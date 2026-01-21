@@ -1,5 +1,28 @@
 {% extends "base.html" %}
 
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Teína - Vídeo Promocional",
+    "description": "Vídeo promocional de Teína, banda de indie pop rock de Calasparra, Murcia. Versiones y temas propios.",
+    "thumbnailUrl": "https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg",
+    "uploadDate": "2024-01-01",
+    "contentUrl": "https://www.youtube.com/watch?v=XDiUv8ba55I",
+    "embedUrl": "https://www.youtube.com/embed/XDiUv8ba55I",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Teína",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ get_url(path='imgs/teina-logo.png') }}"
+        }
+    }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <nav class="navbar">
     <a href="#" class="nav-logo">

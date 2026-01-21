@@ -1,5 +1,6 @@
 +++
 title = "Aviso Legal y Privacidad"
+description = "Aviso legal, política de privacidad y protección de datos del sitio web de Teína, banda de música de Calasparra, Murcia."
 +++
 
 ## Titular del sitio

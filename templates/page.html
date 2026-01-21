@@ -1,5 +1,41 @@
 {% extends "base.html" %}
 
+{% block title %}{{ page.title }} | Teína{% endblock %}
+
+{% block description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
+
+{% block canonical %}{{ page.permalink }}{% endblock %}
+
+{% block og_url %}{{ page.permalink }}{% endblock %}
+{% block og_title %}{{ page.title }} | Teína{% endblock %}
+{% block og_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
+
+{% block twitter_title %}{{ page.title }} | Teína{% endblock %}
+{% block twitter_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
+
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "{{ config.base_url }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ page.title }}",
+            "item": "{{ page.permalink }}"
+        }
+    ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <nav class="navbar scrolled">
     <a href="/" class="nav-logo">
