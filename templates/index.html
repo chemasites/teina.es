@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="hero">
+    <h1>Teína</h1>
+    <p class="tagline">indie pop rock · calasparra</p>
+</header>
+
+<article class="content">
+    {{ section.content | safe }}
+</article>
+{% endblock %}

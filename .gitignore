@@ -1,0 +1,14 @@
+# Zola build output
+public/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Sass cache
+.sass-cache/
