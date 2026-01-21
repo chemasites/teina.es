@@ -1,9 +1,17 @@
 base_url = "https://teina.es"
 title = "Teína"
-description = "Banda de indie pop rock de Calasparra, Murcia"
+description = "Banda de indie pop rock de Calasparra, Murcia. Las mejores versiones del indie pop rock actual y temas propios"
 default_language = "es"
 compile_sass = true
 build_search_index = false
 generate_feeds = false
 
+# SEO
+taxonomies = []
+
+[sitemap]
+filename = "sitemap.xml"
+
 [extra]
+author = "Teína"
+keywords = "Teína, banda, música, indie pop rock, Calasparra, Murcia, grupo musical, versiones, conciertos, eventos"

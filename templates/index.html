@@ -3,12 +3,12 @@
 {% block content %}
 <nav class="navbar">
     <a href="#" class="nav-logo">
-        <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" loading="lazy">
+        <img src="{{ get_url(path='imgs/mariposa-teina.jpg') }}" alt="Teína" loading="lazy">
     </a>
     <ul class="nav-links">
         <li><a href="#banda">Banda</a></li>
         <li><a href="#musica">Música</a></li>
-        <li><a href="/media/">Media</a></li>
+        <li><a href="#media">Media</a></li>
         <li><a href="#contacto">Contacto</a></li>
     </ul>
 </nav>
@@ -72,10 +72,11 @@
     </div>
 </section>
 
-<section class="section fade-in" id="videos">
-    <h2>Vídeos</h2>
-    <p class="section-intro">Escucha nuestros temas y vídeos en directo</p>
-    <div class="videos-grid">
+<section class="section fade-in" id="media">
+    <h2>Media</h2>
+    <p class="section-intro">Vídeos y fotos de nuestros conciertos</p>
+
+    <div class="media-grid">
         <div class="video-item">
             <iframe
                 src="https://www.youtube.com/embed/XDiUv8ba55I"
@@ -85,13 +86,15 @@
                 loading="lazy">
             </iframe>
         </div>
-        <div class="video-item">
-            <div class="video-placeholder">
-                <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Próximamente</span>
-            </div>
+        <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
+            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="Concierto Teína 2025" loading="lazy">
+        </a>
+        <div class="gallery-placeholder">
+            <span>Próximamente</span>
         </div>
     </div>
+
+    <a href="/media/" class="section-cta">Ver más</a>
 </section>
 
 <section class="section section-alt fade-in" id="en-directo">
@@ -107,22 +110,6 @@
         <li>Efecto Mariposa</li>
         <li>entre otros...</li>
     </ul>
-</section>
-
-<section class="section fade-in" id="galeria">
-    <h2>Galería</h2>
-    <p class="section-intro">Momentos de nuestros conciertos</p>
-    <div class="gallery">
-        <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="Concierto Teína 2025" loading="lazy">
-        </a>
-        <div class="gallery-placeholder">
-            <span>Próximamente</span>
-        </div>
-        <div class="gallery-placeholder">
-            <span>Próximamente</span>
-        </div>
-    </div>
 </section>
 
 <section class="section section-alt fade-in" id="conciertos">
@@ -168,7 +155,7 @@
             <ul>
                 <li><a href="#banda">La Banda</a></li>
                 <li><a href="#musica">Música</a></li>
-                <li><a href="/media/">Media</a></li>
+                <li><a href="#media">Media</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
