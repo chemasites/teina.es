@@ -31,16 +31,16 @@
 {% include "partials/navbar.html" %}
 
 <header class="hero" id="inicio">
-    <p class="tagline">indie pop rock - calasparra</p>
+    <p class="tagline">indie pop rock</p>
     <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teina" class="hero-logo">
     {% if lang == "en" %}
-    <p class="hero-description">The best covers of current indie pop rock, plus original songs</p>
+    <p class="hero-description">The best covers of current indie pop rock, plus originals</p>
     <div class="hero-buttons">
         <a href="{{ lang_prefix }}/musica/" class="btn btn-primary">Listen</a>
         <a href="{{ lang_prefix }}/contacto/" class="btn btn-secondary">Bookings</a>
     </div>
     {% else %}
-    <p class="hero-description">Las mejores versiones del indie pop rock actual, ademas de contar con temas propios</p>
+    <p class="hero-description">Las mejores versiones del indie pop rock actual, además de contar con temas propios</p>
     <div class="hero-buttons">
         <a href="/musica/" class="btn btn-primary">Escuchar</a>
         <a href="/contacto/" class="btn btn-secondary">Contrataciones</a>

@@ -904,6 +904,20 @@ body {
             a {
                 font-size: 0.8rem;
             }
+
+            .lang-switcher {
+                margin-left: 0.3rem;
+                padding-left: 0.8rem;
+                border-left: 1px solid #d5c9b8;
+
+                a {
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 4px;
+                    background: rgba(90, 74, 56, 0.1);
+                }
+            }
         }
     }
 
@@ -997,6 +1011,16 @@ body {
 
             a {
                 font-size: 0.7rem;
+            }
+
+            .lang-switcher {
+                margin-left: 0.2rem;
+                padding-left: 0.5rem;
+
+                a {
+                    font-size: 0.65rem;
+                    padding: 0.2rem 0.4rem;
+                }
             }
         }
     }
