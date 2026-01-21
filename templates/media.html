@@ -52,13 +52,13 @@
 {% block content %}
 {% include "partials/navbar.html" %}
 
-<main class="media-page">
-    <header class="media-header">
+<main class="page-content media-page">
+    <header class="page-header">
         <h1>Media</h1>
-        <p>Galeria de fotos y videos de Teina</p>
+        <p class="page-subtitle">Galeria de fotos y videos de Teina</p>
     </header>
 
-    <section class="media-section">
+    <section class="section">
         <h2>Videos</h2>
         <div class="videos-grid">
             <div class="video-item">
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <section class="media-section">
+    <section class="section section-alt">
         <h2>Galeria</h2>
         <div class="gallery gallery-large">
             <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
