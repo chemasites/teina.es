@@ -85,9 +85,11 @@ body {
     }
 
     .hero-logo {
-        max-width: 500px;
+        max-width: 450px;
         height: auto;
-        margin-bottom: 2.5rem;
+        margin-bottom: 5em;
+        transform: scale(1.6);
+        clip-path: inset(18% 18% 12% 18%);
     }
 
     .hero-description {
