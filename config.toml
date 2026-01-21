@@ -5,12 +5,7 @@ default_language = "es"
 compile_sass = true
 build_search_index = false
 generate_feeds = false
-
-# SEO
-taxonomies = []
-
-[sitemap]
-filename = "sitemap.xml"
+generate_sitemap = true
 
 [extra]
 author = "Teína"
