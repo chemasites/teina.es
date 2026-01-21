@@ -3,6 +3,13 @@
     {% set lang_prefix = "/en" %}
 {% endif %}
 
+{% set current = current_path | default(value="/") %}
+{% if lang == "en" %}
+    {% set alt_lang_path = current | replace(from="/en/", to="/") | replace(from="/en", to="/") %}
+{% else %}
+    {% set alt_lang_path = "/en" ~ current %}
+{% endif %}
+
 <nav class="navbar">
     <a href="{{ lang_prefix }}/" class="nav-logo">
         <img src="{{ get_url(path='imgs/mariposa-teina.jpg') }}" alt="Teína" loading="lazy">
@@ -21,9 +28,9 @@
         {% endif %}
         <li class="lang-switcher">
             {% if lang == "en" %}
-            <a href="/" title="Español">ES</a>
+            <a href="{{ alt_lang_path }}" title="Español">ES</a>
             {% else %}
-            <a href="/en/" title="English">EN</a>
+            <a href="{{ alt_lang_path }}" title="English">EN</a>
             {% endif %}
         </li>
         <li class="theme-toggle">
