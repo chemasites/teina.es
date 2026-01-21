@@ -166,7 +166,7 @@ body {
     .nav-links {
         display: flex;
         list-style: none;
-        gap: 2rem;
+        gap: 0.5rem;
         align-items: center;
 
         a {
@@ -174,10 +174,13 @@ body {
             text-decoration: none;
             font-size: 0.9rem;
             letter-spacing: 0.05rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, background 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
 
             &:hover {
                 color: var(--accent-dark);
+                background: var(--accent-hover);
             }
         }
 
@@ -1102,15 +1105,16 @@ html:not([data-theme="light"]) .theme-toggle button {
         padding: 1rem;
 
         .nav-links {
-            gap: 1rem;
+            gap: 0.25rem;
 
             a {
                 font-size: 0.8rem;
+                padding: 0.4rem 0.6rem;
             }
 
             .lang-switcher {
                 margin-left: 0.3rem;
-                padding-left: 0.8rem;
+                padding-left: 0.6rem;
                 border-left: 1px solid var(--border-color);
 
                 a {
@@ -1224,15 +1228,16 @@ html:not([data-theme="light"]) .theme-toggle button {
         }
 
         .nav-links {
-            gap: 0.5rem;
+            gap: 0.1rem;
 
             a {
                 font-size: 0.7rem;
+                padding: 0.35rem 0.4rem;
             }
 
             .lang-switcher {
-                margin-left: 0.2rem;
-                padding-left: 0.5rem;
+                margin-left: 0.1rem;
+                padding-left: 0.4rem;
 
                 a {
                     font-size: 0.65rem;
@@ -1241,7 +1246,7 @@ html:not([data-theme="light"]) .theme-toggle button {
             }
 
             .theme-toggle {
-                padding-left: 0.2rem;
+                padding-left: 0.1rem;
 
                 button {
                     width: 24px;
