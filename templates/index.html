@@ -3,12 +3,12 @@
 {% block content %}
 <nav class="navbar">
     <a href="#" class="nav-logo">
-        <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína">
+        <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" loading="lazy">
     </a>
     <ul class="nav-links">
         <li><a href="#banda">Banda</a></li>
         <li><a href="#musica">Música</a></li>
-        <li><a href="#en-directo">En Directo</a></li>
+        <li><a href="/media/">Media</a></li>
         <li><a href="#contacto">Contacto</a></li>
     </ul>
 </nav>
@@ -23,7 +23,7 @@
     </div>
 </header>
 
-<section class="section" id="banda">
+<section class="section fade-in" id="banda">
     <h2>La Banda</h2>
     <p class="section-intro">Somos Teína, una banda que ofrece las mejores versiones del indie pop rock actual, además de contar con temas propios. Todos los componentes, originarios de Calasparra, en el Noroeste de la Región de Murcia, cuentan con una amplia experiencia en el mundo de la música en directo en diferentes formatos.</p>
 
@@ -56,7 +56,7 @@
     </div>
 </section>
 
-<section class="section section-alt" id="musica">
+<section class="section section-alt fade-in" id="musica">
     <h2>Música</h2>
     <div class="cards">
         <div class="card">
@@ -70,10 +70,31 @@
             <p>Repertorio de hasta 2 horas de duración.</p>
         </div>
     </div>
-    <a href="https://instagram.com/teinaband" target="_blank" class="section-cta">Escúchanos en redes</a>
 </section>
 
-<section class="section" id="en-directo">
+<section class="section fade-in" id="videos">
+    <h2>Vídeos</h2>
+    <p class="section-intro">Escucha nuestros temas y vídeos en directo</p>
+    <div class="videos-grid">
+        <div class="video-item">
+            <iframe
+                src="https://www.youtube.com/embed/XDiUv8ba55I"
+                title="Teína - Vídeo Promocional"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+        <div class="video-item">
+            <div class="video-placeholder">
+                <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Próximamente</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt fade-in" id="en-directo">
     <h2>En Directo</h2>
     <p class="section-intro">Hemos actuado en diferentes salas y festivales, junto a grupos como:</p>
 
@@ -88,7 +109,34 @@
     </ul>
 </section>
 
-<section class="section section-alt" id="contacto">
+<section class="section fade-in" id="galeria">
+    <h2>Galería</h2>
+    <p class="section-intro">Momentos de nuestros conciertos</p>
+    <div class="gallery">
+        <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
+            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="Concierto Teína 2025" loading="lazy">
+        </a>
+        <div class="gallery-placeholder">
+            <span>Próximamente</span>
+        </div>
+        <div class="gallery-placeholder">
+            <span>Próximamente</span>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt fade-in" id="conciertos">
+    <h2>Próximos Conciertos</h2>
+    <div class="events">
+        <div class="event-placeholder">
+            <svg class="event-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <p>Próximas fechas por anunciar</p>
+            <a href="https://instagram.com/teinaband" target="_blank" class="btn btn-secondary">Síguenos para enterarte</a>
+        </div>
+    </div>
+</section>
+
+<section class="section fade-in" id="contacto">
     <div class="contact-container">
         <div class="contact-header">
             <h2>¿Organizas un evento?</h2>
@@ -120,7 +168,7 @@
             <ul>
                 <li><a href="#banda">La Banda</a></li>
                 <li><a href="#musica">Música</a></li>
-                <li><a href="#en-directo">En Directo</a></li>
+                <li><a href="/media/">Media</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
@@ -141,4 +189,10 @@
         <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a></p>
     </div>
 </footer>
+
+<!-- Lightbox for gallery -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="" class="lightbox-img">
+</div>
 {% endblock %}
