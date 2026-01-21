@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | Teina - Contrataciones{% endblock %}
+
+{% block description %}{{ section.description }}{% endblock %}
+
+{% block canonical %}{{ section.permalink }}{% endblock %}
+
+{% block og_url %}{{ section.permalink }}{% endblock %}
+{% block og_title %}{{ section.title }} | Teina{% endblock %}
+{% block og_description %}{{ section.description }}{% endblock %}
+
+{% block twitter_title %}{{ section.title }} | Teina{% endblock %}
+{% block twitter_description %}{{ section.description }}{% endblock %}
+
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "{{ config.base_url }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ section.title }}",
+            "item": "{{ section.permalink }}"
+        }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Teina",
+    "url": "{{ config.base_url }}",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+34-661-892-704",
+        "contactType": "booking",
+        "availableLanguage": "Spanish",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Espana"
+        }
+    },
+    "sameAs": [
+        "https://instagram.com/teinaband"
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+{% include "partials/navbar.html" %}
+
+<main class="page-content contacto-page">
+    <header class="page-header">
+        <h1>{{ section.title }}</h1>
+    </header>
+
+    <section class="section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>¿Organizas un evento?</h2>
+                <p>Hablemos y hagamos que sea inolvidable</p>
+            </div>
+            <div class="contact-actions">
+                <a href="tel:+34661892704" class="contact-card contact-primary">
+                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <div class="contact-card-content">
+                        <span class="contact-label">Llamanos</span>
+                        <span class="contact-value">661 892 704</span>
+                    </div>
+                </a>
+                <a href="https://instagram.com/teinaband" target="_blank" class="contact-card">
+                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <div class="contact-card-content">
+                        <span class="contact-label">Siguenos</span>
+                        <span class="contact-value">@teinaband</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <h2>Servicios</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Bodas</h3>
+                <p>Musica en directo para que tu dia especial sea inolvidable.</p>
+            </div>
+            <div class="card">
+                <h3>Festivales</h3>
+                <p>Actuaciones energicas con repertorio adaptado al evento.</p>
+            </div>
+            <div class="card">
+                <h3>Eventos Privados</h3>
+                <p>Fiestas, celebraciones y eventos corporativos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Zona de Actuacion</h2>
+        <p class="section-intro">Disponibles para eventos en Murcia y toda Espana.</p>
+        <div class="cta-buttons">
+            <a href="/banda/" class="btn btn-secondary">Conocer la banda</a>
+            <a href="/musica/" class="btn btn-secondary">Escuchar musica</a>
+        </div>
+    </section>
+</main>
+
+{% include "partials/footer.html" %}
+{% endblock %}

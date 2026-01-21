@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | Teina - Banda de Indie Pop Rock{% endblock %}
+
+{% block description %}{{ section.description }}{% endblock %}
+
+{% block canonical %}{{ section.permalink }}{% endblock %}
+
+{% block og_url %}{{ section.permalink }}{% endblock %}
+{% block og_title %}{{ section.title }} | Teina{% endblock %}
+{% block og_description %}{{ section.description }}{% endblock %}
+
+{% block twitter_title %}{{ section.title }} | Teina{% endblock %}
+{% block twitter_description %}{{ section.description }}{% endblock %}
+
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "{{ config.base_url }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ section.title }}",
+            "item": "{{ section.permalink }}"
+        }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Teina",
+    "description": "{{ section.description }}",
+    "url": "{{ config.base_url }}",
+    "genre": ["Indie Pop", "Pop Rock", "Rock"],
+    "track": [
+        {
+            "@type": "MusicRecording",
+            "name": "Sencillo 1",
+            "byArtist": {
+                "@type": "MusicGroup",
+                "name": "Teina"
+            }
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Sencillo 2",
+            "byArtist": {
+                "@type": "MusicGroup",
+                "name": "Teina"
+            }
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Sencillo 3",
+            "byArtist": {
+                "@type": "MusicGroup",
+                "name": "Teina"
+            }
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Sencillo 4",
+            "byArtist": {
+                "@type": "MusicGroup",
+                "name": "Teina"
+            }
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Sencillo 5",
+            "byArtist": {
+                "@type": "MusicGroup",
+                "name": "Teina"
+            }
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Sencillo 6",
+            "byArtist": {
+                "@type": "MusicGroup",
+                "name": "Teina"
+            }
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+{% include "partials/navbar.html" %}
+
+<main class="page-content musica-page">
+    <header class="page-header">
+        <h1>{{ section.title }}</h1>
+        <p class="page-intro">{{ section.content | safe }}</p>
+    </header>
+
+    <section class="section">
+        <div class="cards">
+            <div class="card">
+                <h3>Temas Propios</h3>
+                <p class="card-subtitle">6 sencillos</p>
+                <p>La agrupacion cuenta con seis sencillos propios hasta la fecha, fusionando el mejor indie pop rock con letras que conectan.</p>
+            </div>
+            <div class="card">
+                <h3>Repertorio</h3>
+                <p class="card-subtitle">En directo</p>
+                <p>Repertorio de hasta 2 horas de duracion con las mejores versiones del indie pop rock actual.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <h2>Video Promocional</h2>
+        <div class="video-featured">
+            <div class="video-item">
+                <iframe
+                    src="https://www.youtube.com/embed/XDiUv8ba55I"
+                    title="Teina - Video Promocional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <h2>¿Quieres escucharnos en directo?</h2>
+        <div class="cta-buttons">
+            <a href="/contacto/" class="btn btn-primary">Contrataciones</a>
+            <a href="/media/" class="btn btn-secondary">Ver mas videos</a>
+        </div>
+    </section>
+</main>
+
+{% include "partials/footer.html" %}
+{% endblock %}

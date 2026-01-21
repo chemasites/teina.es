@@ -5,15 +5,15 @@
 {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "Teína - Vídeo Promocional",
-    "description": "Vídeo promocional de Teína, banda de indie pop rock de Calasparra, Murcia. Versiones y temas propios.",
+    "name": "Teina - Video Promocional",
+    "description": "Video promocional de Teina, banda de indie pop rock de Calasparra, Murcia. Versiones y temas propios.",
     "thumbnailUrl": "https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg",
     "uploadDate": "2024-01-01",
     "contentUrl": "https://www.youtube.com/watch?v=XDiUv8ba55I",
     "embedUrl": "https://www.youtube.com/embed/XDiUv8ba55I",
     "publisher": {
         "@type": "Organization",
-        "name": "Teína",
+        "name": "Teina",
         "logo": {
             "@type": "ImageObject",
             "url": "{{ get_url(path='imgs/teina-logo.png') }}"
@@ -24,181 +24,68 @@
 {% endblock %}
 
 {% block content %}
-<nav class="navbar">
-    <a href="#" class="nav-logo">
-        <img src="{{ get_url(path='imgs/mariposa-teina.jpg') }}" alt="Teína" loading="lazy">
-    </a>
-    <ul class="nav-links">
-        <li><a href="#banda">Banda</a></li>
-        <li><a href="#musica">Música</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-</nav>
+{% include "partials/navbar.html" %}
 
 <header class="hero" id="inicio">
-    <p class="tagline">indie pop rock · calasparra</p>
-    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" class="hero-logo">
-    <p class="hero-description">Las mejores versiones del indie pop rock actual, además de contar con temas propios</p>
+    <p class="tagline">indie pop rock - calasparra</p>
+    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teina" class="hero-logo">
+    <p class="hero-description">Las mejores versiones del indie pop rock actual, ademas de contar con temas propios</p>
     <div class="hero-buttons">
-        <a href="#musica" class="btn btn-primary">Escuchar</a>
-        <a href="#contacto" class="btn btn-secondary">Contrataciones</a>
+        <a href="/musica/" class="btn btn-primary">Escuchar</a>
+        <a href="/contacto/" class="btn btn-secondary">Contrataciones</a>
     </div>
 </header>
 
-<section class="section fade-in" id="banda">
-    <h2>La Banda</h2>
-    <p class="section-intro">Somos Teína, una banda que ofrece las mejores versiones del indie pop rock actual, además de contar con temas propios. Todos los componentes, originarios de Calasparra, en el Noroeste de la Región de Murcia, cuentan con una amplia experiencia en el mundo de la música en directo en diferentes formatos.</p>
-
-    <div class="members">
-        <div class="member">
-            <div class="member-avatar">J</div>
-            <h3>Juanjo</h3>
-            <p>Guitarra y Voz</p>
-        </div>
-        <div class="member">
-            <div class="member-avatar">J</div>
-            <h3>Jose Antonio</h3>
-            <p>Teclados</p>
-        </div>
-        <div class="member">
-            <div class="member-avatar">A</div>
-            <h3>Adrián</h3>
-            <p>Batería</p>
-        </div>
-        <div class="member">
-            <div class="member-avatar">A</div>
-            <h3>Antonio</h3>
-            <p>Bajo</p>
-        </div>
-        <div class="member">
-            <div class="member-avatar">N</div>
-            <h3>Nacho</h3>
-            <p>Saxos y Percusión</p>
-        </div>
-    </div>
+<section class="section fade-in" id="about">
+    <h2>Sobre Teina</h2>
+    <p class="section-intro">Somos una banda originaria de Calasparra, en el Noroeste de la Region de Murcia. Todos los componentes cuentan con una amplia experiencia en el mundo de la musica en directo en diferentes formatos.</p>
+    <a href="/banda/" class="section-cta">Conocer la banda</a>
 </section>
 
-<section class="section section-alt fade-in" id="musica">
-    <h2>Música</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Temas Propios</h3>
-            <p class="card-subtitle">6 sencillos</p>
-            <p>La agrupación cuenta con seis sencillos propios hasta la fecha.</p>
-        </div>
-        <div class="card">
-            <h3>Repertorio</h3>
-            <p class="card-subtitle">En directo</p>
-            <p>Repertorio de hasta 2 horas de duración.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section fade-in" id="media">
-    <h2>Media</h2>
-    <p class="section-intro">Vídeos y fotos de nuestros conciertos</p>
-
+<section class="section section-alt fade-in" id="preview">
+    <h2>Video Destacado</h2>
     <div class="media-grid">
         <div class="video-item">
             <iframe
                 src="https://www.youtube.com/embed/XDiUv8ba55I"
-                title="Teína - Vídeo Promocional"
+                title="Teina - Video Promocional"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 loading="lazy">
             </iframe>
         </div>
         <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="Concierto Teína 2025" loading="lazy">
+            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="Concierto Teina 2025" loading="lazy">
         </a>
-        <div class="gallery-placeholder">
-            <span>Próximamente</span>
-        </div>
     </div>
-
-    <a href="/media/" class="section-cta">Ver más</a>
+    <a href="/media/" class="section-cta">Ver mas</a>
 </section>
 
-<section class="section section-alt fade-in" id="en-directo">
-    <h2>En Directo</h2>
-    <p class="section-intro">Hemos actuado en diferentes salas y festivales, junto a grupos como:</p>
-
-    <ul class="artists-list">
-        <li>Revolver</li>
-        <li>Second</li>
-        <li>Álvaro de Luna</li>
-        <li>Loquillo</li>
-        <li>Danza Invisible</li>
-        <li>Efecto Mariposa</li>
-        <li>entre otros...</li>
-    </ul>
-</section>
-
-<section class="section section-alt fade-in" id="conciertos">
-    <h2>Próximos Conciertos</h2>
+<section class="section fade-in" id="conciertos">
+    <h2>Proximos Conciertos</h2>
     <div class="events">
         <div class="event-placeholder">
             <svg class="event-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <p>Próximas fechas por anunciar</p>
-            <a href="https://instagram.com/teinaband" target="_blank" class="btn btn-secondary">Síguenos para enterarte</a>
+            <p>Proximas fechas por anunciar</p>
+            <a href="https://instagram.com/teinaband" target="_blank" class="btn btn-secondary">Siguenos para enterarte</a>
         </div>
     </div>
 </section>
 
-<section class="section fade-in" id="contacto">
+<section class="section section-alt fade-in" id="contact-cta">
     <div class="contact-container">
         <div class="contact-header">
             <h2>¿Organizas un evento?</h2>
             <p>Hablemos y hagamos que sea inolvidable</p>
         </div>
-        <div class="contact-actions">
-            <a href="tel:+34661892704" class="contact-card contact-primary">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                <div class="contact-card-content">
-                    <span class="contact-label">Llámanos</span>
-                    <span class="contact-value">661 892 704</span>
-                </div>
-            </a>
-            <a href="https://instagram.com/teinaband" target="_blank" class="contact-card">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                <div class="contact-card-content">
-                    <span class="contact-label">Síguenos</span>
-                    <span class="contact-value">@teinaband</span>
-                </div>
-            </a>
+        <div class="cta-buttons">
+            <a href="/contacto/" class="btn btn-primary">Contactar</a>
+            <a href="tel:+34661892704" class="btn btn-secondary">661 892 704</a>
         </div>
     </div>
 </section>
 
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-col">
-            <h4>Navegación</h4>
-            <ul>
-                <li><a href="#banda">La Banda</a></li>
-                <li><a href="#musica">Música</a></li>
-                <li><a href="#media">Media</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Contacto</h4>
-            <ul>
-                <li><a href="tel:+34661892704">661 892 704</a></li>
-                <li><a href="https://instagram.com/teinaband" target="_blank">@teinaband</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Teína</h4>
-            <p>Indie Pop Rock<br>Calasparra, Murcia</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© {{ now() | date(format="%Y") }} Teína. Todos los derechos reservados. <a href="/legal/">Aviso legal</a></p>
-        <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a></p>
-    </div>
-</footer>
+{% include "partials/footer.html" %}
 
 <!-- Lightbox for gallery -->
 <div class="lightbox" id="lightbox">

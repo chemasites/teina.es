@@ -1,0 +1,11 @@
+<nav class="navbar{% if page %} scrolled{% endif %}">
+    <a href="/" class="nav-logo">
+        <img src="{{ get_url(path='imgs/mariposa-teina.jpg') }}" alt="Teína" loading="lazy">
+    </a>
+    <ul class="nav-links">
+        <li><a href="/banda/"{% if current_path == "/banda/" %} class="active"{% endif %}>Banda</a></li>
+        <li><a href="/musica/"{% if current_path == "/musica/" %} class="active"{% endif %}>Musica</a></li>
+        <li><a href="/media/"{% if current_path == "/media/" %} class="active"{% endif %}>Media</a></li>
+        <li><a href="/contacto/"{% if current_path == "/contacto/" %} class="active"{% endif %}>Contacto</a></li>
+    </ul>
+</nav>

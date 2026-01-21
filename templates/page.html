@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} | Teína{% endblock %}
+{% block title %}{{ page.title }} | Teina{% endblock %}
 
 {% block description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
 {% block canonical %}{{ page.permalink }}{% endblock %}
 
 {% block og_url %}{{ page.permalink }}{% endblock %}
-{% block og_title %}{{ page.title }} | Teína{% endblock %}
+{% block og_title %}{{ page.title }} | Teina{% endblock %}
 {% block og_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
-{% block twitter_title %}{{ page.title }} | Teína{% endblock %}
+{% block twitter_title %}{{ page.title }} | Teina{% endblock %}
 {% block twitter_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
 {% block extra_schema %}
@@ -37,49 +37,12 @@
 {% endblock %}
 
 {% block content %}
-<nav class="navbar scrolled">
-    <a href="/" class="nav-logo">
-        <img src="{{ get_url(path='imgs/mariposa-teina.jpg') }}" alt="Teína">
-    </a>
-    <ul class="nav-links">
-        <li><a href="/#banda">Banda</a></li>
-        <li><a href="/#musica">Música</a></li>
-        <li><a href="/media/">Media</a></li>
-        <li><a href="/#contacto">Contacto</a></li>
-    </ul>
-</nav>
+{% include "partials/navbar.html" %}
 
 <main class="page-content">
     <h1>{{ page.title }}</h1>
     {{ page.content | safe }}
 </main>
 
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-col">
-            <h4>Navegación</h4>
-            <ul>
-                <li><a href="/#banda">La Banda</a></li>
-                <li><a href="/#musica">Música</a></li>
-                <li><a href="/media/">Media</a></li>
-                <li><a href="/#contacto">Contacto</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Contacto</h4>
-            <ul>
-                <li><a href="tel:+34661892704">661 892 704</a></li>
-                <li><a href="https://instagram.com/teinaband" target="_blank">@teinaband</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Teína</h4>
-            <p>Indie Pop Rock<br>Calasparra, Murcia</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© {{ now() | date(format="%Y") }} Teína. Todos los derechos reservados. <a href="/legal/">Aviso legal</a></p>
-        <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a></p>
-    </div>
-</footer>
+{% include "partials/footer.html" %}
 {% endblock %}
