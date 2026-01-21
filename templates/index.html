@@ -1,12 +1,135 @@
 {% extends "base.html" %}
 
 {% block content %}
-<header class="hero">
-    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" class="logo">
+<nav class="navbar">
+    <a href="#" class="nav-logo">
+        <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína">
+    </a>
+    <ul class="nav-links">
+        <li><a href="#banda">Banda</a></li>
+        <li><a href="#musica">Música</a></li>
+        <li><a href="#en-directo">En Directo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<header class="hero" id="inicio">
     <p class="tagline">indie pop rock · calasparra</p>
+    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" class="hero-logo">
+    <p class="hero-description">Las mejores versiones del indie pop rock actual, además de contar con temas propios</p>
+    <div class="hero-buttons">
+        <a href="#musica" class="btn btn-primary">Escuchar</a>
+        <a href="#contacto" class="btn btn-secondary">Contrataciones</a>
+    </div>
 </header>
 
-<article class="content">
-    {{ section.content | safe }}
-</article>
+<section class="section" id="banda">
+    <h2>La Banda</h2>
+    <p class="section-intro">Somos Teína, una banda que ofrece las mejores versiones del indie pop rock actual, además de contar con temas propios. Todos los componentes, originarios de Calasparra, en el Noroeste de la Región de Murcia, cuentan con una amplia experiencia en el mundo de la música en directo en diferentes formatos.</p>
+
+    <div class="members">
+        <div class="member">
+            <div class="member-avatar">J</div>
+            <h3>Juanjo</h3>
+            <p>Guitarra y Voz</p>
+        </div>
+        <div class="member">
+            <div class="member-avatar">J</div>
+            <h3>Jose Antonio</h3>
+            <p>Teclados</p>
+        </div>
+        <div class="member">
+            <div class="member-avatar">A</div>
+            <h3>Adrián</h3>
+            <p>Batería</p>
+        </div>
+        <div class="member">
+            <div class="member-avatar">A</div>
+            <h3>Antonio</h3>
+            <p>Bajo</p>
+        </div>
+        <div class="member">
+            <div class="member-avatar">N</div>
+            <h3>Nacho</h3>
+            <p>Saxos y Percusión</p>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" id="musica">
+    <h2>Música</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Temas Propios</h3>
+            <p class="card-subtitle">6 sencillos</p>
+            <p>La agrupación cuenta con seis sencillos propios hasta la fecha.</p>
+        </div>
+        <div class="card">
+            <h3>Repertorio</h3>
+            <p class="card-subtitle">En directo</p>
+            <p>Repertorio de hasta 2 horas de duración.</p>
+        </div>
+    </div>
+    <a href="https://instagram.com/teinaband" target="_blank" class="section-cta">Escúchanos en redes</a>
+</section>
+
+<section class="section" id="en-directo">
+    <h2>En Directo</h2>
+    <p class="section-intro">Hemos actuado en diferentes salas y festivales, junto a grupos como:</p>
+
+    <ul class="artists-list">
+        <li>Revolver</li>
+        <li>Second</li>
+        <li>Álvaro de Luna</li>
+        <li>Loquillo</li>
+        <li>Danza Invisible</li>
+        <li>Efecto Mariposa</li>
+        <li>entre otros...</li>
+    </ul>
+</section>
+
+<section class="section section-alt" id="contacto">
+    <h2>Contacto</h2>
+    <p class="section-intro">¿Quieres contratarnos para tu evento?</p>
+
+    <div class="contact-info">
+        <a href="tel:+34661892704" class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span>661 892 704 (Juanjo)</span>
+        </a>
+        <a href="https://instagram.com/teinaband" target="_blank" class="contact-item">
+            <span class="contact-icon">📷</span>
+            <span>@teinaband</span>
+        </a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="#banda">La Banda</a></li>
+                <li><a href="#musica">Música</a></li>
+                <li><a href="#en-directo">En Directo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+                <li><a href="tel:+34661892704">661 892 704</a></li>
+                <li><a href="https://instagram.com/teinaband" target="_blank">@teinaband</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Teína</h4>
+            <p>indie pop rock<br>calasparra, murcia</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Teína. Todos los derechos reservados.</p>
+        <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a></p>
+    </div>
+</footer>
 {% endblock %}
