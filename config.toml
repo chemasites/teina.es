@@ -10,3 +10,7 @@ generate_sitemap = true
 [extra]
 author = "Teína"
 keywords = "Teína, banda, música, indie pop rock, Calasparra, Murcia, grupo musical, versiones, conciertos, eventos"
+
+[languages.en]
+title = "Teína"
+description = "Indie pop rock band from Calasparra, Murcia. The best covers of current indie pop rock and original songs"

@@ -1,6 +1,20 @@
+{% set lang_prefix = "" %}
+{% if lang == "en" %}
+    {% set lang_prefix = "/en" %}
+{% endif %}
+
 <footer class="footer">
     <div class="footer-content">
         <div class="footer-col">
+            {% if lang == "en" %}
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="{{ lang_prefix }}/banda/">The Band</a></li>
+                <li><a href="{{ lang_prefix }}/musica/">Music</a></li>
+                <li><a href="{{ lang_prefix }}/media/">Media</a></li>
+                <li><a href="{{ lang_prefix }}/contacto/">Contact</a></li>
+            </ul>
+            {% else %}
             <h4>Navegacion</h4>
             <ul>
                 <li><a href="/banda/">La Banda</a></li>
@@ -8,9 +22,14 @@
                 <li><a href="/media/">Media</a></li>
                 <li><a href="/contacto/">Contacto</a></li>
             </ul>
+            {% endif %}
         </div>
         <div class="footer-col">
+            {% if lang == "en" %}
+            <h4>Contact</h4>
+            {% else %}
             <h4>Contacto</h4>
+            {% endif %}
             <ul>
                 <li><a href="tel:+34661892704">661 892 704</a></li>
                 <li><a href="https://instagram.com/teinaband" target="_blank">@teinaband</a></li>
@@ -22,7 +41,12 @@
         </div>
     </div>
     <div class="footer-bottom">
+        {% if lang == "en" %}
+        <p>&copy; {{ now() | date(format="%Y") }} Teina. All rights reserved. <a href="{{ lang_prefix }}/legal/">Legal notice</a></p>
+        <p class="developer">Developed by <a href="https://chemaclass.com/" target="_blank">Chemaclass</a></p>
+        {% else %}
         <p>&copy; {{ now() | date(format="%Y") }} Teina. Todos los derechos reservados. <a href="/legal/">Aviso legal</a></p>
         <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a></p>
+        {% endif %}
     </div>
 </footer>

@@ -22,8 +22,8 @@
         {
             "@type": "ListItem",
             "position": 1,
-            "name": "Inicio",
-            "item": "{{ config.base_url }}"
+            "name": "{% if lang == 'en' %}Home{% else %}Inicio{% endif %}",
+            "item": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}"
         },
         {
             "@type": "ListItem",
@@ -38,8 +38,8 @@
 {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    "name": "Galeria de Teina",
-    "description": "Fotos y videos de conciertos y actuaciones de Teina",
+    "name": "{% if lang == 'en' %}Teina Gallery{% else %}Galeria de Teina{% endif %}",
+    "description": "{% if lang == 'en' %}Photos and videos of Teina concerts and performances{% else %}Fotos y videos de conciertos y actuaciones de Teina{% endif %}",
     "url": "{{ page.permalink }}",
     "publisher": {
         "@type": "Organization",
@@ -55,7 +55,7 @@
 <main class="page-content media-page">
     <header class="page-header">
         <h1>Media</h1>
-        <p class="page-subtitle">Galeria de fotos y videos de Teina</p>
+        <p class="page-subtitle">{% if lang == "en" %}Photo and video gallery of Teina{% else %}Galeria de fotos y videos de Teina{% endif %}</p>
     </header>
 
     <section class="section">
@@ -64,7 +64,7 @@
             <div class="video-item">
                 <iframe
                     src="https://www.youtube.com/embed/XDiUv8ba55I"
-                    title="Teina - Video Promocional"
+                    title="Teina - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                     loading="lazy">
@@ -74,19 +74,19 @@
     </section>
 
     <section class="section section-alt">
-        <h2>Galeria</h2>
+        <h2>{% if lang == "en" %}Gallery{% else %}Galeria{% endif %}</h2>
         <div class="gallery gallery-large">
             <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="Concierto Teina 2025" loading="lazy">
+                <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teina Concert 2025{% else %}Concierto Teina 2025{% endif %}" loading="lazy">
             </a>
             <div class="gallery-placeholder">
-                <span>Proximamente</span>
+                <span>{% if lang == "en" %}Coming soon{% else %}Proximamente{% endif %}</span>
             </div>
             <div class="gallery-placeholder">
-                <span>Proximamente</span>
+                <span>{% if lang == "en" %}Coming soon{% else %}Proximamente{% endif %}</span>
             </div>
             <div class="gallery-placeholder">
-                <span>Proximamente</span>
+                <span>{% if lang == "en" %}Coming soon{% else %}Proximamente{% endif %}</span>
             </div>
         </div>
     </section>

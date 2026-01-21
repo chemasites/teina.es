@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }} | Banda de Indie Pop Rock en Calasparra, Murcia{% endblock %}</title>
-    <meta name="description" content="{% block description %}{{ config.description }} Versiones y temas propios. Contrataciones para eventos, bodas y festivales en Murcia y toda España.{% endblock %}">
-    <meta name="keywords" content="Teína, banda, música, indie pop rock, Calasparra, Murcia, grupo musical, versiones, conciertos, eventos, bodas, festivales, contratación">
+    <title>{% block title %}{{ config.title }} | {% if lang == "en" %}Indie Pop Rock Band in Calasparra, Murcia{% else %}Banda de Indie Pop Rock en Calasparra, Murcia{% endif %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
+    <meta name="keywords" content="{% if lang == 'en' %}Teína, band, music, indie pop rock, Calasparra, Murcia, musical group, covers, concerts, events, festivals, booking{% else %}Teína, banda, música, indie pop rock, Calasparra, Murcia, grupo musical, versiones, conciertos, eventos, festivales, contratación{% endif %}">
     <meta name="author" content="Teína">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <link rel="canonical" href="{% block canonical %}{{ config.base_url }}{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}{% endblock %}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-    <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% endblock %}">
-    <meta property="og:title" content="{% block og_title %}{{ config.title }} | Banda de Indie Pop Rock{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}{{ config.description }} Contrataciones para eventos.{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
     <meta property="og:image" content="{{ get_url(path='imgs/teina-logo.png') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}es_ES{% endif %}">
     <meta property="og:site_name" content="Teína">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} | Banda de Indie Pop Rock{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock %}">
     <meta name="twitter:image" content="{{ get_url(path='imgs/teina-logo.png') }}">
 
@@ -32,6 +32,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='imgs/favicon.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path='imgs/favicon.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='imgs/teina-logo.png') }}">
+
+    <!-- Language alternatives -->
+    {% set current_path = current_path | default(value="/") %}
+    <link rel="alternate" hreflang="es" href="{{ config.base_url }}{{ current_path | replace(from="/en/", to="/") | replace(from="/en", to="") }}">
+    <link rel="alternate" hreflang="en" href="{{ config.base_url }}/en{{ current_path | replace(from="/en/", to="/") | replace(from="/en", to="") }}">
+    <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}{{ current_path | replace(from="/en/", to="/") | replace(from="/en", to="") }}">
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://www.youtube.com">
