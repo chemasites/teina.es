@@ -335,7 +335,10 @@ body {
     }
 
     .contact-icon {
-        font-size: 1.5rem;
+        width: 20px;
+        height: 20px;
+        color: #7a6a58;
+        flex-shrink: 0;
     }
 }
 
