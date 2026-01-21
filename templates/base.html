@@ -29,6 +29,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}es_ES{% endif %}">
+    <meta property="og:locale:alternate" content="{% if lang == 'en' %}es_ES{% else %}en_US{% endif %}">
     <meta property="og:site_name" content="Teína">
 
     <!-- Twitter Card -->
@@ -44,9 +45,16 @@
 
     <!-- Language alternatives -->
     {% set current_path = current_path | default(value="/") %}
-    <link rel="alternate" hreflang="es" href="{{ config.base_url }}{{ current_path | replace(from="/en/", to="/") | replace(from="/en", to="") }}">
-    <link rel="alternate" hreflang="en" href="{{ config.base_url }}/en{{ current_path | replace(from="/en/", to="/") | replace(from="/en", to="") }}">
-    <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}{{ current_path | replace(from="/en/", to="/") | replace(from="/en", to="") }}">
+    {% if lang == "en" %}
+        {% set es_path = current_path | replace(from="/en/", to="/") | replace(from="/en", to="/") %}
+        {% set en_path = current_path %}
+    {% else %}
+        {% set es_path = current_path %}
+        {% set en_path = "/en" ~ current_path %}
+    {% endif %}
+    <link rel="alternate" hreflang="es" href="{{ config.base_url }}{{ es_path }}">
+    <link rel="alternate" hreflang="en" href="{{ config.base_url }}{{ en_path }}">
+    <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}{{ es_path }}">
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://www.youtube.com">
@@ -61,18 +69,18 @@
         "@context": "https://schema.org",
         "@type": "MusicGroup",
         "name": "Teína",
-        "description": "{{ config.description }}",
-        "url": "{{ config.base_url }}",
+        "description": "{% if lang == 'en' %}Indie pop rock band from Calasparra, Murcia. The best covers of current indie pop rock and original songs. Available for events, festivals and celebrations.{% else %}Banda de indie pop rock de Calasparra, Murcia. Las mejores versiones del indie pop rock actual y temas propios. Disponibles para eventos, festivales y celebraciones.{% endif %}",
+        "url": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}",
         "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
         "image": "{{ get_url(path='imgs/teina-logo.png') }}",
         "genre": ["Indie Pop", "Pop Rock", "Rock"],
         "foundingLocation": {
             "@type": "Place",
-            "name": "Calasparra, Murcia, España"
+            "name": "Calasparra, Murcia, {% if lang == 'en' %}Spain{% else %}España{% endif %}"
         },
         "areaServed": {
             "@type": "Country",
-            "name": "España"
+            "name": "{% if lang == 'en' %}Spain{% else %}España{% endif %}"
         },
         "sameAs": [
             "https://instagram.com/teinaband",
@@ -82,33 +90,34 @@
             "@type": "ContactPoint",
             "telephone": "+34-661-892-704",
             "contactType": "booking",
-            "availableLanguage": "Spanish"
+            "availableLanguage": ["Spanish", "English"]
         },
+        "inLanguage": "{% if lang == 'en' %}en{% else %}es{% endif %}",
         "member": [
             {
                 "@type": "Person",
                 "name": "Juanjo",
-                "roleName": "Guitarra y Voz"
+                "roleName": "{% if lang == 'en' %}Guitar and Vocals{% else %}Guitarra y Voz{% endif %}"
             },
             {
                 "@type": "Person",
                 "name": "Jose Antonio",
-                "roleName": "Teclados"
+                "roleName": "{% if lang == 'en' %}Keyboards{% else %}Teclados{% endif %}"
             },
             {
                 "@type": "Person",
                 "name": "Adrián",
-                "roleName": "Batería"
+                "roleName": "{% if lang == 'en' %}Drums{% else %}Batería{% endif %}"
             },
             {
                 "@type": "Person",
                 "name": "Antonio",
-                "roleName": "Bajo"
+                "roleName": "{% if lang == 'en' %}Bass{% else %}Bajo{% endif %}"
             },
             {
                 "@type": "Person",
                 "name": "Nacho",
-                "roleName": "Saxos y Percusión"
+                "roleName": "{% if lang == 'en' %}Saxophones and Percussion{% else %}Saxos y Percusión{% endif %}"
             }
         ]
     }
