@@ -39,15 +39,40 @@
     "@context": "https://schema.org",
     "@type": "MusicGroup",
     "name": "Teína",
+    "alternateName": ["Teina", "Teína Rock", "Teina Rock"],
     "description": "{{ section.description }}",
     "url": "{{ config.base_url }}",
     "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
-    "genre": ["Indie Pop", "Pop Rock", "Rock"],
+    "genre": ["Indie Pop", "Pop Rock", "Rock", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}", "{% if lang == 'en' %}Alternative Rock{% else %}Rock Alternativo{% endif %}"],
     "foundingLocation": {
         "@type": "Place",
         "name": "Calasparra, Murcia, {% if lang == 'en' %}Spain{% else %}España{% endif %}"
     },
-    "numberOfTracks": 6
+    "numberOfTracks": 6,
+    "track": [
+        {
+            "@type": "MusicRecording",
+            "name": "{% if lang == 'en' %}Original Song{% else %}Tema Original{% endif %} 1",
+            "byArtist": {
+                "@type": "MusicGroup",
+                "name": "Teína"
+            },
+            "genre": ["Indie Pop", "Pop Rock"]
+        }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicPlaylist",
+    "name": "{% if lang == 'en' %}Teína - Original Songs{% else %}Teína - Temas Propios{% endif %}",
+    "description": "{% if lang == 'en' %}Original indie pop rock songs by Teína, band from Calasparra, Murcia, Spain{% else %}Canciones originales de indie pop rock de Teína, banda de Calasparra, Murcia, España{% endif %}",
+    "numTracks": 6,
+    "creator": {
+        "@type": "MusicGroup",
+        "name": "Teína"
+    }
 }
 </script>
 {% endblock %}

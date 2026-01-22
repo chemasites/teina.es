@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for sitemap_entry in entries %}
+    <url>
+        <loc>{{ sitemap_entry.permalink | safe }}</loc>
+        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
+        <changefreq>{% if sitemap_entry.permalink is ending_with("/") or sitemap_entry.permalink is ending_with("/en/") %}weekly{% else %}monthly{% endif %}</changefreq>
+        <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "musica" in sitemap_entry.permalink or "banda" in sitemap_entry.permalink or "contacto" in sitemap_entry.permalink or "media" in sitemap_entry.permalink %}0.8{% else %}0.5{% endif %}</priority>
+    </url>
+    {% endfor %}
+</urlset>
