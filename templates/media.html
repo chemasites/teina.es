@@ -62,22 +62,10 @@
         <h2>Videos</h2>
         <div class="videos-grid">
             <div class="video-item">
-                <iframe
-                    src="https://www.youtube.com/embed/XDiUv8ba55I"
-                    title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
+                <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
             </div>
             <div class="video-item">
-                <iframe
-                    src="https://www.youtube.com/embed/_ue01WuY4bQ"
-                    title="Teína - {% if lang == 'en' %}Song{% else %}Canción{% endif %}"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
+                <lite-youtube videoid="_ue01WuY4bQ" data-title="Teína - {% if lang == 'en' %}Song{% else %}Canción{% endif %}"></lite-youtube>
             </div>
         </div>
     </section>
@@ -86,16 +74,16 @@
         <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
         <div class="gallery gallery-large">
             <a href="{{ get_url(path='media/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy">
+                <img src="{{ get_url(path='media/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy" decoding="async">
             </a>
             <a href="{{ get_url(path='media/adrian1.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/adrian1.png') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy">
+                <img src="{{ get_url(path='media/adrian1.png') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy" decoding="async">
             </a>
             <a href="{{ get_url(path='media/adrian2.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/adrian2.png') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy">
+                <img src="{{ get_url(path='media/adrian2.png') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy" decoding="async">
             </a>
             <a href="{{ get_url(path='media/adrian3.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/adrian3.png') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy">
+                <img src="{{ get_url(path='media/adrian3.png') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy" decoding="async">
             </a>
         </div>
     </section>
@@ -106,6 +94,8 @@
 <!-- Lightbox for gallery -->
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
     <img src="" alt="" class="lightbox-img">
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
 </div>
 {% endblock %}

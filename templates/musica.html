@@ -140,13 +140,7 @@
         <h2>{% if lang == "en" %}Promo Video{% else %}Video Promocional{% endif %}</h2>
         <div class="video-featured">
             <div class="video-item">
-                <iframe
-                    src="https://www.youtube.com/embed/XDiUv8ba55I"
-                    title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
+                <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
             </div>
         </div>
     </section>

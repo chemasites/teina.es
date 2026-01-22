@@ -32,7 +32,7 @@
 
 <header class="hero" id="inicio">
     <p class="tagline">indie pop rock</p>
-    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" class="hero-logo">
+    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" class="hero-logo" fetchpriority="high" decoding="async">
     {% if lang == "en" %}
     <p class="hero-description">The best covers of current indie pop rock, plus originals</p>
     <div class="hero-buttons">
@@ -66,19 +66,10 @@
     {% else %}
     <h2>Video Destacado</h2>
     {% endif %}
-    <div class="media-grid">
+    <div class="videos-grid">
         <div class="video-item">
-            <iframe
-                src="https://www.youtube.com/embed/XDiUv8ba55I"
-                title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy">
-            </iframe>
+            <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
         </div>
-        <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy">
-        </a>
     </div>
     <a href="{{ lang_prefix }}/media/" class="section-cta">{% if lang == "en" %}See more{% else %}Ver más{% endif %}</a>
 </section>
@@ -128,6 +119,8 @@
 <!-- Lightbox for gallery -->
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
     <img src="" alt="" class="lightbox-img">
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
 </div>
 {% endblock %}
