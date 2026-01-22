@@ -41,57 +41,13 @@
     "name": "Teína",
     "description": "{{ section.description }}",
     "url": "{{ config.base_url }}",
+    "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
     "genre": ["Indie Pop", "Pop Rock", "Rock"],
-    "track": [
-        {
-            "@type": "MusicRecording",
-            "name": "Single 1",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Teína"
-            }
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Single 2",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Teína"
-            }
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Single 3",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Teína"
-            }
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Single 4",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Teína"
-            }
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Single 5",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Teína"
-            }
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Single 6",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Teína"
-            }
-        }
-    ]
+    "foundingLocation": {
+        "@type": "Place",
+        "name": "Calasparra, Murcia, {% if lang == 'en' %}Spain{% else %}España{% endif %}"
+    },
+    "numberOfTracks": 6
 }
 </script>
 {% endblock %}

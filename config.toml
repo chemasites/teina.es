@@ -4,7 +4,8 @@ description = "Teína, banda de indie pop-rock con intensidad y personalidad. Ve
 default_language = "es"
 compile_sass = true
 build_search_index = false
-generate_feeds = false
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 generate_sitemap = true
 
 [extra]

@@ -20,14 +20,20 @@
     <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="{% block canonical %}{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}{% endblock %}">
 
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#f9f5f0" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1816" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
     <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}{% endblock %}">
     <meta property="og:title" content="{% block og_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
-    <meta property="og:image" content="{{ get_url(path='imgs/teina-logo.png') }}">
+    <meta property="og:image" content="{% block og_image %}{{ get_url(path='imgs/teina-logo.png') }}{% endblock %}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{% block og_image_alt %}Teína - {% if lang == 'en' %}Indie Pop Rock Band from Calasparra, Murcia{% else %}Banda de Indie Pop Rock de Calasparra, Murcia{% endif %}{% endblock %}">
     <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}es_ES{% endif %}">
     <meta property="og:locale:alternate" content="{% if lang == 'en' %}es_ES{% else %}en_US{% endif %}">
     <meta property="og:site_name" content="Teína">
@@ -36,7 +42,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock %}">
-    <meta name="twitter:image" content="{{ get_url(path='imgs/teina-logo.png') }}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ get_url(path='imgs/teina-logo.png') }}{% endblock %}">
+    <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Teína - {% if lang == 'en' %}Indie Pop Rock Band from Calasparra, Murcia{% else %}Banda de Indie Pop Rock de Calasparra, Murcia{% endif %}{% endblock %}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='imgs/favicon.png') }}">
@@ -55,6 +62,9 @@
     <link rel="alternate" hreflang="es" href="{{ config.base_url }}{{ es_path }}">
     <link rel="alternate" hreflang="en" href="{{ config.base_url }}{{ en_path }}">
     <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}{{ es_path }}">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Teína RSS Feed" href="{{ config.base_url }}/rss.xml">
 
     <!-- Preconnect and DNS prefetch for performance -->
     <link rel="dns-prefetch" href="https://www.youtube.com">
@@ -208,23 +218,28 @@
             },
             {
                 "@type": "Person",
-                "name": "Jose Antonio",
-                "roleName": "{% if lang == 'en' %}Keyboards{% else %}Teclados{% endif %}"
+                "name": "Nacho",
+                "roleName": "{% if lang == 'en' %}Sax, Percussion and Backing Vocals{% else %}Saxo, Percusión y Coros{% endif %}"
             },
             {
                 "@type": "Person",
-                "name": "Adrián",
-                "roleName": "{% if lang == 'en' %}Drums{% else %}Batería{% endif %}"
-            },
-            {
-                "@type": "Person",
-                "name": "Antonio",
+                "name": "AJ Ruíz",
                 "roleName": "{% if lang == 'en' %}Bass{% else %}Bajo{% endif %}"
             },
             {
                 "@type": "Person",
-                "name": "Nacho",
-                "roleName": "{% if lang == 'en' %}Saxophones and Percussion{% else %}Saxos y Percusión{% endif %}"
+                "name": "J.A. Garre",
+                "roleName": "{% if lang == 'en' %}Keyboards{% else %}Teclados{% endif %}"
+            },
+            {
+                "@type": "Person",
+                "name": "Adri",
+                "roleName": "{% if lang == 'en' %}Drums{% else %}Batería{% endif %}"
+            },
+            {
+                "@type": "Person",
+                "name": "Darwin",
+                "roleName": "{% if lang == 'en' %}Guitar and Backing Vocals{% else %}Guitarra y Coros{% endif %}"
             }
         ]
     }

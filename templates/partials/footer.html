@@ -43,11 +43,11 @@
     </div>
     <div class="footer-bottom">
         {% if lang == "en" %}
-        <p>&copy; {{ now() | date(format="%Y") }} Teína. All rights reserved. <a href="{{ lang_prefix }}/legal/">Legal notice</a></p>
-        <p class="developer">Developed by <a href="https://chemaclass.com/" target="_blank">Chemaclass</a></p>
+        <p>&copy; {{ now() | date(format="%Y") }} Teína. All rights reserved.</p>
+        <p class="developer">Developed by <a href="https://chemaclass.com/" target="_blank">Chemaclass</a> · <a href="{{ lang_prefix }}/legal/">Legal notice</a></p>
         {% else %}
-        <p>&copy; {{ now() | date(format="%Y") }} Teína. Todos los derechos reservados. <a href="/legal/">Aviso legal</a></p>
-        <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a></p>
+        <p>&copy; {{ now() | date(format="%Y") }} Teína. Todos los derechos reservados.</p>
+        <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a> · <a href="/legal/">Aviso legal</a></p>
         {% endif %}
     </div>
 </footer>
