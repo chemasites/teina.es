@@ -7,15 +7,26 @@ description = "Legal notice, privacy policy and data protection of the Teína we
 
 This website belongs to **Teína**, music band from Calasparra, Murcia.
 
-For any inquiries, you can contact us at [661 892 704](tel:+34661892704) or through [@teinaband](https://instagram.com/teinaband).
+For any inquiries, you can contact us at [teinaband@gmail.com](mailto:teinaband@gmail.com).
 
 ## Privacy
 
 ### Data we DO NOT collect
 
 - We do not use contact forms or collect personal data directly.
-- We do not use analytics tools.
 - We do not sell or share data with third parties.
+
+### Analytics
+
+This site uses Cronitor RUM to collect anonymous usage statistics. This helps us understand how visitors use the site and improve the content.
+
+Data collected includes:
+- Pages visited
+- Approximate geographic location (country/region)
+- Device type and browser
+- Referrer information
+
+This data is aggregated and does not personally identify you.
 
 ### Cookies
 
