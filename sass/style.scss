@@ -121,7 +121,22 @@ html {
 }
 
 html, body {
-    overscroll-behavior-y: contain;
+    overscroll-behavior-y: none;
+}
+
+// iOS Safari overscroll fix - extend background beyond viewport
+@supports (-webkit-touch-callout: none) {
+    body::before {
+        content: '';
+        position: fixed;
+        top: -50vh;
+        left: 0;
+        right: 0;
+        bottom: -50vh;
+        background-color: var(--bg-base);
+        z-index: -2;
+        pointer-events: none;
+    }
 }
 
 body {
