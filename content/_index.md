@@ -1,4 +1,4 @@
 +++
 title = "Teina"
-description = "Teina, banda de indie pop rock de Calasparra, Murcia. Versiones y temas propios. Contrataciones para eventos, bodas y festivales."
+description = "Teina, banda de indie pop-rock con intensidad y personalidad. Versiones reinterpretadas del indie nacional e internacional y canciones propias."
 +++

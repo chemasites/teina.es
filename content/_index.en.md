@@ -1,4 +1,4 @@
 +++
 title = "Teína"
-description = "Teína, indie pop rock band from Calasparra, Murcia. Covers and original songs. Bookings for events and festivals."
+description = "Teina, indie pop-rock band with intensity and personality. Reinterpreted covers of national and international indie and original songs."
 +++

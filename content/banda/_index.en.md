@@ -1,9 +1,13 @@
 +++
 title = "The Band"
 template = "banda.html"
-description = "Meet Teína, indie pop rock band from Calasparra, Murcia. Juanjo, Jose Antonio, Adrian, Antonio and Nacho offer the best covers of current indie pop rock."
+description = "Teina, indie pop-rock band with intensity and personality. Reinterpreted covers of national and international indie and original songs."
 +++
 
-We are Teína, a band that offers the best covers of current indie pop rock, as well as original songs.
+We are an indie pop-rock band that lives for the stage with intensity and personality. Our repertoire combines reinterpreted covers of great national and international indie references with original songs, where we pour our sonic identity and our stories.
 
-All members, originally from Calasparra, in the Northwest of the Region of Murcia, have extensive experience in the world of live music in different formats.
+On stage we seek more than just playing songs: we create a close, energetic and emotional atmosphere, connecting with the audience from the first chord. Our covers are not copies, but personal readings, with careful arrangements and a stage presence designed to enjoy, sing along and let yourself go.
+
+The band's original compositions draw from melodic pop, alternative rock and the current indie scene, with honest lyrics and choruses that stay with you. Every concert is a balanced mix between the familiar and the new, between nostalgia and surprise.
+
+If you're looking for a band with a current sound, live attitude and a proposal that goes beyond covers, here we are.
