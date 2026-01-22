@@ -73,6 +73,11 @@
             "@type": "Person",
             "name": "Nacho",
             "roleName": "Saxophones and Percussion"
+h        },
+        {
+            "@type": "Person",
+            "name": "Darwin",
+            "roleName": "Guitar and Backing Vocals"
         }
     ]
 }
@@ -100,29 +105,34 @@
         <h2>{% if lang == "en" %}The Members{% else %}Los Miembros{% endif %}</h2>
         <div class="members">
             <div class="member">
-                <div class="member-avatar">J</div>
-                <h3>Juanjo</h3>
-                <p>{% if lang == "en" %}Guitar and Vocals{% else %}Guitarra y Voz{% endif %}</p>
-            </div>
-            <div class="member">
-                <div class="member-avatar">J</div>
+                <img class="member-avatar" src="{{ get_url(path='banda/ja-garre.png') }}" alt="Jose Antonio">
                 <h3>Jose Antonio</h3>
                 <p>{% if lang == "en" %}Keyboards{% else %}Teclados{% endif %}</p>
             </div>
             <div class="member">
-                <div class="member-avatar">A</div>
+                <img class="member-avatar" src="{{ get_url(path='banda/adrian.png') }}" alt="Adrian">
                 <h3>Adrian</h3>
                 <p>{% if lang == "en" %}Drums{% else %}Batería{% endif %}</p>
             </div>
             <div class="member">
-                <div class="member-avatar">A</div>
+                <img class="member-avatar" src="{{ get_url(path='banda/nacho.png') }}" alt="Nacho">
+                <h3>Nacho</h3>
+                <p>{% if lang == "en" %}Saxophones and Percussion{% else %}Saxos y Percusión{% endif %}</p>
+            </div>
+            <div class="member">
+                <img class="member-avatar" src="{{ get_url(path='banda/aj-ruiz.png') }}" alt="Antonio">
                 <h3>Antonio</h3>
                 <p>{% if lang == "en" %}Bass{% else %}Bajo{% endif %}</p>
             </div>
             <div class="member">
-                <div class="member-avatar">N</div>
-                <h3>Nacho</h3>
-                <p>{% if lang == "en" %}Saxophones and Percussion{% else %}Saxos y Percusión{% endif %}</p>
+                <img class="member-avatar" src="{{ get_url(path='banda/juanjo.png') }}" alt="Juanjo">
+                <h3>Juanjo</h3>
+                <p>{% if lang == "en" %}Guitar and Vocals{% else %}Guitarra y Voz{% endif %}</p>
+            </div>
+            <div class="member">
+                <img class="member-avatar" src="{{ get_url(path='banda/darwin.png') }}" alt="Darwin">
+                <h3>Darwin</h3>
+                <p>{% if lang == "en" %}Guitar and Backing Vocals{% else %}Guitarra y Coros{% endif %}</p>
             </div>
         </div>
     </section>
