@@ -1098,6 +1098,45 @@ html:not([data-theme="light"]) .theme-toggle button {
     }
 }
 
+// Banda description
+.banda-intro {
+    .banda-description {
+        max-width: 800px;
+        margin: 0 auto;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 2.5rem;
+        position: relative;
+
+        &::before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            font-size: 5rem;
+            font-family: Georgia, serif;
+            color: var(--accent);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            text-align: left;
+
+            &:last-child {
+                margin-bottom: 0;
+                font-weight: 500;
+                color: var(--accent);
+            }
+        }
+    }
+}
+
 // Responsive - Tablet
 @media (max-width: 992px) {
     .services-grid {
@@ -1304,6 +1343,21 @@ html:not([data-theme="light"]) .theme-toggle button {
 
     .section-intro {
         font-size: 0.95rem;
+    }
+
+    .banda-description {
+        padding: 1.5rem;
+        border-radius: 12px;
+
+        &::before {
+            font-size: 3rem;
+            top: -5px;
+            left: 15px;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
     }
 
     .members {

@@ -97,8 +97,10 @@ h        },
         <p class="page-subtitle">{% if lang == "en" %}Indie pop rock from Calasparra, Murcia{% else %}Indie pop rock desde Calasparra, Murcia{% endif %}</p>
     </header>
 
-    <section class="section">
-        <p class="section-intro">{{ section.content | safe }}</p>
+    <section class="section banda-intro">
+        <div class="banda-description">
+            {{ section.content | safe }}
+        </div>
     </section>
 
     <section class="section">
