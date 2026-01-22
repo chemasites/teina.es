@@ -56,24 +56,24 @@
         },
         {
             "@type": "Person",
-            "name": "Jose Antonio",
-            "roleName": "Keyboards"
+            "name": "Nacho",
+            "roleName": "Sax, Percussion and Backing Vocals"
         },
         {
             "@type": "Person",
-            "name": "Adrian",
+            "name": "Chato",
             "roleName": "Drums"
         },
         {
             "@type": "Person",
-            "name": "Antonio",
-            "roleName": "Bass"
+            "name": "J.A. Garre",
+            "roleName": "Keyboards"
         },
         {
             "@type": "Person",
-            "name": "Nacho",
-            "roleName": "Saxophones and Percussion"
-h        },
+            "name": "AJ Ruíz",
+            "roleName": "Bass"
+        },
         {
             "@type": "Person",
             "name": "Darwin",
@@ -82,6 +82,25 @@ h        },
     ]
 }
 </script>
+{% endblock %}
+
+{% block extra_css %}
+<!-- TODO: Eliminar cuando el modal esté listo -->
+<style>
+.member {
+    cursor: default;
+}
+.member:hover, .member:focus {
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+}
+.member:hover .member-avatar,
+.member:hover .member-avatar-wrapper {
+    transform: none;
+    border-color: var(--border-color);
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -105,41 +124,214 @@ h        },
 
     <section class="section">
         <h2>{% if lang == "en" %}The Members{% else %}Los Miembros{% endif %}</h2>
+        <!-- TODO: Descomentar cuando el modal esté listo
+        <p class="members-hint">{% if lang == "en" %}Click on a member to learn more{% else %}Haz clic en un miembro para saber más{% endif %}</p>
+        -->
         <div class="members">
-            <div class="member">
-                <img class="member-avatar" src="{{ get_url(path='banda/ja-garre.png') }}" alt="Jose Antonio" loading="lazy" decoding="async">
-                <h3>Jose Antonio</h3>
-                <p>{% if lang == "en" %}Keyboards{% else %}Teclados{% endif %}</p>
-            </div>
-            <div class="member">
-                <img class="member-avatar" src="{{ get_url(path='banda/adrian.png') }}" alt="Adrian" loading="lazy" decoding="async">
-                <h3>Adrian</h3>
-                <p>{% if lang == "en" %}Drums{% else %}Batería{% endif %}</p>
-            </div>
-            <div class="member">
-                <img class="member-avatar" src="{{ get_url(path='banda/nacho.png') }}" alt="Nacho" loading="lazy" decoding="async">
-                <h3>Nacho</h3>
-                <p>{% if lang == "en" %}Saxophones and Percussion{% else %}Saxos y Percusión{% endif %}</p>
-            </div>
-            <div class="member">
-                <img class="member-avatar" src="{{ get_url(path='banda/aj-ruiz.png') }}" alt="Antonio" loading="lazy" decoding="async">
-                <h3>Antonio</h3>
-                <p>{% if lang == "en" %}Bass{% else %}Bajo{% endif %}</p>
-            </div>
-            <div class="member">
-                <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1rem; border: 3px solid var(--border-color);">
-                    <img src="{{ get_url(path='banda/juanjo.png') }}" alt="Juanjo" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.3);" loading="lazy" decoding="async">
+            <!-- Fila superior: Juanjo, Nacho, Chato -->
+            <div class="member" data-member="juanjo" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Juanjo's profile{% else %}Ver perfil de Juanjo{% endif %}">
+                <div class="member-avatar-wrapper">
+                    <img src="{{ get_url(path='banda/juanjo.png') }}" alt="Juanjo" loading="lazy" decoding="async">
                 </div>
                 <h3>Juanjo</h3>
                 <p>{% if lang == "en" %}Guitar and Vocals{% else %}Guitarra y Voz{% endif %}</p>
+                <!-- <span class="member-expand">+</span> -->
             </div>
-            <div class="member">
+            <div class="member" data-member="nacho" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Nacho's profile{% else %}Ver perfil de Nacho{% endif %}">
+                <img class="member-avatar" src="{{ get_url(path='banda/nacho.png') }}" alt="Nacho" loading="lazy" decoding="async">
+                <h3>Nacho</h3>
+                <p>{% if lang == "en" %}Sax, Percussion and Backing Vocals{% else %}Saxo, Percusión y Coros{% endif %}</p>
+                <!-- <span class="member-expand">+</span> -->
+            </div>
+            <div class="member" data-member="chato" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Chato's profile{% else %}Ver perfil de Chato{% endif %}">
+                <img class="member-avatar" src="{{ get_url(path='banda/adrian.png') }}" alt="Chato" loading="lazy" decoding="async">
+                <h3>Chato</h3>
+                <p>{% if lang == "en" %}Drums{% else %}Batería{% endif %}</p>
+                <!-- <span class="member-expand">+</span> -->
+            </div>
+            <!-- Fila inferior: J.A. Garre, Robles, Darwin -->
+            <div class="member" data-member="garre" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View J.A. Garre's profile{% else %}Ver perfil de J.A. Garre{% endif %}">
+                <img class="member-avatar" src="{{ get_url(path='banda/ja-garre.png') }}" alt="J.A. Garre" loading="lazy" decoding="async">
+                <h3>J.A. Garre</h3>
+                <p>{% if lang == "en" %}Keyboards{% else %}Teclados{% endif %}</p>
+                <!-- <span class="member-expand">+</span> -->
+            </div>
+            <div class="member" data-member="aj-ruiz" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View AJ Ruíz's profile{% else %}Ver perfil de AJ Ruíz{% endif %}">
+                <img class="member-avatar" src="{{ get_url(path='banda/aj-ruiz.png') }}" alt="AJ Ruíz" loading="lazy" decoding="async">
+                <h3>AJ Ruíz</h3>
+                <p>{% if lang == "en" %}Bass{% else %}Bajo{% endif %}</p>
+                <!-- <span class="member-expand">+</span> -->
+            </div>
+            <div class="member" data-member="darwin" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Darwin's profile{% else %}Ver perfil de Darwin{% endif %}">
                 <img class="member-avatar" src="{{ get_url(path='banda/darwin.png') }}" alt="Darwin" loading="lazy" decoding="async">
                 <h3>Darwin</h3>
                 <p>{% if lang == "en" %}Guitar and Backing Vocals{% else %}Guitarra y Coros{% endif %}</p>
+                <!-- <span class="member-expand">+</span> -->
             </div>
         </div>
     </section>
+
+    <!-- Member Modal -->
+    <div class="member-modal" id="memberModal" aria-hidden="true">
+        <div class="member-modal-backdrop"></div>
+        <div class="member-modal-content" role="dialog" aria-labelledby="modalMemberName">
+            <button class="member-modal-close" aria-label="{% if lang == 'en' %}Close{% else %}Cerrar{% endif %}">&times;</button>
+            <div class="member-modal-header">
+                <img class="member-modal-avatar" id="modalAvatar" src="" alt="">
+                <div class="member-modal-title">
+                    <h3 id="modalMemberName"></h3>
+                    <p class="member-modal-role" id="modalRole"></p>
+                </div>
+            </div>
+            <div class="member-modal-body">
+                <div class="member-modal-section">
+                    <h4>{% if lang == "en" %}About{% else %}Sobre{% endif %}</h4>
+                    <p id="modalBio"></p>
+                </div>
+                <div class="member-modal-stats">
+                    <div class="member-stat">
+                        <span class="member-stat-value" id="modalYears"></span>
+                        <span class="member-stat-label">{% if lang == "en" %}Years of experience{% else %}Años de experiencia{% endif %}</span>
+                    </div>
+                    <div class="member-stat">
+                        <span class="member-stat-value" id="modalInstruments"></span>
+                        <span class="member-stat-label">{% if lang == "en" %}Instruments{% else %}Instrumentos{% endif %}</span>
+                    </div>
+                </div>
+                <div class="member-modal-section">
+                    <h4>{% if lang == "en" %}Influences{% else %}Influencias{% endif %}</h4>
+                    <div class="member-influences" id="modalInfluences"></div>
+                </div>
+                <div class="member-modal-section">
+                    <h4>{% if lang == "en" %}Fun fact{% else %}Curiosidad{% endif %}</h4>
+                    <p id="modalFunFact" class="member-fun-fact"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        // TODO: Activar cuando el contenido esté listo
+        const MODAL_ENABLED = false;
+
+        const memberData = {
+            'juanjo': {
+                name: 'Juanjo',
+                role: '{% if lang == "en" %}Guitar and Vocals{% else %}Guitarra y Voz{% endif %}',
+                avatar: '{{ get_url(path="banda/juanjo.png") }}',
+                bio: '{% if lang == "en" %}Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. The voice and creative force behind the band\'s original compositions.{% else %}Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. La voz y fuerza creativa detrás de las composiciones originales de la banda.{% endif %}',
+                years: '20+',
+                instruments: '3',
+                influences: ['Vetusta Morla', 'Love of Lesbian', 'Izal'],
+                funFact: '{% if lang == "en" %}Writes most songs during late-night walks.{% else %}Escribe la mayoría de canciones durante paseos nocturnos.{% endif %}'
+            },
+            'nacho': {
+                name: 'Nacho',
+                role: '{% if lang == "en" %}Sax, Percussion and Backing Vocals{% else %}Saxo, Percusión y Coros{% endif %}',
+                avatar: '{{ get_url(path="banda/nacho.png") }}',
+                bio: '{% if lang == "en" %}Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Bringing jazz influences and Latin rhythms to the indie pop sound.{% else %}Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Aportando influencias de jazz y ritmos latinos al sonido indie pop.{% endif %}',
+                years: '18+',
+                instruments: '5',
+                influences: ['John Coltrane', 'Charlie Parker', 'Maceo Parker'],
+                funFact: '{% if lang == "en" %}Has a collection of over 20 different percussion instruments.{% else %}Tiene una colección de más de 20 instrumentos de percusión diferentes.{% endif %}'
+            },
+            'chato': {
+                name: 'Chato',
+                role: '{% if lang == "en" %}Drums{% else %}Batería{% endif %}',
+                avatar: '{{ get_url(path="banda/adrian.png") }}',
+                bio: '{% if lang == "en" %}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. The heartbeat of the band with an energetic style that drives every song.{% else %}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. El corazón de la banda con un estilo enérgico que impulsa cada canción.{% endif %}',
+                years: '12+',
+                instruments: '2',
+                influences: ['Dave Grohl', 'Travis Barker', 'Phil Collins'],
+                funFact: '{% if lang == "en" %}Started playing on pots and pans at age 5.{% else %}Empezó tocando en ollas y sartenes a los 5 años.{% endif %}'
+            },
+            'garre': {
+                name: 'J.A. Garre',
+                role: '{% if lang == "en" %}Keyboards{% else %}Teclados{% endif %}',
+                avatar: '{{ get_url(path="banda/ja-garre.png") }}',
+                bio: '{% if lang == "en" %}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Passionate about synthesizers and electronic sounds since childhood.{% else %}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Apasionado por los sintetizadores y sonidos electrónicos desde la infancia.{% endif %}',
+                years: '15+',
+                instruments: '4',
+                influences: ['Coldplay', 'Keane', 'The Killers'],
+                funFact: '{% if lang == "en" %}Can play three keyboards simultaneously during live shows.{% else %}Puede tocar tres teclados simultáneamente durante los conciertos.{% endif %}'
+            },
+            'aj-ruiz': {
+                name: 'AJ Ruíz',
+                role: '{% if lang == "en" %}Bass{% else %}Bajo{% endif %}',
+                avatar: '{{ get_url(path="banda/aj-ruiz.png") }}',
+                bio: '{% if lang == "en" %}Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. The groove master who keeps everyone in sync.{% else %}Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. El maestro del groove que mantiene a todos sincronizados.{% endif %}',
+                years: '14+',
+                instruments: '3',
+                influences: ['Flea', 'John Paul Jones', 'Victor Wooten'],
+                funFact: '{% if lang == "en" %}Built his first bass guitar from scratch.{% else %}Construyó su primer bajo desde cero.{% endif %}'
+            },
+            'darwin': {
+                name: 'Darwin',
+                role: '{% if lang == "en" %}Guitar and Backing Vocals{% else %}Guitarra y Coros{% endif %}',
+                avatar: '{{ get_url(path="banda/darwin.png") }}',
+                bio: '{% if lang == "en" %}Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Master of guitar effects and harmonies that give depth to every track.{% else %}Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Maestro de efectos de guitarra y armonías que dan profundidad a cada canción.{% endif %}',
+                years: '16+',
+                instruments: '4',
+                influences: ['The Edge', 'Johnny Greenwood', 'David Gilmour'],
+                funFact: '{% if lang == "en" %}Has a pedalboard with 15 different effects.{% else %}Tiene una pedalera con 15 efectos diferentes.{% endif %}'
+            }
+        };
+
+        const modal = document.getElementById('memberModal');
+        const backdrop = modal.querySelector('.member-modal-backdrop');
+        const closeBtn = modal.querySelector('.member-modal-close');
+        const members = document.querySelectorAll('.member[data-member]');
+
+        function openModal(memberId) {
+            const data = memberData[memberId];
+            if (!data) return;
+
+            document.getElementById('modalAvatar').src = data.avatar;
+            document.getElementById('modalAvatar').alt = data.name;
+            document.getElementById('modalMemberName').textContent = data.name;
+            document.getElementById('modalRole').textContent = data.role;
+            document.getElementById('modalBio').textContent = data.bio;
+            document.getElementById('modalYears').textContent = data.years;
+            document.getElementById('modalInstruments').textContent = data.instruments;
+            document.getElementById('modalFunFact').textContent = data.funFact;
+
+            const influencesContainer = document.getElementById('modalInfluences');
+            influencesContainer.innerHTML = data.influences.map(i => '<span class="influence-tag">' + i + '</span>').join('');
+
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        if (MODAL_ENABLED) {
+            members.forEach(member => {
+                member.addEventListener('click', () => openModal(member.dataset.member));
+                member.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal(member.dataset.member);
+                    }
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        }
+    })();
+    </script>
 
     <section class="section section-alt">
         <h2>{% if lang == "en" %}Live{% else %}En Directo{% endif %}</h2>
