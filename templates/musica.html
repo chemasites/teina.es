@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} | Teina - {% if lang == "en" %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}
+{% block title %}{{ section.title }} | Teína - {% if lang == "en" %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}
 
 {% block description %}{{ section.description }}{% endblock %}
 
 {% block canonical %}{{ section.permalink }}{% endblock %}
 
 {% block og_url %}{{ section.permalink }}{% endblock %}
-{% block og_title %}{{ section.title }} | Teina{% endblock %}
+{% block og_title %}{{ section.title }} | Teína{% endblock %}
 {% block og_description %}{{ section.description }}{% endblock %}
 
-{% block twitter_title %}{{ section.title }} | Teina{% endblock %}
+{% block twitter_title %}{{ section.title }} | Teína{% endblock %}
 {% block twitter_description %}{{ section.description }}{% endblock %}
 
 {% block extra_schema %}
@@ -38,7 +38,7 @@
 {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
-    "name": "Teina",
+    "name": "Teína",
     "description": "{{ section.description }}",
     "url": "{{ config.base_url }}",
     "genre": ["Indie Pop", "Pop Rock", "Rock"],
@@ -48,7 +48,7 @@
             "name": "Single 1",
             "byArtist": {
                 "@type": "MusicGroup",
-                "name": "Teina"
+                "name": "Teína"
             }
         },
         {
@@ -56,7 +56,7 @@
             "name": "Single 2",
             "byArtist": {
                 "@type": "MusicGroup",
-                "name": "Teina"
+                "name": "Teína"
             }
         },
         {
@@ -64,7 +64,7 @@
             "name": "Single 3",
             "byArtist": {
                 "@type": "MusicGroup",
-                "name": "Teina"
+                "name": "Teína"
             }
         },
         {
@@ -72,7 +72,7 @@
             "name": "Single 4",
             "byArtist": {
                 "@type": "MusicGroup",
-                "name": "Teina"
+                "name": "Teína"
             }
         },
         {
@@ -80,7 +80,7 @@
             "name": "Single 5",
             "byArtist": {
                 "@type": "MusicGroup",
-                "name": "Teina"
+                "name": "Teína"
             }
         },
         {
@@ -88,7 +88,7 @@
             "name": "Single 6",
             "byArtist": {
                 "@type": "MusicGroup",
-                "name": "Teina"
+                "name": "Teína"
             }
         }
     ]
@@ -119,7 +119,7 @@
                 {% else %}
                 <h3>Temas Propios</h3>
                 <p class="card-subtitle">6 sencillos</p>
-                <p>La agrupacion cuenta con seis sencillos propios hasta la fecha, fusionando el mejor indie pop rock con letras que conectan.</p>
+                <p>La agrupación cuenta con seis sencillos propios hasta la fecha, fusionando el mejor indie pop rock con letras que conectan.</p>
                 {% endif %}
             </div>
             <div class="card">
@@ -130,7 +130,7 @@
                 {% else %}
                 <h3>Repertorio</h3>
                 <p class="card-subtitle">En directo</p>
-                <p>Repertorio de hasta 2 horas de duracion con las mejores versiones del indie pop rock actual.</p>
+                <p>Repertorio de hasta 2 horas de duración con las mejores versiones del indie pop rock actual.</p>
                 {% endif %}
             </div>
         </div>
@@ -142,7 +142,7 @@
             <div class="video-item">
                 <iframe
                     src="https://www.youtube.com/embed/XDiUv8ba55I"
-                    title="Teina - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
+                    title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                     loading="lazy">
@@ -155,7 +155,7 @@
         <h2>{% if lang == "en" %}Want to hear us live?{% else %}¿Quieres escucharnos en directo?{% endif %}</h2>
         <div class="cta-buttons">
             <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">{% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}</a>
-            <a href="{{ lang_prefix }}/media/" class="btn btn-secondary">{% if lang == "en" %}See more videos{% else %}Ver mas videos{% endif %}</a>
+            <a href="{{ lang_prefix }}/media/" class="btn btn-secondary">{% if lang == "en" %}See more videos{% else %}Ver más videos{% endif %}</a>
         </div>
     </section>
 </main>

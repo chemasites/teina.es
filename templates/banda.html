@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} | Teina - {% if lang == "en" %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}
+{% block title %}{{ section.title }} | Teína - {% if lang == "en" %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}
 
 {% block description %}{{ section.description }}{% endblock %}
 
 {% block canonical %}{{ section.permalink }}{% endblock %}
 
 {% block og_url %}{{ section.permalink }}{% endblock %}
-{% block og_title %}{{ section.title }} | Teina{% endblock %}
+{% block og_title %}{{ section.title }} | Teína{% endblock %}
 {% block og_description %}{{ section.description }}{% endblock %}
 
-{% block twitter_title %}{{ section.title }} | Teina{% endblock %}
+{% block twitter_title %}{{ section.title }} | Teína{% endblock %}
 {% block twitter_description %}{{ section.description }}{% endblock %}
 
 {% block extra_schema %}
@@ -38,7 +38,7 @@
 {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
-    "name": "Teina",
+    "name": "Teína",
     "description": "{{ section.description }}",
     "url": "{{ config.base_url }}",
     "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
@@ -112,7 +112,7 @@
             <div class="member">
                 <div class="member-avatar">A</div>
                 <h3>Adrian</h3>
-                <p>{% if lang == "en" %}Drums{% else %}Bateria{% endif %}</p>
+                <p>{% if lang == "en" %}Drums{% else %}Batería{% endif %}</p>
             </div>
             <div class="member">
                 <div class="member-avatar">A</div>
@@ -122,7 +122,7 @@
             <div class="member">
                 <div class="member-avatar">N</div>
                 <h3>Nacho</h3>
-                <p>{% if lang == "en" %}Saxophones and Percussion{% else %}Saxos y Percusion{% endif %}</p>
+                <p>{% if lang == "en" %}Saxophones and Percussion{% else %}Saxos y Percusión{% endif %}</p>
             </div>
         </div>
     </section>
@@ -133,7 +133,7 @@
         <ul class="artists-list">
             <li>Revolver</li>
             <li>Second</li>
-            <li>Alvaro de Luna</li>
+            <li>Álvaro de Luna</li>
             <li>Loquillo</li>
             <li>Danza Invisible</li>
             <li>Efecto Mariposa</li>
@@ -145,7 +145,7 @@
         <h2>{% if lang == "en" %}Want to see us live?{% else %}¿Quieres vernos en directo?{% endif %}</h2>
         <div class="cta-buttons">
             <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">{% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}</a>
-            <a href="{{ lang_prefix }}/musica/" class="btn btn-secondary">{% if lang == "en" %}Listen to music{% else %}Escuchar musica{% endif %}</a>
+            <a href="{{ lang_prefix }}/musica/" class="btn btn-secondary">{% if lang == "en" %}Listen to music{% else %}Escuchar música{% endif %}</a>
         </div>
     </section>
 </main>

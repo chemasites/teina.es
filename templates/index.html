@@ -5,15 +5,15 @@
 {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "Teina - Promo Video",
-    "description": "{% if lang == 'en' %}Promo video of Teina, indie pop rock band from Calasparra, Murcia. Covers and original songs.{% else %}Video promocional de Teina, banda de indie pop rock de Calasparra, Murcia. Versiones y temas propios.{% endif %}",
+    "name": "Teína - Promo Video",
+    "description": "{% if lang == 'en' %}Promo video of Teína, indie pop rock band from Calasparra, Murcia. Covers and original songs.{% else %}Video promocional de Teína, banda de indie pop rock de Calasparra, Murcia. Versiones y temas propios.{% endif %}",
     "thumbnailUrl": "https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg",
     "uploadDate": "2024-01-01",
     "contentUrl": "https://www.youtube.com/watch?v=XDiUv8ba55I",
     "embedUrl": "https://www.youtube.com/embed/XDiUv8ba55I",
     "publisher": {
         "@type": "Organization",
-        "name": "Teina",
+        "name": "Teína",
         "logo": {
             "@type": "ImageObject",
             "url": "{{ get_url(path='imgs/teina-logo.png') }}"
@@ -32,7 +32,7 @@
 
 <header class="hero" id="inicio">
     <p class="tagline">indie pop rock</p>
-    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teina" class="hero-logo">
+    <img src="{{ get_url(path='imgs/teina-logo.png') }}" alt="Teína" class="hero-logo">
     {% if lang == "en" %}
     <p class="hero-description">The best covers of current indie pop rock, plus originals</p>
     <div class="hero-buttons">
@@ -50,12 +50,12 @@
 
 <section class="section fade-in" id="about">
     {% if lang == "en" %}
-    <h2>About Teina</h2>
+    <h2>About Teína</h2>
     <p class="section-intro">We are a band from Calasparra, in the Northwest of the Region of Murcia. All members have extensive experience in the world of live music in different formats.</p>
     <a href="{{ lang_prefix }}/banda/" class="section-cta">Meet the band</a>
     {% else %}
-    <h2>Sobre Teina</h2>
-    <p class="section-intro">Somos una banda originaria de Calasparra, en el Noroeste de la Region de Murcia. Todos los componentes cuentan con una amplia experiencia en el mundo de la musica en directo en diferentes formatos.</p>
+    <h2>Sobre Teína</h2>
+    <p class="section-intro">Somos una banda originaria de Calasparra, en el Noroeste de la Región de Murcia. Todos los componentes cuentan con una amplia experiencia en el mundo de la música en directo en diferentes formatos.</p>
     <a href="/banda/" class="section-cta">Conocer la banda</a>
     {% endif %}
 </section>
@@ -70,17 +70,17 @@
         <div class="video-item">
             <iframe
                 src="https://www.youtube.com/embed/XDiUv8ba55I"
-                title="Teina - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
+                title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
                 loading="lazy">
             </iframe>
         </div>
         <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teina Concert 2025{% else %}Concierto Teina 2025{% endif %}" loading="lazy">
+            <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy">
         </a>
     </div>
-    <a href="{{ lang_prefix }}/media/" class="section-cta">{% if lang == "en" %}See more{% else %}Ver mas{% endif %}</a>
+    <a href="{{ lang_prefix }}/media/" class="section-cta">{% if lang == "en" %}See more{% else %}Ver más{% endif %}</a>
 </section>
 
 <section class="section fade-in" id="conciertos">
@@ -94,12 +94,12 @@
         </div>
     </div>
     {% else %}
-    <h2>Proximos Conciertos</h2>
+    <h2>Próximos Conciertos</h2>
     <div class="events">
         <div class="event-placeholder">
             <svg class="event-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <p>Proximas fechas por anunciar</p>
-            <a href="https://instagram.com/teinaband" target="_blank" class="btn btn-secondary">Siguenos para enterarte</a>
+            <p>Próximas fechas por anunciar</p>
+            <a href="https://instagram.com/teinaband" target="_blank" class="btn btn-secondary">Síguenos para enterarte</a>
         </div>
     </div>
     {% endif %}

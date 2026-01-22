@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} | Teina{% endblock %}
+{% block title %}{{ page.title }} | Teína{% endblock %}
 
 {% block description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
 {% block canonical %}{{ page.permalink }}{% endblock %}
 
 {% block og_url %}{{ page.permalink }}{% endblock %}
-{% block og_title %}{{ page.title }} | Teina{% endblock %}
+{% block og_title %}{{ page.title }} | Teína{% endblock %}
 {% block og_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
-{% block twitter_title %}{{ page.title }} | Teina{% endblock %}
+{% block twitter_title %}{{ page.title }} | Teína{% endblock %}
 {% block twitter_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
 {% block extra_schema %}
@@ -38,12 +38,12 @@
 {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    "name": "{% if lang == 'en' %}Teina Gallery{% else %}Galeria de Teina{% endif %}",
-    "description": "{% if lang == 'en' %}Photos and videos of Teina concerts and performances{% else %}Fotos y videos de conciertos y actuaciones de Teina{% endif %}",
+    "name": "{% if lang == 'en' %}Teína Gallery{% else %}Galería de Teína{% endif %}",
+    "description": "{% if lang == 'en' %}Photos and videos of Teína concerts and performances{% else %}Fotos y videos de conciertos y actuaciones de Teína{% endif %}",
     "url": "{{ page.permalink }}",
     "publisher": {
         "@type": "Organization",
-        "name": "Teina"
+        "name": "Teína"
     }
 }
 </script>
@@ -55,7 +55,7 @@
 <main class="page-content media-page">
     <header class="page-header">
         <h1>Media</h1>
-        <p class="page-subtitle">{% if lang == "en" %}Photo and video gallery of Teina{% else %}Galeria de fotos y videos de Teina{% endif %}</p>
+        <p class="page-subtitle">{% if lang == "en" %}Photo and video gallery of Teína{% else %}Galería de fotos y videos de Teína{% endif %}</p>
     </header>
 
     <section class="section">
@@ -64,7 +64,7 @@
             <div class="video-item">
                 <iframe
                     src="https://www.youtube.com/embed/XDiUv8ba55I"
-                    title="Teina - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
+                    title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                     loading="lazy">
@@ -74,19 +74,19 @@
     </section>
 
     <section class="section section-alt">
-        <h2>{% if lang == "en" %}Gallery{% else %}Galeria{% endif %}</h2>
+        <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
         <div class="gallery gallery-large">
             <a href="{{ get_url(path='imgs/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teina Concert 2025{% else %}Concierto Teina 2025{% endif %}" loading="lazy">
+                <img src="{{ get_url(path='imgs/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy">
             </a>
             <div class="gallery-placeholder">
-                <span>{% if lang == "en" %}Coming soon{% else %}Proximamente{% endif %}</span>
+                <span>{% if lang == "en" %}Coming soon{% else %}Próximamente{% endif %}</span>
             </div>
             <div class="gallery-placeholder">
-                <span>{% if lang == "en" %}Coming soon{% else %}Proximamente{% endif %}</span>
+                <span>{% if lang == "en" %}Coming soon{% else %}Próximamente{% endif %}</span>
             </div>
             <div class="gallery-placeholder">
-                <span>{% if lang == "en" %}Coming soon{% else %}Proximamente{% endif %}</span>
+                <span>{% if lang == "en" %}Coming soon{% else %}Próximamente{% endif %}</span>
             </div>
         </div>
     </section>

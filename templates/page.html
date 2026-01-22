@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} | Teina{% endblock %}
+{% block title %}{{ page.title }} | Teína{% endblock %}
 
 {% block description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
 {% block canonical %}{{ page.permalink }}{% endblock %}
 
 {% block og_url %}{{ page.permalink }}{% endblock %}
-{% block og_title %}{{ page.title }} | Teina{% endblock %}
+{% block og_title %}{{ page.title }} | Teína{% endblock %}
 {% block og_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
-{% block twitter_title %}{{ page.title }} | Teina{% endblock %}
+{% block twitter_title %}{{ page.title }} | Teína{% endblock %}
 {% block twitter_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
 {% block extra_schema %}

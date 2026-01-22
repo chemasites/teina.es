@@ -1,6 +1,6 @@
 base_url = "https://teina.es"
 title = "Teína"
-description = "Teina, banda de indie pop-rock con intensidad y personalidad. Versiones reinterpretadas del indie nacional e internacional y canciones propias."
+description = "Teína, banda de indie pop-rock con intensidad y personalidad. Versiones reinterpretadas del indie nacional e internacional y canciones propias."
 default_language = "es"
 compile_sass = true
 build_search_index = false

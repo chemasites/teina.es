@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} | Teina - {% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}{% endblock %}
+{% block title %}{{ section.title }} | Teína - {% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}{% endblock %}
 
 {% block description %}{{ section.description }}{% endblock %}
 
 {% block canonical %}{{ section.permalink }}{% endblock %}
 
 {% block og_url %}{{ section.permalink }}{% endblock %}
-{% block og_title %}{{ section.title }} | Teina{% endblock %}
+{% block og_title %}{{ section.title }} | Teína{% endblock %}
 {% block og_description %}{{ section.description }}{% endblock %}
 
-{% block twitter_title %}{{ section.title }} | Teina{% endblock %}
+{% block twitter_title %}{{ section.title }} | Teína{% endblock %}
 {% block twitter_description %}{{ section.description }}{% endblock %}
 
 {% block extra_schema %}
@@ -38,7 +38,7 @@
 {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
-    "name": "Teina",
+    "name": "Teína",
     "url": "{{ config.base_url }}",
     "contactPoint": {
         "@type": "ContactPoint",
@@ -85,14 +85,14 @@
                 <a href="tel:+34661892704" class="contact-card contact-primary">
                     <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     <div class="contact-card-content">
-                        <span class="contact-label">{% if lang == "en" %}Call us{% else %}Llamanos{% endif %}</span>
+                        <span class="contact-label">{% if lang == "en" %}Call us{% else %}Llámanos{% endif %}</span>
                         <span class="contact-value">661 892 704</span>
                     </div>
                 </a>
                 <a href="https://instagram.com/teinaband" target="_blank" class="contact-card">
                     <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     <div class="contact-card-content">
-                        <span class="contact-label">{% if lang == "en" %}Follow us{% else %}Siguenos{% endif %}</span>
+                        <span class="contact-label">{% if lang == "en" %}Follow us{% else %}Síguenos{% endif %}</span>
                         <span class="contact-value">@teinaband</span>
                     </div>
                 </a>
@@ -109,14 +109,14 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 </div>
                 <h3>{% if lang == "en" %}Celebrations{% else %}Celebraciones{% endif %}</h3>
-                <p>{% if lang == "en" %}Live music to make your special day unforgettable. Personalized repertoire for each occasion.{% else %}Musica en directo para que tu dia especial sea inolvidable. Repertorio personalizado para cada ocasion.{% endif %}</p>
+                <p>{% if lang == "en" %}Live music to make your special day unforgettable. Personalized repertoire for each occasion.{% else %}Música en directo para que tu día especial sea inolvidable. Repertorio personalizado para cada ocasión.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
                 </div>
                 <h3>{% if lang == "en" %}Festivals{% else %}Festivales{% endif %}</h3>
-                <p>{% if lang == "en" %}Energetic performances with repertoire adapted to the event. Experience on stages of all sizes.{% else %}Actuaciones energicas con repertorio adaptado al evento. Experiencia en escenarios de todos los tamanos.{% endif %}</p>
+                <p>{% if lang == "en" %}Energetic performances with repertoire adapted to the event. Experience on stages of all sizes.{% else %}Actuaciones enérgicas con repertorio adaptado al evento. Experiencia en escenarios de todos los tamaños.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
@@ -130,7 +130,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
                 </div>
                 <h3>{% if lang == "en" %}Private Parties{% else %}Fiestas Privadas{% endif %}</h3>
-                <p>{% if lang == "en" %}Birthdays, anniversaries and special events. We create the perfect atmosphere for your party.{% else %}Cumpleanos, aniversarios y eventos especiales. Creamos el ambiente perfecto para tu fiesta.{% endif %}</p>
+                <p>{% if lang == "en" %}Birthdays, anniversaries and special events. We create the perfect atmosphere for your party.{% else %}Cumpleaños, aniversarios y eventos especiales. Creamos el ambiente perfecto para tu fiesta.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
@@ -144,14 +144,14 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
                 </div>
                 <h3>{% if lang == "en" %}Venues & Pubs{% else %}Salas y Pubs{% endif %}</h3>
-                <p>{% if lang == "en" %}Concerts at live music venues and nightclubs. Format adaptable to the space.{% else %}Conciertos en salas de musica en directo y locales nocturnos. Formato adaptable al espacio.{% endif %}</p>
+                <p>{% if lang == "en" %}Concerts at live music venues and nightclubs. Format adaptable to the space.{% else %}Conciertos en salas de música en directo y locales nocturnos. Formato adaptable al espacio.{% endif %}</p>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <h2>{% if lang == "en" %}Performance Area{% else %}Zona de Actuacion{% endif %}</h2>
-        <p class="section-intro">{% if lang == "en" %}Available for events in Murcia and all of Spain.{% else %}Disponibles para eventos en Murcia y toda Espana.{% endif %}</p>
+        <h2>{% if lang == "en" %}Performance Area{% else %}Zona de Actuación{% endif %}</h2>
+        <p class="section-intro">{% if lang == "en" %}Available for events in Murcia and all of Spain.{% else %}Disponibles para eventos en Murcia y toda España.{% endif %}</p>
         <div class="map-container">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12584.476895088877!2d-1.7062!3d38.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63f8a8ddd98b91%3A0x40f3c0e60ac54e0!2s30420%20Calasparra%2C%20Murcia%2C%20Spain!5e0!3m2!1sen!2ses!4v1705000000000!5m2!1sen!2ses"
@@ -161,12 +161,12 @@
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Calasparra, Murcia - {% if lang == 'en' %}Teina Location{% else %}Ubicacion de Teina{% endif %}">
+                title="Calasparra, Murcia - {% if lang == 'en' %}Teína Location{% else %}Ubicación de Teína{% endif %}">
             </iframe>
         </div>
         <div class="cta-buttons">
             <a href="{{ lang_prefix }}/banda/" class="btn btn-secondary">{% if lang == "en" %}Meet the band{% else %}Conocer la banda{% endif %}</a>
-            <a href="{{ lang_prefix }}/musica/" class="btn btn-secondary">{% if lang == "en" %}Listen to music{% else %}Escuchar musica{% endif %}</a>
+            <a href="{{ lang_prefix }}/musica/" class="btn btn-secondary">{% if lang == "en" %}Listen to music{% else %}Escuchar música{% endif %}</a>
         </div>
     </section>
 </main>
