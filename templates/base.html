@@ -64,6 +64,13 @@
     <link rel="preconnect" href="https://www.youtube.com" crossorigin>
     <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
 
+    <!-- Cronitor RUM -->
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+        window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+        cronitor('config', { clientKey: '571cb31cbf805c8164547675a95ac853' });
+    </script>
+
     <!-- Preload critical resources -->
     <link rel="preload" href="{{ get_url(path='style.css') }}" as="style">
     <link rel="preload" href="{{ get_url(path='imgs/teina-logo.png') }}" as="image" fetchpriority="high">
