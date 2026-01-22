@@ -61,8 +61,8 @@
         },
         {
             "@type": "Person",
-            "name": "Chato",
-            "roleName": "Drums"
+            "name": "AJ Ruíz",
+            "roleName": "Bass"
         },
         {
             "@type": "Person",
@@ -71,8 +71,8 @@
         },
         {
             "@type": "Person",
-            "name": "AJ Ruíz",
-            "roleName": "Bass"
+            "name": "Adrian",
+            "roleName": "Drums"
         },
         {
             "@type": "Person",
@@ -128,7 +128,7 @@
         <p class="members-hint">{% if lang == "en" %}Click on a member to learn more{% else %}Haz clic en un miembro para saber más{% endif %}</p>
         -->
         <div class="members">
-            <!-- Fila superior: Juanjo, Nacho, Chato -->
+            <!-- Fila superior: Juanjo, Nacho, AJ Ruíz -->
             <div class="member" data-member="juanjo" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Juanjo's profile{% else %}Ver perfil de Juanjo{% endif %}">
                 <div class="member-avatar-wrapper">
                     <img src="{{ get_url(path='banda/juanjo.png') }}" alt="Juanjo" loading="lazy" decoding="async">
@@ -143,23 +143,23 @@
                 <p>{% if lang == "en" %}Sax, Percussion and Backing Vocals{% else %}Saxo, Percusión y Coros{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
-            <div class="member" data-member="chato" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Chato's profile{% else %}Ver perfil de Chato{% endif %}">
-                <img class="member-avatar" src="{{ get_url(path='banda/adrian.png') }}" alt="Chato" loading="lazy" decoding="async">
-                <h3>Chato</h3>
-                <p>{% if lang == "en" %}Drums{% else %}Batería{% endif %}</p>
+            <div class="member" data-member="aj-ruiz" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View AJ Ruíz's profile{% else %}Ver perfil de AJ Ruíz{% endif %}">
+                <img class="member-avatar" src="{{ get_url(path='banda/aj-ruiz.png') }}" alt="AJ Ruíz" loading="lazy" decoding="async">
+                <h3>AJ Ruíz</h3>
+                <p>{% if lang == "en" %}Bass{% else %}Bajo{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
-            <!-- Fila inferior: J.A. Garre, Robles, Darwin -->
+            <!-- Fila inferior: J.A. Garre, Adrian, Darwin -->
             <div class="member" data-member="garre" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View J.A. Garre's profile{% else %}Ver perfil de J.A. Garre{% endif %}">
                 <img class="member-avatar" src="{{ get_url(path='banda/ja-garre.png') }}" alt="J.A. Garre" loading="lazy" decoding="async">
                 <h3>J.A. Garre</h3>
                 <p>{% if lang == "en" %}Keyboards{% else %}Teclados{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
-            <div class="member" data-member="aj-ruiz" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View AJ Ruíz's profile{% else %}Ver perfil de AJ Ruíz{% endif %}">
-                <img class="member-avatar" src="{{ get_url(path='banda/aj-ruiz.png') }}" alt="AJ Ruíz" loading="lazy" decoding="async">
-                <h3>AJ Ruíz</h3>
-                <p>{% if lang == "en" %}Bass{% else %}Bajo{% endif %}</p>
+            <div class="member" data-member="adrian" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Adrian's profile{% else %}Ver perfil de Adrian{% endif %}">
+                <img class="member-avatar" src="{{ get_url(path='banda/adrian.png') }}" alt="Adrian" loading="lazy" decoding="async">
+                <h3>Adrian</h3>
+                <p>{% if lang == "en" %}Drums{% else %}Batería{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
             <div class="member" data-member="darwin" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Darwin's profile{% else %}Ver perfil de Darwin{% endif %}">
@@ -236,8 +236,8 @@
                 influences: ['John Coltrane', 'Charlie Parker', 'Maceo Parker'],
                 funFact: '{% if lang == "en" %}Has a collection of over 20 different percussion instruments.{% else %}Tiene una colección de más de 20 instrumentos de percusión diferentes.{% endif %}'
             },
-            'chato': {
-                name: 'Chato',
+            'adrian': {
+                name: 'Adrian',
                 role: '{% if lang == "en" %}Drums{% else %}Batería{% endif %}',
                 avatar: '{{ get_url(path="banda/adrian.png") }}',
                 bio: '{% if lang == "en" %}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. The heartbeat of the band with an energetic style that drives every song.{% else %}Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. El corazón de la banda con un estilo enérgico que impulsa cada canción.{% endif %}',
