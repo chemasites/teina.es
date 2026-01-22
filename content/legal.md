@@ -7,7 +7,7 @@ description = "Aviso legal, política de privacidad y protección de datos del s
 
 Este sitio web pertenece a **Teína**, banda de música de Calasparra, Murcia.
 
-Para cualquier consulta, puedes contactarnos en [661 892 704](tel:+34661892704) o a través de [@teinaband](https://instagram.com/teinaband).
+Para cualquier consulta, puedes contactarnos en [teinaband@gmail.com](mailto:teinaband@gmail.com), [661 892 704](tel:+34661892704) o a través de [@teinaband](https://instagram.com/teinaband).
 
 ## Privacidad
 
