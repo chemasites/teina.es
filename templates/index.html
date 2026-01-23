@@ -31,21 +31,24 @@
 {% include "partials/navbar.html" %}
 
 <header class="hero" id="inicio">
-    <p class="tagline">indie pop rock</p>
-    <img src="{{ get_url(path='media/01-portada-original.jpg') }}" alt="Teína" class="hero-logo" fetchpriority="high" decoding="async">
-    {% if lang == "en" %}
-    <p class="hero-description">Indie pop rock band blending reinterpreted covers of major Spanish artists with original songs</p>
-    <div class="hero-buttons">
-        <a href="{{ lang_prefix }}/musica/" class="btn btn-primary">Listen</a>
-        <a href="{{ lang_prefix }}/contacto/" class="btn btn-secondary">Bookings</a>
+    <img src="{{ get_url(path='media/01-portada-original.jpg') }}" alt="Teína - {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda Indie Pop Rock{% endif %}" class="hero-logo" fetchpriority="high" decoding="async">
+    <div class="hero-content">
+        <h1 class="hero-title">Teína</h1>
+        <p class="tagline">indie pop rock</p>
+        {% if lang == "en" %}
+        <p class="hero-description">Reinterpreted covers of major Spanish artists with original songs</p>
+        <div class="hero-buttons">
+            <a href="{{ lang_prefix }}/musica/" class="btn btn-primary">Listen</a>
+            <a href="{{ lang_prefix }}/contacto/" class="btn btn-secondary">Bookings</a>
+        </div>
+        {% else %}
+        <p class="hero-description">Versiones reinterpretadas de grandes referentes nacionales con canciones propias</p>
+        <div class="hero-buttons">
+            <a href="/musica/" class="btn btn-primary">Escuchar</a>
+            <a href="/contacto/" class="btn btn-secondary">Contrataciones</a>
+        </div>
+        {% endif %}
     </div>
-    {% else %}
-    <p class="hero-description">Banda indie pop rock que combina versiones reinterpretadas de grandes referentes nacionales con canciones propias</p>
-    <div class="hero-buttons">
-        <a href="/musica/" class="btn btn-primary">Escuchar</a>
-        <a href="/contacto/" class="btn btn-secondary">Contrataciones</a>
-    </div>
-    {% endif %}
 </header>
 
 <section class="section fade-in" id="about">
