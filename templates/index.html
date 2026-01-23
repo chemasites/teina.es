@@ -31,12 +31,10 @@
 {% include "partials/navbar.html" %}
 
 <header class="hero" id="inicio">
-    <div class="hero-header">
-        <h1 class="hero-title">Teína</h1>
-        <p class="tagline">indie pop rock</p>
-    </div>
     <img src="{{ get_url(path='media/01-portada-original.jpg') }}" alt="Teína - {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda Indie Pop Rock{% endif %}" class="hero-logo" fetchpriority="high" decoding="async">
     <div class="hero-content">
+        <h1 class="hero-title">Teína</h1>
+        <p class="tagline">indie pop rock</p>
         {% if lang == "en" %}
         <p class="hero-description">Reinterpreted covers of major Spanish artists with original songs</p>
         <div class="hero-buttons">
