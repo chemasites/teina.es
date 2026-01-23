@@ -298,15 +298,18 @@ html:not([data-theme="light"]) .theme-toggle button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 4rem;
+    padding-top: 6rem; // navbar height + 2rem spacing
     border-bottom: 1px solid var(--border-color);
+
+    .hero-header {
+        margin-bottom: 1rem;
+    }
 
     .hero-logo {
         max-width: 900px;
         width: 100%;
         height: auto;
         border-radius: 12px;
-        margin-top: 2rem;
     }
 
     .hero-content {
@@ -327,7 +330,7 @@ html:not([data-theme="light"]) .theme-toggle button {
         letter-spacing: 0.25rem;
         text-transform: uppercase;
         color: var(--text-faint);
-        margin-bottom: 1.5rem;
+        margin: 0;
     }
 
     .hero-description {
