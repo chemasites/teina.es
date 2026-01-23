@@ -90,6 +90,15 @@
         <p class="page-subtitle">{% if lang == "en" %}Original songs and covers of the best indie pop rock{% else %}Temas propios y versiones del mejor indie pop rock{% endif %}</p>
     </header>
 
+    <section class="section section-alt">
+        <h2>{% if lang == "en" %}Promo Video{% else %}Video Promocional{% endif %}</h2>
+        <div class="video-featured">
+            <div class="video-item">
+                <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
+            </div>
+        </div>
+    </section>
+
     <section class="section">
         <div class="cards">
             <div class="card">
@@ -97,10 +106,12 @@
                 <h3>Original Songs</h3>
                 <p class="card-subtitle">6 singles</p>
                 <p>The band has six original singles to date, fusing the best indie pop rock with lyrics that connect.</p>
+                <a href="https://www.youtube.com/@teina8932" target="_blank" class="card-link">Listen on YouTube →</a>
                 {% else %}
                 <h3>Temas Propios</h3>
                 <p class="card-subtitle">6 sencillos</p>
                 <p>La agrupación cuenta con seis sencillos propios hasta la fecha, fusionando el mejor indie pop rock con letras que conectan.</p>
+                <a href="https://www.youtube.com/@teina8932" target="_blank" class="card-link">Escuchar en YouTube →</a>
                 {% endif %}
             </div>
             <div class="card">
@@ -113,15 +124,6 @@
                 <p class="card-subtitle">En directo</p>
                 <p>Repertorio de hasta 2 horas de duración con las mejores versiones del indie pop rock actual.</p>
                 {% endif %}
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-alt">
-        <h2>{% if lang == "en" %}Promo Video{% else %}Video Promocional{% endif %}</h2>
-        <div class="video-featured">
-            <div class="video-item">
-                <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
             </div>
         </div>
     </section>
