@@ -1,11 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     {% for sitemap_entry in entries %}
     <url>
         <loc>{{ sitemap_entry.permalink | safe }}</loc>
-        <lastmod>{{ now() | date(format="%Y-%m-%d") }}</lastmod>
-        <changefreq>{% if sitemap_entry.permalink is ending_with("/") or sitemap_entry.permalink is ending_with("/en/") %}weekly{% else %}monthly{% endif %}</changefreq>
+        <lastmod>{% if sitemap_entry.updated %}{{ sitemap_entry.updated | date(format="%Y-%m-%d") }}{% elif sitemap_entry.date %}{{ sitemap_entry.date | date(format="%Y-%m-%d") }}{% else %}{{ now() | date(format="%Y-%m-%d") }}{% endif %}</lastmod>
+        <changefreq>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}weekly{% else %}monthly{% endif %}</changefreq>
         <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "musica" in sitemap_entry.permalink or "banda" in sitemap_entry.permalink or "contacto" in sitemap_entry.permalink or "media" in sitemap_entry.permalink %}0.8{% else %}0.5{% endif %}</priority>
+        {# Homepage images #}
+        {% if sitemap_entry.permalink is ending_with("teina.es/") %}
+        <image:image>
+            <image:loc>https://teina.es/imgs/teina-logo.png</image:loc>
+            <image:title>Teína - Logo de la banda de indie pop rock</image:title>
+            <image:caption>Logo oficial de Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/imgs/mariposa-teina.jpg</image:loc>
+            <image:title>Teína - Imagen de la banda</image:title>
+            <image:caption>Teína, grupo de indie pop rock de Murcia, España</image:caption>
+        </image:image>
+        {% endif %}
+        {% if sitemap_entry.permalink is ending_with("/en/") %}
+        <image:image>
+            <image:loc>https://teina.es/imgs/teina-logo.png</image:loc>
+            <image:title>Teína - Indie pop rock band logo</image:title>
+            <image:caption>Official logo of Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/imgs/mariposa-teina.jpg</image:loc>
+            <image:title>Teína - Band image</image:title>
+            <image:caption>Teína, indie pop rock band from Murcia, Spain</image:caption>
+        </image:image>
+        {% endif %}
+        {# Banda page images - Spanish #}
+        {% if sitemap_entry.permalink is ending_with("/banda/") and not "/en/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/banda/juanjo.png</image:loc>
+            <image:title>Juanjo - Guitarra y Voz de Teína</image:title>
+            <image:caption>Juanjo, guitarrista y vocalista de la banda Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/nacho.png</image:loc>
+            <image:title>Nacho - Saxo, Percusión y Coros de Teína</image:title>
+            <image:caption>Nacho, saxofonista y percusionista de la banda Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/aj-ruiz.png</image:loc>
+            <image:title>AJ Ruíz - Bajo de Teína</image:title>
+            <image:caption>AJ Ruíz, bajista de la banda Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/ja-garre.png</image:loc>
+            <image:title>J.A. Garre - Teclados de Teína</image:title>
+            <image:caption>J.A. Garre, tecladista de la banda Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/adrian.png</image:loc>
+            <image:title>Adri - Batería de Teína</image:title>
+            <image:caption>Adri, baterista de la banda Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/darwin.png</image:loc>
+            <image:title>Darwin - Guitarra y Coros de Teína</image:title>
+            <image:caption>Darwin, guitarrista y corista de la banda Teína</image:caption>
+        </image:image>
+        {% endif %}
+        {# Banda page images - English #}
+        {% if "/en/banda/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/banda/juanjo.png</image:loc>
+            <image:title>Juanjo - Guitar and Vocals of Teína</image:title>
+            <image:caption>Juanjo, guitarist and vocalist of Teína band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/nacho.png</image:loc>
+            <image:title>Nacho - Sax, Percussion and Backing Vocals of Teína</image:title>
+            <image:caption>Nacho, saxophonist and percussionist of Teína band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/aj-ruiz.png</image:loc>
+            <image:title>AJ Ruíz - Bass of Teína</image:title>
+            <image:caption>AJ Ruíz, bassist of Teína band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/ja-garre.png</image:loc>
+            <image:title>J.A. Garre - Keyboards of Teína</image:title>
+            <image:caption>J.A. Garre, keyboardist of Teína band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/adrian.png</image:loc>
+            <image:title>Adri - Drums of Teína</image:title>
+            <image:caption>Adri, drummer of Teína band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/banda/darwin.png</image:loc>
+            <image:title>Darwin - Guitar and Backing Vocals of Teína</image:title>
+            <image:caption>Darwin, guitarist and backing vocalist of Teína band</image:caption>
+        </image:image>
+        {% endif %}
+        {# Media page images and videos - Spanish #}
+        {% if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/conciertos-25.jpg</image:loc>
+            <image:title>Concierto Teína 2025</image:title>
+            <image:caption>Teína en concierto, banda de indie pop rock en directo</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/adrian1.png</image:loc>
+            <image:title>Adri - Batería en directo</image:title>
+            <image:caption>Adri tocando la batería en concierto de Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/guitarra1.png</image:loc>
+            <image:title>Guitarra en directo</image:title>
+            <image:caption>Guitarra en concierto de Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/teclado1.png</image:loc>
+            <image:title>Teclados en directo</image:title>
+            <image:caption>Teclados en concierto de Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/saxo1.png</image:loc>
+            <image:title>Saxofón en directo</image:title>
+            <image:caption>Saxofón en concierto de Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/bajo1.png</image:loc>
+            <image:title>Bajo en directo</image:title>
+            <image:caption>Bajo en concierto de Teína</image:caption>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Teína - Video Promocional</video:title>
+            <video:description>Video promocional de Teína, banda de indie pop rock de Calasparra, Murcia</video:description>
+            <video:player_loc>https://www.youtube.com/embed/XDiUv8ba55I</video:player_loc>
+        </video:video>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/_ue01WuY4bQ/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Teína - Canción</video:title>
+            <video:description>Canción de Teína, banda de indie pop rock de Murcia, España</video:description>
+            <video:player_loc>https://www.youtube.com/embed/_ue01WuY4bQ</video:player_loc>
+        </video:video>
+        {% endif %}
+        {# Media page images and videos - English #}
+        {% if "/en/media/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/conciertos-25.jpg</image:loc>
+            <image:title>Teína Concert 2025</image:title>
+            <image:caption>Teína live in concert, indie pop rock band performing</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/adrian1.png</image:loc>
+            <image:title>Adri - Drums live</image:title>
+            <image:caption>Adri playing drums at Teína concert</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/guitarra1.png</image:loc>
+            <image:title>Guitar live</image:title>
+            <image:caption>Guitar at Teína concert</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/teclado1.png</image:loc>
+            <image:title>Keyboards live</image:title>
+            <image:caption>Keyboards at Teína concert</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/saxo1.png</image:loc>
+            <image:title>Saxophone live</image:title>
+            <image:caption>Saxophone at Teína concert</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/bajo1.png</image:loc>
+            <image:title>Bass live</image:title>
+            <image:caption>Bass at Teína concert</image:caption>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Teína - Promo Video</video:title>
+            <video:description>Promotional video of Teína, indie pop rock band from Calasparra, Murcia, Spain</video:description>
+            <video:player_loc>https://www.youtube.com/embed/XDiUv8ba55I</video:player_loc>
+        </video:video>
+        <video:video>
+            <video:thumbnail_loc>https://img.youtube.com/vi/_ue01WuY4bQ/maxresdefault.jpg</video:thumbnail_loc>
+            <video:title>Teína - Song</video:title>
+            <video:description>Song by Teína, indie pop rock band from Murcia, Spain</video:description>
+            <video:player_loc>https://www.youtube.com/embed/_ue01WuY4bQ</video:player_loc>
+        </video:video>
+        {% endif %}
     </url>
     {% endfor %}
 </urlset>
