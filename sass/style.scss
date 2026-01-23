@@ -312,14 +312,11 @@ html:not([data-theme="light"]) .theme-toggle button {
     }
 
     .hero-logo {
-        max-width: 450px;
+        max-width: 900px;
+        width: 100%;
         height: auto;
-        margin-bottom: 5em;
-        transform: scale(1.6);
-        clip-path: inset(18% 18% 12% 18%);
-        transition: filter 0.3s ease, background 0.3s ease;
-        border-radius: 50%;
-        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
     }
 
     .hero-description {
@@ -335,18 +332,6 @@ html:not([data-theme="light"]) .theme-toggle button {
     }
 }
 
-// Dark mode hero logo - soft glow background (centered, not touching borders)
-[data-theme="dark"] .hero .hero-logo {
-    background: radial-gradient(ellipse 25% 35% at center, rgba(249, 245, 240, 0.4) 0%, rgba(249, 245, 240, 0.15) 50%, transparent 80%);
-    filter: drop-shadow(0 0 30px rgba(249, 245, 240, 0.1));
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .hero .hero-logo {
-        background: radial-gradient(ellipse 25% 35% at center, rgba(249, 245, 240, 0.4) 0%, rgba(249, 245, 240, 0.15) 50%, transparent 80%);
-        filter: drop-shadow(0 0 30px rgba(249, 245, 240, 0.1));
-    }
-}
 
 // Buttons
 .btn {
@@ -1468,7 +1453,7 @@ html:not([data-theme="light"]) .theme-toggle button {
         padding-top: 5rem;
 
         .hero-logo {
-            max-width: 280px;
+            max-width: 100%;
         }
 
         .hero-description {
@@ -1619,8 +1604,8 @@ html:not([data-theme="light"]) .theme-toggle button {
 
     .hero {
         .hero-logo {
-            max-width: 220px;
-            margin-bottom: 3em;
+            max-width: 100%;
+            margin-bottom: 1.5rem;
         }
 
         .tagline {

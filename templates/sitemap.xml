@@ -102,11 +102,6 @@
         {# Media page images and videos - Spanish #}
         {% if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink %}
         <image:image>
-            <image:loc>https://teina.es/media/01-portada-original.jpg</image:loc>
-            <image:title>Portada Teína</image:title>
-            <image:caption>Portada de la banda Teína</image:caption>
-        </image:image>
-        <image:image>
             <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
             <image:title>Foto Teína 1</image:title>
             <image:caption>Teína, banda de indie pop rock</image:caption>
@@ -311,11 +306,6 @@
         {% endif %}
         {# Media page images and videos - English #}
         {% if "/en/media/" in sitemap_entry.permalink %}
-        <image:image>
-            <image:loc>https://teina.es/media/01-portada-original.jpg</image:loc>
-            <image:title>Teína Cover</image:title>
-            <image:caption>Teína band cover photo</image:caption>
-        </image:image>
         <image:image>
             <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
             <image:title>Teína Photo 1</image:title>

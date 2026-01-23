@@ -73,9 +73,6 @@
     <section class="section section-alt">
         <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
         <div class="gallery gallery-large">
-            <a href="{{ get_url(path='media/01-portada-original.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/01-portada-original.jpg') }}" alt="{% if lang == 'en' %}Teína Cover{% else %}Portada Teína{% endif %}" loading="lazy" decoding="async">
-            </a>
             <a href="{{ get_url(path='media/01-primera.jpg') }}" class="gallery-item" data-lightbox>
                 <img data-src="{{ get_url(path='media/thumbs/01-primera.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 1{% else %}Foto Teína 1{% endif %}" loading="lazy" decoding="async">
             </a>
