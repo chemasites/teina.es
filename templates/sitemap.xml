@@ -102,34 +102,199 @@
         {# Media page images and videos - Spanish #}
         {% if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink %}
         <image:image>
-            <image:loc>https://teina.es/media/conciertos-25.jpg</image:loc>
-            <image:title>Concierto Teína 2025</image:title>
-            <image:caption>Teína en concierto, banda de indie pop rock en directo</image:caption>
+            <image:loc>https://teina.es/media/01-portada-original.jpg</image:loc>
+            <image:title>Portada Teína</image:title>
+            <image:caption>Portada de la banda Teína</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
+            <image:title>Foto Teína 1</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/02-segunda.jpg</image:loc>
+            <image:title>Foto Teína 2</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/03-tercera.jpg</image:loc>
+            <image:title>Foto Teína 3</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04.jpg</image:loc>
+            <image:title>Foto Teína 4</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04-cuarta.jpg</image:loc>
+            <image:title>Foto Teína 4</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04.1-cuarta-heic.jpg</image:loc>
+            <image:title>Foto Teína 4.1</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04.2-cuarta.jpg</image:loc>
+            <image:title>Foto Teína 4.2</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/05.jpg</image:loc>
+            <image:title>Foto Teína 5</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/05.3.jpg</image:loc>
+            <image:title>Foto Teína 5.3</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/07.1.jpg</image:loc>
+            <image:title>Foto Teína 7.1</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/07.1-septima.jpg</image:loc>
+            <image:title>Foto Teína 7</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/07.2.jpg</image:loc>
+            <image:title>Foto Teína 7.2</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08-octava.jpg</image:loc>
+            <image:title>Foto Teína 8</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.1.jpg</image:loc>
+            <image:title>Foto Teína 8.1</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.1-dieciseis.jpg</image:loc>
+            <image:title>Foto Teína 16</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.2.jpg</image:loc>
+            <image:title>Foto Teína 8.2</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.5.jpg</image:loc>
+            <image:title>Foto Teína 8.5</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.6.jpg</image:loc>
+            <image:title>Foto Teína 8.6</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09-novena.jpg</image:loc>
+            <image:title>Foto Teína 9</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09.1.jpg</image:loc>
+            <image:title>Foto Teína 9.1</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09.3-diecisiete.jpg</image:loc>
+            <image:title>Foto Teína 17</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09.4.jpg</image:loc>
+            <image:title>Foto Teína 9.4</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/10.jpg</image:loc>
+            <image:title>Foto Teína 10</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/10-decima.jpg</image:loc>
+            <image:title>Foto Teína 10</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/12.jpg</image:loc>
+            <image:title>Foto Teína 12</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/12.1.jpg</image:loc>
+            <image:title>Foto Teína 12.1</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/18-dieciocho.jpg</image:loc>
+            <image:title>Foto Teína 18</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/20-veinte.jpg</image:loc>
+            <image:title>Foto Teína 20</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/22.jpg</image:loc>
+            <image:title>Foto Teína 22</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/22.5.jpg</image:loc>
+            <image:title>Foto Teína 22.5</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/24.jpg</image:loc>
+            <image:title>Foto Teína 24</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/26.jpg</image:loc>
+            <image:title>Foto Teína 26</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/27.jpg</image:loc>
+            <image:title>Foto Teína 27</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/29.jpg</image:loc>
+            <image:title>Foto Teína 29</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/30-photo.jpg</image:loc>
+            <image:title>Foto Teína 30</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/31-photo.jpg</image:loc>
+            <image:title>Foto Teína 31</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/201.jpg</image:loc>
+            <image:title>Foto Teína</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://teina.es/media/adrian1.png</image:loc>
             <image:title>Adri - Batería en directo</image:title>
             <image:caption>Adri tocando la batería en concierto de Teína</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/guitarra1.png</image:loc>
-            <image:title>Guitarra en directo</image:title>
-            <image:caption>Guitarra en concierto de Teína</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/teclado1.png</image:loc>
-            <image:title>Teclados en directo</image:title>
-            <image:caption>Teclados en concierto de Teína</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/saxo1.png</image:loc>
-            <image:title>Saxofón en directo</image:title>
-            <image:caption>Saxofón en concierto de Teína</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/bajo1.png</image:loc>
-            <image:title>Bajo en directo</image:title>
-            <image:caption>Bajo en concierto de Teína</image:caption>
         </image:image>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg</video:thumbnail_loc>
@@ -147,34 +312,199 @@
         {# Media page images and videos - English #}
         {% if "/en/media/" in sitemap_entry.permalink %}
         <image:image>
-            <image:loc>https://teina.es/media/conciertos-25.jpg</image:loc>
-            <image:title>Teína Concert 2025</image:title>
-            <image:caption>Teína live in concert, indie pop rock band performing</image:caption>
+            <image:loc>https://teina.es/media/01-portada-original.jpg</image:loc>
+            <image:title>Teína Cover</image:title>
+            <image:caption>Teína band cover photo</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
+            <image:title>Teína Photo 1</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/02-segunda.jpg</image:loc>
+            <image:title>Teína Photo 2</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/03-tercera.jpg</image:loc>
+            <image:title>Teína Photo 3</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04.jpg</image:loc>
+            <image:title>Teína Photo 4</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04-cuarta.jpg</image:loc>
+            <image:title>Teína Photo 4</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04.1-cuarta-heic.jpg</image:loc>
+            <image:title>Teína Photo 4.1</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/04.2-cuarta.jpg</image:loc>
+            <image:title>Teína Photo 4.2</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/05.jpg</image:loc>
+            <image:title>Teína Photo 5</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/05.3.jpg</image:loc>
+            <image:title>Teína Photo 5.3</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/07.1.jpg</image:loc>
+            <image:title>Teína Photo 7.1</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/07.1-septima.jpg</image:loc>
+            <image:title>Teína Photo 7</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/07.2.jpg</image:loc>
+            <image:title>Teína Photo 7.2</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08-octava.jpg</image:loc>
+            <image:title>Teína Photo 8</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.1.jpg</image:loc>
+            <image:title>Teína Photo 8.1</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.1-dieciseis.jpg</image:loc>
+            <image:title>Teína Photo 16</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.2.jpg</image:loc>
+            <image:title>Teína Photo 8.2</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.5.jpg</image:loc>
+            <image:title>Teína Photo 8.5</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/08.6.jpg</image:loc>
+            <image:title>Teína Photo 8.6</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09-novena.jpg</image:loc>
+            <image:title>Teína Photo 9</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09.1.jpg</image:loc>
+            <image:title>Teína Photo 9.1</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09.3-diecisiete.jpg</image:loc>
+            <image:title>Teína Photo 17</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/09.4.jpg</image:loc>
+            <image:title>Teína Photo 9.4</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/10.jpg</image:loc>
+            <image:title>Teína Photo 10</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/10-decima.jpg</image:loc>
+            <image:title>Teína Photo 10</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/12.jpg</image:loc>
+            <image:title>Teína Photo 12</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/12.1.jpg</image:loc>
+            <image:title>Teína Photo 12.1</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/18-dieciocho.jpg</image:loc>
+            <image:title>Teína Photo 18</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/20-veinte.jpg</image:loc>
+            <image:title>Teína Photo 20</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/22.jpg</image:loc>
+            <image:title>Teína Photo 22</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/22.5.jpg</image:loc>
+            <image:title>Teína Photo 22.5</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/24.jpg</image:loc>
+            <image:title>Teína Photo 24</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/26.jpg</image:loc>
+            <image:title>Teína Photo 26</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/27.jpg</image:loc>
+            <image:title>Teína Photo 27</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/29.jpg</image:loc>
+            <image:title>Teína Photo 29</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/30-photo.jpg</image:loc>
+            <image:title>Teína Photo 30</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/31-photo.jpg</image:loc>
+            <image:title>Teína Photo 31</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/201.jpg</image:loc>
+            <image:title>Teína Photo</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://teina.es/media/adrian1.png</image:loc>
             <image:title>Adri - Drums live</image:title>
             <image:caption>Adri playing drums at Teína concert</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/guitarra1.png</image:loc>
-            <image:title>Guitar live</image:title>
-            <image:caption>Guitar at Teína concert</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/teclado1.png</image:loc>
-            <image:title>Keyboards live</image:title>
-            <image:caption>Keyboards at Teína concert</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/saxo1.png</image:loc>
-            <image:title>Saxophone live</image:title>
-            <image:caption>Saxophone at Teína concert</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/bajo1.png</image:loc>
-            <image:title>Bass live</image:title>
-            <image:caption>Bass at Teína concert</image:caption>
         </image:image>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg</video:thumbnail_loc>

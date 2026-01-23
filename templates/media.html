@@ -73,23 +73,131 @@
     <section class="section section-alt">
         <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
         <div class="gallery gallery-large">
-            <a href="{{ get_url(path='media/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/01-portada-original.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/01-portada-original.jpg') }}" alt="{% if lang == 'en' %}Teína Cover{% else %}Portada Teína{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/01-primera.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/01-primera.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 1{% else %}Foto Teína 1{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/02-segunda.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/02-segunda.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 2{% else %}Foto Teína 2{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/03-tercera.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/03-tercera.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 3{% else %}Foto Teína 3{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/04.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/04.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4{% else %}Foto Teína 4{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/04-cuarta.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/04-cuarta.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4{% else %}Foto Teína 4{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/04.1-cuarta-heic.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/04.1-cuarta-heic.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4.1{% else %}Foto Teína 4.1{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/04.2-cuarta.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/04.2-cuarta.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4.2{% else %}Foto Teína 4.2{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/05.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/05.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 5{% else %}Foto Teína 5{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/05.3.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/05.3.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 5.3{% else %}Foto Teína 5.3{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/07.1.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/07.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 7.1{% else %}Foto Teína 7.1{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/07.1-septima.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/07.1-septima.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 7{% else %}Foto Teína 7{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/07.2.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/07.2.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 7.2{% else %}Foto Teína 7.2{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/08-octava.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/08-octava.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8{% else %}Foto Teína 8{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/08.1.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/08.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.1{% else %}Foto Teína 8.1{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/08.1-dieciseis.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/08.1-dieciseis.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 16{% else %}Foto Teína 16{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/08.2.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/08.2.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.2{% else %}Foto Teína 8.2{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/08.5.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/08.5.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.5{% else %}Foto Teína 8.5{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/08.6.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/08.6.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.6{% else %}Foto Teína 8.6{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/09-novena.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/09-novena.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 9{% else %}Foto Teína 9{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/09.1.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/09.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 9.1{% else %}Foto Teína 9.1{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/09.3-diecisiete.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/09.3-diecisiete.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 17{% else %}Foto Teína 17{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/09.4.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/09.4.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 9.4{% else %}Foto Teína 9.4{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/10.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/10.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 10{% else %}Foto Teína 10{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/10-decima.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/10-decima.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 10{% else %}Foto Teína 10{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/12.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/12.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 12{% else %}Foto Teína 12{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/12.1.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/12.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 12.1{% else %}Foto Teína 12.1{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/18-dieciocho.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/18-dieciocho.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 18{% else %}Foto Teína 18{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/20-veinte.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/20-veinte.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 20{% else %}Foto Teína 20{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/22.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/22.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 22{% else %}Foto Teína 22{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/22.5.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/22.5.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 22.5{% else %}Foto Teína 22.5{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/24.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/24.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 24{% else %}Foto Teína 24{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/26.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/26.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 26{% else %}Foto Teína 26{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/27.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/27.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 27{% else %}Foto Teína 27{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/29.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/29.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 29{% else %}Foto Teína 29{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/30-photo.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/30-photo.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 30{% else %}Foto Teína 30{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/31-photo.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/31-photo.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 31{% else %}Foto Teína 31{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/201.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/201.jpg') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy" decoding="async">
             </a>
             <a href="{{ get_url(path='media/adrian1.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/adrian1.png') }}" alt="{% if lang == 'en' %}Adri - Drums{% else %}Adri - Batería{% endif %}" loading="lazy" decoding="async">
+                <img data-src="{{ get_url(path='media/thumbs/adrian1.jpg') }}" alt="{% if lang == 'en' %}Adri - Drums{% else %}Adri - Batería{% endif %}" loading="lazy" decoding="async">
             </a>
-            <a href="{{ get_url(path='media/guitarra1.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/guitarra1.png') }}" alt="{% if lang == 'en' %}Guitar{% else %}Guitarra{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/teclado1.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/teclado1.png') }}" alt="{% if lang == 'en' %}Keyboards{% else %}Teclados{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/saxo1.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/saxo1.png') }}" alt="{% if lang == 'en' %}Saxophone{% else %}Saxofón{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/bajo1.png') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='media/bajo1.png') }}" alt="{% if lang == 'en' %}Bass{% else %}Bajo{% endif %}" loading="lazy" decoding="async">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>{% if lang == "en" %}Concerts{% else %}Conciertos{% endif %}</h2>
+        <div class="gallery gallery-large">
+            <a href="{{ get_url(path='conciertos/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
+                <img src="{{ get_url(path='conciertos/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy" decoding="async">
             </a>
         </div>
     </section>
