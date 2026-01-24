@@ -856,7 +856,8 @@ html:not([data-theme="light"]) .theme-toggle button {
         }
 
         .contact-label {
-            color: rgba(249, 245, 240, 0.7);
+            color: var(--btn-primary-text);
+            opacity: 0.7;
         }
 
         .contact-value {
