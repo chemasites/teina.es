@@ -321,22 +321,32 @@
             lazyImages.forEach(img => imageObserver.observe(img));
         }
 
-        // Lightbox with arrow key navigation
+        // Lightbox with arrow key navigation and back button support
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.querySelector('.lightbox-img');
         const lightboxClose = document.querySelector('.lightbox-close');
         const galleryItems = document.querySelectorAll('[data-lightbox]');
         let currentIndex = 0;
+        let lightboxHistoryPushed = false;
 
         galleryItems.forEach((item, index) => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 currentIndex = index;
                 showImage(currentIndex);
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                openLightbox();
             });
         });
+
+        function openLightbox() {
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Push state so back button closes lightbox instead of navigating away
+            if (!lightboxHistoryPushed) {
+                history.pushState({ lightbox: true }, '');
+                lightboxHistoryPushed = true;
+            }
+        }
 
         function showImage(index) {
             if (galleryItems.length === 0) return;
@@ -358,11 +368,11 @@
         }
 
         if (lightboxClose) {
-            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxClose.addEventListener('click', closeLightboxWithHistory);
         }
         if (lightbox) {
             lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeLightbox();
+                if (e.target === lightbox) closeLightboxWithHistory();
             });
         }
 
@@ -374,11 +384,28 @@
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
+            lightboxHistoryPushed = false;
         }
+
+        function closeLightboxWithHistory() {
+            if (lightboxHistoryPushed) {
+                // Go back in history, which will trigger popstate and close lightbox
+                history.back();
+            } else {
+                closeLightbox();
+            }
+        }
+
+        // Handle browser back button
+        window.addEventListener('popstate', (e) => {
+            if (lightbox?.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
 
         document.addEventListener('keydown', (e) => {
             if (!lightbox?.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Escape') closeLightboxWithHistory();
             if (e.key === 'ArrowRight') nextImage();
             if (e.key === 'ArrowLeft') prevImage();
         });
