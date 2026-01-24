@@ -206,38 +206,40 @@ body {
 
         .lang-switcher,
         .theme-toggle {
-            margin-left: 0.5rem;
-            padding-left: 1rem;
+            margin-left: 0.25rem;
+            padding-left: 0.75rem;
             border-left: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
 
-            a, button {
-                font-size: 0.8rem;
-                font-weight: 600;
-                padding: 0.3rem 0.6rem;
-                border-radius: 4px;
-                background: var(--accent-hover);
-                transition: background 0.3s ease;
+        .lang-switcher a,
+        .theme-toggle button {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0;
+            border-radius: 6px;
+            background: var(--accent-hover);
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
 
-                &:hover {
-                    background: var(--accent-hover-strong);
-                }
+            &:hover {
+                background: var(--accent-hover-strong);
             }
         }
 
         .theme-toggle {
             border-left: none;
-            padding-left: 0.5rem;
+            padding-left: 0.25rem;
 
             button {
                 border: none;
                 cursor: pointer;
                 color: var(--text-muted);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 32px;
-                height: 32px;
-                padding: 0;
 
                 svg {
                     width: 18px;
@@ -1434,14 +1436,11 @@ html:not([data-theme="light"]) .theme-toggle button {
             .lang-switcher {
                 margin-left: 0.3rem;
                 padding-left: 0.6rem;
-                border-left: 1px solid var(--border-color);
 
                 a {
                     font-size: 0.75rem;
-                    font-weight: 600;
-                    padding: 0.25rem 0.5rem;
-                    border-radius: 4px;
-                    background: var(--accent-hover);
+                    width: 28px;
+                    height: 28px;
                 }
             }
 
@@ -1602,7 +1601,8 @@ html:not([data-theme="light"]) .theme-toggle button {
 
                 a {
                     font-size: 0.65rem;
-                    padding: 0.2rem 0.4rem;
+                    width: 24px;
+                    height: 24px;
                 }
             }
 
