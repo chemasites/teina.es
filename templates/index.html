@@ -31,7 +31,26 @@
 {% include "partials/navbar.html" %}
 
 <header class="hero" id="inicio">
-    <img src="{{ get_url(path='media/01-portada-original.jpg') }}" alt="Teína - {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda Indie Pop Rock{% endif %}" class="hero-logo" fetchpriority="high" decoding="async">
+    <picture>
+        <source
+            type="image/webp"
+            srcset="{{ get_url(path='media/hero-800.webp') }} 800w,
+                    {{ get_url(path='media/hero-1200.webp') }} 1200w,
+                    {{ get_url(path='media/hero-1800.webp') }} 1800w"
+            sizes="(max-width: 480px) 100vw, (max-width: 900px) 100vw, 900px">
+        <img
+            src="{{ get_url(path='media/hero-1200.jpg') }}"
+            srcset="{{ get_url(path='media/hero-800.jpg') }} 800w,
+                    {{ get_url(path='media/hero-1200.jpg') }} 1200w,
+                    {{ get_url(path='media/hero-1800.jpg') }} 1800w"
+            sizes="(max-width: 480px) 100vw, (max-width: 900px) 100vw, 900px"
+            alt="Teína - {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda Indie Pop Rock{% endif %}"
+            class="hero-logo"
+            fetchpriority="high"
+            decoding="async"
+            width="1200"
+            height="621">
+    </picture>
     <div class="hero-content">
         <h1 class="hero-title">Teína</h1>
         <p class="tagline">indie pop rock</p>
