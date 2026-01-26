@@ -6,7 +6,7 @@ description = "Teína is an indie pop rock band from Calasparra, Murcia, Spain. 
 
 We are an indie pop-rock band that lives for the stage with intensity and personality. Our repertoire combines reinterpreted covers of great national and international indie references with original songs, where we pour our sonic identity and our stories.
 
-On stage we seek more than just playing songs: we create a close, energetic and emotional atmosphere, connecting with the audience from the first chord. Our covers are not copies, but personal readings, with careful arrangements and a stage presence designed to enjoy, sing along and let yourself go.
+On stage we seek more than just playing songs: we create a close, energetic and emotional atmosphere, connecting with the audience from the first chord.
 
 The band's original compositions draw from melodic pop, alternative rock and the current indie scene, with honest lyrics and choruses that stay with you. Every concert is a balanced mix between the familiar and the new, between nostalgia and surprise.
 

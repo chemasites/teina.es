@@ -6,7 +6,7 @@ description = "Teína es una banda de indie pop rock de Calasparra, Murcia, Espa
 
 Somos una banda de indie pop-rock que vive el directo con intensidad y personalidad. Nuestro repertorio combina versiones reinterpretadas de grandes referentes del indie nacional e internacional con canciones propias, donde volcamos nuestra identidad sonora y nuestras historias.
 
-En el escenario buscamos algo más que tocar canciones: creamos un ambiente cercano, enérgico y emocional, conectando con el público desde el primer acorde. Nuestras versiones no son copias, sino lecturas personales, con arreglos cuidados y una puesta en escena pensada para disfrutar, cantar y dejarse llevar.
+En el escenario buscamos algo más que tocar canciones: creamos un ambiente cercano, enérgico y emocional, conectando con el público desde el primer acorde.
 
 Las composiciones propias de la banda beben del pop melódico, el rock alternativo y la escena indie actual, con letras honestas y estribillos que se quedan. Cada concierto es una mezcla equilibrada entre lo conocido y lo nuevo, entre la nostalgia y la sorpresa.
 
