@@ -33,6 +33,9 @@
 
     --shadow-color: rgba(42, 37, 32, 0.1);
     --shadow-strong: rgba(42, 37, 32, 0.2);
+
+    --link-color: #7a5a3a;
+    --link-hover: #5a3a1a;
 }
 
 // Dark mode
@@ -69,6 +72,9 @@
 
     --shadow-color: rgba(0, 0, 0, 0.3);
     --shadow-strong: rgba(0, 0, 0, 0.5);
+
+    --link-color: #d4b896;
+    --link-hover: #e8d4b8;
 }
 
 // Auto-detect system preference
@@ -106,6 +112,9 @@
 
         --shadow-color: rgba(0, 0, 0, 0.3);
         --shadow-strong: rgba(0, 0, 0, 0.5);
+
+        --link-color: #d4b896;
+        --link-hover: #e8d4b8;
     }
 }
 
@@ -757,6 +766,19 @@ html:not([data-theme="light"]) .theme-toggle button {
     p {
         color: var(--text-secondary);
         font-size: 0.95rem;
+    }
+
+    .card-link {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--link-hover);
+        }
     }
 }
 
