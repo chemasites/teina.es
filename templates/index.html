@@ -99,23 +99,80 @@
 <section class="section fade-in" id="conciertos">
     {% if lang == "en" %}
     <h2>Upcoming Concerts</h2>
-    <div class="events">
-        <div class="event-placeholder">
-            <svg class="event-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <p>Upcoming dates to be announced</p>
-            <a href="https://instagram.com/teinaband" target="_blank" class="btn btn-secondary">Follow us to find out</a>
-        </div>
-    </div>
     {% else %}
     <h2>Próximos Conciertos</h2>
-    <div class="events">
-        <div class="event-placeholder">
-            <svg class="event-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <p>Próximas fechas por anunciar</p>
-            <a href="https://instagram.com/teinaband" target="_blank" class="btn btn-secondary">Síguenos para enterarte</a>
-        </div>
-    </div>
     {% endif %}
+    <div class="events">
+        <ul class="event-list">
+            <li class="event-item">
+                <span class="event-date">28 {% if lang == "en" %}Mar{% else %}Mar{% endif %}</span>
+                <span class="event-venue">Auditorio Murcia Parque</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">11 {% if lang == "en" %}Apr{% else %}Abr{% endif %}</span>
+                <span class="event-venue">Caravaca de la Cruz</span>
+            </li>
+            <li class="event-item event-private">
+                <span class="event-date">18 {% if lang == "en" %}Apr{% else %}Abr{% endif %}</span>
+                <span class="event-venue">Murcia</span>
+                <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+            </li>
+            <li class="event-item event-private">
+                <span class="event-date">2 {% if lang == "en" %}May{% else %}May{% endif %}</span>
+                <span class="event-venue">Yeste</span>
+                <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+            </li>
+            <li class="event-item event-private">
+                <span class="event-date">10 {% if lang == "en" %}May{% else %}May{% endif %}</span>
+                <span class="event-venue">Calasparra</span>
+                <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+            </li>
+            <li class="event-item event-private">
+                <span class="event-date">23 {% if lang == "en" %}May{% else %}May{% endif %}</span>
+                <span class="event-venue">Alicante</span>
+                <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">13 {% if lang == "en" %}Jun{% else %}Jun{% endif %}</span>
+                <span class="event-venue">Hellín</span>
+            </li>
+            <li class="event-item event-private">
+                <span class="event-date">18 {% if lang == "en" %}Jul{% else %}Jul{% endif %}</span>
+                <span class="event-venue">Caravaca de la Cruz</span>
+                <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">25 {% if lang == "en" %}Jul{% else %}Jul{% endif %}</span>
+                <span class="event-venue">Pliego</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">18 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
+                <span class="event-venue">Canara (Cehegín)</span>
+            </li>
+            <li class="event-item event-private">
+                <span class="event-date">22 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
+                <span class="event-venue">Caravaca</span>
+                <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">5 {% if lang == "en" %}Sep{% else %}Sep{% endif %}</span>
+                <span class="event-venue">Zarcilla de Ramos (Lorca)</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">10 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
+                <span class="event-venue">Orihuela</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">30 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
+                <span class="event-venue">La Puerta Falsa (Murcia)</span>
+            </li>
+            <li class="event-item event-private">
+                <span class="event-date">28 {% if lang == "en" %}Nov{% else %}Nov{% endif %}</span>
+                <span class="event-venue">Calasparra</span>
+                <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+            </li>
+        </ul>
+    </div>
 </section>
 
 <section class="section section-alt fade-in" id="contact-cta">

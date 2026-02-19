@@ -52,11 +52,44 @@
     "track": [
         {
             "@type": "MusicRecording",
-            "name": "{% if lang == 'en' %}Original Song{% else %}Tema Original{% endif %} 1",
-            "byArtist": {
-                "@type": "MusicGroup",
-                "name": "Teína"
-            },
+            "name": "A contratiempo",
+            "datePublished": "2025",
+            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Sentimiento arrocero",
+            "datePublished": "2025",
+            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Volver a empezar",
+            "datePublished": "2024",
+            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Quiero",
+            "datePublished": "2023",
+            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Salvaje",
+            "datePublished": "2019",
+            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Calavera",
+            "datePublished": "2017",
+            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
             "genre": ["Indie Pop", "Pop Rock"]
         }
     ]
@@ -100,20 +133,38 @@
     </section>
 
     <section class="section">
+        <h2>{% if lang == "en" %}Original Songs{% else %}Temas Propios{% endif %}</h2>
+        <ul class="songs-list">
+            <li class="song-item">
+                <span class="song-name">A contratiempo</span>
+                <span class="song-year">2025</span>
+            </li>
+            <li class="song-item">
+                <span class="song-name">Sentimiento arrocero</span>
+                <span class="song-year">2025</span>
+            </li>
+            <li class="song-item">
+                <span class="song-name">Volver a empezar</span>
+                <span class="song-year">2024</span>
+            </li>
+            <li class="song-item">
+                <span class="song-name">Quiero</span>
+                <span class="song-year">2023</span>
+            </li>
+            <li class="song-item">
+                <span class="song-name">Salvaje</span>
+                <span class="song-year">2019</span>
+            </li>
+            <li class="song-item">
+                <span class="song-name">Calavera</span>
+                <span class="song-year">2017</span>
+            </li>
+        </ul>
+        <a href="https://www.youtube.com/@teina8932" target="_blank" class="section-cta">{% if lang == "en" %}Listen on YouTube{% else %}Escuchar en YouTube{% endif %}</a>
+    </section>
+
+    <section class="section section-alt">
         <div class="cards">
-            <div class="card">
-                {% if lang == "en" %}
-                <h3>Original Songs</h3>
-                <p class="card-subtitle">6 singles</p>
-                <p>The band has six original singles to date, fusing the best indie pop rock with lyrics that connect.</p>
-                <a href="https://www.youtube.com/@teina8932" target="_blank" class="card-link">Listen on YouTube →</a>
-                {% else %}
-                <h3>Temas Propios</h3>
-                <p class="card-subtitle">6 sencillos</p>
-                <p>La agrupación cuenta con seis sencillos propios hasta la fecha, fusionando el mejor indie pop rock con letras que conectan.</p>
-                <a href="https://www.youtube.com/@teina8932" target="_blank" class="card-link">Escuchar en YouTube →</a>
-                {% endif %}
-            </div>
             <div class="card">
                 {% if lang == "en" %}
                 <h3>Repertoire</h3>

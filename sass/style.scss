@@ -1206,8 +1206,50 @@ html:not([data-theme="light"]) .theme-toggle button {
 
 // Events
 .events {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.event-date {
+    font-weight: 700;
+    min-width: 70px;
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+
+.event-venue {
+    flex: 1;
+    font-size: 1.05rem;
+}
+
+.event-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
 }
 
 .event-placeholder {
@@ -1229,6 +1271,37 @@ html:not([data-theme="light"]) .theme-toggle button {
         font-size: 1.1rem;
         margin-bottom: 1.5rem;
     }
+}
+
+// Songs list
+.songs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2rem;
+    max-width: 500px;
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.song-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.song-year {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
 }
 
 // Lightbox
