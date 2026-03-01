@@ -1204,6 +1204,56 @@ html:not([data-theme="light"]) .theme-toggle button {
     flex-wrap: wrap;
 }
 
+// Promo Reel
+.promo-reel {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.promo-reel-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+
+    &:hover {
+        background: var(--accent);
+        color: #fff;
+        transform: translateY(-1px);
+
+        .promo-reel-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.promo-reel-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.promo-reel-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
 // Events
 .events {
     max-width: 600px;
