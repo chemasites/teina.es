@@ -170,7 +170,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     background: transparent;
     z-index: 1000;
     border-bottom: 1px solid transparent;
@@ -184,8 +184,8 @@ body {
     }
 
     .nav-logo img {
-        height: 55px;
-        width: 70px;
+        height: 45px;
+        width: 58px;
         object-fit: cover;
         object-position: center;
         mask-image: radial-gradient(ellipse 60% 70% at center, black 40%, transparent 75%);
@@ -1230,20 +1230,21 @@ html:not([data-theme="light"]) .theme-toggle button {
     gap: 0.75rem;
     padding: 1rem 1.2rem;
     background: var(--bg-card);
-    border: 1px solid var(--accent);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
-    color: var(--text);
+    color: var(--text-primary);
     text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s, border-color 0.2s, color 0.2s;
 
     &:hover {
-        background: var(--accent);
-        color: #fff;
+        background: var(--accent-dark);
+        border-color: var(--accent-dark);
+        color: var(--btn-primary-text);
         transform: translateY(-1px);
 
         .promo-reel-badge {
             background: rgba(255, 255, 255, 0.2);
-            color: #fff;
+            color: inherit;
             border-color: rgba(255, 255, 255, 0.3);
         }
     }
@@ -1594,7 +1595,7 @@ html:not([data-theme="light"]) .theme-toggle button {
 // Responsive - Mobile Large
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem;
+        padding: 0.5rem 1rem;
 
         .nav-links {
             gap: 0.25rem;
