@@ -58,7 +58,7 @@
         <p class="page-subtitle">{% if lang == "en" %}Photo and video gallery of Teína{% else %}Galería de fotos y videos de Teína{% endif %}</p>
     </header>
 
-    <section class="section">
+    <section class="section" id="videos">
         <h2>Videos</h2>
         <div class="videos-grid">
             <div class="video-item">
@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    <section class="section section-alt">
+    <section class="section section-alt" id="galeria">
         <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
         <div class="gallery gallery-large">
             <a href="{{ get_url(path='media/01-primera.jpg') }}" class="gallery-item" data-lightbox>
@@ -190,7 +190,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="conciertos">
         <h2>{% if lang == "en" %}Concerts{% else %}Conciertos{% endif %}</h2>
         <div class="gallery gallery-large">
             <a href="{{ get_url(path='conciertos/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>

@@ -402,6 +402,20 @@ html:not([data-theme="light"]) .theme-toggle button {
         margin-bottom: 1.5rem;
         text-align: center;
         color: var(--accent-dark);
+
+        .anchor-link {
+            opacity: 0;
+            margin-left: 0.4rem;
+            font-size: 0.7em;
+            color: var(--text-faint);
+            text-decoration: none;
+            transition: opacity 0.2s;
+            vertical-align: middle;
+        }
+
+        &:hover .anchor-link {
+            opacity: 1;
+        }
     }
 
     .section-intro {
@@ -1288,6 +1302,11 @@ html:not([data-theme="light"]) .theme-toggle button {
 .event-venue {
     flex: 1;
     font-size: 1.05rem;
+}
+
+.event-past {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
 
 .event-badge {

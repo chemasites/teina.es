@@ -276,6 +276,27 @@
     {% block content %}{% endblock %}
 
     <script>
+        // Anchor links on section headings
+        document.querySelectorAll('section[id] > h2').forEach(h2 => {
+            const id = h2.parentElement.id;
+            const link = document.createElement('a');
+            link.href = '#' + id;
+            link.className = 'anchor-link';
+            link.setAttribute('aria-label', 'Link to this section');
+            link.textContent = '#';
+            h2.style.position = 'relative';
+            h2.appendChild(link);
+        });
+
+        // Mark past events
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        document.querySelectorAll('.event-item[data-date]').forEach(item => {
+            if (new Date(item.dataset.date) < today) {
+                item.classList.add('event-past');
+            }
+        });
+
         // Navbar scroll effect
         const navbar = document.querySelector('.navbar');
         if (navbar) {
