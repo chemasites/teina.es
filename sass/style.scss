@@ -1300,6 +1300,12 @@ html:not([data-theme="light"]) .theme-toggle button {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-muted);
+
+    &-time {
+        background: var(--accent-hover);
+        border-color: var(--accent-medium);
+        color: var(--accent-dark);
+    }
 }
 
 .event-placeholder {
