@@ -1468,15 +1468,6 @@ html:not([data-theme="light"]) .theme-toggle button {
         transform: translateY(-1px);
     }
 
-    &-qr {
-        background: var(--accent-dark);
-        color: var(--btn-primary-text);
-
-        &:hover {
-            background: var(--accent-medium);
-        }
-    }
-
     &-tickets {
         background: transparent;
         border-color: var(--accent-dark);
