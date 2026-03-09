@@ -117,7 +117,7 @@
     </a>
 </section>
 
-<section class="section fade-in" id="conciertos">
+<section class="section section-concerts fade-in" id="conciertos">
     {% if lang == "en" %}
     <h2>Upcoming Concerts</h2>
     {% else %}
@@ -139,80 +139,106 @@
             <li class="event-item" data-date="2026-03-28">
                 <span class="event-date">28 {% if lang == "en" %}Mar{% else %}Mar{% endif %}</span>
                 <span class="event-venue">Murcia - Auditorio Murcia Parque</span>
-                <span class="event-badge event-badge-time">21.30h</span>
+                <span class="event-actions">
+                    <button class="event-btn event-btn-qr" onclick="document.getElementById('qr-modal').classList.add('active'); document.body.style.overflow='hidden';" aria-label="{% if lang == 'en' %}Show QR to buy tickets{% else %}Mostrar QR para comprar entrada{% endif %}">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v2h2v-2zm-4 0h-2v4h2v2h2v-2h2v2h2v-2h-2v-2h2v-2h-2v2h-2v-2zm2 4h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                        <span>QR</span>
+                    </button>
+                    <a href="https://muchoamucho.org/" target="_blank" rel="noopener noreferrer" class="event-btn event-btn-tickets">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 010-6h20a3 3 0 010 6"/><path d="M2 15a3 3 0 000 6h20a3 3 0 000-6"/><line x1="2" y1="9" x2="2" y2="15"/><line x1="22" y1="9" x2="22" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                        <span>{% if lang == "en" %}Tickets{% else %}Entradas{% endif %}</span>
+                    </a>
+                </span>
+                <span class="event-time">21.30h</span>
             </li>
             <li class="event-item" data-date="2026-04-11">
                 <span class="event-date">11 {% if lang == "en" %}Apr{% else %}Abr{% endif %}</span>
                 <span class="event-venue">Caravaca de la Cruz - C/ San Jorge</span>
-                <span class="event-badge event-badge-time">19.00h</span>
+                <span class="event-actions"></span>
+                <span class="event-time">19.00h</span>
             </li>
             <li class="event-item event-private" data-date="2026-04-18">
                 <span class="event-date">18 {% if lang == "en" %}Apr{% else %}Abr{% endif %}</span>
                 <span class="event-venue">Murcia</span>
+                <span class="event-actions"></span>
                 <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
             </li>
             <li class="event-item event-private" data-date="2026-05-02">
                 <span class="event-date">2 {% if lang == "en" %}May{% else %}May{% endif %}</span>
                 <span class="event-venue">Yeste</span>
+                <span class="event-actions"></span>
                 <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
             </li>
             <li class="event-item event-private" data-date="2026-05-10">
                 <span class="event-date">10 {% if lang == "en" %}May{% else %}May{% endif %}</span>
                 <span class="event-venue">Calasparra</span>
+                <span class="event-actions"></span>
                 <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
             </li>
             <li class="event-item event-private" data-date="2026-05-23">
                 <span class="event-date">23 {% if lang == "en" %}May{% else %}May{% endif %}</span>
                 <span class="event-venue">Alicante</span>
+                <span class="event-actions"></span>
                 <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
             </li>
             <li class="event-item" data-date="2026-06-13">
                 <span class="event-date">13 {% if lang == "en" %}Jun{% else %}Jun{% endif %}</span>
                 <span class="event-venue">Hellín - Recinto Ferial</span>
-                <span class="event-badge event-badge-time">23.00h</span>
+                <span class="event-actions"></span>
+                <span class="event-time">23.00h</span>
             </li>
             <li class="event-item event-private" data-date="2026-07-18">
                 <span class="event-date">18 {% if lang == "en" %}Jul{% else %}Jul{% endif %}</span>
                 <span class="event-venue">Caravaca de la Cruz</span>
+                <span class="event-actions"></span>
                 <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
             </li>
             <li class="event-item" data-date="2026-07-25">
                 <span class="event-date">25 {% if lang == "en" %}Jul{% else %}Jul{% endif %}</span>
                 <span class="event-venue">Pliego - Parque de las Cañadas</span>
-                <span class="event-badge event-badge-time">00.00h</span>
+                <span class="event-actions"></span>
+                <span class="event-time">00.00h</span>
             </li>
             <li class="event-item" data-date="2026-08-18">
                 <span class="event-date">18 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
                 <span class="event-venue">Canara (Cehegín)</span>
-                <span class="event-badge event-badge-time">00.00h</span>
+                <span class="event-actions"></span>
+                <span class="event-time">00.00h</span>
             </li>
             <li class="event-item event-private" data-date="2026-08-22">
                 <span class="event-date">22 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
                 <span class="event-venue">Caravaca</span>
+                <span class="event-actions"></span>
                 <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
             </li>
             <li class="event-item" data-date="2026-08-24">
                 <span class="event-date">24 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
                 <span class="event-venue">Teruel - Monreal del Campo (Carpa Festera)</span>
+                <span class="event-actions"></span>
+                <span class="event-time">--:--</span>
             </li>
             <li class="event-item" data-date="2026-09-05">
                 <span class="event-date">5 {% if lang == "en" %}Sep{% else %}Sep{% endif %}</span>
                 <span class="event-venue">Lorca - Zarcilla de Ramos</span>
-                <span class="event-badge event-badge-time">23.30h</span>
+                <span class="event-actions"></span>
+                <span class="event-time">23.30h</span>
             </li>
             <li class="event-item" data-date="2026-10-10">
                 <span class="event-date">10 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
                 <span class="event-venue">Orihuela - El Escorratel</span>
-                <span class="event-badge event-badge-time">23.30h</span>
+                <span class="event-actions"></span>
+                <span class="event-time">23.30h</span>
             </li>
             <li class="event-item" data-date="2026-10-30">
                 <span class="event-date">30 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
                 <span class="event-venue">Murcia - La Puerta Falsa</span>
-                <span class="event-badge event-badge-time">22.00h</span>
+                <span class="event-actions"></span>
+                <span class="event-time">22.00h</span>
             </li>
             <li class="event-item event-private" data-date="2026-11-28">
                 <span class="event-date">28 {% if lang == "en" %}Nov{% else %}Nov{% endif %}</span>
                 <span class="event-venue">Calasparra</span>
+                <span class="event-actions"></span>
                 <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
             </li>
         </ul>
@@ -251,5 +277,11 @@
     <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
     <img src="" alt="" class="lightbox-img">
     <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+</div>
+
+<!-- QR Modal -->
+<div class="lightbox" id="qr-modal" onclick="if(event.target===this){this.classList.remove('active');document.body.style.overflow='';}">
+    <button class="lightbox-close" onclick="document.getElementById('qr-modal').classList.remove('active'); document.body.style.overflow='';">&times;</button>
+    <img src="{{ get_url(path='conciertos/qr/28-marzo-2026.png') }}" alt="QR - Entrada 28 Marzo 2026" class="lightbox-img">
 </div>
 {% endblock %}
