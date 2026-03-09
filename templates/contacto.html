@@ -97,13 +97,23 @@
                         <span class="contact-value">teinaband@gmail.com</span>
                     </div>
                 </a>
-                <a href="https://instagram.com/teinaband" target="_blank" class="contact-card">
-                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    <div class="contact-card-content">
-                        <span class="contact-label">{% if lang == "en" %}Follow us{% else %}Síguenos{% endif %}</span>
-                        <span class="contact-value">@teinaband</span>
-                    </div>
-                </a>
+            </div>
+            <div class="contact-social">
+                <p class="contact-social-label">{% if lang == "en" %}Follow us{% else %}Síguenos{% endif %}</p>
+                <div class="contact-social-links">
+                    <a href="https://instagram.com/teinaband" target="_blank" rel="noopener" class="contact-social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.youtube.com/@teina8932" target="_blank" rel="noopener" class="contact-social-link" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J" target="_blank" rel="noopener" class="contact-social-link" aria-label="Spotify">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
+                        <span>Spotify</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -160,9 +170,13 @@
     <section class="section" id="zona">
         <h2>{% if lang == "en" %}Performance Area{% else %}Zona de Actuación{% endif %}</h2>
         <p class="section-intro">{% if lang == "en" %}Available for events in Murcia and all of Spain.{% else %}Disponibles para eventos en Murcia y toda España.{% endif %}</p>
+        <div class="location-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Calasparra, Murcia</span>
+        </div>
         <div class="map-container">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12584.476895088877!2d-1.7062!3d38.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63f8a8ddd98b91%3A0x40f3c0e60ac54e0!2s30420%20Calasparra%2C%20Murcia%2C%20Spain!5e0!3m2!1sen!2ses!4v1705000000000!5m2!1sen!2ses"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600000!2d-1.5!3d38.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63f8a8ddd98b91%3A0x40f3c0e60ac54e0!2s30420%20Calasparra%2C%20Murcia%2C%20Spain!5e0!3m2!1sen!2ses!4v1705000000000!5m2!1sen!2ses"
                 width="100%"
                 height="400"
                 style="border:0; border-radius: 12px;"
@@ -173,8 +187,14 @@
             </iframe>
         </div>
         <div class="cta-buttons">
-            <a href="{{ lang_prefix }}/banda/" class="btn btn-secondary">{% if lang == "en" %}Meet the band{% else %}Conocer la banda{% endif %}</a>
-            <a href="{{ lang_prefix }}/musica/" class="btn btn-secondary">{% if lang == "en" %}Listen to music{% else %}Escuchar música{% endif %}</a>
+            <a href="{{ lang_prefix }}/banda/" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                {% if lang == "en" %}Meet the band{% else %}Conocer la banda{% endif %}
+            </a>
+            <a href="{{ lang_prefix }}/musica/" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                {% if lang == "en" %}Listen to music{% else %}Escuchar música{% endif %}
+            </a>
         </div>
     </section>
 </main>

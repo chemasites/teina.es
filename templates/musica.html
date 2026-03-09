@@ -136,36 +136,70 @@
         <h2>{% if lang == "en" %}Original Songs{% else %}Temas Propios{% endif %}</h2>
         <ul class="songs-list">
             <li class="song-item">
+                <span class="song-number">1</span>
+                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">A contratiempo</span>
                 <span class="song-year">2025</span>
             </li>
             <li class="song-item">
+                <span class="song-number">2</span>
+                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Sentimiento arrocero</span>
                 <span class="song-year">2025</span>
             </li>
             <li class="song-item">
+                <span class="song-number">3</span>
+                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Volver a empezar</span>
                 <span class="song-year">2024</span>
             </li>
             <li class="song-item">
+                <span class="song-number">4</span>
+                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Quiero</span>
                 <span class="song-year">2023</span>
             </li>
             <li class="song-item">
+                <span class="song-number">5</span>
+                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Salvaje</span>
                 <span class="song-year">2019</span>
             </li>
             <li class="song-item">
+                <span class="song-number">6</span>
+                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Calavera</span>
                 <span class="song-year">2017</span>
             </li>
         </ul>
-        <a href="https://www.youtube.com/@teina8932" target="_blank" class="section-cta">{% if lang == "en" %}Listen on YouTube{% else %}Escuchar en YouTube{% endif %}</a>
+        <div class="songs-links">
+            <a href="https://www.youtube.com/@teina8932" target="_blank" class="songs-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                YouTube
+            </a>
+            <a href="https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J" target="_blank" class="songs-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
+                Spotify
+            </a>
+        </div>
     </section>
 
     <section class="section section-alt">
         <div class="cards">
             <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                {% if lang == "en" %}
+                <h3>Original Songs</h3>
+                <p class="card-subtitle">Studio</p>
+                <p>Original indie pop rock songs with intensity and personality.</p>
+                {% else %}
+                <h3>Temas Propios</h3>
+                <p class="card-subtitle">Estudio</p>
+                <p>Canciones propias de indie pop rock con intensidad y personalidad.</p>
+                {% endif %}
+            </div>
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
                 {% if lang == "en" %}
                 <h3>Repertoire</h3>
                 <p class="card-subtitle">Live</p>
@@ -176,14 +210,32 @@
                 <p>Repertorio de hasta 2 horas de duración con las mejores versiones del indie pop rock actual.</p>
                 {% endif %}
             </div>
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                {% if lang == "en" %}
+                <h3>Events</h3>
+                <p class="card-subtitle">Adaptable</p>
+                <p>Festivals, concerts, private parties, and corporate events throughout Spain.</p>
+                {% else %}
+                <h3>Eventos</h3>
+                <p class="card-subtitle">Adaptable</p>
+                <p>Festivales, conciertos, fiestas privadas y eventos corporativos en toda España.</p>
+                {% endif %}
+            </div>
         </div>
     </section>
 
     <section class="section cta-section">
         <h2>{% if lang == "en" %}Want to hear us live?{% else %}¿Quieres escucharnos en directo?{% endif %}</h2>
         <div class="cta-buttons">
-            <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">{% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}</a>
-            <a href="{{ lang_prefix }}/media/" class="btn btn-secondary">{% if lang == "en" %}See more videos{% else %}Ver más videos{% endif %}</a>
+            <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                {% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}
+            </a>
+            <a href="{{ lang_prefix }}/media/" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                {% if lang == "en" %}See more videos{% else %}Ver más videos{% endif %}
+            </a>
         </div>
     </section>
 </main>

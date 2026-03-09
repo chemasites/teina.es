@@ -57,14 +57,26 @@
         {% if lang == "en" %}
         <p class="hero-description">Indie pop rock band that combines reinterpreted covers of major Spanish artists with original songs</p>
         <div class="hero-buttons">
-            <a href="{{ lang_prefix }}/musica/" class="btn btn-primary">Listen</a>
-            <a href="{{ lang_prefix }}/contacto/" class="btn btn-secondary">Bookings</a>
+            <a href="{{ lang_prefix }}/musica/" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                Listen
+            </a>
+            <a href="{{ lang_prefix }}/contacto/" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Bookings
+            </a>
         </div>
         {% else %}
         <p class="hero-description">Banda indie pop rock que combina versiones reinterpretadas de grandes referentes nacionales con canciones propias</p>
         <div class="hero-buttons">
-            <a href="/musica/" class="btn btn-primary">Escuchar</a>
-            <a href="/contacto/" class="btn btn-secondary">Contrataciones</a>
+            <a href="/musica/" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                Escuchar
+            </a>
+            <a href="/contacto/" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Contrataciones
+            </a>
         </div>
         {% endif %}
     </div>
@@ -74,11 +86,17 @@
     {% if lang == "en" %}
     <h2>About Teína</h2>
     <p class="section-intro">We are an indie pop rock band from Calasparra, in the Northwest of the Region of Murcia, Spain. All members have extensive experience in the world of live music in different formats. Teína offers the best reinterpreted covers of Spanish indie rock, plus original songs with intensity and personality.</p>
-    <a href="{{ lang_prefix }}/banda/" class="section-cta">Meet the band</a>
+    <a href="{{ lang_prefix }}/banda/" class="section-cta">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        Meet the band
+    </a>
     {% else %}
     <h2>Sobre Teína</h2>
     <p class="section-intro">Teína es una banda de indie pop rock originaria de Calasparra, en el Noroeste de la Región de Murcia, España. Todos los componentes cuentan con una amplia experiencia en el mundo de la música en directo en diferentes formatos. Ofrecemos las mejores versiones reinterpretadas del indie rock nacional, además de temas propios con intensidad y personalidad.</p>
-    <a href="/banda/" class="section-cta">Conocer la banda</a>
+    <a href="/banda/" class="section-cta">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        Conocer la banda
+    </a>
     {% endif %}
 </section>
 
@@ -93,7 +111,10 @@
             <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
         </div>
     </div>
-    <a href="{{ lang_prefix }}/media/" class="section-cta">{% if lang == "en" %}See more{% else %}Ver más{% endif %}</a>
+    <a href="{{ lang_prefix }}/media/" class="section-cta">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        {% if lang == "en" %}See more{% else %}Ver más{% endif %}
+    </a>
 </section>
 
 <section class="section fade-in" id="conciertos">
@@ -210,8 +231,14 @@
             {% endif %}
         </div>
         <div class="cta-buttons">
-            <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">{% if lang == "en" %}Contact{% else %}Contactar{% endif %}</a>
-            <a href="tel:+34661892704" class="btn btn-secondary">661 892 704</a>
+            <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                {% if lang == "en" %}Contact{% else %}Contactar{% endif %}
+            </a>
+            <a href="tel:+34661892704" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                661 892 704
+            </a>
         </div>
     </div>
 </section>
