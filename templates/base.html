@@ -64,9 +64,6 @@
     <link rel="alternate" hreflang="en" href="{{ config.base_url }}{{ en_path }}">
     <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}{{ es_path }}">
 
-    <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="Teína RSS Feed" href="{{ config.base_url }}/rss.xml">
-
     <!-- Preconnect and DNS prefetch for performance -->
     <link rel="dns-prefetch" href="https://www.youtube.com">
     <link rel="dns-prefetch" href="https://www.google.com">
@@ -93,13 +90,28 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Teína",
+        "alternateName": "Teina",
+        "url": "{{ config.base_url }}",
+        "inLanguage": ["es", "en"],
+        "publisher": {
+            "@type": "MusicGroup",
+            "name": "Teína"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
         "@type": "MusicGroup",
         "name": "Teína",
         "alternateName": ["Teina", "Teína Band", "Teina Band", "Teína Rock", "Teina Rock"],
         "description": "{% if lang == 'en' %}Indie pop rock band from Calasparra, Murcia, Spain. The best covers of current indie pop rock and original songs. Available for events, festivals and celebrations.{% else %}Teína es una banda de indie pop rock de Calasparra, Murcia, España. Las mejores versiones del indie pop rock actual y temas propios. Disponibles para eventos, festivales y celebraciones.{% endif %}",
         "url": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}",
         "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
-        "image": "{{ get_url(path='imgs/teina-logo.png') }}",
+        "image": "{{ get_url(path='media/hero-1200.jpg') }}",
+        "numberOfMembers": 6,
         "genre": ["Indie Pop", "Pop Rock", "Rock", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}", "{% if lang == 'en' %}Alternative Rock{% else %}Rock Alternativo{% endif %}"],
         "foundingLocation": {
             "@type": "Place",
@@ -117,11 +129,13 @@
         },
         "sameAs": [
             "https://instagram.com/teinaband",
-            "https://www.youtube.com/watch?v=XDiUv8ba55I"
+            "https://www.youtube.com/@teina8932",
+            "https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+34-661-892-704",
+            "email": "teinaband@gmail.com",
             "contactType": "booking",
             "availableLanguage": ["Spanish", "English"]
         },

@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://teina.es/sitemap.xml
+
+# AI discoverability
+# https://llmstxt.org

@@ -1,0 +1,10 @@
+/* TEAM */
+Band: Teina
+Site: https://teina.es
+Location: Calasparra, Murcia, Spain
+Contact: teinaband@gmail.com
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript
+Software: Zola (Static Site Generator)
+Languages: Spanish, English
