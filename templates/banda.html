@@ -138,39 +138,57 @@
             <!-- Fila superior: Juanjo, Nacho, AJ Ruíz -->
             <div class="member" data-member="juanjo" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Juanjo's profile{% else %}Ver perfil de Juanjo{% endif %}">
                 <div class="member-avatar-wrapper">
-                    <img src="{{ get_url(path='banda/juanjo.png') }}" alt="Juanjo" loading="lazy" decoding="async">
+                    <picture>
+                        <source type="image/webp" srcset="{{ get_url(path='banda/juanjo.webp') }}">
+                        <img src="{{ get_url(path='banda/juanjo.png') }}" alt="Juanjo" loading="lazy" decoding="async" width="690" height="666">
+                    </picture>
                 </div>
                 <h3>Juanjo</h3>
                 <p>{% if lang == "en" %}Guitar and Vocals{% else %}Guitarra y Voz{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
             <div class="member" data-member="nacho" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Nacho's profile{% else %}Ver perfil de Nacho{% endif %}">
-                <img class="member-avatar" src="{{ get_url(path='banda/nacho.png') }}" alt="Nacho" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='banda/nacho.webp') }}">
+                    <img class="member-avatar" src="{{ get_url(path='banda/nacho.png') }}" alt="Nacho" loading="lazy" decoding="async" width="1250" height="1124">
+                </picture>
                 <h3>Nacho</h3>
                 <p>{% if lang == "en" %}Sax, Percussion and Backing Vocals{% else %}Saxo, Percusión y Coros{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
             <div class="member" data-member="aj-ruiz" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View AJ Ruíz's profile{% else %}Ver perfil de AJ Ruíz{% endif %}">
-                <img class="member-avatar" src="{{ get_url(path='banda/aj-ruiz.png') }}" alt="AJ Ruíz" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='banda/aj-ruiz.webp') }}">
+                    <img class="member-avatar" src="{{ get_url(path='banda/aj-ruiz.png') }}" alt="AJ Ruíz" loading="lazy" decoding="async" width="612" height="546">
+                </picture>
                 <h3>AJ Ruíz</h3>
                 <p>{% if lang == "en" %}Bass{% else %}Bajo{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
             <!-- Fila inferior: J.A. Garre, Adri, Darwin -->
             <div class="member" data-member="garre" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View J.A. Garre's profile{% else %}Ver perfil de J.A. Garre{% endif %}">
-                <img class="member-avatar" src="{{ get_url(path='banda/ja-garre.png') }}" alt="J.A. Garre" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='banda/ja-garre.webp') }}">
+                    <img class="member-avatar" src="{{ get_url(path='banda/ja-garre.png') }}" alt="J.A. Garre" loading="lazy" decoding="async" width="752" height="700">
+                </picture>
                 <h3>J.A. Garre</h3>
                 <p>{% if lang == "en" %}Keyboards{% else %}Teclados{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
             <div class="member" data-member="adrian" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Adri's profile{% else %}Ver perfil de Adri{% endif %}">
-                <img class="member-avatar" src="{{ get_url(path='banda/adrian.png') }}" alt="Adri" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='banda/adrian.webp') }}">
+                    <img class="member-avatar" src="{{ get_url(path='banda/adrian.png') }}" alt="Adri" loading="lazy" decoding="async" width="850" height="884">
+                </picture>
                 <h3>Adri</h3>
                 <p>{% if lang == "en" %}Drums{% else %}Batería{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->
             </div>
             <div class="member" data-member="darwin" tabindex="0" role="button" aria-label="{% if lang == 'en' %}View Darwin's profile{% else %}Ver perfil de Darwin{% endif %}">
-                <img class="member-avatar" src="{{ get_url(path='banda/darwin.png') }}" alt="Darwin" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='banda/darwin.webp') }}">
+                    <img class="member-avatar" src="{{ get_url(path='banda/darwin.png') }}" alt="Darwin" loading="lazy" decoding="async" width="1224" height="1324">
+                </picture>
                 <h3>Darwin</h3>
                 <p>{% if lang == "en" %}Guitar and Backing Vocals{% else %}Guitarra y Coros{% endif %}</p>
                 <!-- <span class="member-expand">+</span> -->

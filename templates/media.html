@@ -194,7 +194,10 @@
         <h2>{% if lang == "en" %}Concerts{% else %}Conciertos{% endif %}</h2>
         <div class="gallery gallery-large">
             <a href="{{ get_url(path='conciertos/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-                <img src="{{ get_url(path='conciertos/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='conciertos/conciertos-25.webp') }}">
+                    <img src="{{ get_url(path='conciertos/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy" decoding="async" width="1080" height="1350">
+                </picture>
             </a>
         </div>
     </section>
