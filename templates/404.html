@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Teina</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='imgs/favicon.png') }}">
+    <style>
+        :root {
+            --bg: #f9f5f0;
+            --text: #3a3530;
+            --muted: #7a6a58;
+            --border: #d5c9b8;
+            --btn-bg: #2a2520;
+            --btn-text: #f9f5f0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1816;
+                --text: #e8e4e0;
+                --muted: #9a9692;
+                --border: #3a3836;
+                --btn-bg: #e8e4e0;
+                --btn-text: #1a1816;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Georgia", serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .container { max-width: 460px; }
+        h1 { font-size: 5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        p { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6; }
+        .links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: var(--btn-bg);
+            color: var(--btn-text);
+        }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover { border-color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Esta pagina no existe. Vuelve al inicio o contactanos.</p>
+        <div class="links">
+            <a href="/" class="btn-primary">Inicio</a>
+            <a href="/contacto/" class="btn-secondary">Contacto</a>
+        </div>
+    </div>
+</body>
+</html>

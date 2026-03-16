@@ -1,0 +1,17 @@
+{
+    "name": "Teina - Indie Pop Rock",
+    "short_name": "Teina",
+    "description": "Banda de indie pop rock de Calasparra, Murcia",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f9f5f0",
+    "theme_color": "#f9f5f0",
+    "icons": [
+        {
+            "src": "/imgs/teina-logo.png",
+            "sizes": "945x945",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
