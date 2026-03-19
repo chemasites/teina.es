@@ -4,7 +4,7 @@ public/
 # IDE
 .idea/
 .vscode/
-.claude/
+.claude/settings.local.json
 *.swp
 *.swo
 
