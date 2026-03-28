@@ -1503,6 +1503,25 @@ html:not([data-theme="light"]) .theme-toggle button {
     opacity: 0.5;
 }
 
+.event-today {
+    background: var(--accent-hover-strong);
+    border-left: 3px solid var(--accent-dark);
+    grid-template-columns: auto 80px 1fr auto auto;
+}
+
+.event-badge-today {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    background: var(--accent-dark);
+    color: var(--btn-primary-text);
+    white-space: nowrap;
+    line-height: 1;
+}
+
 .event-badge {
     font-size: 0.75rem;
     font-weight: 600;

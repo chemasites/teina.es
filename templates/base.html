@@ -196,8 +196,16 @@
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         document.querySelectorAll('.event-item[data-date]').forEach(item => {
-            if (new Date(item.dataset.date) < today) {
+            const eventDate = new Date(item.dataset.date);
+            eventDate.setHours(0, 0, 0, 0);
+            if (eventDate < today) {
                 item.classList.add('event-past');
+            } else if (eventDate.getTime() === today.getTime()) {
+                item.classList.add('event-today');
+                const badge = document.createElement('span');
+                badge.className = 'event-badge-today';
+                badge.textContent = document.documentElement.lang === 'en' ? 'TODAY' : 'HOY';
+                item.prepend(badge);
             }
         });
 
