@@ -16,27 +16,12 @@ zola serve
 
 The site will be available at `http://127.0.0.1:1111/`
 
-## Build
-
-Generate the static site:
-
-```bash
-zola build
-```
-
-The output will be in the `public/` directory.
-
 ## Deployment
 
 The site is automatically deployed to GitHub Pages via GitHub Actions on push to `main`.
 
-## Structure
+## Scripts
 
-```
-├── content/          # Markdown content
-├── sass/             # SCSS styles
-├── static/           # Static assets (images, fonts)
-├── templates/        # HTML templates
-├── config.toml       # Zola configuration
-└── public/           # Generated site (gitignored)
-```
+Maintenance scripts live in [`scripts/`](scripts/README.md). Notably
+`scripts/concert.py` adds, removes, updates and lists concerts in the
+homepage. See [scripts/README.md](scripts/README.md) for usage.
