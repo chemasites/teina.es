@@ -118,6 +118,83 @@ def append_to_gallery(entries: list[str]) -> None:
     TEMPLATE.write_text(updated, encoding='utf-8')
 
 
+GALLERY_ENTRY_RE = re.compile(
+    r"            <a href=\"\{\{ get_url\(path='media/([^']+)'\) \}\}\" "
+    r"class=\"gallery-item\" data-lightbox>\n"
+    r"                <img data-src=\"\{\{ get_url\(path='media/thumbs/[^']+'\) \}\}\" "
+    r"alt=\"\{% if lang == 'en' %\}([^{]*?)\{% else %\}([^{]*?)\{% endif %\}\" "
+    r"loading=\"lazy\" decoding=\"async\">\n"
+    r"            </a>"
+)
+
+
+def parse_gallery_entries() -> list[tuple[str, str, str]]:
+    content = TEMPLATE.read_text(encoding='utf-8')
+    m = GALLERY_RE.search(content)
+    if not m:
+        sys.exit("error: #galeria gallery-large block not found")
+    body = m.group(2)
+    return [(em.group(1), em.group(3), em.group(2))
+            for em in GALLERY_ENTRY_RE.finditer(body)]
+
+
+def cmd_list(_args: argparse.Namespace) -> None:
+    entries = parse_gallery_entries()
+    rows = [(str(i + 1), name, alt_es, alt_en)
+            for i, (name, alt_es, alt_en) in enumerate(entries)]
+    headers = ("ID", "FILE", "ALT (ES)", "ALT (EN)")
+    widths = [max(len(h), max((len(r[i]) for r in rows), default=0))
+              for i, h in enumerate(headers)]
+    fmt = "  ".join("{:<" + str(w) + "}" for w in widths)
+    print(fmt.format(*headers))
+    print("  ".join("-" * w for w in widths))
+    for r in rows:
+        print(fmt.format(*r))
+
+
+def remove_from_gallery(name: str) -> bool:
+    content = TEMPLATE.read_text(encoding='utf-8')
+    m = GALLERY_RE.search(content)
+    if not m:
+        sys.exit("error: #galeria gallery-large block not found")
+    body = m.group(2)
+    new_body, n = re.subn(
+        r'\n?            <a href="\{\{ get_url\(path=\''
+        + re.escape('media/' + name)
+        + r"'\) \}\}\" class=\"gallery-item\" data-lightbox>\n"
+          r"                <img data-src=\"[^\"]+\" alt=\"[^\"]+\" "
+          r"loading=\"lazy\" decoding=\"async\">\n"
+          r"            </a>",
+        '', body)
+    if n == 0:
+        return False
+    updated = content[:m.start()] + m.group(1) + new_body + m.group(3) + content[m.end():]
+    TEMPLATE.write_text(updated, encoding='utf-8')
+    return True
+
+
+def cmd_remove(args: argparse.Namespace) -> None:
+    entries = parse_gallery_entries()
+    if args.id is not None:
+        if args.id < 1 or args.id > len(entries):
+            sys.exit(f"error: invalid id {args.id}; valid 1..{len(entries)}")
+        name = entries[args.id - 1][0]
+    elif args.name:
+        name = args.name
+    else:
+        sys.exit("error: pass --id or --name")
+    removed_tpl = remove_from_gallery(name)
+    stem = Path(name).stem
+    removed_files = []
+    if not args.keep_files:
+        for p in (MEDIA_DIR / name, THUMBS_DIR / (stem + '.jpg')):
+            if p.exists():
+                p.unlink()
+                removed_files.append(p.name)
+    print(f"removed: {name} (template={removed_tpl}, "
+          f"files={','.join(removed_files) or 'none'})")
+
+
 def cmd_import(args: argparse.Namespace) -> None:
     src_dir = Path(args.src).expanduser()
     if not src_dir.is_dir():
@@ -194,6 +271,16 @@ def main() -> None:
     i.add_argument('--dry-run', action='store_true',
                    help='print actions without writing')
     i.set_defaults(func=cmd_import)
+
+    ls = sub.add_parser('list', help='list gallery entries')
+    ls.set_defaults(func=cmd_list)
+
+    rm = sub.add_parser('remove', help='remove a gallery entry by --id or --name')
+    rm.add_argument('--id', type=int, help='ID from `list`')
+    rm.add_argument('--name', help='filename (e.g. 01-primera.jpg)')
+    rm.add_argument('--keep-files', action='store_true',
+                    help='remove template entry only; keep image + thumb')
+    rm.set_defaults(func=cmd_remove)
 
     args = p.parse_args()
     args.func(args)

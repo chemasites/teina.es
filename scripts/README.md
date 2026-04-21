@@ -107,5 +107,52 @@ python3 scripts/media.py import --alt-es "Concierto Murcia" \
 python3 scripts/media.py import --move
 ```
 
-After importing, run `zola build` and consider updating
-`templates/sitemap.xml` if the images should appear in the sitemap.
+### List gallery entries
+
+```bash
+python3 scripts/media.py list
+```
+
+Prints `ID`, `FILE`, `ALT (ES)`, `ALT (EN)` for every entry in the `#galeria`
+section of `templates/media.html`. Use the `ID` to target a row in `remove`.
+
+### Remove a gallery entry
+
+By file name:
+
+```bash
+python3 scripts/media.py remove --name 27.jpg
+```
+
+By ID (see `list`):
+
+```bash
+python3 scripts/media.py remove --id 30
+```
+
+Deletes `static/media/<name>`, `static/media/thumbs/<stem>.jpg`, and the
+`<a>` entry in `templates/media.html`. Use `--keep-files` to only remove
+the template entry.
+
+After importing or removing, run `scripts/sitemap.py regen` to sync the
+sitemap, then `zola build` to verify.
+
+## `sitemap.py`
+
+Regenerates the `/media/` and `/en/media/` image and video blocks in
+`templates/sitemap.xml` from the current `templates/media.html`. Other
+sections (homepage, banda) are left untouched.
+
+Titles come from the `<img alt>` text in the gallery, captions use a
+fixed boilerplate, video titles come from `<lite-youtube data-title>`,
+and video descriptions are templated per locale.
+
+```bash
+# Preview without writing
+python3 scripts/sitemap.py regen --dry-run
+
+# Regenerate
+python3 scripts/sitemap.py regen
+```
+
+Run it any time you add or remove media gallery entries.
