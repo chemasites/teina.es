@@ -70,3 +70,42 @@ python3 scripts/concert.py update --id 5 --private
 ```
 
 After any change run `zola build` to verify.
+
+## `media.py`
+
+Copies and optimizes images from `local/imgs/` into the media gallery:
+
+- Resizes full image to a max width (default 2048px, quality 75).
+- Generates a JPEG thumbnail (default 600px, quality 70) in
+  `static/media/thumbs/` (matches existing gallery sizes).
+- Converts HEIC/WebP/JPEG to `.jpg`; keeps `.png` as-is.
+- Sanitizes filenames (lowercase, safe chars).
+- Strips EXIF metadata (needs `exiftool`; optional).
+- Appends a gallery entry in `templates/media.html` (section `#galeria`)
+  with auto-incrementing alt text (`Foto Teína N` / `Teína Photo N`).
+
+Requires `sips` (macOS built-in).
+
+### Drop files in `local/imgs/` and import
+
+```bash
+# Dry-run first to preview
+python3 scripts/media.py import --dry-run
+
+# Real import
+python3 scripts/media.py import
+
+# Custom source dir (positional), sizes and quality
+python3 scripts/media.py import ~/Pictures/teina \
+  --max 1800 --thumb 500 --quality 80 --thumb-quality 75
+
+# Custom alt text for this batch
+python3 scripts/media.py import --alt-es "Concierto Murcia" \
+  --alt-en "Murcia Concert"
+
+# Move sources out of local/imgs/ after success
+python3 scripts/media.py import --move
+```
+
+After importing, run `zola build` and consider updating
+`templates/sitemap.xml` if the images should appear in the sitemap.
