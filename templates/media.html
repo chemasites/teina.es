@@ -73,6 +73,56 @@
     <section class="section section-alt" id="galeria">
         <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
         <div class="gallery gallery-large">
+            <!-- Stage wide shots -->
+            <a href="{{ get_url(path='media/banda-confeti-final.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/banda-confeti-final.jpg') }}" alt="{% if lang == 'en' %}Teína on stage with confetti rain and crowd{% else %}Teína en escenario con lluvia de confeti y público{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/banda-completa-luces-azules.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/banda-completa-luces-azules.jpg') }}" alt="{% if lang == 'en' %}Full band on stage with blue lights and Teína logo{% else %}Banda completa en escenario con luces azules y logo Teína{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/banda-foto-publico-grande.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/banda-foto-publico-grande.jpg') }}" alt="{% if lang == 'en' %}Band photo with large crowd behind{% else %}Foto de banda con gran público al fondo{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/banda-escenario-noche-atras.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/banda-escenario-noche-atras.jpg') }}" alt="{% if lang == 'en' %}Stage view from drums at night{% else %}Vista del escenario desde la batería por la noche{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/duo-escenario-luces-azules.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/duo-escenario-luces-azules.jpg') }}" alt="{% if lang == 'en' %}Duo on stage with blue lights{% else %}Dúo en escenario con luces azules{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <!-- Performer closeups -->
+            <a href="{{ get_url(path='media/juanjo-apuntando-publico.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/juanjo-apuntando-publico.jpg') }}" alt="{% if lang == 'en' %}Juanjo pointing at the crowd from stage{% else %}Juanjo apuntando al público desde el escenario{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/juanjo-darwin-escenario.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/juanjo-darwin-escenario.jpg') }}" alt="{% if lang == 'en' %}Juanjo and Darwin performing on stage{% else %}Juanjo y Darwin actuando en escenario{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/aj-bajo-luces-rojas.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/aj-bajo-luces-rojas.jpg') }}" alt="{% if lang == 'en' %}AJ Ruíz on bass with red stage lights{% else %}AJ Ruíz al bajo con luces rojas en escenario{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/adri-bateria-accion.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/adri-bateria-accion.jpg') }}" alt="{% if lang == 'en' %}Adri playing drums live{% else %}Adri tocando la batería en directo{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/darwin-guitarra-silueta.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/darwin-guitarra-silueta.jpg') }}" alt="{% if lang == 'en' %}Darwin silhouette playing guitar on stage{% else %}Darwin en silueta tocando guitarra en escenario{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <!-- Group shots -->
+            <a href="{{ get_url(path='media/banda-selfie-publico-fiesta.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/banda-selfie-publico-fiesta.jpg') }}" alt="{% if lang == 'en' %}Band selfie with crowd at festival{% else %}Selfie de la banda con el público en las fiestas{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/banda-camerino-byn.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/banda-camerino-byn.jpg') }}" alt="{% if lang == 'en' %}Band laughing in dressing room, black and white{% else %}Banda riendo en el camerino en blanco y negro{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <!-- Backstage -->
+            <a href="{{ get_url(path='media/banda-camerino-invitados.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/banda-camerino-invitados.jpg') }}" alt="{% if lang == 'en' %}Band with guests backstage{% else %}Banda con invitados en el camerino{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/brindis-camerino.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/brindis-camerino.jpg') }}" alt="{% if lang == 'en' %}Toast backstage before the concert{% else %}Brindis en el camerino antes del concierto{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <a href="{{ get_url(path='media/backstage-saludo.jpg') }}" class="gallery-item" data-lightbox>
+                <img data-src="{{ get_url(path='media/thumbs/backstage-saludo.jpg') }}" alt="{% if lang == 'en' %}Musicians greeting backstage{% else %}Saludo entre músicos en el backstage{% endif %}" loading="lazy" decoding="async">
+            </a>
+            <!-- Previous library -->
             <a href="{{ get_url(path='media/01-primera.jpg') }}" class="gallery-item" data-lightbox>
                 <img data-src="{{ get_url(path='media/thumbs/01-primera.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 1{% else %}Foto Teína 1{% endif %}" loading="lazy" decoding="async">
             </a>
@@ -186,51 +236,6 @@
             </a>
             <a href="{{ get_url(path='media/adrian1.png') }}" class="gallery-item" data-lightbox>
                 <img data-src="{{ get_url(path='media/thumbs/adrian1.jpg') }}" alt="{% if lang == 'en' %}Adri - Drums{% else %}Adri - Batería{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.44-1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.44-1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 32{% else %}Foto Teína 32{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.44-2.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.44-2.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 33{% else %}Foto Teína 33{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.44-3.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.44-3.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 34{% else %}Foto Teína 34{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.44.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.44.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 35{% else %}Foto Teína 35{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.45-1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.45-1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 36{% else %}Foto Teína 36{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.45-2.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.45-2.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 37{% else %}Foto Teína 37{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.45-3.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.45-3.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 38{% else %}Foto Teína 38{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.45-4.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.45-4.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 39{% else %}Foto Teína 39{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.45-5.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.45-5.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 40{% else %}Foto Teína 40{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.45-6.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.45-6.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 41{% else %}Foto Teína 41{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.45.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.45.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 42{% else %}Foto Teína 42{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.47-1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.47-1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 43{% else %}Foto Teína 43{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.47.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.47.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 44{% else %}Foto Teína 44{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.48-1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.48-1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 45{% else %}Foto Teína 45{% endif %}" loading="lazy" decoding="async">
-            </a>
-            <a href="{{ get_url(path='media/whatsapp-image-2026-05-15-at-16.38.48.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/whatsapp-image-2026-05-15-at-16.38.48.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 46{% else %}Foto Teína 46{% endif %}" loading="lazy" decoding="async">
             </a>
         </div>
     </section>

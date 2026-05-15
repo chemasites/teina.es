@@ -102,6 +102,81 @@
         {# Media page images and videos - Spanish #}
         {% if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink %}
         <image:image>
+            <image:loc>https://teina.es/media/banda-confeti-final.jpg</image:loc>
+            <image:title>Teína en escenario con lluvia de confeti y público</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
+            <image:title>Banda completa en escenario con luces azules y logo Teína</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-foto-publico-grande.jpg</image:loc>
+            <image:title>Foto de banda con gran público al fondo</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-escenario-noche-atras.jpg</image:loc>
+            <image:title>Vista del escenario desde la batería por la noche</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/duo-escenario-luces-azules.jpg</image:loc>
+            <image:title>Dúo en escenario con luces azules</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/juanjo-apuntando-publico.jpg</image:loc>
+            <image:title>Juanjo apuntando al público desde el escenario</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/juanjo-darwin-escenario.jpg</image:loc>
+            <image:title>Juanjo y Darwin actuando en escenario</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/aj-bajo-luces-rojas.jpg</image:loc>
+            <image:title>AJ Ruíz al bajo con luces rojas en escenario</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/adri-bateria-accion.jpg</image:loc>
+            <image:title>Adri tocando la batería en directo</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/darwin-guitarra-silueta.jpg</image:loc>
+            <image:title>Darwin en silueta tocando guitarra en escenario</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-selfie-publico-fiesta.jpg</image:loc>
+            <image:title>Selfie de la banda con el público en las fiestas</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-camerino-byn.jpg</image:loc>
+            <image:title>Banda riendo en el camerino en blanco y negro</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-camerino-invitados.jpg</image:loc>
+            <image:title>Banda con invitados en el camerino</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/brindis-camerino.jpg</image:loc>
+            <image:title>Brindis en el camerino antes del concierto</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/backstage-saludo.jpg</image:loc>
+            <image:title>Saludo entre músicos en el backstage</image:title>
+            <image:caption>Teína, banda de indie pop rock</image:caption>
+        </image:image>
+        <image:image>
             <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
             <image:title>Foto Teína 1</image:title>
             <image:caption>Teína, banda de indie pop rock</image:caption>
@@ -291,81 +366,6 @@
             <image:title>Adri - Batería</image:title>
             <image:caption>Teína, banda de indie pop rock</image:caption>
         </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44-1.jpg</image:loc>
-            <image:title>Foto Teína 32</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44-2.jpg</image:loc>
-            <image:title>Foto Teína 33</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44-3.jpg</image:loc>
-            <image:title>Foto Teína 34</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44.jpg</image:loc>
-            <image:title>Foto Teína 35</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-1.jpg</image:loc>
-            <image:title>Foto Teína 36</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-2.jpg</image:loc>
-            <image:title>Foto Teína 37</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-3.jpg</image:loc>
-            <image:title>Foto Teína 38</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-4.jpg</image:loc>
-            <image:title>Foto Teína 39</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-5.jpg</image:loc>
-            <image:title>Foto Teína 40</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-6.jpg</image:loc>
-            <image:title>Foto Teína 41</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45.jpg</image:loc>
-            <image:title>Foto Teína 42</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.47-1.jpg</image:loc>
-            <image:title>Foto Teína 43</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.47.jpg</image:loc>
-            <image:title>Foto Teína 44</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.48-1.jpg</image:loc>
-            <image:title>Foto Teína 45</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.48.jpg</image:loc>
-            <image:title>Foto Teína 46</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
-        </image:image>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg</video:thumbnail_loc>
             <video:title>Teína - Video Promocional</video:title>
@@ -381,6 +381,81 @@
         {% endif %}
         {# Media page images and videos - English #}
         {% if "/en/media/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/banda-confeti-final.jpg</image:loc>
+            <image:title>Teína on stage with confetti rain and crowd</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
+            <image:title>Full band on stage with blue lights and Teína logo</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-foto-publico-grande.jpg</image:loc>
+            <image:title>Band photo with large crowd behind</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-escenario-noche-atras.jpg</image:loc>
+            <image:title>Stage view from drums at night</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/duo-escenario-luces-azules.jpg</image:loc>
+            <image:title>Duo on stage with blue lights</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/juanjo-apuntando-publico.jpg</image:loc>
+            <image:title>Juanjo pointing at the crowd from stage</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/juanjo-darwin-escenario.jpg</image:loc>
+            <image:title>Juanjo and Darwin performing on stage</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/aj-bajo-luces-rojas.jpg</image:loc>
+            <image:title>AJ Ruíz on bass with red stage lights</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/adri-bateria-accion.jpg</image:loc>
+            <image:title>Adri playing drums live</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/darwin-guitarra-silueta.jpg</image:loc>
+            <image:title>Darwin silhouette playing guitar on stage</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-selfie-publico-fiesta.jpg</image:loc>
+            <image:title>Band selfie with crowd at festival</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-camerino-byn.jpg</image:loc>
+            <image:title>Band laughing in dressing room, black and white</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/banda-camerino-invitados.jpg</image:loc>
+            <image:title>Band with guests backstage</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/brindis-camerino.jpg</image:loc>
+            <image:title>Toast backstage before the concert</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://teina.es/media/backstage-saludo.jpg</image:loc>
+            <image:title>Musicians greeting backstage</image:title>
+            <image:caption>Teína, indie pop rock band</image:caption>
+        </image:image>
         <image:image>
             <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
             <image:title>Teína Photo 1</image:title>
@@ -569,81 +644,6 @@
         <image:image>
             <image:loc>https://teina.es/media/adrian1.png</image:loc>
             <image:title>Adri - Drums</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44-1.jpg</image:loc>
-            <image:title>Teína Photo 32</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44-2.jpg</image:loc>
-            <image:title>Teína Photo 33</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44-3.jpg</image:loc>
-            <image:title>Teína Photo 34</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.44.jpg</image:loc>
-            <image:title>Teína Photo 35</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-1.jpg</image:loc>
-            <image:title>Teína Photo 36</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-2.jpg</image:loc>
-            <image:title>Teína Photo 37</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-3.jpg</image:loc>
-            <image:title>Teína Photo 38</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-4.jpg</image:loc>
-            <image:title>Teína Photo 39</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-5.jpg</image:loc>
-            <image:title>Teína Photo 40</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45-6.jpg</image:loc>
-            <image:title>Teína Photo 41</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.45.jpg</image:loc>
-            <image:title>Teína Photo 42</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.47-1.jpg</image:loc>
-            <image:title>Teína Photo 43</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.47.jpg</image:loc>
-            <image:title>Teína Photo 44</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.48-1.jpg</image:loc>
-            <image:title>Teína Photo 45</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://teina.es/media/whatsapp-image-2026-05-15-at-16.38.48.jpg</image:loc>
-            <image:title>Teína Photo 46</image:title>
             <image:caption>Teína, indie pop rock band</image:caption>
         </image:image>
         <video:video>
