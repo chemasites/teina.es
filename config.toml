@@ -1,6 +1,6 @@
 base_url = "https://teina.es"
 title = "Teína"
-description = "Teína, banda de indie pop-rock con intensidad y personalidad. Versiones reinterpretadas del indie nacional e internacional y canciones propias."
+description = "Teína, banda tributo de indie pop rock en Murcia. Versiones reinterpretadas del indie nacional e internacional y canciones propias. Contratación para eventos, festivales y celebraciones."
 default_language = "es"
 compile_sass = true
 build_search_index = false
@@ -9,8 +9,8 @@ generate_sitemap = true
 
 [extra]
 author = "Teína"
-keywords = "Teína, teina, teina rock, teina banda, banda teina, teina murcia, teina indie, teina música, grupo teina, teina españa, banda indie murcia, grupo rock calasparra, música indie española, rock alternativo murcia, pop rock español, indie español, grupo musical, versiones, conciertos, eventos, festivales"
+keywords = "Teína, teina, teina rock, teina banda, banda teina, teina murcia, teina indie, teina música, grupo teina, teina españa, tributo indie pop rock, banda tributo murcia, tributo pop rock murcia, tributo indie murcia, banda indie murcia, grupo rock calasparra, música indie española, rock alternativo murcia, pop rock español, indie español, grupo musical, versiones, conciertos, eventos, festivales, contratación"
 
 [languages.en]
 title = "Teína"
-description = "Teina, indie pop-rock band with intensity and personality. Reinterpreted covers of national and international indie and original songs."
+description = "Teina, indie pop rock tribute band from Murcia, Spain. Reinterpreted covers of Spanish and international indie, plus original songs. Available for events, festivals and celebrations."

@@ -12,9 +12,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }} | {% if lang == "en" %}Indie Pop Rock Band in Calasparra, Murcia{% else %}Banda de Indie Pop Rock en Calasparra, Murcia{% endif %}{% endblock %}</title>
+    <title>{% block title %}{{ config.title }} — {% if lang == "en" %}Indie Pop Rock Tribute Band in Murcia, Spain{% else %}Tributo Indie Pop Rock en Murcia | Versiones y temas propios{% endif %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
-    <meta name="keywords" content="{% if lang == 'en' %}Teína, teina, teina band, teina rock, teina music, teina spain, teina indie, indie pop rock band, Calasparra, Murcia, Spanish band, covers, concerts, events, festivals, booking, live music Spain{% else %}Teína, teina, teina rock, teina banda, banda teina, teina murcia, teina indie, teina música, grupo teina, teina españa, teina pop rock, teina calasparra, banda indie murcia, grupo rock calasparra, música indie española, banda versiones murcia, rock alternativo murcia, pop rock español, indie español, grupo musical, versiones, conciertos, eventos, festivales, contratación{% endif %}">
+    <meta name="keywords" content="{% if lang == 'en' %}Teína, teina, teina band, teina rock, teina music, teina spain, teina indie, indie pop rock band, tribute band murcia, indie tribute band, indie pop rock tribute, Calasparra, Murcia, Spanish band, covers, concerts, events, festivals, booking, live music Spain{% else %}Teína, teina, teina rock, teina banda, banda teina, teina murcia, teina indie, teina música, grupo teina, teina españa, teina pop rock, teina calasparra, tributo indie, banda tributo murcia, tributo pop rock murcia, tributo indie pop rock, banda indie murcia, grupo rock calasparra, música indie española, banda versiones murcia, rock alternativo murcia, pop rock español, indie español, grupo musical, versiones, conciertos, eventos, festivales, contratación{% endif %}">
     <meta name="author" content="Teína">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -28,7 +28,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
     <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}{% endblock %}">
-    <meta property="og:title" content="{% block og_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Tribute Band in Murcia{% else %}Tributo Indie Pop Rock en Murcia{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
     <meta property="og:image" content="{% block og_image %}{{ get_url(path='media/hero-1200.jpg') }}{% endblock %}">
     <meta property="og:image:width" content="1200">
@@ -40,7 +40,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda de Indie Pop Rock{% endif %}{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Tribute Band in Murcia{% else %}Tributo Indie Pop Rock en Murcia{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock %}">
     <meta name="twitter:image" content="{% block twitter_image %}{{ get_url(path='media/hero-1200.jpg') }}{% endblock %}">
     <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Teína - {% if lang == 'en' %}Indie Pop Rock Band from Calasparra, Murcia{% else %}Banda de Indie Pop Rock de Calasparra, Murcia{% endif %}{% endblock %}">
@@ -107,26 +107,38 @@
         "@type": "MusicGroup",
         "name": "Teína",
         "alternateName": ["Teina", "Teína Band", "Teina Band", "Teína Rock", "Teina Rock"],
-        "description": "{% if lang == 'en' %}Indie pop rock band from Calasparra, Murcia, Spain. The best covers of current indie pop rock and original songs. Available for events, festivals and celebrations.{% else %}Teína es una banda de indie pop rock de Calasparra, Murcia, España. Las mejores versiones del indie pop rock actual y temas propios. Disponibles para eventos, festivales y celebraciones.{% endif %}",
+        "description": "{% if lang == 'en' %}Indie pop rock tribute band from Calasparra, Murcia, Spain. The best reinterpreted covers of current Spanish indie pop rock and original songs. Available for events, festivals and celebrations across the Region of Murcia and Spain.{% else %}Teína es una banda tributo de indie pop rock de Calasparra, Murcia, España. Las mejores versiones reinterpretadas del indie pop rock nacional actual y temas propios. Disponibles para eventos, festivales y celebraciones en la Región de Murcia y toda España.{% endif %}",
         "url": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}",
         "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
         "image": "{{ get_url(path='media/hero-1200.jpg') }}",
         "numberOfMembers": 6,
-        "genre": ["Indie Pop", "Pop Rock", "Rock", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}", "{% if lang == 'en' %}Alternative Rock{% else %}Rock Alternativo{% endif %}"],
+        "genre": ["Indie Pop Rock", "Tributo", "Pop Rock Español", "Indie Pop", "Pop Rock", "Rock", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}", "{% if lang == 'en' %}Alternative Rock{% else %}Rock Alternativo{% endif %}"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Calasparra",
+            "addressRegion": "Región de Murcia",
+            "addressCountry": "ES"
+        },
         "foundingLocation": {
             "@type": "Place",
             "name": "Calasparra, Murcia, {% if lang == 'en' %}Spain{% else %}España{% endif %}",
             "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Calasparra",
-                "addressRegion": "Murcia",
-                "addressCountry": "{% if lang == 'en' %}Spain{% else %}ES{% endif %}"
+                "addressRegion": "Región de Murcia",
+                "addressCountry": "ES"
             }
         },
-        "areaServed": {
-            "@type": "Country",
-            "name": "{% if lang == 'en' %}Spain{% else %}España{% endif %}"
-        },
+        "areaServed": [
+            {
+                "@type": "AdministrativeArea",
+                "name": "Región de Murcia"
+            },
+            {
+                "@type": "Country",
+                "name": "{% if lang == 'en' %}Spain{% else %}España{% endif %}"
+            }
+        ],
         "sameAs": [
             "https://instagram.com/teinaband",
             "https://www.youtube.com/@teina8932",
