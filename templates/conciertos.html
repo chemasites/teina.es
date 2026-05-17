@@ -171,7 +171,7 @@
 <main class="page-content conciertos-page">
     <header class="page-header">
         <h1>{{ section.title }}</h1>
-        <p class="page-subtitle">{% if lang == "en" %}Dates, venues and tickets{% else %}Fechas, localidades y entradas{% endif %}</p>
+        <p class="page-subtitle">{% if lang == "en" %}Upcoming dates, venues and tickets to see us live{% else %}Próximas fechas, localidades y entradas para verla en directo{% endif %}</p>
     </header>
 
     <section class="section" id="conciertos">
@@ -312,26 +312,16 @@
     </section>
 
     <section class="section cta-section">
-        <div class="contact-container">
-            <div class="contact-header">
-                {% if lang == "en" %}
-                <h2>Organizing an event?</h2>
-                <p>Let's talk and make it unforgettable</p>
-                {% else %}
-                <h2>¿Organizas un evento?</h2>
-                <p>Hablemos y hagamos que sea inolvidable</p>
-                {% endif %}
-            </div>
-            <div class="cta-buttons">
-                <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    {% if lang == "en" %}Contact{% else %}Contactar{% endif %}
-                </a>
-                <a href="tel:+34661892704" class="btn btn-secondary">
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    661 892 704
-                </a>
-            </div>
+        <h2>{% if lang == "en" %}Organizing an event?{% else %}¿Organizas un evento?{% endif %}</h2>
+        <div class="cta-buttons">
+            <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                {% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}
+            </a>
+            <a href="tel:+34661892704" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                661 892 704
+            </a>
         </div>
     </section>
 </main>
