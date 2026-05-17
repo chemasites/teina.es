@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     {% for sitemap_entry in entries %}
     <url>
         <loc>{{ sitemap_entry.permalink | safe }}</loc>
-        <lastmod>{% if sitemap_entry.updated %}{{ sitemap_entry.updated | date(format="%Y-%m-%d") }}{% elif sitemap_entry.date %}{{ sitemap_entry.date | date(format="%Y-%m-%d") }}{% else %}{{ now() | date(format="%Y-%m-%d") }}{% endif %}</lastmod>
-        <changefreq>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}weekly{% else %}monthly{% endif %}</changefreq>
-        <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "musica" in sitemap_entry.permalink or "banda" in sitemap_entry.permalink or "contacto" in sitemap_entry.permalink or "media" in sitemap_entry.permalink or "tributo" in sitemap_entry.permalink or "conciertos" in sitemap_entry.permalink %}0.8{% else %}0.5{% endif %}</priority>
+        <lastmod>{% if sitemap_entry.updated %}{{ sitemap_entry.updated | date(format="%Y-%m-%dT%H:%M:%S+02:00") }}{% elif sitemap_entry.date %}{{ sitemap_entry.date | date(format="%Y-%m-%dT%H:%M:%S+02:00") }}{% else %}{{ now() | date(format="%Y-%m-%dT%H:%M:%S+02:00") }}{% endif %}</lastmod>
+        <changefreq>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") or "conciertos" in sitemap_entry.permalink %}weekly{% else %}monthly{% endif %}</changefreq>
+        <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "conciertos" in sitemap_entry.permalink or "tributo" in sitemap_entry.permalink %}0.9{% elif "banda" in sitemap_entry.permalink or "musica" in sitemap_entry.permalink or "media" in sitemap_entry.permalink %}0.8{% elif "contacto" in sitemap_entry.permalink %}0.7{% else %}0.5{% endif %}</priority>
+        {# hreflang alternate links #}
+        {% if "/en/" in sitemap_entry.permalink %}
+        <xhtml:link rel="alternate" hreflang="es" href="{{ sitemap_entry.permalink | replace(from="teina.es/en/", to="teina.es/") | safe }}"/>
+        <xhtml:link rel="alternate" hreflang="en" href="{{ sitemap_entry.permalink | safe }}"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ sitemap_entry.permalink | replace(from="teina.es/en/", to="teina.es/") | safe }}"/>
+        {% else %}
+        <xhtml:link rel="alternate" hreflang="es" href="{{ sitemap_entry.permalink | safe }}"/>
+        <xhtml:link rel="alternate" hreflang="en" href="{{ sitemap_entry.permalink | replace(from="teina.es/", to="teina.es/en/") | safe }}"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ sitemap_entry.permalink | safe }}"/>
+        {% endif %}
         {# Homepage images #}
         {% if sitemap_entry.permalink is ending_with("teina.es/") %}
         <image:image>
@@ -97,6 +109,38 @@
             <image:loc>https://teina.es/banda/darwin.png</image:loc>
             <image:title>Darwin - Guitar and Backing Vocals of Teína</image:title>
             <image:caption>Darwin, guitarist and backing vocalist of Teína band</image:caption>
+        </image:image>
+        {% endif %}
+        {# Tributo page images - Spanish #}
+        {% if sitemap_entry.permalink is ending_with("/tributo/") and not "/en/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
+            <image:title>Teína - Banda tributo de indie pop rock en Murcia</image:title>
+            <image:caption>Teína en directo, banda tributo de indie pop rock en Murcia</image:caption>
+        </image:image>
+        {% endif %}
+        {# Tributo page images - English #}
+        {% if "/en/tributo/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
+            <image:title>Teína - Indie pop rock tribute band in Murcia</image:title>
+            <image:caption>Teína live, indie pop rock tribute band in Murcia</image:caption>
+        </image:image>
+        {% endif %}
+        {# Conciertos page images - Spanish #}
+        {% if sitemap_entry.permalink is ending_with("/conciertos/") and not "/en/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
+            <image:title>Próximos conciertos de Teína</image:title>
+            <image:caption>Calendario de próximos conciertos de Teína, banda tributo de indie pop rock en Murcia</image:caption>
+        </image:image>
+        {% endif %}
+        {# Conciertos page images - English #}
+        {% if "/en/conciertos/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
+            <image:title>Upcoming Teína concerts</image:title>
+            <image:caption>Upcoming concerts calendar for Teína, indie pop rock tribute band in Murcia</image:caption>
         </image:image>
         {% endif %}
         {# Media page images and videos - Spanish #}

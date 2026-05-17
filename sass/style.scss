@@ -174,7 +174,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2rem;
+    padding: 0.65rem 2rem;
     background: transparent;
     z-index: 1000;
     border-bottom: 1px solid transparent;
@@ -218,13 +218,13 @@ body {
         }
 
         .nav-cta-item {
-            margin-left: 0.5rem;
+            margin-left: 0.75rem;
 
             a.nav-cta {
                 background: var(--accent-dark);
                 color: var(--btn-primary-text);
                 font-weight: 600;
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 1.25rem;
                 border-radius: 6px;
                 border: 1px solid var(--accent-dark);
                 transition: background 0.2s ease, transform 0.15s ease;
@@ -333,7 +333,7 @@ html:not([data-theme="light"]) .theme-toggle button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 4rem;
+    padding-top: 5rem;
     border-bottom: 1px solid var(--border-color);
 
     .hero-logo {
@@ -345,31 +345,31 @@ html:not([data-theme="light"]) .theme-toggle button {
     }
 
     .hero-content {
-        margin-top: 2rem;
-        padding: 0 2rem 4rem;
-        max-width: 600px;
+        margin-top: 2.5rem;
+        padding: 0 2rem 5rem;
+        max-width: 640px;
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: clamp(2.25rem, 5vw, 3.25rem);
         font-weight: 700;
         margin-bottom: 0.5rem;
         letter-spacing: 0.1rem;
     }
 
     .tagline {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         letter-spacing: 0.25rem;
         text-transform: uppercase;
         color: var(--text-faint);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.75rem;
     }
 
     .hero-description {
         font-size: 1.1rem;
         color: var(--text-secondary);
-        margin-bottom: 2rem;
-        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        line-height: 1.7;
     }
 
     .hero-buttons {
@@ -385,7 +385,7 @@ html:not([data-theme="light"]) .theme-toggle button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 2rem;
+    padding: 0.9rem 2.25rem;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -424,15 +424,15 @@ html:not([data-theme="light"]) .theme-toggle button {
 
 // Sections
 .section {
-    padding: 5rem 2rem;
+    padding: 4.5rem 2rem;
     max-width: 1000px;
     margin: 0 auto;
 
     h2 {
-        font-size: 2rem;
+        font-size: clamp(1.6rem, 3vw, 2rem);
         font-weight: 400;
-        letter-spacing: 0.1rem;
-        margin-bottom: 1.5rem;
+        letter-spacing: 0.08rem;
+        margin-bottom: 1.25rem;
         text-align: center;
         color: var(--accent-dark);
 
@@ -454,9 +454,10 @@ html:not([data-theme="light"]) .theme-toggle button {
     .section-intro {
         text-align: center;
         color: var(--text-secondary);
-        max-width: 700px;
-        margin: 0 auto 3rem;
+        max-width: 680px;
+        margin: 0 auto 2.5rem;
         font-size: 1.05rem;
+        line-height: 1.75;
     }
 
     .section-cta {
@@ -464,7 +465,7 @@ html:not([data-theme="light"]) .theme-toggle button {
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         color: var(--text-muted);
         font-size: 0.9rem;
         letter-spacing: 0.1rem;
@@ -787,7 +788,7 @@ html:not([data-theme="light"]) .theme-toggle button {
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1.75rem;
 }
 
 .card {
@@ -1045,14 +1046,14 @@ html:not([data-theme="light"]) .theme-toggle button {
 // Footer
 .footer {
     border-top: 1px solid var(--border-color);
-    padding: 4rem 2rem 2rem;
+    padding: 3.5rem 2rem 2rem;
 
     .footer-content {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 3rem;
+        gap: 2.5rem;
         max-width: 1000px;
-        margin: 0 auto 3rem;
+        margin: 0 auto 2.5rem;
     }
 
     .footer-col {
@@ -1798,15 +1799,15 @@ html:not([data-theme="light"]) .theme-toggle button {
 // Page Header (unified for all inner pages)
 .page-header {
     text-align: center;
-    padding: 4rem 2rem 2rem;
+    padding: 4.5rem 2rem 2.5rem;
     border-bottom: 1px solid var(--border-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 
     h1 {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 4vw, 2.75rem);
         font-weight: 400;
         color: var(--accent-dark);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
         letter-spacing: 0.05rem;
     }
 }
@@ -1814,7 +1815,8 @@ html:not([data-theme="light"]) .theme-toggle button {
 .page-subtitle {
     color: var(--text-subtle);
     font-size: 1.1rem;
-    max-width: 500px;
+    line-height: 1.65;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -1836,7 +1838,7 @@ html:not([data-theme="light"]) .theme-toggle button {
 
 // Page Content (inner pages container)
 .page-content {
-    padding-top: 5rem;
+    padding-top: 5.5rem;
 
     // Default styles for simple pages (legal, etc.)
     &:not(.banda-page):not(.musica-page):not(.media-page):not(.contacto-page):not(.tributo-page):not(.conciertos-page) {
@@ -2161,7 +2163,7 @@ lite-youtube {
     }
 
     .section {
-        padding: 3rem 1.5rem;
+        padding: 3.5rem 1.5rem;
 
         h2 {
             font-size: 1.6rem;
@@ -2183,7 +2185,7 @@ lite-youtube {
     }
 
     .page-header {
-        padding: 3rem 1.5rem 1.5rem;
+        padding: 3.5rem 1.5rem 2rem;
 
         h1 {
             font-size: 2rem;

@@ -1,6 +1,7 @@
 +++
 title = "Legal Notice and Privacy"
 description = "Legal notice, privacy policy and data protection of the Teína website, music band from Calasparra, Murcia."
+updated = "2026-05-17"
 +++
 
 ## Site Owner
