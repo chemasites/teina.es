@@ -81,7 +81,7 @@
 
     <!-- Preload critical resources -->
     <link rel="preload" href="{{ get_url(path='style.css') }}" as="style">
-    <link rel="preload" href="{{ get_url(path='imgs/teina-logo.png') }}" as="image" fetchpriority="high">
+    {% block preload %}{% endblock %}
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
