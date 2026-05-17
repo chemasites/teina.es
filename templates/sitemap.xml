@@ -7,7 +7,7 @@
         <loc>{{ sitemap_entry.permalink | safe }}</loc>
         <lastmod>{% if sitemap_entry.updated %}{{ sitemap_entry.updated | date(format="%Y-%m-%d") }}{% elif sitemap_entry.date %}{{ sitemap_entry.date | date(format="%Y-%m-%d") }}{% else %}{{ now() | date(format="%Y-%m-%d") }}{% endif %}</lastmod>
         <changefreq>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}weekly{% else %}monthly{% endif %}</changefreq>
-        <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "musica" in sitemap_entry.permalink or "banda" in sitemap_entry.permalink or "contacto" in sitemap_entry.permalink or "media" in sitemap_entry.permalink %}0.8{% else %}0.5{% endif %}</priority>
+        <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "musica" in sitemap_entry.permalink or "banda" in sitemap_entry.permalink or "contacto" in sitemap_entry.permalink or "media" in sitemap_entry.permalink or "tributo" in sitemap_entry.permalink or "conciertos" in sitemap_entry.permalink %}0.8{% else %}0.5{% endif %}</priority>
         {# Homepage images #}
         {% if sitemap_entry.permalink is ending_with("teina.es/") %}
         <image:image>

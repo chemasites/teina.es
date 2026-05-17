@@ -217,6 +217,26 @@ body {
             }
         }
 
+        .nav-cta-item {
+            margin-left: 0.5rem;
+
+            a.nav-cta {
+                background: var(--accent-dark);
+                color: var(--btn-primary-text);
+                font-weight: 600;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                border: 1px solid var(--accent-dark);
+                transition: background 0.2s ease, transform 0.15s ease;
+
+                &:hover {
+                    background: var(--btn-primary-hover, var(--accent-dark));
+                    color: var(--btn-primary-text);
+                    transform: translateY(-1px);
+                }
+            }
+        }
+
         .lang-switcher,
         .theme-toggle {
             margin-left: 0.25rem;
@@ -2080,6 +2100,11 @@ lite-youtube {
             a {
                 font-size: 0.8rem;
                 padding: 0.4rem 0.6rem;
+            }
+
+            .nav-cta-item a.nav-cta {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.78rem;
             }
 
             .lang-switcher {

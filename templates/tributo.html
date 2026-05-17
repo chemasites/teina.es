@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | Teína{% endblock %}
+
+{% block description %}{{ section.description }}{% endblock %}
+
+{% block canonical %}{{ section.permalink }}{% endblock %}
+
+{% block og_url %}{{ section.permalink }}{% endblock %}
+{% block og_title %}{{ section.title }} | Teína{% endblock %}
+{% block og_description %}{{ section.description }}{% endblock %}
+
+{% block twitter_title %}{{ section.title }} | Teína{% endblock %}
+{% block twitter_description %}{{ section.description }}{% endblock %}
+
+{% block extra_schema %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "{% if lang == 'en' %}Home{% else %}Inicio{% endif %}",
+            "item": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ section.title }}",
+            "item": "{{ section.permalink }}"
+        }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Teína",
+    "alternateName": ["Teina", "Teína Band", "Teina Band"],
+    "description": "{{ section.description }}",
+    "url": "{{ config.base_url }}",
+    "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
+    "image": "{{ get_url(path='media/hero-1200.jpg') }}",
+    "genre": ["Indie Pop Rock", "Tributo", "Pop Rock Español", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}"],
+    "foundingLocation": {
+        "@type": "Place",
+        "name": "Calasparra, Murcia, {% if lang == 'en' %}Spain{% else %}España{% endif %}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Calasparra",
+            "addressRegion": "Región de Murcia",
+            "addressCountry": "ES"
+        }
+    },
+    "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Región de Murcia" },
+        { "@type": "Country", "name": "{% if lang == 'en' %}Spain{% else %}España{% endif %}" }
+    ]
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "{% if lang == 'en' %}Is Teína a tribute band?{% else %}¿Teína es una banda tributo?{% endif %}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{% if lang == 'en' %}Yes. Teína is an indie pop rock tribute band based in Murcia, Spain. We reinterpret major Spanish and international indie pop rock songs and also play original tracks.{% else %}Sí. Teína es una banda tributo de indie pop rock con base en Murcia. Reinterpretamos las grandes canciones del indie pop rock nacional e internacional, además de tocar temas propios.{% endif %}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{% if lang == 'en' %}Where is Teína based?{% else %}¿Dónde está la banda Teína?{% endif %}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{% if lang == 'en' %}Calasparra, in the Northwest of the Region of Murcia, Spain. We play across Murcia and bordering regions.{% else %}En Calasparra, en el Noroeste de la Región de Murcia. Actuamos por toda la Región de Murcia y zonas limítrofes.{% endif %}"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "{% if lang == 'en' %}What kind of events does Teína play?{% else %}¿Qué tipo de eventos toca Teína?{% endif %}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{% if lang == 'en' %}Concerts, festivals, town celebrations, weddings, private parties and corporate events.{% else %}Conciertos, festivales, fiestas patronales, bodas, fiestas privadas y eventos corporativos.{% endif %}"
+            }
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+{% set lang_prefix = "" %}
+{% if lang == "en" %}
+    {% set lang_prefix = "/en" %}
+{% endif %}
+{% include "partials/navbar.html" %}
+
+<main class="page-content tributo-page">
+    <header class="page-header">
+        <h1>{{ section.title }}</h1>
+        <p class="page-subtitle">{% if lang == "en" %}The best Spanish indie pop rock, reinterpreted live with original songs{% else %}Lo mejor del indie pop rock nacional, reinterpretado en directo con temas propios{% endif %}</p>
+    </header>
+
+    <section class="section" id="intro">
+        {% if lang == "en" %}
+        <h2>Indie pop rock tribute band in Murcia, Spain</h2>
+        <p class="section-intro"><strong>Teína</strong> is an indie pop rock tribute band based in Calasparra, in the Northwest of the Region of Murcia. We bring the best songs of Spanish and international indie to the live stage, reinterpreted with our own identity, alongside original tracks. If you're looking for an indie pop rock tribute band in Murcia for your concert, festival, town celebration, wedding or private event, we connect with the audience from the first chord.</p>
+        {% else %}
+        <h2>Banda tributo de indie pop rock en Murcia</h2>
+        <p class="section-intro"><strong>Teína</strong> es una banda tributo de indie pop rock con base en Calasparra, en el Noroeste de la Región de Murcia. Llevamos al directo las mejores canciones del indie nacional e internacional, reinterpretadas con identidad propia, junto a nuestros temas originales. Si buscas una banda tributo indie pop rock en Murcia para tu concierto, festival, fiesta patronal, boda o evento privado, conectamos con el público desde el primer acorde.</p>
+        {% endif %}
+    </section>
+
+    <section class="section section-alt" id="repertorio">
+        <div class="cards">
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                {% if lang == "en" %}
+                <h3>Spanish indie</h3>
+                <p class="card-subtitle">Reinterpreted</p>
+                <p>Vetusta Morla, Love of Lesbian, Izal, Lori Meyers, Sidonie, Dorian, La Habitación Roja, Iván Ferreiro, Sidecars, Second, Carolina Durante and many more.</p>
+                {% else %}
+                <h3>Indie nacional</h3>
+                <p class="card-subtitle">Reinterpretado</p>
+                <p>Vetusta Morla, Love of Lesbian, Izal, Lori Meyers, Sidonie, Dorian, La Habitación Roja, Iván Ferreiro, Sidecars, Second, Carolina Durante y muchos más.</p>
+                {% endif %}
+            </div>
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                {% if lang == "en" %}
+                <h3>International indie</h3>
+                <p class="card-subtitle">Live</p>
+                <p>Highlights of international indie and alternative pop rock the crowd sings back from the first verse.</p>
+                {% else %}
+                <h3>Indie internacional</h3>
+                <p class="card-subtitle">En directo</p>
+                <p>Referentes del indie internacional y momentos de pop rock alternativo que el público corea desde la primera estrofa.</p>
+                {% endif %}
+            </div>
+            <div class="card">
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                {% if lang == "en" %}
+                <h3>Original songs</h3>
+                <p class="card-subtitle">Teína sound</p>
+                <p>Tribute mixed with original alternative pop rock tracks. Familiar meets new without losing intensity or closeness.</p>
+                {% else %}
+                <h3>Temas propios</h3>
+                <p class="card-subtitle">Sello Teína</p>
+                <p>Tributo combinado con temas propios de pop rock alternativo. Lo conocido convive con lo nuevo, sin perder intensidad ni cercanía.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="zona">
+        {% if lang == "en" %}
+        <h2>Where we play</h2>
+        <p class="section-intro">We mainly operate in the <strong>Region of Murcia</strong> (Murcia city, Calasparra, Caravaca de la Cruz, Cehegín, Lorca, Yeste, Letur) and bordering areas of Andalusia, Albacete, Alicante and Almería. We also travel to other parts of Spain for festivals and events.</p>
+        <a href="{{ lang_prefix }}/conciertos/" class="section-cta">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            See upcoming concerts
+        </a>
+        {% else %}
+        <h2>Dónde tocamos</h2>
+        <p class="section-intro">Operamos principalmente en la <strong>Región de Murcia</strong> (Murcia capital, Calasparra, Caravaca de la Cruz, Cehegín, Lorca, Yeste, Letur) y zonas limítrofes de Andalucía, Albacete, Alicante y Almería. También nos desplazamos a otros puntos de España para festivales y eventos.</p>
+        <a href="/conciertos/" class="section-cta">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Ver próximos conciertos
+        </a>
+        {% endif %}
+    </section>
+
+    <section class="section cta-section">
+        {% if lang == "en" %}
+        <h2>Book Teína</h2>
+        <p>Looking for an indie pop rock tribute band in Murcia? Let's talk directly, no middlemen.</p>
+        {% else %}
+        <h2>Contrata a Teína</h2>
+        <p>¿Buscas una banda tributo de indie pop rock en Murcia? Hablamos directo y sin intermediarios.</p>
+        {% endif %}
+        <div class="cta-buttons">
+            <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                {% if lang == "en" %}Contact{% else %}Contactar{% endif %}
+            </a>
+            <a href="{{ lang_prefix }}/banda/" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                {% if lang == "en" %}Meet the band{% else %}Conocer la banda{% endif %}
+            </a>
+        </div>
+    </section>
+</main>
+
+{% include "partials/footer.html" %}
+{% endblock %}

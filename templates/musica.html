@@ -121,6 +121,7 @@
     <header class="page-header">
         <h1>{{ section.title }}</h1>
         <p class="page-subtitle">{% if lang == "en" %}Original songs and covers of the best indie pop rock{% else %}Temas propios y versiones del mejor indie pop rock{% endif %}</p>
+        <p class="page-subtitle">{% if lang == "en" %}We are also an <a href="{{ lang_prefix }}/tributo/">indie pop rock tribute band in Murcia</a>.{% else %}También somos <a href="{{ lang_prefix }}/tributo/">banda tributo de indie pop rock en Murcia</a>.{% endif %}</p>
     </header>
 
     <section class="section section-alt" id="promo">
@@ -181,47 +182,6 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
                 Spotify
             </a>
-        </div>
-    </section>
-
-    <section class="section section-alt">
-        <div class="cards">
-            <div class="card">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                {% if lang == "en" %}
-                <h3>Original Songs</h3>
-                <p class="card-subtitle">Studio</p>
-                <p>Original indie pop rock songs with intensity and personality.</p>
-                {% else %}
-                <h3>Temas Propios</h3>
-                <p class="card-subtitle">Estudio</p>
-                <p>Canciones propias de indie pop rock con intensidad y personalidad.</p>
-                {% endif %}
-            </div>
-            <div class="card">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                {% if lang == "en" %}
-                <h3>Repertoire</h3>
-                <p class="card-subtitle">Live</p>
-                <p>Repertoire of up to 2 hours with the best covers of current indie pop rock.</p>
-                {% else %}
-                <h3>Repertorio</h3>
-                <p class="card-subtitle">En directo</p>
-                <p>Repertorio de hasta 2 horas de duración con las mejores versiones del indie pop rock actual.</p>
-                {% endif %}
-            </div>
-            <div class="card">
-                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                {% if lang == "en" %}
-                <h3>Events</h3>
-                <p class="card-subtitle">Adaptable</p>
-                <p>Festivals, concerts, private parties, and corporate events throughout Spain.</p>
-                {% else %}
-                <h3>Eventos</h3>
-                <p class="card-subtitle">Adaptable</p>
-                <p>Festivales, conciertos, fiestas privadas y eventos corporativos en toda España.</p>
-                {% endif %}
-            </div>
         </div>
     </section>
 
