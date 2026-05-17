@@ -192,21 +192,52 @@
             h2.appendChild(link);
         });
 
-        // Mark past events
+        // Separate past events into collapsible section
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        document.querySelectorAll('.event-item[data-date]').forEach(item => {
-            const eventDate = new Date(item.dataset.date);
-            eventDate.setHours(0, 0, 0, 0);
-            if (eventDate < today) {
+        const isEn = document.documentElement.lang === 'en';
+        document.querySelectorAll('.event-list').forEach(list => {
+            const pastItems = [];
+            list.querySelectorAll('.event-item[data-date]').forEach(item => {
+                const eventDate = new Date(item.dataset.date);
+                eventDate.setHours(0, 0, 0, 0);
+                const dateEl = item.querySelector('.event-date');
+                if (dateEl && !dateEl.querySelector('.event-year')) {
+                    const year = document.createElement('span');
+                    year.className = 'event-year';
+                    year.textContent = eventDate.getFullYear();
+                    dateEl.appendChild(document.createTextNode(' '));
+                    dateEl.appendChild(year);
+                }
+                if (eventDate < today) {
+                    pastItems.push({ item, date: eventDate });
+                } else if (eventDate.getTime() === today.getTime()) {
+                    item.classList.add('event-today');
+                    const badge = document.createElement('span');
+                    badge.className = 'event-badge-today';
+                    badge.textContent = isEn ? 'TODAY' : 'HOY';
+                    item.prepend(badge);
+                }
+            });
+            if (pastItems.length === 0) return;
+            pastItems.sort((a, b) => b.date - a.date);
+            const details = document.createElement('details');
+            details.className = 'past-events';
+            const summary = document.createElement('summary');
+            summary.className = 'past-events-summary';
+            summary.textContent = isEn
+                ? `View all past concerts (${pastItems.length})`
+                : `Ver todos los conciertos pasados (${pastItems.length})`;
+            const pastList = document.createElement('ul');
+            pastList.className = 'event-list event-list-past';
+            pastItems.forEach(({ item }) => {
                 item.classList.add('event-past');
-            } else if (eventDate.getTime() === today.getTime()) {
-                item.classList.add('event-today');
-                const badge = document.createElement('span');
-                badge.className = 'event-badge-today';
-                badge.textContent = document.documentElement.lang === 'en' ? 'TODAY' : 'HOY';
-                item.prepend(badge);
-            }
+                pastList.appendChild(item);
+            });
+            details.appendChild(summary);
+            details.appendChild(pastList);
+            const eventsContainer = list.closest('.events') || list.parentElement;
+            eventsContainer.insertAdjacentElement('afterend', details);
         });
 
         // Navbar scroll effect

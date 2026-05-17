@@ -1441,6 +1441,13 @@ html:not([data-theme="light"]) .theme-toggle button {
     white-space: nowrap;
 }
 
+.event-year {
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.7;
+    margin-left: 0.15rem;
+}
+
 .event-venue {
     font-size: 1.05rem;
     min-width: 0;
@@ -1499,8 +1506,86 @@ html:not([data-theme="light"]) .theme-toggle button {
 }
 
 .event-past {
-    text-decoration: line-through;
-    opacity: 0.5;
+    opacity: 0.65;
+}
+
+.past-events {
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+}
+
+.past-events-summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary, var(--accent-dark));
+    background: var(--accent-hover);
+    border: 1px solid var(--accent-medium);
+    border-radius: 6px;
+    user-select: none;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &::before {
+        content: "▸";
+        display: inline-block;
+        transition: transform 0.2s ease;
+        font-size: 0.85rem;
+    }
+
+    &:hover {
+        background: var(--accent-hover-strong, var(--accent-hover));
+    }
+}
+
+.past-events[open] .past-events-summary::before {
+    transform: rotate(90deg);
+}
+
+.event-list-past {
+    margin-top: 0.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+
+    .event-item {
+        grid-template-columns: 70px 1fr auto;
+        gap: 0.75rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .event-date {
+        font-size: 0.8rem;
+    }
+
+    .event-venue {
+        font-size: 0.9rem;
+    }
+
+    .event-time {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+        min-width: 48px;
+    }
+
+    .event-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.4rem;
+    }
+
+    .event-actions {
+        display: none;
+    }
 }
 
 .event-today {
