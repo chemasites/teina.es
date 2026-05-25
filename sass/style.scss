@@ -2276,6 +2276,10 @@ lite-youtube {
         gap: 2rem;
     }
 
+    .footer .footer-social {
+        justify-content: center;
+    }
+
     .gallery-large {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
