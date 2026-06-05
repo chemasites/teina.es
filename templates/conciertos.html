@@ -89,13 +89,13 @@
         </div>
         {% set cdata = load_data(path="data/concerts.toml") %}
         {% set concerts = cdata.concert | sort(attribute="date") %}
-        {% set today_num = now() | date(format="%Y%m%d") | int %}
         {% set months_es = ["", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"] %}
         {% set months_en = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %}
+        {# Flat list of all concerts (sorted). base.html JS splits past into a
+           collapsible "past-events" details and adds year + HOY badges client-side. #}
         <div class="events">
             <ul class="event-list">
                 {%- for c in concerts %}
-                {%- if c.date | replace(from="-", to="") | int >= today_num %}
                 {%- set parts = c.date | split(pat="-") %}
                 {%- set m = parts[1] | int %}
                 <li class="event-item{% if c.private %} event-private{% endif %}" data-date="{{ c.date }}">
@@ -113,36 +113,9 @@
                     <span class="event-time">{{ c.time }}</span>
                     {%- endif %}
                 </li>
-                {%- endif %}
                 {%- endfor %}
             </ul>
         </div>
-
-        {%- set_global has_past = false %}
-        {%- for c in concerts %}{% if c.date | replace(from="-", to="") | int < today_num %}{% set_global has_past = true %}{% endif %}{% endfor %}
-        {%- if has_past %}
-        <details class="past-events">
-            <summary class="past-events-summary">{% if lang == "en" %}Past concerts{% else %}Conciertos pasados{% endif %}</summary>
-            <ul class="event-list event-list-past">
-                {%- for c in concerts | reverse %}
-                {%- if c.date | replace(from="-", to="") | int < today_num %}
-                {%- set parts = c.date | split(pat="-") %}
-                {%- set m = parts[1] | int %}
-                <li class="event-item event-past{% if c.private %} event-private{% endif %}" data-date="{{ c.date }}">
-                    <span class="event-date">{{ parts[2] | int }} {% if lang == "en" %}{{ months_en[m] }}{% else %}{{ months_es[m] }}{% endif %}</span>
-                    <span class="event-venue">{{ c.display }}</span>
-                    <span class="event-actions"></span>
-                    {%- if c.private %}
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                    {%- else %}
-                    <span class="event-time">{{ c.time }}</span>
-                    {%- endif %}
-                </li>
-                {%- endif %}
-                {%- endfor %}
-            </ul>
-        </details>
-        {%- endif %}
     </section>
 
     <section class="section cta-section">
