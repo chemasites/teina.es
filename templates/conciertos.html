@@ -120,6 +120,16 @@
     {
         "@context": "https://schema.org",
         "@type": "MusicEvent",
+        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Calasparra",
+        "startDate": "2026-08-28T00:00:00+02:00",
+        "location": { "@type": "Place", "name": "Gran Vía 31", "address": { "@type": "PostalAddress", "addressLocality": "Calasparra", "addressCountry": "ES" } },
+        "performer": { "@type": "MusicGroup", "name": "Teína" },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicEvent",
         "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Zarcilla de Ramos",
         "startDate": "2026-09-05T23:30:00+02:00",
         "location": { "@type": "Place", "name": "Zarcilla de Ramos", "address": { "@type": "PostalAddress", "addressLocality": "Lorca", "addressCountry": "ES" } },
@@ -277,11 +287,23 @@
                     <span class="event-actions"></span>
                     <span class="event-time">--:--</span>
                 </li>
+                <li class="event-item" data-date="2026-08-28">
+                    <span class="event-date">28 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
+                    <span class="event-venue">Calasparra - Gran Vía 31</span>
+                    <span class="event-actions"></span>
+                    <span class="event-time">00.00h</span>
+                </li>
                 <li class="event-item" data-date="2026-09-05">
                     <span class="event-date">5 {% if lang == "en" %}Sep{% else %}Sep{% endif %}</span>
                     <span class="event-venue">Lorca - Zarcilla de Ramos</span>
                     <span class="event-actions"></span>
                     <span class="event-time">23.30h</span>
+                </li>
+                <li class="event-item event-private" data-date="2026-09-26">
+                    <span class="event-date">26 {% if lang == "en" %}Sep{% else %}Sep{% endif %}</span>
+                    <span class="event-venue">Hotel Nelva</span>
+                    <span class="event-actions"></span>
+                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
                 </li>
                 <li class="event-item" data-date="2026-10-02">
                     <span class="event-date">2 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
