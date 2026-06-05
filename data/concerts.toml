@@ -6,6 +6,8 @@
 # ticket_url: optional; renders a Tickets button + JSON-LD offer.
 # schema_*: only for public events (JSON-LD MusicEvent). schema_start is full
 #   ISO 8601 with timezone, or date-only "YYYY-MM-DD" if time unknown.
+#
+# Managed by scripts/concert.py — keep fields in the canonical order below.
 
 [[concert]]
 date = "2026-03-28"

@@ -4,9 +4,11 @@ Maintenance scripts for the Teína website.
 
 ## `concert.py`
 
-Edits the concerts section in `templates/index.html` — both the visible event
-list and the JSON-LD `MusicEvent` schema. No AI, pure regex. Chronological
-order kept automatically.
+Edits `data/concerts.toml`, the single source of truth for concerts.
+`templates/conciertos.html` loops over it to render both the visible event list
+and the JSON-LD `MusicEvent` schema; `base.html` JS splits past events into a
+collapsible section client-side. No AI. Entries are kept in chronological order
+and canonical field order automatically. Run `zola build` after any change.
 
 ### List all concerts
 

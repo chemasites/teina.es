@@ -13,3 +13,6 @@ public/
 
 # Sass cache
 .sass-cache/
+
+# Python
+__pycache__/
