@@ -35,138 +35,29 @@
 }
 </script>
 <script type="application/ld+json">
+{% set cdata = load_data(path="data/concerts.toml") %}
+{% set concerts = cdata.concert | sort(attribute="date") %}
+{% set today_num = now() | date(format="%Y%m%d") | int %}
 [
+{% set_global first = true %}
+{%- for c in concerts %}
+{%- if not c.private and c.date | replace(from="-", to="") | int >= today_num %}
+{%- if not first %},{% endif %}{% set_global first = false %}
     {
         "@context": "https://schema.org",
         "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Auditorio Murcia Parque",
-        "startDate": "2026-03-28T21:30:00+01:00",
-        "location": { "@type": "Place", "name": "Auditorio Murcia Parque", "address": { "@type": "PostalAddress", "addressLocality": "Murcia", "addressCountry": "ES" } },
+        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} {{ c.schema_name }}",
+        "startDate": "{{ c.schema_start }}",
+        "location": { "@type": "Place", "name": "{{ c.schema_loc }}", "address": { "@type": "PostalAddress", "addressLocality": "{{ c.schema_city }}", "addressCountry": "ES" } },
         "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "offers": { "@type": "Offer", "url": "https://www.vivaticket.com/es/ticket/mucho-a-mucho-fest/12793", "availability": "https://schema.org/InStock" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Caravaca de la Cruz",
-        "startDate": "2026-04-11T19:00:00+02:00",
-        "location": { "@type": "Place", "name": "C/ San Jorge", "address": { "@type": "PostalAddress", "addressLocality": "Caravaca de la Cruz", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Cuervarrock",
-        "startDate": "2026-07-24T22:00:00+02:00",
-        "location": { "@type": "Place", "name": "Cuervarrock", "address": { "@type": "PostalAddress", "addressLocality": "Calasparra", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Pliego",
-        "startDate": "2026-07-25T00:00:00+02:00",
-        "location": { "@type": "Place", "name": "Parque de las Cañadas", "address": { "@type": "PostalAddress", "addressLocality": "Pliego", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Almaciles",
-        "startDate": "2026-08-17T23:30:00+02:00",
-        "location": { "@type": "Place", "name": "Almaciles", "address": { "@type": "PostalAddress", "addressLocality": "Granada", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Canara (Cehegín)",
-        "startDate": "2026-08-18T00:00:00+02:00",
-        "location": { "@type": "Place", "name": "Canara", "address": { "@type": "PostalAddress", "addressLocality": "Cehegín", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Letur",
-        "startDate": "2026-08-19T18:00:00+02:00",
-        "location": { "@type": "Place", "name": "Letur", "address": { "@type": "PostalAddress", "addressLocality": "Letur", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Monreal del Campo",
-        "startDate": "2026-08-24",
-        "location": { "@type": "Place", "name": "Carpa Festera", "address": { "@type": "PostalAddress", "addressLocality": "Monreal del Campo, Teruel", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Calasparra",
-        "startDate": "2026-08-28T00:00:00+02:00",
-        "location": { "@type": "Place", "name": "Gran Vía 31", "address": { "@type": "PostalAddress", "addressLocality": "Calasparra", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Zarcilla de Ramos",
-        "startDate": "2026-09-05T23:30:00+02:00",
-        "location": { "@type": "Place", "name": "Zarcilla de Ramos", "address": { "@type": "PostalAddress", "addressLocality": "Lorca", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} Puebla de Mula",
-        "startDate": "2026-10-02",
-        "location": { "@type": "Place", "name": "Puebla de Mula", "address": { "@type": "PostalAddress", "addressLocality": "Puebla de Mula", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} El Escorratel",
-        "startDate": "2026-10-10T23:30:00+02:00",
-        "location": { "@type": "Place", "name": "El Escorratel", "address": { "@type": "PostalAddress", "addressLocality": "Orihuela", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicEvent",
-        "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} La Puerta Falsa",
-        "startDate": "2026-10-30T22:00:00+01:00",
-        "location": { "@type": "Place", "name": "La Puerta Falsa", "address": { "@type": "PostalAddress", "addressLocality": "Murcia", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
+        {%- if c.ticket_url %}
+        "offers": { "@type": "Offer", "url": "{{ c.ticket_url }}", "availability": "https://schema.org/InStock" },
+        {%- endif %}
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
     }
+{%- endif %}
+{%- endfor %}
 ]
 </script>
 {% endblock %}
@@ -196,141 +87,62 @@
                 <span class="promo-reel-badge">Instagram</span>
             </a>
         </div>
+        {% set cdata = load_data(path="data/concerts.toml") %}
+        {% set concerts = cdata.concert | sort(attribute="date") %}
+        {% set today_num = now() | date(format="%Y%m%d") | int %}
+        {% set months_es = ["", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"] %}
+        {% set months_en = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %}
         <div class="events">
             <ul class="event-list">
-                <li class="event-item" data-date="2026-03-28">
-                    <span class="event-date">28 {% if lang == "en" %}Mar{% else %}Mar{% endif %}</span>
-                    <span class="event-venue">Murcia - Auditorio Murcia Parque</span>
-                    <span class="event-actions">
-                        <a href="https://www.vivaticket.com/es/ticket/mucho-a-mucho-fest/12793" target="_blank" rel="noopener noreferrer" class="event-btn event-btn-tickets">
+                {%- for c in concerts %}
+                {%- if c.date | replace(from="-", to="") | int >= today_num %}
+                {%- set parts = c.date | split(pat="-") %}
+                {%- set m = parts[1] | int %}
+                <li class="event-item{% if c.private %} event-private{% endif %}" data-date="{{ c.date }}">
+                    <span class="event-date">{{ parts[2] | int }} {% if lang == "en" %}{{ months_en[m] }}{% else %}{{ months_es[m] }}{% endif %}</span>
+                    <span class="event-venue">{{ c.display }}</span>
+                    <span class="event-actions">{% if c.ticket_url %}
+                        <a href="{{ c.ticket_url }}" target="_blank" rel="noopener noreferrer" class="event-btn event-btn-tickets">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 010-6h20a3 3 0 010 6"/><path d="M2 15a3 3 0 000 6h20a3 3 0 000-6"/><line x1="2" y1="9" x2="2" y2="15"/><line x1="22" y1="9" x2="22" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
                             <span>{% if lang == "en" %}Tickets{% else %}Entradas{% endif %}</span>
                         </a>
-                    </span>
-                    <span class="event-time">21.30h</span>
-                </li>
-                <li class="event-item" data-date="2026-04-11">
-                    <span class="event-date">11 {% if lang == "en" %}Apr{% else %}Abr{% endif %}</span>
-                    <span class="event-venue">Caravaca de la Cruz - C/ San Jorge</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">19.00h</span>
-                </li>
-                <li class="event-item event-private" data-date="2026-04-18">
-                    <span class="event-date">18 {% if lang == "en" %}Apr{% else %}Abr{% endif %}</span>
-                    <span class="event-venue">Murcia</span>
-                    <span class="event-actions"></span>
+                    {% endif %}</span>
+                    {%- if c.private %}
                     <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+                    {%- else %}
+                    <span class="event-time">{{ c.time }}</span>
+                    {%- endif %}
                 </li>
-                <li class="event-item event-private" data-date="2026-05-02">
-                    <span class="event-date">2 {% if lang == "en" %}May{% else %}May{% endif %}</span>
-                    <span class="event-venue">Yeste</span>
-                    <span class="event-actions"></span>
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                </li>
-                <li class="event-item event-private" data-date="2026-05-10">
-                    <span class="event-date">10 {% if lang == "en" %}May{% else %}May{% endif %}</span>
-                    <span class="event-venue">Calasparra</span>
-                    <span class="event-actions"></span>
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                </li>
-                <li class="event-item event-private" data-date="2026-05-23">
-                    <span class="event-date">23 {% if lang == "en" %}May{% else %}May{% endif %}</span>
-                    <span class="event-venue">Alicante</span>
-                    <span class="event-actions"></span>
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                </li>
-                <li class="event-item event-private" data-date="2026-07-18">
-                    <span class="event-date">18 {% if lang == "en" %}Jul{% else %}Jul{% endif %}</span>
-                    <span class="event-venue">Caravaca de la Cruz</span>
-                    <span class="event-actions"></span>
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                </li>
-                <li class="event-item" data-date="2026-07-24">
-                    <span class="event-date">24 {% if lang == "en" %}Jul{% else %}Jul{% endif %}</span>
-                    <span class="event-venue">Calasparra - Cuervarrock</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">22.00h</span>
-                </li>
-                <li class="event-item" data-date="2026-07-25">
-                    <span class="event-date">25 {% if lang == "en" %}Jul{% else %}Jul{% endif %}</span>
-                    <span class="event-venue">Pliego - Parque de las Cañadas</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">00.00h</span>
-                </li>
-                <li class="event-item" data-date="2026-08-17">
-                    <span class="event-date">17 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
-                    <span class="event-venue">Granada - Almaciles</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">23.30h</span>
-                </li>
-                <li class="event-item" data-date="2026-08-18">
-                    <span class="event-date">18 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
-                    <span class="event-venue">Canara (Cehegín)</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">00.00h</span>
-                </li>
-                <li class="event-item" data-date="2026-08-19">
-                    <span class="event-date">19 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
-                    <span class="event-venue">Letur</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">18.00h</span>
-                </li>
-                <li class="event-item event-private" data-date="2026-08-22">
-                    <span class="event-date">22 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
-                    <span class="event-venue">Caravaca</span>
-                    <span class="event-actions"></span>
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                </li>
-                <li class="event-item" data-date="2026-08-24">
-                    <span class="event-date">24 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
-                    <span class="event-venue">Teruel - Monreal del Campo (Carpa Festera)</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">--:--</span>
-                </li>
-                <li class="event-item" data-date="2026-08-28">
-                    <span class="event-date">28 {% if lang == "en" %}Aug{% else %}Ago{% endif %}</span>
-                    <span class="event-venue">Calasparra - Gran Vía 31</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">00.00h</span>
-                </li>
-                <li class="event-item" data-date="2026-09-05">
-                    <span class="event-date">5 {% if lang == "en" %}Sep{% else %}Sep{% endif %}</span>
-                    <span class="event-venue">Lorca - Zarcilla de Ramos</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">23.30h</span>
-                </li>
-                <li class="event-item event-private" data-date="2026-09-26">
-                    <span class="event-date">26 {% if lang == "en" %}Sep{% else %}Sep{% endif %}</span>
-                    <span class="event-venue">Hotel Nelva</span>
-                    <span class="event-actions"></span>
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                </li>
-                <li class="event-item" data-date="2026-10-02">
-                    <span class="event-date">2 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
-                    <span class="event-venue">Puebla de Mula</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">--:--</span>
-                </li>
-                <li class="event-item" data-date="2026-10-10">
-                    <span class="event-date">10 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
-                    <span class="event-venue">Orihuela - El Escorratel</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">23.30h</span>
-                </li>
-                <li class="event-item" data-date="2026-10-30">
-                    <span class="event-date">30 {% if lang == "en" %}Oct{% else %}Oct{% endif %}</span>
-                    <span class="event-venue">Murcia - La Puerta Falsa</span>
-                    <span class="event-actions"></span>
-                    <span class="event-time">22.00h</span>
-                </li>
-                <li class="event-item event-private" data-date="2026-11-28">
-                    <span class="event-date">28 {% if lang == "en" %}Nov{% else %}Nov{% endif %}</span>
-                    <span class="event-venue">Calasparra</span>
-                    <span class="event-actions"></span>
-                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
-                </li>
+                {%- endif %}
+                {%- endfor %}
             </ul>
         </div>
+
+        {%- set_global has_past = false %}
+        {%- for c in concerts %}{% if c.date | replace(from="-", to="") | int < today_num %}{% set_global has_past = true %}{% endif %}{% endfor %}
+        {%- if has_past %}
+        <details class="past-events">
+            <summary class="past-events-summary">{% if lang == "en" %}Past concerts{% else %}Conciertos pasados{% endif %}</summary>
+            <ul class="event-list event-list-past">
+                {%- for c in concerts | reverse %}
+                {%- if c.date | replace(from="-", to="") | int < today_num %}
+                {%- set parts = c.date | split(pat="-") %}
+                {%- set m = parts[1] | int %}
+                <li class="event-item event-past{% if c.private %} event-private{% endif %}" data-date="{{ c.date }}">
+                    <span class="event-date">{{ parts[2] | int }} {% if lang == "en" %}{{ months_en[m] }}{% else %}{{ months_es[m] }}{% endif %}</span>
+                    <span class="event-venue">{{ c.display }}</span>
+                    <span class="event-actions"></span>
+                    {%- if c.private %}
+                    <span class="event-badge">{% if lang == "en" %}Private{% else %}Privado{% endif %}</span>
+                    {%- else %}
+                    <span class="event-time">{{ c.time }}</span>
+                    {%- endif %}
+                </li>
+                {%- endif %}
+                {%- endfor %}
+            </ul>
+        </details>
+        {%- endif %}
     </section>
 
     <section class="section cta-section">

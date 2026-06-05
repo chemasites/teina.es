@@ -1,0 +1,179 @@
+# Concerts data — single source for visible list + JSON-LD structured data.
+# date: "YYYY-MM-DD" (used for sorting, past/future split, data-date attr)
+# display: visible venue label (language-neutral, e.g. "City - Venue")
+# time: visible time like "22.00h", or "--:--" if unknown. Omit for private.
+# private: true hides time, shows "Privado/Private" badge, skips JSON-LD.
+# ticket_url: optional; renders a Tickets button + JSON-LD offer.
+# schema_*: only for public events (JSON-LD MusicEvent). schema_start is full
+#   ISO 8601 with timezone, or date-only "YYYY-MM-DD" if time unknown.
+
+[[concert]]
+date = "2026-03-28"
+display = "Murcia - Auditorio Murcia Parque"
+time = "21.30h"
+private = false
+ticket_url = "https://www.vivaticket.com/es/ticket/mucho-a-mucho-fest/12793"
+schema_name = "Auditorio Murcia Parque"
+schema_loc = "Auditorio Murcia Parque"
+schema_city = "Murcia"
+schema_start = "2026-03-28T21:30:00+01:00"
+
+[[concert]]
+date = "2026-04-11"
+display = "Caravaca de la Cruz - C/ San Jorge"
+time = "19.00h"
+private = false
+schema_name = "Caravaca de la Cruz"
+schema_loc = "C/ San Jorge"
+schema_city = "Caravaca de la Cruz"
+schema_start = "2026-04-11T19:00:00+02:00"
+
+[[concert]]
+date = "2026-04-18"
+display = "Murcia"
+private = true
+
+[[concert]]
+date = "2026-05-02"
+display = "Yeste"
+private = true
+
+[[concert]]
+date = "2026-05-10"
+display = "Calasparra"
+private = true
+
+[[concert]]
+date = "2026-05-23"
+display = "Alicante"
+private = true
+
+[[concert]]
+date = "2026-07-18"
+display = "Caravaca de la Cruz"
+private = true
+
+[[concert]]
+date = "2026-07-24"
+display = "Calasparra - Cuervarrock"
+time = "22.00h"
+private = false
+schema_name = "Cuervarrock"
+schema_loc = "Cuervarrock"
+schema_city = "Calasparra"
+schema_start = "2026-07-24T22:00:00+02:00"
+
+[[concert]]
+date = "2026-07-25"
+display = "Pliego - Parque de las Cañadas"
+time = "00.00h"
+private = false
+schema_name = "Pliego"
+schema_loc = "Parque de las Cañadas"
+schema_city = "Pliego"
+schema_start = "2026-07-25T00:00:00+02:00"
+
+[[concert]]
+date = "2026-08-17"
+display = "Granada - Almaciles"
+time = "23.30h"
+private = false
+schema_name = "Almaciles"
+schema_loc = "Almaciles"
+schema_city = "Granada"
+schema_start = "2026-08-17T23:30:00+02:00"
+
+[[concert]]
+date = "2026-08-18"
+display = "Canara (Cehegín)"
+time = "00.00h"
+private = false
+schema_name = "Canara (Cehegín)"
+schema_loc = "Canara"
+schema_city = "Cehegín"
+schema_start = "2026-08-18T00:00:00+02:00"
+
+[[concert]]
+date = "2026-08-19"
+display = "Letur"
+time = "18.00h"
+private = false
+schema_name = "Letur"
+schema_loc = "Letur"
+schema_city = "Letur"
+schema_start = "2026-08-19T18:00:00+02:00"
+
+[[concert]]
+date = "2026-08-22"
+display = "Caravaca"
+private = true
+
+[[concert]]
+date = "2026-08-24"
+display = "Teruel - Monreal del Campo (Carpa Festera)"
+time = "--:--"
+private = false
+schema_name = "Monreal del Campo"
+schema_loc = "Carpa Festera"
+schema_city = "Monreal del Campo, Teruel"
+schema_start = "2026-08-24"
+
+[[concert]]
+date = "2026-08-28"
+display = "Calasparra - Gran Vía 31"
+time = "00.00h"
+private = false
+schema_name = "Calasparra"
+schema_loc = "Gran Vía 31"
+schema_city = "Calasparra"
+schema_start = "2026-08-28T00:00:00+02:00"
+
+[[concert]]
+date = "2026-09-05"
+display = "Lorca - Zarcilla de Ramos"
+time = "23.30h"
+private = false
+schema_name = "Zarcilla de Ramos"
+schema_loc = "Zarcilla de Ramos"
+schema_city = "Lorca"
+schema_start = "2026-09-05T23:30:00+02:00"
+
+[[concert]]
+date = "2026-09-26"
+display = "Hotel Nelva"
+private = true
+
+[[concert]]
+date = "2026-10-02"
+display = "Puebla de Mula"
+time = "--:--"
+private = false
+schema_name = "Puebla de Mula"
+schema_loc = "Puebla de Mula"
+schema_city = "Puebla de Mula"
+schema_start = "2026-10-02"
+
+[[concert]]
+date = "2026-10-10"
+display = "Orihuela - El Escorratel"
+time = "23.30h"
+private = false
+schema_name = "El Escorratel"
+schema_loc = "El Escorratel"
+schema_city = "Orihuela"
+schema_start = "2026-10-10T23:30:00+02:00"
+
+[[concert]]
+date = "2026-10-30"
+display = "Murcia - La Puerta Falsa"
+time = "22.00h"
+private = false
+schema_name = "La Puerta Falsa"
+schema_loc = "La Puerta Falsa"
+schema_city = "Murcia"
+schema_start = "2026-10-30T22:00:00+01:00"
+
+[[concert]]
+date = "2026-11-28"
+display = "Calasparra"
+private = true
