@@ -64,7 +64,9 @@ private = true
 ```
 
 ## Notes
-- Past events (date < today) auto-move to the collapsible "Conciertos pasados" section.
-- Public past events are auto-excluded from JSON-LD — no manual cleanup needed.
+- The template renders one flat sorted `<li>` list; `base.html` JS moves past events
+  (date < today) into a collapsible "Ver todos los conciertos pasados" section and adds
+  the year + a HOY/TODAY badge client-side. Do not add a second past section in the template.
+- Public past events are auto-excluded from JSON-LD (server-side date filter) — no manual cleanup.
 - Never edit the `<li>` list or `<script type="application/ld+json">` in the template;
   they are generated from the TOML.
