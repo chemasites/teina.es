@@ -51,6 +51,16 @@ display = "Alicante"
 private = true
 
 [[concert]]
+date = "2026-07-12"
+display = "Moratalla - La Farola"
+time = "23.00h"
+private = false
+schema_name = "La Farola"
+schema_loc = "La Farola"
+schema_city = "Moratalla"
+schema_start = "2026-07-12T23:00:00+02:00"
+
+[[concert]]
 date = "2026-07-18"
 display = "Caravaca de la Cruz"
 private = true
