@@ -54,6 +54,8 @@
     <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Teína - {% if lang == 'en' %}Indie Pop Rock Band from Calasparra, Murcia{% else %}Banda de Indie Pop Rock de Calasparra, Murcia{% endif %}{% endblock %}">
 
     <!-- Favicon & PWA -->
+    {# crawlers request /favicon.ico at the root regardless of these tags; without it the SERP shows a blank globe #}
+    <link rel="icon" href="{{ get_url(path='favicon.ico') }}" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='imgs/favicon.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path='imgs/favicon.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='imgs/teina-logo.png') }}">

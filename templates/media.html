@@ -38,6 +38,7 @@
 {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
+    "inLanguage": "{{ lang }}",
     "name": "{% if lang == 'en' %}Teína Gallery{% else %}Galería de Teína{% endif %}",
     "description": "{% if lang == 'en' %}Photos and videos of Teína concerts and performances{% else %}Fotos y videos de conciertos y actuaciones de Teína{% endif %}",
     "url": "{{ page.permalink | safe }}",
@@ -51,10 +52,12 @@
 {
     "@context": "https://schema.org",
     "@type": "VideoObject",
+    "inLanguage": "{{ lang }}",
     "name": "{% if lang == 'en' %}Teína - Promo Video{% else %}Teína - Video Promocional{% endif %}",
     "description": "{% if lang == 'en' %}Promo video of Teína, indie pop rock tribute band from Calasparra, Murcia.{% else %}Video promocional de Teína, banda tributo de indie pop rock de Calasparra, Murcia.{% endif %}",
-    "thumbnailUrl": "https://i.ytimg.com/vi/XDiUv8ba55I/maxresdefault.jpg",
-    "uploadDate": "2025-01-01T00:00:00+01:00",
+    "thumbnailUrl": ["https://i.ytimg.com/vi/XDiUv8ba55I/maxresdefault.jpg", "https://i.ytimg.com/vi/XDiUv8ba55I/sddefault.jpg", "https://i.ytimg.com/vi/XDiUv8ba55I/hqdefault.jpg"],
+    "uploadDate": "2024-08-27",
+    "duration": "PT2M33S",
     "contentUrl": "https://www.youtube.com/watch?v=XDiUv8ba55I",
     "embedUrl": "https://www.youtube-nocookie.com/embed/XDiUv8ba55I",
     "publisher": { "@type": "MusicGroup", "name": "Teína" }
@@ -64,10 +67,12 @@
 {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "{% if lang == 'en' %}Teína - Live Song{% else %}Teína - Canción en Directo{% endif %}",
-    "description": "{% if lang == 'en' %}Teína performing live, indie pop rock tribute band from Murcia.{% else %}Teína en directo, banda tributo de indie pop rock de Murcia.{% endif %}",
-    "thumbnailUrl": "https://i.ytimg.com/vi/_ue01WuY4bQ/maxresdefault.jpg",
-    "uploadDate": "2024-01-01T00:00:00+01:00",
+    "inLanguage": "{{ lang }}",
+    "name": "Teína - {% if lang == 'en' %}Sentimiento Arrocero (Official Calasparra Anthem){% else %}Sentimiento Arrocero (Himno oficial Ciudad Calasparra){% endif %}",
+    "description": "{% if lang == 'en' %}Sentimiento Arrocero, the official anthem of Calasparra, performed by Teína, indie pop rock band from Calasparra, Murcia, Spain.{% else %}Sentimiento Arrocero, himno oficial de la Ciudad de Calasparra, interpretado por Teína, banda de indie pop rock de Calasparra, Murcia.{% endif %}",
+    "thumbnailUrl": ["https://i.ytimg.com/vi/_ue01WuY4bQ/maxresdefault.jpg", "https://i.ytimg.com/vi/_ue01WuY4bQ/sddefault.jpg", "https://i.ytimg.com/vi/_ue01WuY4bQ/hqdefault.jpg"],
+    "uploadDate": "2025-09-14",
+    "duration": "PT2M57S",
     "contentUrl": "https://www.youtube.com/watch?v=_ue01WuY4bQ",
     "embedUrl": "https://www.youtube-nocookie.com/embed/_ue01WuY4bQ",
     "publisher": { "@type": "MusicGroup", "name": "Teína" }
@@ -95,7 +100,7 @@
                 <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
             </div>
             <div class="video-item">
-                <lite-youtube videoid="_ue01WuY4bQ" data-title="Teína - {% if lang == 'en' %}Song{% else %}Canción{% endif %}"></lite-youtube>
+                <lite-youtube videoid="_ue01WuY4bQ" data-title="Teína - {% if lang == 'en' %}Sentimiento Arrocero (Official Calasparra Anthem){% else %}Sentimiento Arrocero (Himno oficial Ciudad Calasparra){% endif %}"></lite-youtube>
             </div>
         </div>
     </section>

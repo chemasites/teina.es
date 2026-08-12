@@ -417,12 +417,16 @@
             <video:title>Teína - Video Promocional</video:title>
             <video:description>Video Promocional de Teína, banda de indie pop rock de Calasparra, Murcia</video:description>
             <video:player_loc>https://www.youtube.com/embed/XDiUv8ba55I</video:player_loc>
+            <video:duration>153</video:duration>
+            <video:publication_date>2024-08-27</video:publication_date>
         </video:video>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/_ue01WuY4bQ/maxresdefault.jpg</video:thumbnail_loc>
-            <video:title>Teína - Canción</video:title>
-            <video:description>Canción de Teína, banda de indie pop rock de Calasparra, Murcia</video:description>
+            <video:title>Teína - Sentimiento Arrocero (Himno oficial Ciudad Calasparra)</video:title>
+            <video:description>Sentimiento Arrocero, himno oficial de la Ciudad de Calasparra, interpretado por Teína</video:description>
             <video:player_loc>https://www.youtube.com/embed/_ue01WuY4bQ</video:player_loc>
+            <video:duration>177</video:duration>
+            <video:publication_date>2025-09-14</video:publication_date>
         </video:video>
         {%- endif -%}
         {#- Media page images and videos - English -#}
@@ -697,12 +701,16 @@
             <video:title>Teína - Promo Video</video:title>
             <video:description>Promo Video of Teína, indie pop rock band from Calasparra, Murcia, Spain</video:description>
             <video:player_loc>https://www.youtube.com/embed/XDiUv8ba55I</video:player_loc>
+            <video:duration>153</video:duration>
+            <video:publication_date>2024-08-27</video:publication_date>
         </video:video>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/_ue01WuY4bQ/maxresdefault.jpg</video:thumbnail_loc>
-            <video:title>Teína - Song</video:title>
-            <video:description>Song of Teína, indie pop rock band from Calasparra, Murcia, Spain</video:description>
+            <video:title>Teína - Sentimiento Arrocero (Official Calasparra Anthem)</video:title>
+            <video:description>Sentimiento Arrocero, the official anthem of Calasparra, performed by Teína</video:description>
             <video:player_loc>https://www.youtube.com/embed/_ue01WuY4bQ</video:player_loc>
+            <video:duration>177</video:duration>
+            <video:publication_date>2025-09-14</video:publication_date>
         </video:video>
         {%- endif -%}
     </url>

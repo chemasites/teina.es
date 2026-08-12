@@ -66,6 +66,7 @@
 {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": "{{ lang }}",
 {%- set fdata = load_data(path="data/faq.toml") %}
     "mainEntity": [
 {%- for item in fdata.faq %}
