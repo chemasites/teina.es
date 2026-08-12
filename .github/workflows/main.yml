@@ -33,6 +33,9 @@ jobs:
         with:
           tool: zola@0.22.0
 
+      - name: Check with Zola
+        run: zola check
+
       - name: Build with Zola
         run: zola build
 

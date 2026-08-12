@@ -23,13 +23,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "{% if lang == 'en' %}Home{% else %}Inicio{% endif %}",
-            "item": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}"
+            "item": "{{ config.base_url | safe }}{% if lang == 'en' %}/en/{% else %}/{% endif %}"
         },
         {
             "@type": "ListItem",
             "position": 2,
             "name": "{{ section.title }}",
-            "item": "{{ section.permalink }}"
+            "item": "{{ section.permalink | safe }}"
         }
     ]
 }
@@ -38,61 +38,17 @@
 {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
+    "@id": "{{ config.base_url | safe }}/#band",
     "name": "Teína",
     "alternateName": ["Teina", "Teína Rock", "Teina Rock"],
     "description": "{{ section.description }}",
-    "url": "{{ config.base_url }}",
+    "url": "{{ config.base_url | safe }}",
     "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
     "genre": ["Indie Pop", "Pop Rock", "Rock", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}", "{% if lang == 'en' %}Alternative Rock{% else %}Rock Alternativo{% endif %}"],
     "foundingLocation": {
         "@type": "Place",
         "name": "Calasparra, Murcia, {% if lang == 'en' %}Spain{% else %}España{% endif %}"
-    },
-    "numberOfTracks": 6,
-    "track": [
-        {
-            "@type": "MusicRecording",
-            "name": "A contratiempo",
-            "datePublished": "2025",
-            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
-            "genre": ["Indie Pop", "Pop Rock"]
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Sentimiento arrocero",
-            "datePublished": "2025",
-            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
-            "genre": ["Indie Pop", "Pop Rock"]
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Volver a empezar",
-            "datePublished": "2024",
-            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
-            "genre": ["Indie Pop", "Pop Rock"]
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Quiero",
-            "datePublished": "2023",
-            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
-            "genre": ["Indie Pop", "Pop Rock"]
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Salvaje",
-            "datePublished": "2019",
-            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
-            "genre": ["Indie Pop", "Pop Rock"]
-        },
-        {
-            "@type": "MusicRecording",
-            "name": "Calavera",
-            "datePublished": "2017",
-            "byArtist": { "@type": "MusicGroup", "name": "Teína" },
-            "genre": ["Indie Pop", "Pop Rock"]
-        }
-    ]
+    }
 }
 </script>
 <script type="application/ld+json">
@@ -102,10 +58,51 @@
     "name": "{% if lang == 'en' %}Teína - Original Songs{% else %}Teína - Temas Propios{% endif %}",
     "description": "{% if lang == 'en' %}Original indie pop rock songs by Teína, band from Calasparra, Murcia, Spain{% else %}Canciones originales de indie pop rock de Teína, banda de Calasparra, Murcia, España{% endif %}",
     "numTracks": 6,
-    "creator": {
-        "@type": "MusicGroup",
-        "name": "Teína"
-    }
+    "creator": { "@id": "{{ config.base_url | safe }}/#band" },
+    "track": [
+        {
+            "@type": "MusicRecording",
+            "name": "A contratiempo",
+            "datePublished": "2025",
+            "byArtist": { "@id": "{{ config.base_url | safe }}/#band" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Sentimiento arrocero",
+            "datePublished": "2025",
+            "byArtist": { "@id": "{{ config.base_url | safe }}/#band" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Volver a empezar",
+            "datePublished": "2024",
+            "byArtist": { "@id": "{{ config.base_url | safe }}/#band" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Quiero",
+            "datePublished": "2023",
+            "byArtist": { "@id": "{{ config.base_url | safe }}/#band" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Salvaje",
+            "datePublished": "2019",
+            "byArtist": { "@id": "{{ config.base_url | safe }}/#band" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        },
+        {
+            "@type": "MusicRecording",
+            "name": "Calavera",
+            "datePublished": "2017",
+            "byArtist": { "@id": "{{ config.base_url | safe }}/#band" },
+            "genre": ["Indie Pop", "Pop Rock"]
+        }
+    ]
 }
 </script>
 <script type="application/ld+json">
@@ -133,7 +130,7 @@
 {% endif %}
 {% include "partials/navbar.html" %}
 
-<main class="page-content musica-page">
+<main class="page-content musica-page" id="main">
     <header class="page-header">
         <h1>{{ section.title }}</h1>
         <p class="page-subtitle">{% if lang == "en" %}Listen to our originals and the covers that fill the room{% else %}Escucha nuestros temas y las versiones que llenan los conciertos{% endif %}</p>
@@ -150,51 +147,52 @@
 
     <section class="section" id="temas">
         <h2>{% if lang == "en" %}Original Songs{% else %}Temas Propios{% endif %}</h2>
+        <p class="section-intro">{% if lang == "en" %}Six original singles, released between 2017 and 2025 and available on Spotify and YouTube. They sit alongside a live repertoire of reinterpreted covers from the Spanish and international indie scene, which is what fills most of a two-hour set. The originals are where the band's own sound lives: the same six musicians, writing for the stage rather than the studio. Hear how it lands live in the <a href="{{ lang_prefix }}/media/">photo and video gallery</a>, or check the <a href="{{ lang_prefix }}/conciertos/">upcoming dates</a>.{% else %}Seis sencillos propios, publicados entre 2017 y 2025 y disponibles en Spotify y YouTube. Conviven con un repertorio en directo de versiones reinterpretadas del indie nacional e internacional, que es lo que llena la mayor parte de un set de dos horas. Los temas propios son donde vive el sonido de la banda: los mismos seis músicos, componiendo para el escenario antes que para el estudio. Mira cómo suena en directo en la <a href="{{ lang_prefix }}/media/">galería de fotos y vídeos</a>, o consulta las <a href="{{ lang_prefix }}/conciertos/">próximas fechas</a>.{% endif %}</p>
         <ul class="songs-list">
             <li class="song-item">
                 <span class="song-number">1</span>
-                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">A contratiempo</span>
                 <span class="song-year">2025</span>
             </li>
             <li class="song-item">
                 <span class="song-number">2</span>
-                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Sentimiento arrocero</span>
                 <span class="song-year">2025</span>
             </li>
             <li class="song-item">
                 <span class="song-number">3</span>
-                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Volver a empezar</span>
                 <span class="song-year">2024</span>
             </li>
             <li class="song-item">
                 <span class="song-number">4</span>
-                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Quiero</span>
                 <span class="song-year">2023</span>
             </li>
             <li class="song-item">
                 <span class="song-number">5</span>
-                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Salvaje</span>
                 <span class="song-year">2019</span>
             </li>
             <li class="song-item">
                 <span class="song-number">6</span>
-                <svg class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="song-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 <span class="song-name">Calavera</span>
                 <span class="song-year">2017</span>
             </li>
         </ul>
         <div class="songs-links">
             <a href="https://www.youtube.com/@teina8932" target="_blank" class="songs-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
                 YouTube
             </a>
             <a href="https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J" target="_blank" class="songs-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
                 Spotify
             </a>
         </div>
@@ -204,11 +202,11 @@
         <h2>{% if lang == "en" %}Want to hear us live?{% else %}¿Quieres escucharnos en directo?{% endif %}</h2>
         <div class="cta-buttons">
             <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 {% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}
             </a>
             <a href="{{ lang_prefix }}/media/" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 {% if lang == "en" %}See more videos{% else %}Ver más videos{% endif %}
             </a>
         </div>

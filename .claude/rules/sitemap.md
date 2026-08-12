@@ -20,3 +20,9 @@ paths:
 - Never fall back to `now()`: a build-time date on every page makes Google treat lastmod as noise
 - Date-only format (`YYYY-MM-DD`); no hand-written timezone offset
 - `scripts/concert.py` stamps `extra.updated` on both `content/conciertos/_index*.md` on every save
+
+## Image tiers
+
+- Gallery images ship in three tiers: `static/media/thumbs/` (grid), `static/media/large/` (lightbox, capped ~1600px), and the untouched original in `static/media/`
+- Sitemap gallery entries point at the `large/` WebP, because that is the image the page actually links
+- Image titles/captions in the sitemap must match the `alt` text of the same image in `templates/media.html`

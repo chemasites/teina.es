@@ -12,13 +12,21 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }} — {% if lang == "en" %}Indie Pop Rock Tribute Band in Murcia, Spain{% else %}Tributo Indie Pop Rock en Murcia | Versiones y temas propios{% endif %}{% endblock %}</title>
+    <title>{% block title %}{{ config.title }} — {% if lang == "en" %}Indie Pop Rock Band in Murcia, Spain{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
-    <meta name="keywords" content="{% if lang == 'en' %}Teína, teina, teina band, teina rock, teina music, teina spain, teina indie, indie pop rock band, tribute band murcia, indie tribute band, indie pop rock tribute, Calasparra, Murcia, Spanish band, covers, concerts, events, festivals, booking, live music Spain{% else %}Teína, teina, teina rock, teina banda, banda teina, teina murcia, teina indie, teina música, grupo teina, teina españa, teina pop rock, teina calasparra, tributo indie, banda tributo murcia, tributo pop rock murcia, tributo indie pop rock, banda indie murcia, grupo rock calasparra, música indie española, banda versiones murcia, rock alternativo murcia, pop rock español, indie español, grupo musical, versiones, conciertos, eventos, festivales, contratación{% endif %}">
     <meta name="author" content="Teína">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <link rel="canonical" href="{% block canonical %}{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}{% endblock %}">
+    {# set before canonical/og:url so both reuse the trailing-slash-correct paths, not a hand-built /en #}
+    {% set current_path = current_path | default(value="/") %}
+    {% if lang == "en" %}
+        {% set es_path = current_path | replace(from="/en/", to="/") | replace(from="/en", to="/") %}
+        {% set en_path = current_path %}
+    {% else %}
+        {% set es_path = current_path %}
+        {% set en_path = "/en" ~ current_path %}
+    {% endif %}
+    <link rel="canonical" href="{% block canonical %}{{ config.base_url | safe }}{% if lang == 'en' %}{{ en_path }}{% else %}{{ es_path }}{% endif %}{% endblock %}">
 
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#f9f5f0" media="(prefers-color-scheme: light)">
@@ -27,8 +35,8 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-    <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}{% endblock %}">
-    <meta property="og:title" content="{% block og_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Tribute Band in Murcia{% else %}Tributo Indie Pop Rock en Murcia{% endif %}{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ config.base_url | safe }}{% if lang == 'en' %}{{ en_path }}{% else %}{{ es_path }}{% endif %}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Band in Murcia{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
     <meta property="og:image" content="{% block og_image %}{{ get_url(path='media/hero-1200.jpg') }}{% endblock %}">
     <meta property="og:image:width" content="1200">
@@ -40,7 +48,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Tribute Band in Murcia{% else %}Tributo Indie Pop Rock en Murcia{% endif %}{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Band in Murcia{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock %}">
     <meta name="twitter:image" content="{% block twitter_image %}{{ get_url(path='media/hero-1200.jpg') }}{% endblock %}">
     <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Teína - {% if lang == 'en' %}Indie Pop Rock Band from Calasparra, Murcia{% else %}Banda de Indie Pop Rock de Calasparra, Murcia{% endif %}{% endblock %}">
@@ -52,17 +60,9 @@
     <link rel="manifest" href="{{ get_url(path='manifest.json') }}">
 
     <!-- Language alternatives -->
-    {% set current_path = current_path | default(value="/") %}
-    {% if lang == "en" %}
-        {% set es_path = current_path | replace(from="/en/", to="/") | replace(from="/en", to="/") %}
-        {% set en_path = current_path %}
-    {% else %}
-        {% set es_path = current_path %}
-        {% set en_path = "/en" ~ current_path %}
-    {% endif %}
-    <link rel="alternate" hreflang="es" href="{{ config.base_url }}{{ es_path }}">
-    <link rel="alternate" hreflang="en" href="{{ config.base_url }}{{ en_path }}">
-    <link rel="alternate" hreflang="x-default" href="{{ config.base_url }}{{ es_path }}">
+    <link rel="alternate" hreflang="es" href="{{ config.base_url | safe }}{{ es_path }}">
+    <link rel="alternate" hreflang="en" href="{{ config.base_url | safe }}{{ en_path }}">
+    <link rel="alternate" hreflang="x-default" href="{{ config.base_url | safe }}{{ es_path }}">
 
     <!-- Preconnect and DNS prefetch for performance -->
     <link rel="dns-prefetch" href="https://www.youtube.com">
@@ -71,6 +71,7 @@
     <link rel="dns-prefetch" href="https://instagram.com">
     <link rel="preconnect" href="https://www.youtube.com" crossorigin>
     <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+    <link rel="preconnect" href="https://rum.cronitor.io" crossorigin>
 
     <!-- Cronitor RUM -->
     <script async src="https://rum.cronitor.io/script.js"></script>
@@ -93,22 +94,21 @@
         "@type": "WebSite",
         "name": "Teína",
         "alternateName": "Teina",
-        "url": "{{ config.base_url }}",
+        "url": "{{ config.base_url | safe }}",
+        "description": "{{ config.description }}",
         "inLanguage": ["es", "en"],
-        "publisher": {
-            "@type": "MusicGroup",
-            "name": "Teína"
-        }
+        "publisher": { "@id": "{{ config.base_url | safe }}/#band" }
     }
     </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "MusicGroup",
+        "@id": "{{ config.base_url | safe }}/#band",
         "name": "Teína",
         "alternateName": ["Teina", "Teína Band", "Teina Band", "Teína Rock", "Teina Rock"],
         "description": "{% if lang == 'en' %}Indie pop rock tribute band from Calasparra, Murcia, Spain. The best reinterpreted covers of current Spanish indie pop rock and original songs. Available for events, festivals and celebrations across the Region of Murcia and Spain.{% else %}Teína es una banda tributo de indie pop rock de Calasparra, Murcia, España. Las mejores versiones reinterpretadas del indie pop rock nacional actual y temas propios. Disponibles para eventos, festivales y celebraciones en la Región de Murcia y toda España.{% endif %}",
-        "url": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}",
+        "url": "{{ config.base_url | safe }}{% if lang == 'en' %}/en/{% else %}/{% endif %}",
         "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
         "image": "{{ get_url(path='media/hero-1200.jpg') }}",
         "numberOfMembers": 6,
@@ -276,27 +276,6 @@
 
         fadeElements.forEach(el => fadeObserver.observe(el));
 
-        // Lazy load images with Intersection Observer
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        if (lazyImages.length > 0) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '100px 0px', // Load images 100px before they enter viewport
-                threshold: 0.01
-            });
-
-            lazyImages.forEach(img => imageObserver.observe(img));
-        }
-
         // Lightbox with arrow key navigation and back button support
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.querySelector('.lightbox-img');
@@ -314,9 +293,13 @@
             });
         });
 
+        let lightboxTrigger = null;
+
         function openLightbox() {
+            lightboxTrigger = document.activeElement;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
+            lightboxClose.focus();
             // Push state so back button closes lightbox instead of navigating away
             if (!lightboxHistoryPushed) {
                 history.pushState({ lightbox: true }, '');
@@ -327,6 +310,11 @@
         function showImage(index) {
             if (galleryItems.length === 0) return;
             const item = galleryItems[index];
+            // href is the webp tier; older engines fall back to the jpg sibling
+            lightboxImg.onerror = () => {
+                lightboxImg.onerror = null;
+                if (item.dataset.fallback) lightboxImg.src = item.dataset.fallback;
+            };
             lightboxImg.src = item.href;
             lightboxImg.alt = item.querySelector('img')?.alt || '';
         }
@@ -361,7 +349,22 @@
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
             lightboxHistoryPushed = false;
+            if (lightboxTrigger) { lightboxTrigger.focus(); lightboxTrigger = null; }
         }
+
+        // keep Tab inside the dialog while it is open
+        lightbox.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab') return;
+            const focusable = lightbox.querySelectorAll('button');
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault(); last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault(); first.focus();
+            }
+        });
 
         function closeLightboxWithHistory() {
             if (lightboxHistoryPushed) {

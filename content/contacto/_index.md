@@ -1,7 +1,7 @@
 +++
 title = "Contacto"
 template = "contacto.html"
-description = "Contacta con Teína para contrataciones y eventos. Tel: 661 892 704. Disponibles para bodas, festivales y eventos en toda España."
+description = "Contrata a Teína para tu evento: bodas, fiestas patronales y festivales. Teléfono 661 892 704. Disponibles en Murcia y toda España."
 +++
 
 ¿Organizas un evento? Hablemos y hagamos que sea inolvidable.

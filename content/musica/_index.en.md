@@ -1,7 +1,7 @@
 +++
 title = "Music"
 template = "musica.html"
-description = "Listen to music by Teína, indie pop rock band from Murcia, Spain. 6 original singles and a repertoire of up to 2 hours with the best covers of Spanish and international indie rock."
+description = "Listen to Teína: six original indie pop rock singles plus a covers repertoire of Spanish and international indie that fills a two-hour live set."
 +++
 
 The band has six original singles to date, as well as an extensive repertoire of covers of current indie pop rock.

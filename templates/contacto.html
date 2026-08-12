@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} | Teína - {% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}{% endblock %}
+{% block title %}{% if lang == "en" %}Book Teína | Live Band for Events in Murcia, Spain{% else %}Contratar a Teína | Banda en Directo para Eventos en Murcia{% endif %}{% endblock %}
 
 {% block description %}{{ section.description }}{% endblock %}
 
@@ -23,13 +23,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "{% if lang == 'en' %}Home{% else %}Inicio{% endif %}",
-            "item": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}"
+            "item": "{{ config.base_url | safe }}{% if lang == 'en' %}/en/{% else %}/{% endif %}"
         },
         {
             "@type": "ListItem",
             "position": 2,
             "name": "{{ section.title }}",
-            "item": "{{ section.permalink }}"
+            "item": "{{ section.permalink | safe }}"
         }
     ]
 }
@@ -38,8 +38,9 @@
 {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
+    "@id": "{{ config.base_url | safe }}/#band",
     "name": "Teína",
-    "url": "{{ config.base_url }}",
+    "url": "{{ config.base_url | safe }}",
     "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+34-661-892-704",
@@ -48,7 +49,7 @@
         "availableLanguage": ["Spanish", "English"],
         "areaServed": {
             "@type": "Country",
-            "name": "Spain"
+            "name": "{% if lang == 'en' %}Spain{% else %}España{% endif %}"
         }
     },
     "sameAs": [
@@ -65,7 +66,7 @@
 {% endif %}
 {% include "partials/navbar.html" %}
 
-<main class="page-content contacto-page">
+<main class="page-content contacto-page" id="main">
     <header class="page-header">
         <h1>{{ section.title }}</h1>
         <p class="page-subtitle">{% if lang == "en" %}Tell us about your event and we'll make it happen{% else %}Cuéntanos tu evento y lo hacemos realidad{% endif %}</p>
@@ -84,14 +85,14 @@
             </div>
             <div class="contact-actions">
                 <a href="tel:+34661892704" class="contact-card contact-primary">
-                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <svg aria-hidden="true" focusable="false" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     <div class="contact-card-content">
                         <span class="contact-label">{% if lang == "en" %}Call us{% else %}Llámanos{% endif %}</span>
                         <span class="contact-value">661 892 704</span>
                     </div>
                 </a>
                 <a href="mailto:teinaband@gmail.com" class="contact-card">
-                    <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <svg aria-hidden="true" focusable="false" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     <div class="contact-card-content">
                         <span class="contact-label">{% if lang == "en" %}Email us{% else %}Escríbenos{% endif %}</span>
                         <span class="contact-value">teinaband@gmail.com</span>
@@ -102,15 +103,15 @@
                 <p class="contact-social-label">{% if lang == "en" %}Follow us{% else %}Síguenos{% endif %}</p>
                 <div class="contact-social-links">
                     <a href="https://instagram.com/teinaband" target="_blank" rel="noopener" class="contact-social-link" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                         <span>Instagram</span>
                     </a>
                     <a href="https://www.youtube.com/@teina8932" target="_blank" rel="noopener" class="contact-social-link" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
                         <span>YouTube</span>
                     </a>
                     <a href="https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J" target="_blank" rel="noopener" class="contact-social-link" aria-label="Spotify">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
                         <span>Spotify</span>
                     </a>
                 </div>
@@ -124,42 +125,42 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 </div>
                 <h3>{% if lang == "en" %}Celebrations{% else %}Celebraciones{% endif %}</h3>
                 <p>{% if lang == "en" %}Live music to make your special day unforgettable. Personalized repertoire for each occasion.{% else %}Música en directo para que tu día especial sea inolvidable. Repertorio personalizado para cada ocasión.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
                 </div>
                 <h3>{% if lang == "en" %}Festivals{% else %}Festivales{% endif %}</h3>
                 <p>{% if lang == "en" %}Energetic performances with repertoire adapted to the event. Experience on stages of all sizes.{% else %}Actuaciones enérgicas con repertorio adaptado al evento. Experiencia en escenarios de todos los tamaños.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
                 <h3>{% if lang == "en" %}Corporate Events{% else %}Eventos Corporativos{% endif %}</h3>
                 <p>{% if lang == "en" %}Conventions, presentations and company dinners. Professionalism and punctuality guaranteed.{% else %}Convenciones, presentaciones y cenas de empresa. Profesionalidad y puntualidad garantizadas.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"></path><path d="M2 7h20v5H2z"></path><path d="M12 22V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
                 </div>
                 <h3>{% if lang == "en" %}Private Parties{% else %}Fiestas Privadas{% endif %}</h3>
                 <p>{% if lang == "en" %}Birthdays, anniversaries and special events. We create the perfect atmosphere for your party.{% else %}Cumpleaños, aniversarios y eventos especiales. Creamos el ambiente perfecto para tu fiesta.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 </div>
                 <h3>{% if lang == "en" %}Town Festivals{% else %}Fiestas Patronales{% endif %}</h3>
                 <p>{% if lang == "en" %}Street parties and town celebrations with the best atmosphere. Varied repertoire for all ages.{% else %}Verbenas y fiestas de pueblo con el mejor ambiente. Repertorio variado para todas las edades.{% endif %}</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
                 </div>
                 <h3>{% if lang == "en" %}Venues & Pubs{% else %}Salas y Pubs{% endif %}</h3>
                 <p>{% if lang == "en" %}Concerts at live music venues and nightclubs. Format adaptable to the space.{% else %}Conciertos en salas de música en directo y locales nocturnos. Formato adaptable al espacio.{% endif %}</p>
@@ -171,7 +172,7 @@
         <h2>{% if lang == "en" %}Performance Area{% else %}Zona de Actuación{% endif %}</h2>
         <p class="section-intro">{% if lang == "en" %}Available for events in Murcia and all of Spain.{% else %}Disponibles para eventos en Murcia y toda España.{% endif %}</p>
         <div class="location-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <span>Calasparra, Murcia</span>
         </div>
         <div class="map-container">
@@ -188,11 +189,11 @@
         </div>
         <div class="cta-buttons">
             <a href="{{ lang_prefix }}/banda/" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                 {% if lang == "en" %}Meet the band{% else %}Conocer la banda{% endif %}
             </a>
             <a href="{{ lang_prefix }}/musica/" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 {% if lang == "en" %}Listen to music{% else %}Escuchar música{% endif %}
             </a>
         </div>

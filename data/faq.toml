@@ -1,0 +1,46 @@
+# FAQ for /tributo/ — single source for the visible list + JSON-LD FAQPage.
+# Google requires FAQ markup to match content the visitor can actually see, so
+# templates/tributo.html renders both from this file. Never add an entry here
+# that is not rendered, and never hardcode a Q&A in the template.
+
+[[faq]]
+q_es = "¿Teína es una banda tributo?"
+q_en = "Is Teína a tribute band?"
+a_es = "Sí. Teína es una banda tributo de indie pop rock con base en Murcia. Reinterpretamos las grandes canciones del indie pop rock nacional e internacional, además de tocar temas propios."
+a_en = "Yes. Teína is an indie pop rock tribute band based in Murcia, Spain. We reinterpret major Spanish and international indie pop rock songs and also play original tracks."
+
+[[faq]]
+q_es = "¿Dónde está la banda Teína?"
+q_en = "Where is Teína based?"
+a_es = "En Calasparra, en el Noroeste de la Región de Murcia. Actuamos por toda la Región de Murcia y zonas limítrofes."
+a_en = "Calasparra, in the Northwest of the Region of Murcia, Spain. We play across Murcia and bordering regions."
+
+[[faq]]
+q_es = "¿Qué tipo de eventos toca Teína?"
+q_en = "What kind of events does Teína play?"
+a_es = "Conciertos, festivales, fiestas patronales, bodas, fiestas privadas y eventos corporativos."
+a_en = "Concerts, festivals, town celebrations, weddings, private parties and corporate events."
+
+[[faq]]
+q_es = "¿Hasta dónde os desplazáis?"
+q_en = "How far do you travel?"
+a_es = "Principalmente por la Región de Murcia (Murcia capital, Calasparra, Caravaca de la Cruz, Cehegín, Lorca, Yeste, Letur) y zonas limítrofes de Andalucía, Albacete, Alicante y Almería. También viajamos a otros puntos de España para festivales y eventos."
+a_en = "Mainly across the Region of Murcia (Murcia city, Calasparra, Caravaca de la Cruz, Cehegín, Lorca, Yeste, Letur) and bordering areas of Andalusia, Albacete, Alicante and Almería. We also travel to other parts of Spain for festivals and events."
+
+[[faq]]
+q_es = "¿Cuánto dura el repertorio?"
+q_en = "How long is the set?"
+a_es = "El repertorio llega hasta las dos horas de directo, combinando versiones reinterpretadas del indie pop rock actual con nuestros seis temas propios."
+a_en = "The repertoire runs up to two hours live, combining reinterpreted covers of current indie pop rock with our six original songs."
+
+[[faq]]
+q_es = "¿Cómo os contratamos?"
+q_en = "How do we book you?"
+a_es = "Llámanos al 661 892 704 o escríbenos a teinaband@gmail.com con la fecha, la localidad y el tipo de evento. Te respondemos con disponibilidad y condiciones."
+a_en = "Call 661 892 704 or email teinaband@gmail.com with the date, the town and the type of event. We reply with availability and terms."
+
+[[faq]]
+q_es = "¿Cuántos músicos sois?"
+q_en = "How many musicians are in the band?"
+a_es = "Somos seis: guitarra y voz, saxo y percusión, bajo, teclados, batería y una segunda guitarra con coros."
+a_en = "Six: guitar and vocals, sax and percussion, bass, keyboards, drums, and a second guitar with backing vocals."

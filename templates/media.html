@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} | Teína{% endblock %}
+{% block title %}{% if lang == "en" %}Photos & Live Videos of Teína | Indie Pop Rock Murcia{% else %}Fotos y Vídeos de Teína en Directo | Indie Pop Rock Murcia{% endif %}{% endblock %}
 
 {% block description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
@@ -23,13 +23,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "{% if lang == 'en' %}Home{% else %}Inicio{% endif %}",
-            "item": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}"
+            "item": "{{ config.base_url | safe }}{% if lang == 'en' %}/en/{% else %}/{% endif %}"
         },
         {
             "@type": "ListItem",
             "position": 2,
             "name": "{{ page.title }}",
-            "item": "{{ page.permalink }}"
+            "item": "{{ page.permalink | safe }}"
         }
     ]
 }
@@ -40,7 +40,7 @@
     "@type": "ImageGallery",
     "name": "{% if lang == 'en' %}Teína Gallery{% else %}Galería de Teína{% endif %}",
     "description": "{% if lang == 'en' %}Photos and videos of Teína concerts and performances{% else %}Fotos y videos de conciertos y actuaciones de Teína{% endif %}",
-    "url": "{{ page.permalink }}",
+    "url": "{{ page.permalink | safe }}",
     "publisher": {
         "@type": "Organization",
         "name": "Teína"
@@ -76,11 +76,15 @@
 {% endblock %}
 
 {% block content %}
+{% set lang_prefix = "" %}
+{% if lang == "en" %}
+    {% set lang_prefix = "/en" %}
+{% endif %}
 {% include "partials/navbar.html" %}
 
-<main class="page-content media-page">
+<main class="page-content media-page" id="main">
     <header class="page-header">
-        <h1>Media</h1>
+        <h1>{% if lang == "en" %}Photos & Videos of Teína{% else %}Fotos y Vídeos de Teína{% endif %}</h1>
         <p class="page-subtitle">{% if lang == "en" %}Photos and videos from inside the live show{% else %}Fotos y vídeos desde dentro del directo{% endif %}</p>
     </header>
 
@@ -98,170 +102,331 @@
 
     <section class="section section-alt" id="galeria">
         <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
+        <p class="section-intro">{% if lang == "en" %}Every photo here is from a real Teína show — town festivals across the Region of Murcia, summer stages, backstage before the first chord. The gallery covers full-band shots under stage lights, close-ups of each musician at work, and the quieter moments in the dressing room. If you are weighing us up for an event, this is what the night actually looks like. See where we play next on our <a href="{{ lang_prefix }}/conciertos/">upcoming concerts</a>, or read about the <a href="{{ lang_prefix }}/tributo/">tribute show</a> itself.{% else %}Todas las fotos son de conciertos reales de Teína: fiestas de pueblo por toda la Región de Murcia, escenarios de verano, backstage antes del primer acorde. La galería recoge planos de banda completa bajo los focos, primeros planos de cada músico y los momentos más tranquilos del camerino. Si nos estás valorando para un evento, así es una noche con nosotros. Mira dónde tocamos próximamente en <a href="{{ lang_prefix }}/conciertos/">conciertos</a>, o conoce el <a href="{{ lang_prefix }}/tributo/">tributo</a>.{% endif %}</p>
+
         <div class="gallery gallery-large">
             <!-- Stage wide shots -->
-            <a href="{{ get_url(path='media/banda-confeti-final.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/banda-confeti-final.jpg') }}" alt="{% if lang == 'en' %}Teína on stage with confetti rain and crowd{% else %}Teína en escenario con lluvia de confeti y público{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/banda-confeti-final.webp') }}" data-fallback="{{ get_url(path='media/large/banda-confeti-final.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-confeti-final.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/banda-confeti-final.jpg') }}" alt="{% if lang == 'en' %}Teína on stage with confetti rain and crowd{% else %}Teína en escenario con lluvia de confeti y público{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/banda-completa-luces-azules.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/banda-completa-luces-azules.jpg') }}" alt="{% if lang == 'en' %}Full band on stage with blue lights and Teína logo{% else %}Banda completa en escenario con luces azules y logo Teína{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/banda-completa-luces-azules.webp') }}" data-fallback="{{ get_url(path='media/large/banda-completa-luces-azules.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-completa-luces-azules.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/banda-completa-luces-azules.jpg') }}" alt="{% if lang == 'en' %}Full band on stage with blue lights and Teína logo{% else %}Banda completa en escenario con luces azules y logo Teína{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/banda-foto-publico-grande.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/banda-foto-publico-grande.jpg') }}" alt="{% if lang == 'en' %}Band photo with large crowd behind{% else %}Foto de banda con gran público al fondo{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/banda-foto-publico-grande.webp') }}" data-fallback="{{ get_url(path='media/large/banda-foto-publico-grande.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-foto-publico-grande.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/banda-foto-publico-grande.jpg') }}" alt="{% if lang == 'en' %}Band photo with large crowd behind{% else %}Foto de banda con gran público al fondo{% endif %}" width="600" height="369" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/banda-escenario-noche-atras.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/banda-escenario-noche-atras.jpg') }}" alt="{% if lang == 'en' %}Stage view from drums at night{% else %}Vista del escenario desde la batería por la noche{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/banda-escenario-noche-atras.webp') }}" data-fallback="{{ get_url(path='media/large/banda-escenario-noche-atras.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-escenario-noche-atras.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/banda-escenario-noche-atras.jpg') }}" alt="{% if lang == 'en' %}Stage view from drums at night{% else %}Vista del escenario desde la batería por la noche{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/duo-escenario-luces-azules.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/duo-escenario-luces-azules.jpg') }}" alt="{% if lang == 'en' %}Duo on stage with blue lights{% else %}Dúo en escenario con luces azules{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/duo-escenario-luces-azules.webp') }}" data-fallback="{{ get_url(path='media/large/duo-escenario-luces-azules.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/duo-escenario-luces-azules.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/duo-escenario-luces-azules.jpg') }}" alt="{% if lang == 'en' %}Duo on stage with blue lights{% else %}Dúo en escenario con luces azules{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
             <!-- Performer closeups -->
-            <a href="{{ get_url(path='media/juanjo-apuntando-publico.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/juanjo-apuntando-publico.jpg') }}" alt="{% if lang == 'en' %}Juanjo pointing at the crowd from stage{% else %}Juanjo apuntando al público desde el escenario{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/juanjo-apuntando-publico.webp') }}" data-fallback="{{ get_url(path='media/large/juanjo-apuntando-publico.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/juanjo-apuntando-publico.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/juanjo-apuntando-publico.jpg') }}" alt="{% if lang == 'en' %}Juanjo pointing at the crowd from stage{% else %}Juanjo apuntando al público desde el escenario{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/juanjo-darwin-escenario.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/juanjo-darwin-escenario.jpg') }}" alt="{% if lang == 'en' %}Juanjo and Darwin performing on stage{% else %}Juanjo y Darwin actuando en escenario{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/juanjo-darwin-escenario.webp') }}" data-fallback="{{ get_url(path='media/large/juanjo-darwin-escenario.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/juanjo-darwin-escenario.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/juanjo-darwin-escenario.jpg') }}" alt="{% if lang == 'en' %}Juanjo and Darwin performing on stage{% else %}Juanjo y Darwin actuando en escenario{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/aj-bajo-luces-rojas.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/aj-bajo-luces-rojas.jpg') }}" alt="{% if lang == 'en' %}AJ Ruíz on bass with red stage lights{% else %}AJ Ruíz al bajo con luces rojas en escenario{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/aj-bajo-luces-rojas.webp') }}" data-fallback="{{ get_url(path='media/large/aj-bajo-luces-rojas.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/aj-bajo-luces-rojas.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/aj-bajo-luces-rojas.jpg') }}" alt="{% if lang == 'en' %}AJ Ruíz on bass with red stage lights{% else %}AJ Ruíz al bajo con luces rojas en escenario{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/adri-bateria-accion.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/adri-bateria-accion.jpg') }}" alt="{% if lang == 'en' %}Adri playing drums live{% else %}Adri tocando la batería en directo{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/adri-bateria-accion.webp') }}" data-fallback="{{ get_url(path='media/large/adri-bateria-accion.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/adri-bateria-accion.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/adri-bateria-accion.jpg') }}" alt="{% if lang == 'en' %}Adri playing drums live{% else %}Adri tocando la batería en directo{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/darwin-guitarra-silueta.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/darwin-guitarra-silueta.jpg') }}" alt="{% if lang == 'en' %}Darwin silhouette playing guitar on stage{% else %}Darwin en silueta tocando guitarra en escenario{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/darwin-guitarra-silueta.webp') }}" data-fallback="{{ get_url(path='media/large/darwin-guitarra-silueta.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/darwin-guitarra-silueta.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/darwin-guitarra-silueta.jpg') }}" alt="{% if lang == 'en' %}Darwin silhouette playing guitar on stage{% else %}Darwin en silueta tocando guitarra en escenario{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
             <!-- Group shots -->
-            <a href="{{ get_url(path='media/banda-selfie-publico-fiesta.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/banda-selfie-publico-fiesta.jpg') }}" alt="{% if lang == 'en' %}Band selfie with crowd at festival{% else %}Selfie de la banda con el público en las fiestas{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/banda-selfie-publico-fiesta.webp') }}" data-fallback="{{ get_url(path='media/large/banda-selfie-publico-fiesta.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-selfie-publico-fiesta.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/banda-selfie-publico-fiesta.jpg') }}" alt="{% if lang == 'en' %}Band selfie with crowd at festival{% else %}Selfie de la banda con el público en las fiestas{% endif %}" width="600" height="338" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/banda-camerino-byn.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/banda-camerino-byn.jpg') }}" alt="{% if lang == 'en' %}Band laughing in dressing room, black and white{% else %}Banda riendo en el camerino en blanco y negro{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/banda-camerino-byn.webp') }}" data-fallback="{{ get_url(path='media/large/banda-camerino-byn.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-camerino-byn.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/banda-camerino-byn.jpg') }}" alt="{% if lang == 'en' %}Band laughing in dressing room, black and white{% else %}Banda riendo en el camerino en blanco y negro{% endif %}" width="276" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
             <!-- Backstage -->
-            <a href="{{ get_url(path='media/banda-camerino-invitados.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/banda-camerino-invitados.jpg') }}" alt="{% if lang == 'en' %}Band with guests backstage{% else %}Banda con invitados en el camerino{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/banda-camerino-invitados.webp') }}" data-fallback="{{ get_url(path='media/large/banda-camerino-invitados.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-camerino-invitados.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/banda-camerino-invitados.jpg') }}" alt="{% if lang == 'en' %}Band with guests backstage{% else %}Banda con invitados en el camerino{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/brindis-camerino.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/brindis-camerino.jpg') }}" alt="{% if lang == 'en' %}Toast backstage before the concert{% else %}Brindis en el camerino antes del concierto{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/brindis-camerino.webp') }}" data-fallback="{{ get_url(path='media/large/brindis-camerino.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/brindis-camerino.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/brindis-camerino.jpg') }}" alt="{% if lang == 'en' %}Toast backstage before the concert{% else %}Brindis en el camerino antes del concierto{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/backstage-saludo.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/backstage-saludo.jpg') }}" alt="{% if lang == 'en' %}Musicians greeting backstage{% else %}Saludo entre músicos en el backstage{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/backstage-saludo.webp') }}" data-fallback="{{ get_url(path='media/large/backstage-saludo.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/backstage-saludo.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/backstage-saludo.jpg') }}" alt="{% if lang == 'en' %}Musicians greeting backstage{% else %}Saludo entre músicos en el backstage{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
             <!-- Previous library -->
-            <a href="{{ get_url(path='media/01-primera.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/01-primera.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 1{% else %}Foto Teína 1{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/01-primera.webp') }}" data-fallback="{{ get_url(path='media/large/01-primera.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/01-primera.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/01-primera.jpg') }}" alt="{% if lang == 'en' %}Aerial view of the band on stage with a packed crowd below{% else %}Vista aérea de la banda en el escenario con el público abarrotado{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/02-segunda.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/02-segunda.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 2{% else %}Foto Teína 2{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/02-segunda.webp') }}" data-fallback="{{ get_url(path='media/large/02-segunda.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/02-segunda.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/02-segunda.jpg') }}" alt="{% if lang == 'en' %}Band and crew group photo on stage facing a massive night crowd{% else %}Banda y equipo posando en el escenario frente a un público multitudinario{% endif %}" width="600" height="270" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/03-tercera.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/03-tercera.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 3{% else %}Foto Teína 3{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/03-tercera.webp') }}" data-fallback="{{ get_url(path='media/large/03-tercera.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/03-tercera.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/03-tercera.jpg') }}" alt="{% if lang == 'en' %}Band performing under a white festival tent with saxophone and guitars{% else %}Banda tocando bajo una carpa blanca de fiestas con saxofón y guitarras{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/04.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/04.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4{% else %}Foto Teína 4{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/04.webp') }}" data-fallback="{{ get_url(path='media/large/04.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/04.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/04.jpg') }}" alt="{% if lang == 'en' %}Band relaxing and joking in a small white dressing room{% else %}Banda relajada y bromeando en un camerino pequeño y blanco{% endif %}" width="600" height="450" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/04-cuarta.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/04-cuarta.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4{% else %}Foto Teína 4{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/04-cuarta.webp') }}" data-fallback="{{ get_url(path='media/large/04-cuarta.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/04-cuarta.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/04-cuarta.jpg') }}" alt="{% if lang == 'en' %}Band holding a local football jersey in front of a night crowd{% else %}Banda sosteniendo una camiseta de fútbol local ante el público nocturno{% endif %}" width="518" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/04.1-cuarta-heic.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/04.1-cuarta-heic.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4.1{% else %}Foto Teína 4.1{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/04.1-cuarta-heic.webp') }}" data-fallback="{{ get_url(path='media/large/04.1-cuarta-heic.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/04.1-cuarta-heic.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/04.1-cuarta-heic.jpg') }}" alt="{% if lang == 'en' %}Band celebrating with confetti on a lit-up street after the show{% else %}Banda celebrando entre confeti en una calle iluminada tras el concierto{% endif %}" width="600" height="450" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/04.2-cuarta.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/04.2-cuarta.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 4.2{% else %}Foto Teína 4.2{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/04.2-cuarta.webp') }}" data-fallback="{{ get_url(path='media/large/04.2-cuarta.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/04.2-cuarta.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/04.2-cuarta.jpg') }}" alt="{% if lang == 'en' %}Band on stage with confetti and the Teína butterfly banner{% else %}Banda en el escenario entre confeti y la bandera de la mariposa de Teína{% endif %}" width="600" height="588" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/05.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/05.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 5{% else %}Foto Teína 5{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/05.webp') }}" data-fallback="{{ get_url(path='media/large/05.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/05.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/05.jpg') }}" alt="{% if lang == 'en' %}Band posing with a large group of fans under a Mahou sign{% else %}Banda posando con un gran grupo de fans bajo un cartel de Mahou{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/05.3.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/05.3.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 5.3{% else %}Foto Teína 5.3{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/05.3.webp') }}" data-fallback="{{ get_url(path='media/large/05.3.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/05.3.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/05.3.jpg') }}" alt="{% if lang == 'en' %}Band playing live with confetti falling at La Puerta Falsa venue{% else %}Banda tocando en directo entre confeti en la sala La Puerta Falsa{% endif %}" width="600" height="389" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/07.1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/07.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 7.1{% else %}Foto Teína 7.1{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/07.1.webp') }}" data-fallback="{{ get_url(path='media/large/07.1.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/07.1.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/07.1.jpg') }}" alt="{% if lang == 'en' %}Juanjo performing while a camera operator films close-up on stage{% else %}Juanjo actuando mientras un cámara graba en primer plano sobre el escenario{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/07.1-septima.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/07.1-septima.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 7{% else %}Foto Teína 7{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/07.1-septima.webp') }}" data-fallback="{{ get_url(path='media/large/07.1-septima.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/07.1-septima.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/07.1-septima.jpg') }}" alt="{% if lang == 'en' %}Band group photo in a hotel hallway before a show{% else %}Foto de grupo de la banda en el pasillo de un hotel antes del concierto{% endif %}" width="600" height="401" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/07.2.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/07.2.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 7.2{% else %}Foto Teína 7.2{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/07.2.webp') }}" data-fallback="{{ get_url(path='media/large/07.2.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/07.2.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/07.2.jpg') }}" alt="{% if lang == 'en' %}Band performing on stage inside a seated theater auditorium{% else %}Banda tocando en el escenario de un auditorio con público sentado{% endif %}" width="600" height="387" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/08-octava.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/08-octava.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8{% else %}Foto Teína 8{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/08-octava.webp') }}" data-fallback="{{ get_url(path='media/large/08-octava.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/08-octava.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/08-octava.jpg') }}" alt="{% if lang == 'en' %}Full band performing outdoors at night in front of a building{% else %}Banda completa tocando al aire libre por la noche frente a un edificio{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/08.1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/08.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.1{% else %}Foto Teína 8.1{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/08.1.webp') }}" data-fallback="{{ get_url(path='media/large/08.1.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/08.1.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/08.1.jpg') }}" alt="{% if lang == 'en' %}Band posing with fans making peace signs at a festival{% else %}Banda posando con los fans haciendo la señal de la paz en las fiestas{% endif %}" width="600" height="459" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/08.1-dieciseis.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/08.1-dieciseis.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 16{% else %}Foto Teína 16{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/08.1-dieciseis.webp') }}" data-fallback="{{ get_url(path='media/large/08.1-dieciseis.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/08.1-dieciseis.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/08.1-dieciseis.jpg') }}" alt="{% if lang == 'en' %}Singer raises his leg mid-performance under red and blue stage lights{% else %}El cantante levanta la pierna en plena actuación bajo luces rojas y azules{% endif %}" width="450" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/08.2.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/08.2.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.2{% else %}Foto Teína 8.2{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/08.2.webp') }}" data-fallback="{{ get_url(path='media/large/08.2.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/08.2.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/08.2.jpg') }}" alt="{% if lang == 'en' %}Band and crowd gathered in a courtyard decorated with hanging flags{% else %}Banda y público reunidos en un patio decorado con banderines{% endif %}" width="600" height="536" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/08.5.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/08.5.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.5{% else %}Foto Teína 8.5{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/08.5.webp') }}" data-fallback="{{ get_url(path='media/large/08.5.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/08.5.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/08.5.jpg') }}" alt="{% if lang == 'en' %}Band and fans group photo on a patio with mountains behind{% else %}Banda y fans posando en una terraza con montañas al fondo{% endif %}" width="600" height="529" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/08.6.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/08.6.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 8.6{% else %}Foto Teína 8.6{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/08.6.webp') }}" data-fallback="{{ get_url(path='media/large/08.6.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/08.6.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/08.6.jpg') }}" alt="{% if lang == 'en' %}Band and audience dancing arm in arm on an outdoor terrace{% else %}Banda y público bailando abrazados en una terraza al aire libre{% endif %}" width="600" height="353" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/09-novena.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/09-novena.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 9{% else %}Foto Teína 9{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/09-novena.webp') }}" data-fallback="{{ get_url(path='media/large/09-novena.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/09-novena.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/09-novena.jpg') }}" alt="{% if lang == 'en' %}Nacho playing saxophone in black and white with the Teína banner{% else %}Nacho tocando el saxofón en blanco y negro junto a la bandera de Teína{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/09.1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/09.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 9.1{% else %}Foto Teína 9.1{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/09.1.webp') }}" data-fallback="{{ get_url(path='media/large/09.1.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/09.1.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/09.1.jpg') }}" alt="{% if lang == 'en' %}Nacho and a guitarist sharing a laugh mid-song, black and white{% else %}Nacho y un guitarrista riendo juntos a mitad de canción, en blanco y negro{% endif %}" width="399" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/09.3-diecisiete.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/09.3-diecisiete.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 17{% else %}Foto Teína 17{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/09.3-diecisiete.webp') }}" data-fallback="{{ get_url(path='media/large/09.3-diecisiete.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/09.3-diecisiete.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/09.3-diecisiete.jpg') }}" alt="{% if lang == 'en' %}Band being interviewed on camera with a microphone backstage{% else %}Banda siendo entrevistada con micrófono de televisión entre bastidores{% endif %}" width="600" height="450" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/09.4.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/09.4.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 9.4{% else %}Foto Teína 9.4{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/09.4.webp') }}" data-fallback="{{ get_url(path='media/large/09.4.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/09.4.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/09.4.jpg') }}" alt="{% if lang == 'en' %}AJ Ruíz playing bass under trees with the saxophonist behind him{% else %}AJ Ruíz tocando el bajo bajo los árboles con el saxofonista detrás{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/10-decima.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/10-decima.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 10{% else %}Foto Teína 10{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/10-decima.webp') }}" data-fallback="{{ get_url(path='media/large/10-decima.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/10-decima.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/10-decima.jpg') }}" alt="{% if lang == 'en' %}Juanjo singing close-up on an outdoor stage lit with string lights{% else %}Juanjo cantando en primer plano en un escenario iluminado con guirnaldas de luces{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/12.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/12.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 12{% else %}Foto Teína 12{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/12.webp') }}" data-fallback="{{ get_url(path='media/large/12.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/12.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/12.jpg') }}" alt="{% if lang == 'en' %}Guitarist raises his fist mid-song in a black and white shot{% else %}El guitarrista levanta el puño en plena canción, en blanco y negro{% endif %}" width="433" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/18-dieciocho.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/18-dieciocho.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 18{% else %}Foto Teína 18{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/18-dieciocho.webp') }}" data-fallback="{{ get_url(path='media/large/18-dieciocho.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/18-dieciocho.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/18-dieciocho.jpg') }}" alt="{% if lang == 'en' %}Guitarist plants a foot on the monitor mid-solo, black and white{% else %}El guitarrista apoya el pie en el monitor en pleno solo, en blanco y negro{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/20-veinte.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/20-veinte.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 20{% else %}Foto Teína 20{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/20-veinte.webp') }}" data-fallback="{{ get_url(path='media/large/20-veinte.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/20-veinte.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/20-veinte.jpg') }}" alt="{% if lang == 'en' %}Band and friends posing arm in arm under blue and green lights{% else %}Banda y amigos posando abrazados bajo luces azules y verdes{% endif %}" width="600" height="450" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/22.5.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/22.5.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 22.5{% else %}Foto Teína 22.5{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/22.5.webp') }}" data-fallback="{{ get_url(path='media/large/22.5.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/22.5.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/22.5.jpg') }}" alt="{% if lang == 'en' %}Two friends smiling together at an outdoor evening celebration{% else %}Dos amigos sonriendo juntos en una celebración nocturna al aire libre{% endif %}" width="337" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/24.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/24.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 24{% else %}Foto Teína 24{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/24.webp') }}" data-fallback="{{ get_url(path='media/large/24.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/24.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/24.jpg') }}" alt="{% if lang == 'en' %}Band and fans raising arms while holding the Teína butterfly flag{% else %}Banda y fans con los brazos en alto y la bandera de Teína{% endif %}" width="600" height="410" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/26.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/26.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 26{% else %}Foto Teína 26{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/26.webp') }}" data-fallback="{{ get_url(path='media/large/26.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/26.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/26.jpg') }}" alt="{% if lang == 'en' %}Band setting up to play in a lit plaza surrounded by restaurant terraces{% else %}Banda instalada para tocar en una plaza iluminada rodeada de terrazas{% endif %}" width="600" height="450" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/27.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/27.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 27{% else %}Foto Teína 27{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/27.webp') }}" data-fallback="{{ get_url(path='media/large/27.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/27.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/27.jpg') }}" alt="{% if lang == 'en' %}Band and friends posing against an ivy wall under purple light{% else %}Banda y amigos posando frente a un muro de hiedra bajo luz morada{% endif %}" width="600" height="450" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/29.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/29.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 29{% else %}Foto Teína 29{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/29.webp') }}" data-fallback="{{ get_url(path='media/large/29.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/29.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/29.jpg') }}" alt="{% if lang == 'en' %}Band and friends group photo outdoors after an evening show{% else %}Banda y amigos en una foto de grupo al aire libre tras el concierto{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/30-photo.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/30-photo.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 30{% else %}Foto Teína 30{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/30-photo.webp') }}" data-fallback="{{ get_url(path='media/large/30-photo.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/30-photo.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/30-photo.jpg') }}" alt="{% if lang == 'en' %}J.A. Garre playing keyboards under blue stage lighting{% else %}J.A. Garre tocando el teclado bajo una luz azul de escenario{% endif %}" width="396" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/31-photo.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/31-photo.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 31{% else %}Foto Teína 31{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/31-photo.webp') }}" data-fallback="{{ get_url(path='media/large/31-photo.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/31-photo.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/31-photo.jpg') }}" alt="{% if lang == 'en' %}AJ Ruíz playing bass guitar on an outdoor stage{% else %}AJ Ruíz tocando el bajo en un escenario al aire libre{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/201.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/201.jpg') }}" alt="{% if lang == 'en' %}Teína Photo{% else %}Foto Teína{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/201.webp') }}" data-fallback="{{ get_url(path='media/large/201.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/201.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/201.jpg') }}" alt="{% if lang == 'en' %}Juanjo singing into the microphone while playing guitar{% else %}Juanjo cantando frente al micrófono mientras toca la guitarra{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/22.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/22.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 22{% else %}Foto Teína 22{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/22.webp') }}" data-fallback="{{ get_url(path='media/large/22.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/22.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/22.jpg') }}" alt="{% if lang == 'en' %}AJ Ruíz playing a turquoise bass guitar on a dark stage{% else %}AJ Ruíz tocando un bajo turquesa en un escenario a oscuras{% endif %}" width="399" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/12.1.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/12.1.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 12.1{% else %}Foto Teína 12.1{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/12.1.webp') }}" data-fallback="{{ get_url(path='media/large/12.1.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/12.1.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/12.1.jpg') }}" alt="{% if lang == 'en' %}Nacho playing saxophone in a tan jacket on a dark stage{% else %}Nacho tocando el saxofón con chaqueta beige en un escenario oscuro{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/10.jpg') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/10.jpg') }}" alt="{% if lang == 'en' %}Teína Photo 10{% else %}Foto Teína 10{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/10.webp') }}" data-fallback="{{ get_url(path='media/large/10.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/10.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/10.jpg') }}" alt="{% if lang == 'en' %}J.A. Garre playing keyboard with his eyes closed on stage{% else %}J.A. Garre tocando el teclado con los ojos cerrados en el escenario{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
-            <a href="{{ get_url(path='media/adrian1.png') }}" class="gallery-item" data-lightbox>
-                <img data-src="{{ get_url(path='media/thumbs/adrian1.jpg') }}" alt="{% if lang == 'en' %}Adri - Drums{% else %}Adri - Batería{% endif %}" loading="lazy" decoding="async">
+            <a href="{{ get_url(path='media/large/adrian1.webp') }}" data-fallback="{{ get_url(path='media/large/adrian1.jpg') }}" class="gallery-item" data-lightbox>
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='media/thumbs/adrian1.webp') }}">
+                    <img src="{{ get_url(path='media/thumbs/adrian1.jpg') }}" alt="{% if lang == 'en' %}Adri - Drums{% else %}Adri - Batería{% endif %}" width="600" height="600" loading="lazy" decoding="async">
+                </picture>
             </a>
         </div>
     </section>
@@ -282,10 +447,10 @@
 {% include "partials/footer.html" %}
 
 <!-- Lightbox for gallery -->
-<div class="lightbox" id="lightbox">
-    <button class="lightbox-close">&times;</button>
-    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="{% if lang == 'en' %}Photo viewer{% else %}Visor de fotos{% endif %}">
+    <button class="lightbox-close" aria-label="{% if lang == 'en' %}Close{% else %}Cerrar{% endif %}">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="{% if lang == 'en' %}Previous{% else %}Anterior{% endif %}">&#8249;</button>
     <img src="" alt="" class="lightbox-img">
-    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+    <button class="lightbox-nav lightbox-next" aria-label="{% if lang == 'en' %}Next{% else %}Siguiente{% endif %}">&#8250;</button>
 </div>
 {% endblock %}

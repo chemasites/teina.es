@@ -71,7 +71,7 @@
             <image:caption>Juanjo, guitarrista y vocalista de la banda Teína</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/nacho.png</image:loc>
+            <image:loc>https://teina.es/banda/nacho.jpg</image:loc>
             <image:title>Nacho - Saxo, Percusión y Coros de Teína</image:title>
             <image:caption>Nacho, saxofonista y percusionista de la banda Teína</image:caption>
         </image:image>
@@ -81,17 +81,17 @@
             <image:caption>AJ Ruíz, bajista de la banda Teína</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/ja-garre.png</image:loc>
+            <image:loc>https://teina.es/banda/ja-garre.jpg</image:loc>
             <image:title>J.A. Garre - Teclados de Teína</image:title>
             <image:caption>J.A. Garre, tecladista de la banda Teína</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/adrian.png</image:loc>
+            <image:loc>https://teina.es/banda/adrian.jpg</image:loc>
             <image:title>Adri - Batería de Teína</image:title>
             <image:caption>Adri, baterista de la banda Teína</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/darwin.png</image:loc>
+            <image:loc>https://teina.es/banda/darwin.jpg</image:loc>
             <image:title>Darwin - Guitarra y Coros de Teína</image:title>
             <image:caption>Darwin, guitarrista y corista de la banda Teína</image:caption>
         </image:image>
@@ -104,7 +104,7 @@
             <image:caption>Juanjo, guitarist and vocalist of Teína band</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/nacho.png</image:loc>
+            <image:loc>https://teina.es/banda/nacho.jpg</image:loc>
             <image:title>Nacho - Sax, Percussion and Backing Vocals of Teína</image:title>
             <image:caption>Nacho, saxophonist and percussionist of Teína band</image:caption>
         </image:image>
@@ -114,17 +114,17 @@
             <image:caption>AJ Ruíz, bassist of Teína band</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/ja-garre.png</image:loc>
+            <image:loc>https://teina.es/banda/ja-garre.jpg</image:loc>
             <image:title>J.A. Garre - Keyboards of Teína</image:title>
             <image:caption>J.A. Garre, keyboardist of Teína band</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/adrian.png</image:loc>
+            <image:loc>https://teina.es/banda/adrian.jpg</image:loc>
             <image:title>Adri - Drums of Teína</image:title>
             <image:caption>Adri, drummer of Teína band</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/banda/darwin.png</image:loc>
+            <image:loc>https://teina.es/banda/darwin.jpg</image:loc>
             <image:title>Darwin - Guitar and Backing Vocals of Teína</image:title>
             <image:caption>Darwin, guitarist and backing vocalist of Teína band</image:caption>
         </image:image>
@@ -148,269 +148,269 @@
         {#- Media page images and videos - Spanish -#}
         {%- if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink -%}
         <image:image>
-            <image:loc>https://teina.es/media/banda-confeti-final.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-confeti-final.webp</image:loc>
             <image:title>Teína en escenario con lluvia de confeti y público</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-completa-luces-azules.webp</image:loc>
             <image:title>Banda completa en escenario con luces azules y logo Teína</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-foto-publico-grande.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-foto-publico-grande.webp</image:loc>
             <image:title>Foto de banda con gran público al fondo</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-escenario-noche-atras.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-escenario-noche-atras.webp</image:loc>
             <image:title>Vista del escenario desde la batería por la noche</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/duo-escenario-luces-azules.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/duo-escenario-luces-azules.webp</image:loc>
             <image:title>Dúo en escenario con luces azules</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/juanjo-apuntando-publico.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/juanjo-apuntando-publico.webp</image:loc>
             <image:title>Juanjo apuntando al público desde el escenario</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/juanjo-darwin-escenario.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/juanjo-darwin-escenario.webp</image:loc>
             <image:title>Juanjo y Darwin actuando en escenario</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/aj-bajo-luces-rojas.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/aj-bajo-luces-rojas.webp</image:loc>
             <image:title>AJ Ruíz al bajo con luces rojas en escenario</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/adri-bateria-accion.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/adri-bateria-accion.webp</image:loc>
             <image:title>Adri tocando la batería en directo</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/darwin-guitarra-silueta.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/darwin-guitarra-silueta.webp</image:loc>
             <image:title>Darwin en silueta tocando guitarra en escenario</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-selfie-publico-fiesta.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-selfie-publico-fiesta.webp</image:loc>
             <image:title>Selfie de la banda con el público en las fiestas</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-camerino-byn.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-camerino-byn.webp</image:loc>
             <image:title>Banda riendo en el camerino en blanco y negro</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-camerino-invitados.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-camerino-invitados.webp</image:loc>
             <image:title>Banda con invitados en el camerino</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/brindis-camerino.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/brindis-camerino.webp</image:loc>
             <image:title>Brindis en el camerino antes del concierto</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/backstage-saludo.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/backstage-saludo.webp</image:loc>
             <image:title>Saludo entre músicos en el backstage</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
-            <image:title>Foto Teína 1</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/01-primera.webp</image:loc>
+            <image:title>Vista aérea de la banda en el escenario con el público abarrotado</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/02-segunda.jpg</image:loc>
-            <image:title>Foto Teína 2</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/02-segunda.webp</image:loc>
+            <image:title>Banda y equipo posando en el escenario frente a un público multitudinario</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/03-tercera.jpg</image:loc>
-            <image:title>Foto Teína 3</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/03-tercera.webp</image:loc>
+            <image:title>Banda tocando bajo una carpa blanca de fiestas con saxofón y guitarras</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04.jpg</image:loc>
-            <image:title>Foto Teína 4</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/04.webp</image:loc>
+            <image:title>Banda relajada y bromeando en un camerino pequeño y blanco</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04-cuarta.jpg</image:loc>
-            <image:title>Foto Teína 4</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/04-cuarta.webp</image:loc>
+            <image:title>Banda sosteniendo una camiseta de fútbol local ante el público nocturno</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04.1-cuarta-heic.jpg</image:loc>
-            <image:title>Foto Teína 4.1</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/04.1-cuarta-heic.webp</image:loc>
+            <image:title>Banda celebrando entre confeti en una calle iluminada tras el concierto</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04.2-cuarta.jpg</image:loc>
-            <image:title>Foto Teína 4.2</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/04.2-cuarta.webp</image:loc>
+            <image:title>Banda en el escenario entre confeti y la bandera de la mariposa de Teína</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/05.jpg</image:loc>
-            <image:title>Foto Teína 5</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/05.webp</image:loc>
+            <image:title>Banda posando con un gran grupo de fans bajo un cartel de Mahou</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/05.3.jpg</image:loc>
-            <image:title>Foto Teína 5.3</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/05.3.webp</image:loc>
+            <image:title>Banda tocando en directo entre confeti en la sala La Puerta Falsa</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/07.1.jpg</image:loc>
-            <image:title>Foto Teína 7.1</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/07.1.webp</image:loc>
+            <image:title>Juanjo actuando mientras un cámara graba en primer plano sobre el escenario</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/07.1-septima.jpg</image:loc>
-            <image:title>Foto Teína 7</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/07.1-septima.webp</image:loc>
+            <image:title>Foto de grupo de la banda en el pasillo de un hotel antes del concierto</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/07.2.jpg</image:loc>
-            <image:title>Foto Teína 7.2</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/07.2.webp</image:loc>
+            <image:title>Banda tocando en el escenario de un auditorio con público sentado</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08-octava.jpg</image:loc>
-            <image:title>Foto Teína 8</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/08-octava.webp</image:loc>
+            <image:title>Banda completa tocando al aire libre por la noche frente a un edificio</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.1.jpg</image:loc>
-            <image:title>Foto Teína 8.1</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/08.1.webp</image:loc>
+            <image:title>Banda posando con los fans haciendo la señal de la paz en las fiestas</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.1-dieciseis.jpg</image:loc>
-            <image:title>Foto Teína 16</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/08.1-dieciseis.webp</image:loc>
+            <image:title>El cantante levanta la pierna en plena actuación bajo luces rojas y azules</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.2.jpg</image:loc>
-            <image:title>Foto Teína 8.2</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/08.2.webp</image:loc>
+            <image:title>Banda y público reunidos en un patio decorado con banderines</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.5.jpg</image:loc>
-            <image:title>Foto Teína 8.5</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/08.5.webp</image:loc>
+            <image:title>Banda y fans posando en una terraza con montañas al fondo</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.6.jpg</image:loc>
-            <image:title>Foto Teína 8.6</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/08.6.webp</image:loc>
+            <image:title>Banda y público bailando abrazados en una terraza al aire libre</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09-novena.jpg</image:loc>
-            <image:title>Foto Teína 9</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/09-novena.webp</image:loc>
+            <image:title>Nacho tocando el saxofón en blanco y negro junto a la bandera de Teína</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09.1.jpg</image:loc>
-            <image:title>Foto Teína 9.1</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/09.1.webp</image:loc>
+            <image:title>Nacho y un guitarrista riendo juntos a mitad de canción, en blanco y negro</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09.3-diecisiete.jpg</image:loc>
-            <image:title>Foto Teína 17</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/09.3-diecisiete.webp</image:loc>
+            <image:title>Banda siendo entrevistada con micrófono de televisión entre bastidores</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09.4.jpg</image:loc>
-            <image:title>Foto Teína 9.4</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/09.4.webp</image:loc>
+            <image:title>AJ Ruíz tocando el bajo bajo los árboles con el saxofonista detrás</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/10.jpg</image:loc>
-            <image:title>Foto Teína 10</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/10.webp</image:loc>
+            <image:title>J.A. Garre tocando el teclado con los ojos cerrados en el escenario</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/10-decima.jpg</image:loc>
-            <image:title>Foto Teína 10</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/10-decima.webp</image:loc>
+            <image:title>Juanjo cantando en primer plano en un escenario iluminado con guirnaldas de luces</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/12.jpg</image:loc>
-            <image:title>Foto Teína 12</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/12.webp</image:loc>
+            <image:title>El guitarrista levanta el puño en plena canción, en blanco y negro</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/12.1.jpg</image:loc>
-            <image:title>Foto Teína 12.1</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/12.1.webp</image:loc>
+            <image:title>Nacho tocando el saxofón con chaqueta beige en un escenario oscuro</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/18-dieciocho.jpg</image:loc>
-            <image:title>Foto Teína 18</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/18-dieciocho.webp</image:loc>
+            <image:title>El guitarrista apoya el pie en el monitor en pleno solo, en blanco y negro</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/20-veinte.jpg</image:loc>
-            <image:title>Foto Teína 20</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/20-veinte.webp</image:loc>
+            <image:title>Banda y amigos posando abrazados bajo luces azules y verdes</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/22.jpg</image:loc>
-            <image:title>Foto Teína 22</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/22.webp</image:loc>
+            <image:title>AJ Ruíz tocando un bajo turquesa en un escenario a oscuras</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/22.5.jpg</image:loc>
-            <image:title>Foto Teína 22.5</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/22.5.webp</image:loc>
+            <image:title>Dos amigos sonriendo juntos en una celebración nocturna al aire libre</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/24.jpg</image:loc>
-            <image:title>Foto Teína 24</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/24.webp</image:loc>
+            <image:title>Banda y fans con los brazos en alto y la bandera de Teína</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/26.jpg</image:loc>
-            <image:title>Foto Teína 26</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/26.webp</image:loc>
+            <image:title>Banda instalada para tocar en una plaza iluminada rodeada de terrazas</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/27.jpg</image:loc>
-            <image:title>Foto Teína 27</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/27.webp</image:loc>
+            <image:title>Banda y amigos posando frente a un muro de hiedra bajo luz morada</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/29.jpg</image:loc>
-            <image:title>Foto Teína 29</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/29.webp</image:loc>
+            <image:title>Banda y amigos en una foto de grupo al aire libre tras el concierto</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/30-photo.jpg</image:loc>
-            <image:title>Foto Teína 30</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/30-photo.webp</image:loc>
+            <image:title>J.A. Garre tocando el teclado bajo una luz azul de escenario</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/31-photo.jpg</image:loc>
-            <image:title>Foto Teína 31</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/31-photo.webp</image:loc>
+            <image:title>AJ Ruíz tocando el bajo en un escenario al aire libre</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/201.jpg</image:loc>
-            <image:title>Foto Teína</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:loc>https://teina.es/media/large/201.webp</image:loc>
+            <image:title>Juanjo cantando frente al micrófono mientras toca la guitarra</image:title>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/adrian1.png</image:loc>
+            <image:loc>https://teina.es/media/large/adrian1.webp</image:loc>
             <image:title>Adri - Batería</image:title>
-            <image:caption>Teína, banda de indie pop rock</image:caption>
+            <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg</video:thumbnail_loc>
@@ -428,269 +428,269 @@
         {#- Media page images and videos - English -#}
         {%- if "/en/media/" in sitemap_entry.permalink -%}
         <image:image>
-            <image:loc>https://teina.es/media/banda-confeti-final.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-confeti-final.webp</image:loc>
             <image:title>Teína on stage with confetti rain and crowd</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-completa-luces-azules.webp</image:loc>
             <image:title>Full band on stage with blue lights and Teína logo</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-foto-publico-grande.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-foto-publico-grande.webp</image:loc>
             <image:title>Band photo with large crowd behind</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-escenario-noche-atras.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-escenario-noche-atras.webp</image:loc>
             <image:title>Stage view from drums at night</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/duo-escenario-luces-azules.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/duo-escenario-luces-azules.webp</image:loc>
             <image:title>Duo on stage with blue lights</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/juanjo-apuntando-publico.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/juanjo-apuntando-publico.webp</image:loc>
             <image:title>Juanjo pointing at the crowd from stage</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/juanjo-darwin-escenario.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/juanjo-darwin-escenario.webp</image:loc>
             <image:title>Juanjo and Darwin performing on stage</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/aj-bajo-luces-rojas.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/aj-bajo-luces-rojas.webp</image:loc>
             <image:title>AJ Ruíz on bass with red stage lights</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/adri-bateria-accion.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/adri-bateria-accion.webp</image:loc>
             <image:title>Adri playing drums live</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/darwin-guitarra-silueta.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/darwin-guitarra-silueta.webp</image:loc>
             <image:title>Darwin silhouette playing guitar on stage</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-selfie-publico-fiesta.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-selfie-publico-fiesta.webp</image:loc>
             <image:title>Band selfie with crowd at festival</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-camerino-byn.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-camerino-byn.webp</image:loc>
             <image:title>Band laughing in dressing room, black and white</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/banda-camerino-invitados.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/banda-camerino-invitados.webp</image:loc>
             <image:title>Band with guests backstage</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/brindis-camerino.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/brindis-camerino.webp</image:loc>
             <image:title>Toast backstage before the concert</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/backstage-saludo.jpg</image:loc>
+            <image:loc>https://teina.es/media/large/backstage-saludo.webp</image:loc>
             <image:title>Musicians greeting backstage</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/01-primera.jpg</image:loc>
-            <image:title>Teína Photo 1</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/01-primera.webp</image:loc>
+            <image:title>Aerial view of the band on stage with a packed crowd below</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/02-segunda.jpg</image:loc>
-            <image:title>Teína Photo 2</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/02-segunda.webp</image:loc>
+            <image:title>Band and crew group photo on stage facing a massive night crowd</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/03-tercera.jpg</image:loc>
-            <image:title>Teína Photo 3</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/03-tercera.webp</image:loc>
+            <image:title>Band performing under a white festival tent with saxophone and guitars</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04.jpg</image:loc>
-            <image:title>Teína Photo 4</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/04.webp</image:loc>
+            <image:title>Band relaxing and joking in a small white dressing room</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04-cuarta.jpg</image:loc>
-            <image:title>Teína Photo 4</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/04-cuarta.webp</image:loc>
+            <image:title>Band holding a local football jersey in front of a night crowd</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04.1-cuarta-heic.jpg</image:loc>
-            <image:title>Teína Photo 4.1</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/04.1-cuarta-heic.webp</image:loc>
+            <image:title>Band celebrating with confetti on a lit-up street after the show</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/04.2-cuarta.jpg</image:loc>
-            <image:title>Teína Photo 4.2</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/04.2-cuarta.webp</image:loc>
+            <image:title>Band on stage with confetti and the Teína butterfly banner</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/05.jpg</image:loc>
-            <image:title>Teína Photo 5</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/05.webp</image:loc>
+            <image:title>Band posing with a large group of fans under a Mahou sign</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/05.3.jpg</image:loc>
-            <image:title>Teína Photo 5.3</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/05.3.webp</image:loc>
+            <image:title>Band playing live with confetti falling at La Puerta Falsa venue</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/07.1.jpg</image:loc>
-            <image:title>Teína Photo 7.1</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/07.1.webp</image:loc>
+            <image:title>Juanjo performing while a camera operator films close-up on stage</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/07.1-septima.jpg</image:loc>
-            <image:title>Teína Photo 7</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/07.1-septima.webp</image:loc>
+            <image:title>Band group photo in a hotel hallway before a show</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/07.2.jpg</image:loc>
-            <image:title>Teína Photo 7.2</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/07.2.webp</image:loc>
+            <image:title>Band performing on stage inside a seated theater auditorium</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08-octava.jpg</image:loc>
-            <image:title>Teína Photo 8</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/08-octava.webp</image:loc>
+            <image:title>Full band performing outdoors at night in front of a building</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.1.jpg</image:loc>
-            <image:title>Teína Photo 8.1</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/08.1.webp</image:loc>
+            <image:title>Band posing with fans making peace signs at a festival</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.1-dieciseis.jpg</image:loc>
-            <image:title>Teína Photo 16</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/08.1-dieciseis.webp</image:loc>
+            <image:title>Singer raises his leg mid-performance under red and blue stage lights</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.2.jpg</image:loc>
-            <image:title>Teína Photo 8.2</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/08.2.webp</image:loc>
+            <image:title>Band and crowd gathered in a courtyard decorated with hanging flags</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.5.jpg</image:loc>
-            <image:title>Teína Photo 8.5</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/08.5.webp</image:loc>
+            <image:title>Band and fans group photo on a patio with mountains behind</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/08.6.jpg</image:loc>
-            <image:title>Teína Photo 8.6</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/08.6.webp</image:loc>
+            <image:title>Band and audience dancing arm in arm on an outdoor terrace</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09-novena.jpg</image:loc>
-            <image:title>Teína Photo 9</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/09-novena.webp</image:loc>
+            <image:title>Nacho playing saxophone in black and white with the Teína banner</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09.1.jpg</image:loc>
-            <image:title>Teína Photo 9.1</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/09.1.webp</image:loc>
+            <image:title>Nacho and a guitarist sharing a laugh mid-song, black and white</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09.3-diecisiete.jpg</image:loc>
-            <image:title>Teína Photo 17</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/09.3-diecisiete.webp</image:loc>
+            <image:title>Band being interviewed on camera with a microphone backstage</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/09.4.jpg</image:loc>
-            <image:title>Teína Photo 9.4</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/09.4.webp</image:loc>
+            <image:title>AJ Ruíz playing bass under trees with the saxophonist behind him</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/10.jpg</image:loc>
-            <image:title>Teína Photo 10</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/10.webp</image:loc>
+            <image:title>J.A. Garre playing keyboard with his eyes closed on stage</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/10-decima.jpg</image:loc>
-            <image:title>Teína Photo 10</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/10-decima.webp</image:loc>
+            <image:title>Juanjo singing close-up on an outdoor stage lit with string lights</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/12.jpg</image:loc>
-            <image:title>Teína Photo 12</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/12.webp</image:loc>
+            <image:title>Guitarist raises his fist mid-song in a black and white shot</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/12.1.jpg</image:loc>
-            <image:title>Teína Photo 12.1</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/12.1.webp</image:loc>
+            <image:title>Nacho playing saxophone in a tan jacket on a dark stage</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/18-dieciocho.jpg</image:loc>
-            <image:title>Teína Photo 18</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/18-dieciocho.webp</image:loc>
+            <image:title>Guitarist plants a foot on the monitor mid-solo, black and white</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/20-veinte.jpg</image:loc>
-            <image:title>Teína Photo 20</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/20-veinte.webp</image:loc>
+            <image:title>Band and friends posing arm in arm under blue and green lights</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/22.jpg</image:loc>
-            <image:title>Teína Photo 22</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/22.webp</image:loc>
+            <image:title>AJ Ruíz playing a turquoise bass guitar on a dark stage</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/22.5.jpg</image:loc>
-            <image:title>Teína Photo 22.5</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/22.5.webp</image:loc>
+            <image:title>Two friends smiling together at an outdoor evening celebration</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/24.jpg</image:loc>
-            <image:title>Teína Photo 24</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/24.webp</image:loc>
+            <image:title>Band and fans raising arms while holding the Teína butterfly flag</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/26.jpg</image:loc>
-            <image:title>Teína Photo 26</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/26.webp</image:loc>
+            <image:title>Band setting up to play in a lit plaza surrounded by restaurant terraces</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/27.jpg</image:loc>
-            <image:title>Teína Photo 27</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/27.webp</image:loc>
+            <image:title>Band and friends posing against an ivy wall under purple light</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/29.jpg</image:loc>
-            <image:title>Teína Photo 29</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/29.webp</image:loc>
+            <image:title>Band and friends group photo outdoors after an evening show</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/30-photo.jpg</image:loc>
-            <image:title>Teína Photo 30</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/30-photo.webp</image:loc>
+            <image:title>J.A. Garre playing keyboards under blue stage lighting</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/31-photo.jpg</image:loc>
-            <image:title>Teína Photo 31</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/31-photo.webp</image:loc>
+            <image:title>AJ Ruíz playing bass guitar on an outdoor stage</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/201.jpg</image:loc>
-            <image:title>Teína Photo</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:loc>https://teina.es/media/large/201.webp</image:loc>
+            <image:title>Juanjo singing into the microphone while playing guitar</image:title>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://teina.es/media/adrian1.png</image:loc>
+            <image:loc>https://teina.es/media/large/adrian1.webp</image:loc>
             <image:title>Adri - Drums</image:title>
-            <image:caption>Teína, indie pop rock band</image:caption>
+            <image:caption>Teína, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
         </image:image>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/XDiUv8ba55I/maxresdefault.jpg</video:thumbnail_loc>

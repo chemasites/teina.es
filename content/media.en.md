@@ -1,6 +1,6 @@
 +++
-title = "Media"
+title = "Photos & Videos"
 template = "media.html"
-description = "Photo and video gallery of Teína, indie pop rock band from Calasparra, Murcia. Images of concerts and live performances."
-updated = "2026-05-17"
+description = "Photos and videos of Teína live: concerts, backstage and performances by the indie pop rock tribute band from Calasparra, Murcia, Spain."
+updated = "2026-08-12"
 +++

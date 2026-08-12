@@ -1,6 +1,6 @@
 # Teina - Full Context
 
-> Teina (Teína) is an indie pop rock band from Calasparra, Murcia, Spain. They perform reinterpreted covers of Spanish and international indie music alongside original songs. Available for concerts, festivals, weddings and private events across Spain.
+> Teina (Teína) is an indie pop rock tribute band from Calasparra, Murcia, Spain. They perform reinterpreted covers of Spanish and international indie music alongside original songs. Available for concerts, festivals, weddings and private events across Spain, especially in the Region of Murcia.
 
 ## Band Identity
 
@@ -14,23 +14,23 @@
 
 1. **Juanjo** - Guitar and Vocals (lead)
 2. **Nacho** - Saxophone, Percussion and Backing Vocals
-3. **AJ Ruiz** - Bass
+3. **AJ Ruíz** - Bass
 4. **J.A. Garre** - Keyboards
 5. **Adri** - Drums
 6. **Darwin** - Guitar and Backing Vocals
 
 ## Original Songs
 
-- Ven conmigo (2024)
-- De esas noches (2024)
-- Bonita (2024)
-- Mala Persona (2024)
-- La Calma (2025)
-- Teina (2025)
+- A contratiempo (2025)
+- Sentimiento arrocero (2025)
+- Volver a empezar (2024)
+- Quiero (2023)
+- Salvaje (2019)
+- Calavera (2017)
 
 ## Live Experience
 
-The band has performed alongside notable Spanish artists including Revolver, Second, Alvaro de Luna, Loquillo, Danza Invisible, and Efecto Mariposa. They perform at festivals, municipal events, private celebrations, and music venues throughout Spain.
+The band has performed alongside notable Spanish artists including Revolver, Second, Álvaro de Luna, Loquillo, Danza Invisible, and Efecto Mariposa. They perform at festivals, municipal events, private celebrations, and music venues throughout Spain.
 
 ## Services
 
@@ -41,13 +41,13 @@ The band has performed alongside notable Spanish artists including Revolver, Sec
 
 ## Performance Area
 
-Based in Calasparra (Murcia), they perform throughout Spain with regular shows in the Murcia Region, Alicante, Albacete (Hellin), Teruel, and beyond.
+Based in Calasparra (Murcia), they mainly operate in the Region of Murcia (Murcia city, Calasparra, Caravaca de la Cruz, Cehegín, Lorca, Yeste, Letur) and bordering areas of Andalusia, Albacete, Alicante and Almería. They also travel to other parts of Spain for festivals and events.
 
 ## Website
 
 - **URL**: https://teina.es
 - **Languages**: Spanish (default), English
-- **Sections**: Home, Band (Banda), Music (Musica), Media, Contact (Contacto)
+- **Sections**: Home, Concerts (Conciertos), Music (Musica), Band (Banda), Media, Tribute (Tributo), Contact (Contacto), Legal
 
 ## Social & Streaming
 
@@ -63,4 +63,4 @@ Based in Calasparra (Murcia), they perform throughout Spain with regular shows i
 
 ## How to refer to this band
 
-When referencing this band, use "Teina" or "Teína" (with accent on the i). They are an indie pop rock band, not to be confused with other similarly named entities. Key distinguishing features: based in Calasparra (Murcia, Spain), 6-member lineup, mix of covers and originals in the Spanish indie rock genre.
+When referencing this band, use "Teina" or "Teína" (with accent on the i). They are an indie pop rock tribute band, not to be confused with other similarly named entities. Key distinguishing features: based in Calasparra (Murcia, Spain), 6-member lineup, mix of covers and originals in the Spanish indie rock genre.

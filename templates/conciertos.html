@@ -23,13 +23,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "{% if lang == 'en' %}Home{% else %}Inicio{% endif %}",
-            "item": "{{ config.base_url }}{% if lang == 'en' %}/en{% endif %}"
+            "item": "{{ config.base_url | safe }}{% if lang == 'en' %}/en/{% else %}/{% endif %}"
         },
         {
             "@type": "ListItem",
             "position": 2,
             "name": "{{ section.title }}",
-            "item": "{{ section.permalink }}"
+            "item": "{{ section.permalink | safe }}"
         }
     ]
 }
@@ -48,10 +48,13 @@
         "@type": "MusicEvent",
         "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} {{ c.schema_name }}",
         "startDate": "{{ c.schema_start }}",
-        "location": { "@type": "Place", "name": "{{ c.schema_loc }}", "address": { "@type": "PostalAddress", "addressLocality": "{{ c.schema_city }}", "addressCountry": "ES" } },
-        "performer": { "@type": "MusicGroup", "name": "Teína" },
-        {%- if c.ticket_url %}
-        "offers": { "@type": "Offer", "url": "{{ c.ticket_url }}", "availability": "https://schema.org/InStock" },
+        "description": "{% if lang == 'en' %}Teína live at {{ c.schema_loc }}, {{ c.schema_city }} — indie pop rock tribute band from Calasparra, Murcia.{% else %}Teína en directo en {{ c.schema_loc }}, {{ c.schema_city }} — banda tributo de indie pop rock de Calasparra, Murcia.{% endif %}",
+        "image": "{{ get_url(path='conciertos/conciertos-25.jpg') }}",
+        "location": { "@type": "Place", "name": "{{ c.schema_loc }}", "address": { "@type": "PostalAddress", "addressLocality": "{{ c.schema_city }}"{% if c.schema_region %}, "addressRegion": "{{ c.schema_region }}"{% endif %}, "addressCountry": "ES" } },
+        "performer": { "@id": "{{ config.base_url | safe }}/#band" },
+        {#- Google discards an Offer without price, so emit it only once schema_price is set -#}
+        {%- if c.ticket_url and c.schema_price %}
+        "offers": { "@type": "Offer", "url": "{{ c.ticket_url }}", "price": "{{ c.schema_price }}", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "validFrom": "{{ c.schema_valid_from | default(value=c.date) }}" },
         {%- endif %}
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
@@ -69,7 +72,7 @@
 {% endif %}
 {% include "partials/navbar.html" %}
 
-<main class="page-content conciertos-page">
+<main class="page-content conciertos-page" id="main">
     <header class="page-header">
         <h1>{{ section.title }}</h1>
         <p class="page-subtitle">{% if lang == "en" %}Upcoming dates, venues and tickets to see us live{% else %}Próximas fechas, localidades y entradas para verla en directo{% endif %}</p>
@@ -103,7 +106,7 @@
                     <span class="event-venue">{{ c.display }}</span>
                     <span class="event-actions">{% if c.ticket_url %}
                         <a href="{{ c.ticket_url }}" target="_blank" rel="noopener noreferrer" class="event-btn event-btn-tickets">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 010-6h20a3 3 0 010 6"/><path d="M2 15a3 3 0 000 6h20a3 3 0 000-6"/><line x1="2" y1="9" x2="2" y2="15"/><line x1="22" y1="9" x2="22" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                            <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 010-6h20a3 3 0 010 6"/><path d="M2 15a3 3 0 000 6h20a3 3 0 000-6"/><line x1="2" y1="9" x2="2" y2="15"/><line x1="22" y1="9" x2="22" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
                             <span>{% if lang == "en" %}Tickets{% else %}Entradas{% endif %}</span>
                         </a>
                     {% endif %}</span>
@@ -122,11 +125,11 @@
         <h2>{% if lang == "en" %}Organizing an event?{% else %}¿Organizas un evento?{% endif %}</h2>
         <div class="cta-buttons">
             <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 {% if lang == "en" %}Bookings{% else %}Contrataciones{% endif %}
             </a>
             <a href="tel:+34661892704" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                 661 892 704
             </a>
         </div>

@@ -41,6 +41,8 @@
 {% endif %}
 {% include "partials/navbar.html" %}
 
+<main class="page-content" id="main">
+
 <header class="hero" id="inicio">
     <picture>
         <source
@@ -63,17 +65,16 @@
             height="857">
     </picture>
     <div class="hero-content">
-        <h1 class="hero-title">Teína</h1>
-        <p class="tagline">tributo indie pop rock</p>
+        <h1 class="hero-title">Teína <span class="tagline">{% if lang == "en" %}indie pop rock tribute{% else %}tributo indie pop rock{% endif %}</span></h1>
         {% if lang == "en" %}
         <p class="hero-description">Indie pop rock tribute band that combines reinterpreted covers of major Spanish artists with original songs</p>
         <div class="hero-buttons">
             <a href="{{ lang_prefix }}/musica/" class="btn btn-primary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 Listen
             </a>
             <a href="{{ lang_prefix }}/contacto/" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 Bookings
             </a>
         </div>
@@ -81,11 +82,11 @@
         <p class="hero-description">Banda tributo de indie pop rock que combina versiones reinterpretadas de grandes referentes nacionales con canciones propias</p>
         <div class="hero-buttons">
             <a href="/musica/" class="btn btn-primary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                 Escuchar
             </a>
             <a href="/contacto/" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 Contrataciones
             </a>
         </div>
@@ -98,14 +99,14 @@
     <h2>About Teína</h2>
     <p class="section-intro">We are an indie pop rock tribute band from Calasparra, in the Northwest of the Region of Murcia, Spain. All members have extensive experience in the world of live music in different formats. Teína offers the best reinterpreted covers of Spanish indie rock, plus original songs with intensity and personality. <a href="{{ lang_prefix }}/tributo/">Learn more about our tribute →</a></p>
     <a href="{{ lang_prefix }}/banda/" class="section-cta">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         Meet the band
     </a>
     {% else %}
     <h2>Sobre Teína</h2>
     <p class="section-intro">Teína es una banda tributo de indie pop rock originaria de Calasparra, en el Noroeste de la Región de Murcia, España. Todos los componentes cuentan con una amplia experiencia en el mundo de la música en directo en diferentes formatos. Ofrecemos las mejores versiones reinterpretadas del indie rock nacional, además de temas propios con intensidad y personalidad. <a href="/tributo/">Conoce nuestro tributo →</a></p>
     <a href="/banda/" class="section-cta">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         Conocer la banda
     </a>
     {% endif %}
@@ -123,7 +124,7 @@
         </div>
     </div>
     <a href="{{ lang_prefix }}/media/" class="section-cta">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         {% if lang == "en" %}See more{% else %}Ver más{% endif %}
     </a>
 </section>
@@ -134,7 +135,7 @@
     <p class="section-intro">Upcoming live shows in Murcia, Granada, Calasparra, Caravaca and more.</p>
     <div class="cta-buttons">
         <a href="{{ lang_prefix }}/conciertos/" class="btn btn-primary">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             See all concerts →
         </a>
     </div>
@@ -143,7 +144,7 @@
     <p class="section-intro">Próximos directos en Murcia, Granada, Calasparra, Caravaca y más.</p>
     <div class="cta-buttons">
         <a href="/conciertos/" class="btn btn-primary">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Ver todos los conciertos →
         </a>
     </div>
@@ -163,24 +164,19 @@
         </div>
         <div class="cta-buttons">
             <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 {% if lang == "en" %}Contact{% else %}Contactar{% endif %}
             </a>
             <a href="tel:+34661892704" class="btn btn-secondary">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                 661 892 704
             </a>
         </div>
     </div>
 </section>
 
+</main>
+
 {% include "partials/footer.html" %}
 
-<!-- Lightbox for gallery -->
-<div class="lightbox" id="lightbox">
-    <button class="lightbox-close">&times;</button>
-    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
-    <img src="" alt="" class="lightbox-img">
-    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
-</div>
 {% endblock %}

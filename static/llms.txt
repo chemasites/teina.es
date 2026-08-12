@@ -6,17 +6,20 @@
 
 ## About
 
-Teina es una banda tributo de indie pop rock con 6 miembros: Juanjo (guitarra, voz), Nacho (saxo, percusión, coros), AJ Ruiz (bajo), J.A. Garre (teclados), Adri (batería) y Darwin (guitarra, coros). Con base en Calasparra, en el Noroeste de la Región de Murcia, combinan indie pop, pop rock y rock alternativo con letras honestas y actuaciones en directo llenas de energía.
+Teina es una banda tributo de indie pop rock con 6 miembros: Juanjo (guitarra, voz), Nacho (saxo, percusión, coros), AJ Ruíz (bajo), J.A. Garre (teclados), Adri (batería) y Darwin (guitarra, coros). Con base en Calasparra, en el Noroeste de la Región de Murcia, combinan indie pop, pop rock y rock alternativo con letras honestas y actuaciones en directo llenas de energía.
 
-Teina is a 6-member band: Juanjo (guitar, vocals), Nacho (sax, percussion, backing vocals), AJ Ruiz (bass), J.A. Garre (keyboards), Adri (drums), and Darwin (guitar, backing vocals). Based in Calasparra in the Northwest of the Region of Murcia, they combine indie pop, pop rock and alternative rock with honest lyrics and energetic live performances.
+Teina is a 6-member indie pop rock tribute band: Juanjo (guitar, vocals), Nacho (sax, percussion, backing vocals), AJ Ruíz (bass), J.A. Garre (keyboards), Adri (drums), and Darwin (guitar, backing vocals). Based in Calasparra in the Northwest of the Region of Murcia, they combine indie pop, pop rock and alternative rock with honest lyrics and energetic live performances.
 
 ## Website sections
 
 - [Home](https://teina.es/): Band overview, upcoming concerts, featured video
+- [Concerts](https://teina.es/conciertos/): Upcoming and past concert dates, venues, tickets
+- [Music](https://teina.es/musica/): Original songs, promo video, streaming links (Spotify, YouTube)
 - [Band](https://teina.es/banda/): Member profiles, biography, live experience
-- [Music](https://teina.es/musica/): Original songs, streaming links (Spotify, YouTube)
 - [Media](https://teina.es/media/): Photo gallery, concert videos
-- [Contact](https://teina.es/contacto/): Booking inquiries, phone, email, location
+- [Tribute](https://teina.es/tributo/): Tribute repertoire, artists covered, performance area
+- [Contact](https://teina.es/contacto/): Booking inquiries, services, phone, email, location
+- [Legal](https://teina.es/legal/): Legal notice and privacy policy
 
 ## Contact
 

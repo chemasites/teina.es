@@ -1,7 +1,7 @@
 +++
 title = "Contact"
 template = "contacto.html"
-description = "Contact Teína for bookings and events. Phone: 661 892 704. Available for weddings, festivals and events across Spain."
+description = "Book Teína for your event: weddings, town festivals and music festivals. Phone +34 661 892 704. Available across Murcia and all of Spain."
 +++
 
 Organizing an event? Let's talk and make it unforgettable.

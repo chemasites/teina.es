@@ -4,6 +4,10 @@
 # time: visible time like "22.00h", or "--:--" if unknown. Omit for private.
 # private: true hides time, shows "Privado/Private" badge, skips JSON-LD.
 # ticket_url: optional; renders a Tickets button + JSON-LD offer.
+# schema_region: optional addressRegion, e.g. "Región de Murcia". Omitted when
+#   unknown rather than guessed — a wrong region is worse than none.
+# schema_price: ticket price in EUR ("0" if free). The JSON-LD Offer is only
+#   emitted when this is set, because Google discards an Offer without a price.
 # schema_*: only for public events (JSON-LD MusicEvent). schema_start is full
 #   ISO 8601 with timezone, or date-only "YYYY-MM-DD" if time unknown.
 #

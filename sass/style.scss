@@ -17,7 +17,8 @@
     --text-secondary: #4a4540;
     --text-muted: #5a4a38;
     --text-subtle: #7a6a58;
-    --text-faint: #8a7a68;
+    // #8a7a68 was 3.82:1 on --bg-base, fails WCAG AA (4.5:1); this hits 4.66:1
+    --text-faint: #7c6c5a;
 
     --border-color: #d5c9b8;
     --border-light: #c5b9a8;
@@ -56,7 +57,8 @@
     --text-secondary: #d0ccc8;
     --text-muted: #b8b4b0;
     --text-subtle: #9a9692;
-    --text-faint: #7a7672;
+    // #7a7672 was 3.93:1 on --bg-base, fails WCAG AA (4.5:1); this hits 4.90:1
+    --text-faint: #8a8681;
 
     --border-color: #3a3836;
     --border-light: #4a4846;
@@ -96,7 +98,7 @@
         --text-secondary: #d0ccc8;
         --text-muted: #b8b4b0;
         --text-subtle: #9a9692;
-        --text-faint: #7a7672;
+        --text-faint: #8a8681;
 
         --border-color: #3a3836;
         --border-light: #4a4846;
@@ -119,6 +121,32 @@
 
         --link-color: #d4b896;
         --link-hover: #e8d4b8;
+    }
+}
+
+// Keyboard-only focus ring; :not(:focus-visible) is invalid in old browsers so
+// they keep the native outline instead of losing focus indication entirely
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-dark);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    // base opacity:0 in .fade-in must not survive a near-0ms transition
+    .fade-in {
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -536,11 +564,10 @@ html:not([data-theme="light"]) .theme-toggle button {
     transition: all 0.3s ease;
     position: relative;
 
-    &:hover, &:focus {
+    &:hover, &:focus-visible {
         background: var(--bg-card);
         transform: translateY(-4px);
         box-shadow: 0 8px 24px var(--shadow-color);
-        outline: none;
 
         .member-avatar, .member-avatar-wrapper {
             border-color: var(--accent);
@@ -1067,7 +1094,7 @@ html:not([data-theme="light"]) .theme-toggle button {
     }
 
     .footer-col {
-        h4 {
+        .footer-heading {
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -1242,6 +1269,9 @@ html:not([data-theme="light"]) .theme-toggle button {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    // skip off-screen layout/paint; 300px matches the ~300-330px rendered column width, square per aspect-ratio above
+    content-visibility: auto;
+    contain-intrinsic-size: auto 300px;
 
     &:hover {
         transform: scale(1.02);
@@ -2498,5 +2528,50 @@ lite-youtube {
     .gallery-item,
     .gallery-placeholder {
         border-radius: 8px;
+    }
+}
+
+.skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: -3rem;
+    z-index: 1000;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    background: var(--bg-card-solid);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: top 0.15s ease;
+
+    &:focus-visible {
+        top: 0.5rem;
+    }
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: left;
+
+    .faq-item {
+        background: var(--bg-card);
+        border: 1px solid var(--bg-alt);
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin: 0.75rem 0 0;
+            color: var(--text-secondary);
+        }
     }
 }

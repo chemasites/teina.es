@@ -3,10 +3,11 @@
 
 Usage:
   concert.py add --date YYYY-MM-DD --city CITY [--venue VENUE] [--time HH:MM]
-             [--ticket URL] [--private]
+             [--ticket URL] [--region REGION] [--price EUR] [--private]
   concert.py remove (--date YYYY-MM-DD | --id N)
   concert.py update --id N [--time HH:MM | --clear-time] [--ticket URL |
-             --clear-ticket] [--venue VENUE] [--city CITY] [--private | --public]
+             --clear-ticket] [--venue VENUE] [--city CITY] [--region REGION]
+             [--price EUR] [--private | --public]
   concert.py list
 
 data/concerts.toml is the single source of truth: templates/conciertos.html
@@ -33,6 +34,10 @@ HEADER = """# Concerts data — single source for visible list + JSON-LD structu
 # time: visible time like "22.00h", or "--:--" if unknown. Omit for private.
 # private: true hides time, shows "Privado/Private" badge, skips JSON-LD.
 # ticket_url: optional; renders a Tickets button + JSON-LD offer.
+# schema_region: optional addressRegion, e.g. "Región de Murcia". Omitted when
+#   unknown rather than guessed — a wrong region is worse than none.
+# schema_price: ticket price in EUR ("0" if free). The JSON-LD Offer is only
+#   emitted when this is set, because Google discards an Offer without a price.
 # schema_*: only for public events (JSON-LD MusicEvent). schema_start is full
 #   ISO 8601 with timezone, or date-only "YYYY-MM-DD" if time unknown.
 #
@@ -40,7 +45,8 @@ HEADER = """# Concerts data — single source for visible list + JSON-LD structu
 """
 
 FIELD_ORDER = ["date", "display", "time", "private", "ticket_url",
-               "schema_name", "schema_loc", "schema_city", "schema_start"]
+               "schema_name", "schema_loc", "schema_city", "schema_region",
+               "schema_price", "schema_start"]
 
 
 def load():
@@ -99,7 +105,7 @@ def fmt_time(time):
     return time.replace(":", ".") + "h" if time else "--:--"
 
 
-def build(date, city, venue, time, ticket, private):
+def build(date, city, venue, time, ticket, private, region=None, price=None):
     same = bool(venue) and venue.lower() == city.lower()
     display = city + (f" - {venue}" if venue and not same else "")
     c = {"date": date, "display": display, "private": bool(private)}
@@ -111,6 +117,11 @@ def build(date, city, venue, time, ticket, private):
     c["schema_name"] = venue if venue and not same else city
     c["schema_loc"] = venue or city
     c["schema_city"] = city
+    if region:
+        c["schema_region"] = region
+    # Google drops an Offer without a price, so a ticket link only reaches search results with one
+    if price is not None:
+        c["schema_price"] = str(price)
     c["schema_start"] = make_start(date, time)
     return c
 
@@ -141,7 +152,7 @@ def cmd_add(args):
     if any(c["date"] == args.date for c in concerts):
         sys.exit(f"error: concert on {args.date} already exists; remove first")
     concerts.append(build(args.date, args.city, args.venue, args.time,
-                          args.ticket, args.private))
+                          args.ticket, args.private, args.region, args.price))
     save(concerts)
     label = f"{args.venue} - {args.city}" if args.venue else args.city
     print(f"added: {args.date} {label}")
@@ -183,7 +194,9 @@ def cmd_update(args):
         private = True
     if args.public:
         private = False
-    rebuilt = build(date, city, venue, time, ticket, private)
+    region = args.region if args.region is not None else c.get("schema_region")
+    price = args.price if args.price is not None else c.get("schema_price")
+    rebuilt = build(date, city, venue, time, ticket, private, region, price)
     concerts = [x for x in concerts if x["date"] != date] + [rebuilt]
     save(concerts)
     print(f"updated id={args.id} date={date}")
@@ -234,6 +247,8 @@ def main():
     a.add_argument("--venue", default="", help="venue name (optional)")
     a.add_argument("--time", help="HH:MM (optional)")
     a.add_argument("--ticket", help="ticket URL (optional)")
+    a.add_argument("--region", help="addressRegion, e.g. 'Región de Murcia' (optional)")
+    a.add_argument("--price", help="ticket price in EUR, '0' if free; required for Event rich results")
     a.add_argument("--private", action="store_true",
                    help="mark as private event (no time, Privado badge)")
     a.set_defaults(func=cmd_add)
@@ -249,6 +264,8 @@ def main():
     u.add_argument("--clear-time", action="store_true",
                    help="clear time (display --:--)")
     u.add_argument("--ticket", help="set ticket URL")
+    u.add_argument("--region", help="set addressRegion")
+    u.add_argument("--price", help="set ticket price in EUR")
     u.add_argument("--clear-ticket", action="store_true", help="remove ticket")
     u.add_argument("--venue", help="set venue name")
     u.add_argument("--city", help="set city")
