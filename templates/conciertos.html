@@ -4,9 +4,9 @@
 
 {% block description %}{{ section.description }}{% endblock %}
 
-{% block canonical %}{{ section.permalink }}{% endblock %}
+{% block canonical %}{{ section.permalink | safe }}{% endblock %}
 
-{% block og_url %}{{ section.permalink }}{% endblock %}
+{% block og_url %}{{ section.permalink | safe }}{% endblock %}
 {% block og_title %}{{ section.title }} | Teína{% endblock %}
 {% block og_description %}{{ section.description }}{% endblock %}
 

@@ -26,7 +26,7 @@
         {% set es_path = current_path %}
         {% set en_path = "/en" ~ current_path %}
     {% endif %}
-    <link rel="canonical" href="{% block canonical %}{{ config.base_url | safe }}{% if lang == 'en' %}{{ en_path }}{% else %}{{ es_path }}{% endif %}{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}{{ config.base_url | safe }}{% if lang == 'en' %}{{ en_path | safe }}{% else %}{{ es_path | safe }}{% endif %}{% endblock %}">
 
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#f9f5f0" media="(prefers-color-scheme: light)">
@@ -35,7 +35,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-    <meta property="og:url" content="{% block og_url %}{{ config.base_url | safe }}{% if lang == 'en' %}{{ en_path }}{% else %}{{ es_path }}{% endif %}{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ config.base_url | safe }}{% if lang == 'en' %}{{ en_path | safe }}{% else %}{{ es_path | safe }}{% endif %}{% endblock %}">
     <meta property="og:title" content="{% block og_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Band in Murcia{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
     <meta property="og:image" content="{% block og_image %}{{ get_url(path='media/hero-1200.jpg') }}{% endblock %}">
@@ -60,9 +60,9 @@
     <link rel="manifest" href="{{ get_url(path='manifest.json') }}">
 
     <!-- Language alternatives -->
-    <link rel="alternate" hreflang="es" href="{{ config.base_url | safe }}{{ es_path }}">
-    <link rel="alternate" hreflang="en" href="{{ config.base_url | safe }}{{ en_path }}">
-    <link rel="alternate" hreflang="x-default" href="{{ config.base_url | safe }}{{ es_path }}">
+    <link rel="alternate" hreflang="es" href="{{ config.base_url | safe }}{{ es_path | safe }}">
+    <link rel="alternate" hreflang="en" href="{{ config.base_url | safe }}{{ en_path | safe }}">
+    <link rel="alternate" hreflang="x-default" href="{{ config.base_url | safe }}{{ es_path | safe }}">
 
     <!-- Preconnect and DNS prefetch for performance -->
     <link rel="dns-prefetch" href="https://www.youtube.com">
