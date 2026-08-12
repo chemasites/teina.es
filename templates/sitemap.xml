@@ -4,24 +4,32 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    {% for sitemap_entry in entries %}
+    {%- for sitemap_entry in entries -%}
     <url>
         <loc>{{ sitemap_entry.permalink | safe }}</loc>
-        <lastmod>{% if sitemap_entry.updated %}{{ sitemap_entry.updated | date(format="%Y-%m-%dT%H:%M:%S+02:00") }}{% elif sitemap_entry.date %}{{ sitemap_entry.date | date(format="%Y-%m-%dT%H:%M:%S+02:00") }}{% else %}{{ now() | date(format="%Y-%m-%dT%H:%M:%S+02:00") }}{% endif %}</lastmod>
+        {#- omit lastmod rather than stamp now(): a build-time date on every page teaches Google the signal is noise -#}
+        {%- if sitemap_entry.updated %}
+        <lastmod>{{ sitemap_entry.updated | date(format="%Y-%m-%d") }}</lastmod>
+        {#- sections cannot carry a top-level `updated`, so they pass it through extra -#}
+        {%- elif sitemap_entry.extra and sitemap_entry.extra.updated %}
+        <lastmod>{{ sitemap_entry.extra.updated | date(format="%Y-%m-%d") }}</lastmod>
+        {%- elif sitemap_entry.date %}
+        <lastmod>{{ sitemap_entry.date | date(format="%Y-%m-%d") }}</lastmod>
+        {%- endif %}
         <changefreq>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") or "conciertos" in sitemap_entry.permalink %}weekly{% else %}monthly{% endif %}</changefreq>
         <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "conciertos" in sitemap_entry.permalink or "tributo" in sitemap_entry.permalink %}0.9{% elif "banda" in sitemap_entry.permalink or "musica" in sitemap_entry.permalink or "media" in sitemap_entry.permalink %}0.8{% elif "contacto" in sitemap_entry.permalink %}0.7{% else %}0.5{% endif %}</priority>
-        {# hreflang alternate links #}
-        {% if "/en/" in sitemap_entry.permalink %}
+        {#- hreflang alternate links -#}
+        {%- if "/en/" in sitemap_entry.permalink -%}
         <xhtml:link rel="alternate" hreflang="es" href="{{ sitemap_entry.permalink | replace(from="teina.es/en/", to="teina.es/") | safe }}"/>
         <xhtml:link rel="alternate" hreflang="en" href="{{ sitemap_entry.permalink | safe }}"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="{{ sitemap_entry.permalink | replace(from="teina.es/en/", to="teina.es/") | safe }}"/>
-        {% else %}
+        {%- else -%}
         <xhtml:link rel="alternate" hreflang="es" href="{{ sitemap_entry.permalink | safe }}"/>
         <xhtml:link rel="alternate" hreflang="en" href="{{ sitemap_entry.permalink | replace(from="teina.es/", to="teina.es/en/") | safe }}"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="{{ sitemap_entry.permalink | safe }}"/>
-        {% endif %}
-        {# Homepage images #}
-        {% if sitemap_entry.permalink is ending_with("teina.es/") %}
+        {%- endif -%}
+        {#- Homepage images -#}
+        {%- if sitemap_entry.permalink is ending_with("teina.es/") -%}
         <image:image>
             <image:loc>https://teina.es/imgs/teina-logo.png</image:loc>
             <image:title>Teína - Logo de la banda de indie pop rock</image:title>
@@ -32,8 +40,13 @@
             <image:title>Teína - Imagen de la banda</image:title>
             <image:caption>Teína, grupo de indie pop rock de Murcia, España</image:caption>
         </image:image>
-        {% endif %}
-        {% if sitemap_entry.permalink is ending_with("/en/") %}
+        <image:image>
+            <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
+            <image:title>Teína - Banda de indie pop rock en directo</image:title>
+            <image:caption>Teína tocando en directo, banda de indie pop rock de Calasparra, Murcia</image:caption>
+        </image:image>
+        {%- endif -%}
+        {%- if sitemap_entry.permalink is ending_with("/en/") -%}
         <image:image>
             <image:loc>https://teina.es/imgs/teina-logo.png</image:loc>
             <image:title>Teína - Indie pop rock band logo</image:title>
@@ -44,9 +57,14 @@
             <image:title>Teína - Band image</image:title>
             <image:caption>Teína, indie pop rock band from Murcia, Spain</image:caption>
         </image:image>
-        {% endif %}
-        {# Banda page images - Spanish #}
-        {% if sitemap_entry.permalink is ending_with("/banda/") and not "/en/" in sitemap_entry.permalink %}
+        <image:image>
+            <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
+            <image:title>Teína - Indie pop rock band live</image:title>
+            <image:caption>Teína playing live, indie pop rock band from Calasparra, Murcia, Spain</image:caption>
+        </image:image>
+        {%- endif -%}
+        {#- Banda page images - Spanish -#}
+        {%- if sitemap_entry.permalink is ending_with("/banda/") and not "/en/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/banda/juanjo.png</image:loc>
             <image:title>Juanjo - Guitarra y Voz de Teína</image:title>
@@ -77,9 +95,9 @@
             <image:title>Darwin - Guitarra y Coros de Teína</image:title>
             <image:caption>Darwin, guitarrista y corista de la banda Teína</image:caption>
         </image:image>
-        {% endif %}
-        {# Banda page images - English #}
-        {% if "/en/banda/" in sitemap_entry.permalink %}
+        {%- endif -%}
+        {#- Banda page images - English -#}
+        {%- if "/en/banda/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/banda/juanjo.png</image:loc>
             <image:title>Juanjo - Guitar and Vocals of Teína</image:title>
@@ -110,41 +128,25 @@
             <image:title>Darwin - Guitar and Backing Vocals of Teína</image:title>
             <image:caption>Darwin, guitarist and backing vocalist of Teína band</image:caption>
         </image:image>
-        {% endif %}
-        {# Tributo page images - Spanish #}
-        {% if sitemap_entry.permalink is ending_with("/tributo/") and not "/en/" in sitemap_entry.permalink %}
+        {%- endif -%}
+        {#- Tributo page images - Spanish -#}
+        {%- if sitemap_entry.permalink is ending_with("/tributo/") and not "/en/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
             <image:title>Teína - Banda tributo de indie pop rock en Murcia</image:title>
             <image:caption>Teína en directo, banda tributo de indie pop rock en Murcia</image:caption>
         </image:image>
-        {% endif %}
-        {# Tributo page images - English #}
-        {% if "/en/tributo/" in sitemap_entry.permalink %}
+        {%- endif -%}
+        {#- Tributo page images - English -#}
+        {%- if "/en/tributo/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
             <image:title>Teína - Indie pop rock tribute band in Murcia</image:title>
             <image:caption>Teína live, indie pop rock tribute band in Murcia</image:caption>
         </image:image>
-        {% endif %}
-        {# Conciertos page images - Spanish #}
-        {% if sitemap_entry.permalink is ending_with("/conciertos/") and not "/en/" in sitemap_entry.permalink %}
-        <image:image>
-            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
-            <image:title>Próximos conciertos de Teína</image:title>
-            <image:caption>Calendario de próximos conciertos de Teína, banda tributo de indie pop rock en Murcia</image:caption>
-        </image:image>
-        {% endif %}
-        {# Conciertos page images - English #}
-        {% if "/en/conciertos/" in sitemap_entry.permalink %}
-        <image:image>
-            <image:loc>https://teina.es/media/banda-completa-luces-azules.jpg</image:loc>
-            <image:title>Upcoming Teína concerts</image:title>
-            <image:caption>Upcoming concerts calendar for Teína, indie pop rock tribute band in Murcia</image:caption>
-        </image:image>
-        {% endif %}
-        {# Media page images and videos - Spanish #}
-        {% if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink %}
+        {%- endif -%}
+        {#- Media page images and videos - Spanish -#}
+        {%- if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/media/banda-confeti-final.jpg</image:loc>
             <image:title>Teína en escenario con lluvia de confeti y público</image:title>
@@ -422,9 +424,9 @@
             <video:description>Canción de Teína, banda de indie pop rock de Calasparra, Murcia</video:description>
             <video:player_loc>https://www.youtube.com/embed/_ue01WuY4bQ</video:player_loc>
         </video:video>
-        {% endif %}
-        {# Media page images and videos - English #}
-        {% if "/en/media/" in sitemap_entry.permalink %}
+        {%- endif -%}
+        {#- Media page images and videos - English -#}
+        {%- if "/en/media/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/media/banda-confeti-final.jpg</image:loc>
             <image:title>Teína on stage with confetti rain and crowd</image:title>
@@ -702,7 +704,7 @@
             <video:description>Song of Teína, indie pop rock band from Calasparra, Murcia, Spain</video:description>
             <video:player_loc>https://www.youtube.com/embed/_ue01WuY4bQ</video:player_loc>
         </video:video>
-        {% endif %}
+        {%- endif -%}
     </url>
-    {% endfor %}
+    {%- endfor -%}
 </urlset>

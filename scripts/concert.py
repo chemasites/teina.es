@@ -19,10 +19,13 @@ import argparse
 import re
 import sys
 import tomllib
+from datetime import date as date_cls
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TOML = ROOT / "data" / "concerts.toml"
+CONCIERTOS_PAGES = [ROOT / "content" / "conciertos" / "_index.md",
+                    ROOT / "content" / "conciertos" / "_index.en.md"]
 
 HEADER = """# Concerts data — single source for visible list + JSON-LD structured data.
 # date: "YYYY-MM-DD" (used for sorting, past/future split, data-date attr)
@@ -49,6 +52,25 @@ def save(concerts):
     concerts.sort(key=lambda c: c["date"])
     body = "\n\n".join(emit(c) for c in concerts)
     TOML.write_text(HEADER + "\n" + body + "\n", encoding="utf-8")
+    stamp_updated()
+
+
+def stamp_updated():
+    """Refresh conciertos `extra.updated` so <lastmod> tracks real edits, not build time."""
+    today = date_cls.today().isoformat()
+    for page in CONCIERTOS_PAGES:
+        text = page.read_text(encoding="utf-8")
+        if re.search(r'^updated = "', text, flags=re.MULTILINE):
+            text = re.sub(r'^updated = "[^"]*"$', f'updated = "{today}"',
+                          text, count=1, flags=re.MULTILINE)
+        elif re.search(r"^\[extra\]$", text, flags=re.MULTILINE):
+            text = re.sub(r"^\[extra\]$", f'[extra]\nupdated = "{today}"',
+                          text, count=1, flags=re.MULTILINE)
+        else:
+            # Zola sections reject a top-level `updated`, so it has to live under [extra]
+            text = re.sub(r"\n\+\+\+", f'\n\n[extra]\nupdated = "{today}"\n+++',
+                          text, count=1)
+        page.write_text(text, encoding="utf-8")
 
 
 def emit(c):
