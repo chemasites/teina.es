@@ -254,6 +254,29 @@
             eventsContainer.insertAdjacentElement('afterend', details);
         });
 
+        // Burger menu
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        if (navToggle && navLinks) {
+            const setNavOpen = (open) => {
+                navToggle.closest('.navbar').classList.toggle('nav-open', open);
+                navToggle.setAttribute('aria-expanded', String(open));
+            };
+            navToggle.addEventListener('click', () => {
+                setNavOpen(navToggle.getAttribute('aria-expanded') !== 'true');
+            });
+            navLinks.addEventListener('click', (e) => {
+                if (e.target.closest('a')) setNavOpen(false);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') setNavOpen(false);
+            });
+            // the panel only exists under the 860px breakpoint; leaving it open past that strands the class
+            window.matchMedia('(min-width: 861px)').addEventListener('change', (e) => {
+                if (e.matches) setNavOpen(false);
+            });
+        }
+
         // Navbar scroll effect
         const navbar = document.querySelector('.navbar');
         if (navbar) {

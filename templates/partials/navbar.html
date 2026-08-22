@@ -16,7 +16,10 @@
     <a href="{{ lang_prefix }}/" class="nav-logo">
         <img src="{{ get_url(path='imgs/mariposa-teina.jpg') }}" alt="Teína" width="58" height="45" decoding="async" fetchpriority="high">
     </a>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="{% if lang == 'en' %}Open menu{% else %}Abrir menú{% endif %}">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
         {% if lang == "en" %}
         <li><a href="{{ lang_prefix }}/conciertos/">Concerts</a></li>
         <li><a href="{{ lang_prefix }}/musica/">Music</a></li>
@@ -32,6 +35,8 @@
         <li><a href="/media/">Media</a></li>
         <li class="nav-cta-item"><a href="/contacto/" class="nav-cta">Contratar</a></li>
         {% endif %}
+    </ul>
+    <ul class="nav-actions">
         <li class="lang-switcher">
             {% if lang == "en" %}
             <a href="{{ alt_lang_path }}" title="Español">ES</a>
