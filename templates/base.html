@@ -378,7 +378,7 @@
         }
 
         // keep Tab inside the dialog while it is open
-        lightbox.addEventListener('keydown', (e) => {
+        lightbox?.addEventListener('keydown', (e) => {
             if (e.key !== 'Tab') return;
             const focusable = lightbox.querySelectorAll('button');
             if (!focusable.length) return;
