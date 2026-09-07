@@ -5,5 +5,5 @@ description = "Próximos conciertos de Teína por la Región de Murcia y alreded
 sort_by = "weight"
 
 [extra]
-updated = "2026-08-12"
+updated = "2026-09-07"
 +++

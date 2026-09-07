@@ -184,6 +184,7 @@ date = "2026-10-30"
 display = "Murcia - La Puerta Falsa"
 time = "22.00h"
 private = false
+ticket_url = "https://eltaquillero.com/event/te%C3%ADna---concierto/310"
 schema_name = "La Puerta Falsa"
 schema_loc = "La Puerta Falsa"
 schema_city = "Murcia"

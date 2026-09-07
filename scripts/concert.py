@@ -20,7 +20,7 @@ import argparse
 import re
 import sys
 import tomllib
-from datetime import date as date_cls
+from datetime import date as date_cls, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -93,11 +93,19 @@ def emit(c):
     return "\n".join(lines)
 
 
+def last_sunday(year, month):
+    d = date_cls(year, month, 31)
+    return d - timedelta(days=(d.weekday() + 1) % 7)
+
+
 def make_start(date, time):
     if not time:
         return date
-    mth = int(date.split("-")[1])
-    offset = "+02:00" if 3 <= mth <= 10 else "+01:00"  # approx Spain DST
+    y, m, d = (int(x) for x in date.split("-"))
+    # Spain switches on the last Sunday of March and October, so a month-only
+    # rule mislabels the tail of October (e.g. the 30th is already CET).
+    summer = last_sunday(y, 3) <= date_cls(y, m, d) < last_sunday(y, 10)
+    offset = "+02:00" if summer else "+01:00"
     return f"{date}T{time}:00{offset}"
 
 
