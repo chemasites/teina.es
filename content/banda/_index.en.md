@@ -2,6 +2,9 @@
 title = "The Band"
 template = "banda.html"
 description = "Teína is an indie pop rock band from Calasparra, Murcia, Spain. Six musicians, reinterpreted Spanish indie covers and original songs, live on stage."
+
+[extra]
+updated = "2026-10-01"
 +++
 
 We are an indie pop-rock band that lives for the stage with intensity and personality. Our repertoire combines reinterpreted covers of great national and international indie references with original songs, where we pour our sonic identity and our stories.

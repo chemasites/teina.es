@@ -13,6 +13,12 @@
 {% block twitter_title %}{{ page.title }} | Teína{% endblock %}
 {% block twitter_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
+{% block og_image %}{{ get_url(path='media/large/banda-confeti-final.jpg') }}{% endblock %}
+{% block og_image_width %}1600{% endblock %}
+{% block og_image_height %}1066{% endblock %}
+{% block og_image_alt %}{% if lang == 'en' %}Teína on stage under a rain of confetti{% else %}Teína en el escenario bajo una lluvia de confeti{% endif %}{% endblock %}
+{% block twitter_image %}{{ get_url(path='media/large/banda-confeti-final.jpg') }}{% endblock %}
+{% block twitter_image_alt %}{% if lang == 'en' %}Teína on stage under a rain of confetti{% else %}Teína en el escenario bajo una lluvia de confeti{% endif %}{% endblock %}
 {% block field %}field--plaster{% endblock %}
 {% block theme_color %}#f4ead9{% endblock %}
 

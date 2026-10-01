@@ -12,7 +12,7 @@ Teina is a 6-member indie pop rock tribute band: Juanjo (guitar, vocals), Nacho 
 
 ## Website sections
 
-- [Home](https://teina.es/): Band overview, upcoming concerts, featured video
+- [Home](https://teina.es/): Band overview, next concert dates, repertoire, live video and photos, event types, original songs, booking
 - [Concerts](https://teina.es/conciertos/): Upcoming and past concert dates, venues, tickets
 - [Music](https://teina.es/musica/): Original songs, promo video, streaming links (Spotify, YouTube)
 - [Band](https://teina.es/banda/): Member profiles, biography, live experience
@@ -20,6 +20,10 @@ Teina is a 6-member indie pop rock tribute band: Juanjo (guitar, vocals), Nacho 
 - [Tribute](https://teina.es/tributo/): Tribute repertoire, artists covered, performance area
 - [Contact](https://teina.es/contacto/): Booking inquiries, services, phone, email, location
 - [Legal](https://teina.es/legal/): Legal notice and privacy policy
+
+## Booking
+
+To book Teína, call or email with the date, the town or venue, and the type of event. The band replies directly with availability and terms. No agency or middlemen.
 
 ## Contact
 
@@ -31,8 +35,10 @@ Teina is a 6-member indie pop rock tribute band: Juanjo (guitar, vocals), Nacho 
 
 ## Languages
 
-The website is available in Spanish (default) and English.
+The website is available in Spanish (default, `/`) and English (`/en/`), with the same facts in both.
 
 ## Optional
 
 For the full detailed version, see [/llms-full.txt](https://teina.es/llms-full.txt)
+
+Last updated: 2026-10-01

@@ -13,6 +13,12 @@
 {% block twitter_title %}{{ section.title }} | Teína{% endblock %}
 {% block twitter_description %}{{ section.description }}{% endblock %}
 
+{% block og_image %}{{ get_url(path='media/large/banda-foto-publico-grande.jpg') }}{% endblock %}
+{% block og_image_width %}1600{% endblock %}
+{% block og_image_height %}983{% endblock %}
+{% block og_image_alt %}{% if lang == 'en' %}Teína live in front of a packed town square{% else %}Teína en concierto con una plaza llena de público{% endif %}{% endblock %}
+{% block twitter_image %}{{ get_url(path='media/large/banda-foto-publico-grande.jpg') }}{% endblock %}
+{% block twitter_image_alt %}{% if lang == 'en' %}Teína live in front of a packed town square{% else %}Teína en concierto con una plaza llena de público{% endif %}{% endblock %}
 {% block field %}field--sand{% endblock %}
 {% block theme_color %}#e6d2b3{% endblock %}
 
@@ -48,7 +54,7 @@
         "@type": "MusicEvent",
         "name": "Teína {% if lang == 'en' %}at{% else %}en{% endif %} {{ c.schema_name }}",
         "startDate": "{{ c.schema_start }}",
-        "description": "{% if lang == 'en' %}Teína live at {{ c.schema_loc }}, {{ c.schema_city }} — indie pop rock tribute band from Calasparra, Murcia.{% else %}Teína en directo en {{ c.schema_loc }}, {{ c.schema_city }} — banda tributo de indie pop rock de Calasparra, Murcia.{% endif %}",
+        "description": "{% if lang == 'en' %}Teína live at {{ c.schema_loc }}, {{ c.schema_city }}. Indie pop rock tribute band from Calasparra, Murcia.{% else %}Teína en directo en {{ c.schema_loc }}, {{ c.schema_city }}. Banda tributo de indie pop rock de Calasparra, Murcia.{% endif %}",
         "image": "{{ get_url(path='conciertos/conciertos-25.jpg') }}",
         "location": { "@type": "Place", "name": "{{ c.schema_loc }}", "address": { "@type": "PostalAddress", "addressLocality": "{{ c.schema_city }}"{% if c.schema_region %}, "addressRegion": "{{ c.schema_region }}"{% endif %}, "addressCountry": "ES" } },
         "performer": { "@id": "{{ config.base_url | safe }}/#band" },

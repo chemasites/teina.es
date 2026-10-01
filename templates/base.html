@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }} — {% if lang == "en" %}Indie Pop Rock Band in Murcia, Spain{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}</title>
+    <title>{% block title %}{{ config.title }} | {% if lang == "en" %}Indie Pop Rock Band in Murcia, Spain{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
     <meta name="author" content="Teína">
     <meta name="robots" content="index, follow">
@@ -25,11 +25,11 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
     <meta property="og:url" content="{% block og_url %}{{ config.base_url | safe }}{% if lang == 'en' %}{{ en_path | safe }}{% else %}{{ es_path | safe }}{% endif %}{% endblock %}">
-    <meta property="og:title" content="{% block og_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Band in Murcia{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band in Murcia{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock %}">
     <meta property="og:image" content="{% block og_image %}{{ get_url(path='media/hero-1200.jpg') }}{% endblock %}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="857">
+    <meta property="og:image:width" content="{% block og_image_width %}1200{% endblock %}">
+    <meta property="og:image:height" content="{% block og_image_height %}857{% endblock %}">
     <meta property="og:image:alt" content="{% block og_image_alt %}Teína - {% if lang == 'en' %}Indie Pop Rock Band from Calasparra, Murcia{% else %}Banda de Indie Pop Rock de Calasparra, Murcia{% endif %}{% endblock %}">
     <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}es_ES{% endif %}">
     <meta property="og:locale:alternate" content="{% if lang == 'en' %}es_ES{% else %}en_US{% endif %}">
@@ -37,7 +37,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} — {% if lang == 'en' %}Indie Pop Rock Band in Murcia{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }} | {% if lang == 'en' %}Indie Pop Rock Band in Murcia{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock %}">
     <meta name="twitter:image" content="{% block twitter_image %}{{ get_url(path='media/hero-1200.jpg') }}{% endblock %}">
     <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Teína - {% if lang == 'en' %}Indie Pop Rock Band from Calasparra, Murcia{% else %}Banda de Indie Pop Rock de Calasparra, Murcia{% endif %}{% endblock %}">

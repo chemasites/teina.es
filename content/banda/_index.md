@@ -2,6 +2,9 @@
 title = "La Banda"
 template = "banda.html"
 description = "Conoce a Teína: seis músicos de indie pop rock de Calasparra, Murcia. Versiones reinterpretadas del indie nacional y temas propios en directo."
+
+[extra]
+updated = "2026-10-01"
 +++
 
 Somos una banda de indie pop-rock que vive el directo con intensidad y personalidad. Nuestro repertorio combina versiones reinterpretadas de grandes referentes del indie nacional e internacional con canciones propias, donde volcamos nuestra identidad sonora y nuestras historias.
