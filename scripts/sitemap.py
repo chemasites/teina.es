@@ -22,8 +22,8 @@ MEDIA_HTML = ROOT / "templates" / "media.html"
 SITEMAP = ROOT / "templates" / "sitemap.xml"
 
 BASE_URL = "https://teina.es"
-CAPTION_ES = "Teína, banda de indie pop rock"
-CAPTION_EN = "Teína, indie pop rock band"
+CAPTION_ES = "Teína, banda de indie pop rock de Calasparra, Murcia"
+CAPTION_EN = "Teína, indie pop rock band from Calasparra, Murcia, Spain"
 
 GALLERY_RE = re.compile(
     r'<section class="section section-alt" id="galeria">.*?'
@@ -41,17 +41,28 @@ VIDEO_RE = re.compile(
     r"Teína - \{% if lang == 'en' %\}([^{]*?)\{% else %\}([^{]*?)\{% endif %\}\""
 )
 
+VIDEO_DESC_RE = re.compile(
+    r'<video:description>([^<]*)</video:description>\n'
+    r'\s*<video:player_loc>https://www\.youtube\.com/embed/([^<]+)</video:player_loc>'
+)
+
+VIDEO_EXTRAS_RE = re.compile(
+    r'<video:player_loc>https://www\.youtube\.com/embed/([^<]+)</video:player_loc>\n'
+    r'(.*?)        </video:video>',
+    re.DOTALL,
+)
+
 SITEMAP_ES_RE = re.compile(
-    r'(\{% if sitemap_entry\.permalink is ending_with\("/media/"\) '
-    r'and not "/en/" in sitemap_entry\.permalink %\}\n)'
+    r'(\{%-? if sitemap_entry\.permalink is ending_with\((?:pat=)?"/media/"\) '
+    r'and not "/en/" in sitemap_entry\.permalink -?%\}\n)'
     r'(.*?)'
-    r'(        \{% endif %\}\n        \{# Media page images and videos - English #\})',
+    r'(        \{%-? endif -?%\}\n        \{#-? Media page images and videos - English -?#\})',
     re.DOTALL,
 )
 SITEMAP_EN_RE = re.compile(
-    r'(\{% if "/en/media/" in sitemap_entry\.permalink %\}\n)'
+    r'(\{%-? if "/en/media/" in sitemap_entry\.permalink -?%\}\n)'
     r'(.*?)'
-    r'(        \{% endif %\}\n    </url>)',
+    r'(        \{%-? endif -?%\}\n    </url>)',
     re.DOTALL,
 )
 
@@ -85,18 +96,29 @@ def build_image_block(name: str, title: str, caption: str) -> str:
     )
 
 
-def build_video_block(vid: str, title: str, description: str) -> str:
+def parse_video_extras(sitemap: str) -> dict[str, str]:
+    """Hand-added tags after <video:player_loc> (duration, publication_date), kept across regens."""
+    return {m.group(1): m.group(2) for m in VIDEO_EXTRAS_RE.finditer(sitemap)}
+
+
+def build_video_block(vid: str, title: str, description: str, extras: str) -> str:
     return (
         '        <video:video>\n'
         f'            <video:thumbnail_loc>https://img.youtube.com/vi/{vid}/maxresdefault.jpg</video:thumbnail_loc>\n'
         f'            <video:title>Teína - {title}</video:title>\n'
         f'            <video:description>{description}</video:description>\n'
         f'            <video:player_loc>https://www.youtube.com/embed/{vid}</video:player_loc>\n'
+        f'{extras}'
         '        </video:video>'
     )
 
 
-def build_block(images, videos, lang: str) -> str:
+def parse_video_descriptions(block: str) -> dict[str, str]:
+    """Existing descriptions win over the template, so hand-written ones survive a regen."""
+    return {m.group(2): m.group(1) for m in VIDEO_DESC_RE.finditer(block)}
+
+
+def build_block(images, videos, extras: dict[str, str], descriptions: dict[str, str], lang: str) -> str:
     lines = []
     for name, alt_es, alt_en in images:
         title = alt_en if lang == 'en' else alt_es
@@ -104,11 +126,13 @@ def build_block(images, videos, lang: str) -> str:
         lines.append(build_image_block(name, title, caption))
     for vid, title_es, title_en in videos:
         title = title_en if lang == 'en' else title_es
-        if lang == 'en':
+        if vid in descriptions:
+            description = descriptions[vid]
+        elif lang == 'en':
             description = f"{title} of Teína, indie pop rock band from Calasparra, Murcia, Spain"
         else:
             description = f"{title} de Teína, banda de indie pop rock de Calasparra, Murcia"
-        lines.append(build_video_block(vid, title, description))
+        lines.append(build_video_block(vid, title, description, extras.get(vid, '')))
     return '\n'.join(lines) + '\n'
 
 
@@ -117,18 +141,19 @@ def cmd_regen(args: argparse.Namespace) -> None:
     videos = parse_videos()
     print(f"found {len(images)} image(s), {len(videos)} video(s) in media.html")
 
-    es_block = build_block(images, videos, 'es')
-    en_block = build_block(images, videos, 'en')
-
     content = SITEMAP.read_text(encoding='utf-8')
+    extras = parse_video_extras(content)
+
     m_es = SITEMAP_ES_RE.search(content)
     if not m_es:
         sys.exit("error: Spanish media block markers not found in sitemap.xml")
+    es_block = build_block(images, videos, extras, parse_video_descriptions(m_es.group(2)), 'es')
     content2 = (content[:m_es.start()] + m_es.group(1) + es_block
                 + m_es.group(3) + content[m_es.end():])
     m_en = SITEMAP_EN_RE.search(content2)
     if not m_en:
         sys.exit("error: English media block markers not found in sitemap.xml")
+    en_block = build_block(images, videos, extras, parse_video_descriptions(m_en.group(2)), 'en')
     content3 = (content2[:m_en.start()] + m_en.group(1) + en_block
                 + m_en.group(3) + content2[m_en.end():])
 

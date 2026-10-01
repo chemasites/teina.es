@@ -12,9 +12,8 @@ Add media to the gallery in `templates/media.html`. Request: $ARGUMENTS
 ## Photos
 
 1. Copy the images into `local/imgs/`.
-2. `python3.12 scripts/media.py import --dry-run [--alt-es "..." --alt-en "..."]`, check the plan, then run it without `--dry-run`. It writes a resized copy to `static/media/`, a 600px JPEG thumbnail, and the gallery entry.
-3. Match the existing entries: add a 600px WebP thumbnail, a 1600px `static/media/large/` JPEG and WebP (`sips -Z 1600`, `cwebp -q 80`), and point the entry's `href`, `data-fallback`, `<source>`, and `<img>` at them like its neighbours. Set real `width` and `height`. Delete the resized copy in `static/media/`; the gallery serves only `large/` and `thumbs/`.
-4. Replace generic alt text ("Foto Teína N") with a short description of the photo in both languages.
+2. `python3.12 scripts/media.py import --dry-run`, check the plan, then run it without `--dry-run`. It writes `large/` (1600px) and `thumbs/` (600px) as JPEG and WebP and appends a `<picture>` entry with `width` and `height`.
+3. Give each photo a short ES and EN description: pass `--alt-es`/`--alt-en` for a single photo, or replace the generic "Foto Teína N" / "Teína Photo N" alt text afterwards.
 
 ## YouTube videos
 

@@ -19,7 +19,7 @@ You manage images for https://teina.es.
 
 ## Tools
 
-- New gallery photos: drop them in `local/imgs/`, run `python3.12 scripts/media.py import --dry-run`, then without `--dry-run`. It writes a resized copy to `static/media/`, a JPEG thumbnail, and the gallery entry. Turn that copy into the `large/` JPEG and WebP, point the entry at them like its neighbours, then delete the copy.
+- New gallery photos: drop them in `local/imgs/`, run `python3.12 scripts/media.py import --dry-run`, then without `--dry-run`. It writes `large/` and `thumbs/` as JPEG and WebP and appends the gallery entry with `width` and `height`. `scripts/media.py remove --name <name>` undoes it.
 - `cwebp -q 80 in.jpg -o out.webp` for WebP; `sips -Z <px> in.jpg --out out.jpg` to resize; `sips -g pixelWidth -g pixelHeight file` for dimensions.
 
 ## After adding images
