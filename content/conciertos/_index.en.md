@@ -5,5 +5,5 @@ description = "Upcoming Teína concerts across the Region of Murcia and beyond. 
 sort_by = "weight"
 
 [extra]
-updated = "2026-09-07"
+updated = "2026-10-01"
 +++
