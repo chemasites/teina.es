@@ -7,7 +7,11 @@ x-claude:
   allowed-tools: Read, Edit, Write, Bash, Grep, Glob
 ---
 
-Add media to the gallery in `templates/media.html`. Request: $ARGUMENTS
+Add media to the gallery in `templates/media.html`.
+
+::target claude
+Request: $ARGUMENTS
+::end
 
 ## Photos
 

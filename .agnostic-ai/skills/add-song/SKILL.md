@@ -7,7 +7,11 @@ x-claude:
   allowed-tools: Read, Edit, Bash, Grep
 ---
 
-Add an original song to `templates/musica.html`. Request: $ARGUMENTS
+Add an original song to `templates/musica.html`.
+
+::target claude
+Request: $ARGUMENTS
+::end
 
 1. Read the song list in `templates/musica.html` and copy the structure of the newest entry.
 2. Insert the song newest first, with the Spotify and YouTube links given. Fill the ES and EN branches.

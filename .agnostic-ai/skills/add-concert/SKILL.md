@@ -7,7 +7,11 @@ x-claude:
   allowed-tools: Read, Edit, Bash, Grep
 ---
 
-Update the concert list. Request: $ARGUMENTS
+Update the concert list.
+
+::target claude
+Request: $ARGUMENTS
+::end
 
 `data/concerts.toml` is the only source. `templates/conciertos.html` renders the visible list and the `MusicEvent` JSON-LD from it, sorts by date, and hides past events from JSON-LD. Never edit that template's list or JSON-LD by hand.
 
