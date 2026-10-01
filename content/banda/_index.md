@@ -7,10 +7,8 @@ description = "Conoce a Teína: seis músicos de indie pop rock de Calasparra, M
 updated = "2026-10-01"
 +++
 
-Somos una banda de indie pop-rock que vive el directo con intensidad y personalidad. Nuestro repertorio combina versiones reinterpretadas de grandes referentes del indie nacional e internacional con canciones propias, donde volcamos nuestra identidad sonora y nuestras historias.
+Somos una banda de indie pop rock de Calasparra, Murcia. En directo mezclamos versiones del indie nacional e internacional con nuestras canciones.
 
-En el escenario buscamos algo más que tocar canciones: creamos un ambiente cercano, enérgico y emocional, conectando con el público desde el primer acorde.
+Nuestros temas beben del pop melódico, el rock alternativo y el indie actual. Letras honestas y estribillos que se quedan.
 
-Las composiciones propias de la banda beben del pop melódico, el rock alternativo y la escena indie actual, con letras honestas y estribillos que se quedan. Cada concierto es una mezcla equilibrada entre lo conocido y lo nuevo, entre la nostalgia y la sorpresa.
-
-Si buscas una banda con sonido actual, actitud en directo y una propuesta que va más allá de las versiones, aquí estamos.
+Cada concierto mezcla lo conocido con lo nuevo.
