@@ -1,0 +1,5 @@
+command: afplay /System/Library/Sounds/Glass.aiff
+description: Runs `afplay /System/Library/Sounds/Glass.aiff` on Stop.
+event: Stop
+matcher: ""
+name: stop-glass

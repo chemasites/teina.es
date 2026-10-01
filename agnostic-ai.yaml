@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Chemaclass/agnostic-ai/v0.75.0/docs/schemas/config.schema.json
+version: 1
+
+targets:
+  - claude
+  - codex
+
+# Track shared sources; ignore generated native configuration.
+gitignore:
+  enabled: true
+
+# Fail if a spec cannot be represented by a selected target.
+on-unsupported: error
+
+outputs:
+  codex:
+    exec-policies:
+      - pattern: ["git", "push", "--force"]
+        decision: forbidden
+        justification: Never rewrite published history on main.
+      - pattern: ["git", "push", "-f"]
+        decision: forbidden
+        justification: Never rewrite published history on main.
+      - pattern: ["git", "reset", "--hard"]
+        decision: forbidden
+        justification: Discards uncommitted site edits.
+      - pattern: ["git", "clean", "-f"]
+        decision: forbidden
+        justification: Deletes untracked inputs such as local/imgs.
+      - pattern: ["rm", "-rf"]
+        decision: forbidden
+        justification: Recursive deletes need a human.
