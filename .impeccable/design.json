@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-01T11:35:45+00:00",
+  "generatedAt": "2026-10-01T11:36:59+00:00",
   "title": "Design System: Teína",
   "extensions": {
     "colorMeta": {
@@ -212,14 +212,16 @@
       "file": "static/imgs/teina-logo-trim.webp",
       "fallback": "static/imgs/teina-logo-trim.png",
       "intrinsic": "381x573",
-      "width": "clamp(9rem, 16vw, 13rem); 7.5rem under 760px",
+      "width": "clamp(8rem, 13vw, 11.5rem); 7.5rem under 860px",
       "provenance": "static/imgs/teina-logo-trim.webp.json"
     },
-    "heroPhoto": {
-      "aspectRatio": "16 / 9; 4 / 3 under 760px",
-      "objectPosition": "50% 8%",
-      "maxHeight": "78vh",
-      "frame": "3px solid var(--ink)"
+    "hero": {
+      "grid": "minmax(0, 5fr) text, minmax(0, 7fr) photo; gap clamp(1.5rem, 4vw, 4rem); align-items center",
+      "photoHeight": "min(68vh, 44rem), min 20rem",
+      "photoAspectUnder860": "4 / 3, photo first, text centred",
+      "objectPosition": "50% 30%",
+      "frame": "none",
+      "strap": "Banda murciana (EN: Band from Murcia, Spain)"
     },
     "shadows": [],
     "borders": [
@@ -300,11 +302,6 @@
         "purpose": "Booking dock appears, header ticket hides, concert rows reflow."
       },
       {
-        "name": "hero-stack",
-        "value": "760px",
-        "purpose": "Hero photo to 4:3; logo and text stack and centre."
-      },
-      {
         "name": "tablet-narrow",
         "value": "800px",
         "purpose": "Live split and members grid collapse."
@@ -312,7 +309,7 @@
       {
         "name": "tablet",
         "value": "860px",
-        "purpose": "Splits, booking band and services collapse."
+        "purpose": "Home hero stacks (photo first at 4:3, text centred); splits, booking band and services collapse."
       },
       {
         "name": "box-office-left",
@@ -425,10 +422,10 @@
   ],
   "narrative": {
     "northStar": "The Real Band",
-    "overview": "**Creative North Star: \"The Real Band\"**\n\nThe site presents Teína as a working band. The real logo and a real photo of all six members lead the home page. Below them, the copy is plain modern type, and booking is never more than one tap away. Pages are flat fields of the logo's colours: plaster cream, sand, leaf green and deep forest green, with black ink for text and rules. Headings are Archivo ExtraBold in sentence case. Lists of names are outlined pill tags. Buttons are ticket stubs, the one playful shape in an otherwise plain system.\n\nThe look is flat and ruled. There are no shadows, no gradients on surfaces and no blur. Structure comes from 3px ink rules, field colour changes and type weight. Photography carries the energy: live and band photos are framed in a 3px ink border with square corners. Motion is small and functional: tickets lift and tilt on hover, photos zoom slightly inside their frames, the mobile menu wipes down.\n\nThe palette is pinned to the butterfly logo and was chosen by the band. There is one light theme and no dark mode. The band rejected the earlier festival-poster direction (condensed uppercase display type, name rows separated by dots, an offset second print layer) because it read as a bullfight poster. That look is retired.\n\n- The band-supplied logo (butterfly plus script wordmark) appears as an image, never redrawn in type.\n- A full-width live band photo opens the home page.\n- Archivo is the only typeface; headings are ExtraBold in sentence case.\n- Lists of names are outlined pill tags that wrap freely.\n- Whole-page colour fields: each template sets one field on `<body>`, and sections switch field.\n- 3px ink rules as the structural device; no shadows.\n- Ticket-stub buttons with notched ends and a dashed perforation.\n- Booking reachable in one tap on every page: header ticket, booking band, and a fixed dock on phones.",
+    "overview": "**Creative North Star: \"The Real Band\"**\n\nThe site presents Teína as a working band. The real logo and a real photo of all six members share the home page's first screen. Below them, the copy is plain modern type, and booking is never more than one tap away. Pages are flat fields of the logo's colours: plaster cream, sand, leaf green and deep forest green, with black ink for text and rules. Headings are Archivo ExtraBold in sentence case. Lists of names are outlined pill tags. Buttons are ticket stubs, the one playful shape in an otherwise plain system.\n\nThe look is flat and ruled. There are no shadows, no gradients on surfaces and no blur. Structure comes from 3px ink rules, field colour changes and type weight. Photography carries the energy: live and band photos are framed in a 3px ink border with square corners, except the unframed home hero photo. Motion is small and functional: tickets lift and tilt on hover, photos zoom slightly inside their frames, the mobile menu wipes down.\n\nThe palette is pinned to the butterfly logo and was chosen by the band. There is one light theme and no dark mode. The band rejected the earlier festival-poster direction (condensed uppercase display type, name rows separated by dots, an offset second print layer) because it read as a bullfight poster. That look is retired.\n\n- The band-supplied logo (butterfly plus script wordmark) appears as an image, never redrawn in type.\n- The home hero pairs the logo and booking copy with a large, unframed band photo.\n- Archivo is the only typeface; headings are ExtraBold in sentence case.\n- Lists of names are outlined pill tags that wrap freely.\n- Whole-page colour fields: each template sets one field on `<body>`, and sections switch field.\n- 3px ink rules as the structural device; no shadows.\n- Ticket-stub buttons with notched ends and a dashed perforation.\n- Booking reachable in one tap on every page: header ticket, booking band, and a fixed dock on phones.",
     "keyCharacteristics": [
       "The band-supplied logo (butterfly plus script wordmark) appears as an image, never redrawn in type.",
-      "A full-width live band photo opens the home page.",
+      "The home hero pairs the logo and booking copy with a large, unframed band photo.",
       "Archivo is the only typeface; headings are ExtraBold in sentence case.",
       "Lists of names are outlined pill tags that wrap freely.",
       "Whole-page colour fields: each template sets one field on `<body>`, and sections switch field.",
@@ -444,7 +441,7 @@
       },
       {
         "name": "The Field Rule",
-        "body": "A field sets the background (`--field`) and the text colour on it (`--on-field`) together. Plaster and sand carry ink text; leaf and forest carry plaster text. Never set one without the other. Fields still assign a `--ghost` value, but nothing reads it.",
+        "body": "A field sets the background (`--field`) and the text colour on it (`--on-field`) together. Plaster and sand carry ink text; leaf and forest carry plaster text. Never set one without the other.",
         "section": "colors"
       },
       {
@@ -474,7 +471,7 @@
       },
       {
         "name": "The Faces First Rule",
-        "body": "The home photo is cropped from the top (focal point 50% 8%), so every member's face stays visible at every width.",
+        "body": "The home photo is cropped around the faces (focal point 50% 30%), so all six members stay visible in both the tall desktop crop and the 4:3 phone crop.",
         "section": "layout"
       },
       {
@@ -488,7 +485,7 @@
       "Do set headings in Archivo 800 at width 112 in sentence case, with negative tracking.",
       "Do show lists of names as outlined pill tags.",
       "Do use ticket stubs for every button, picking the variant that contrasts with the field.",
-      "Do separate sections and rows with 3px ink rules, and frame photos with a 3px ink border.",
+      "Do separate sections and rows with 3px ink rules, and frame photos with a 3px ink border (the home hero photo is the one unframed photo).",
       "Do show the logo as the band-supplied image.",
       "Do keep booking one tap away on every page, in both languages.",
       "Do check layouts at 390px and 1440px."

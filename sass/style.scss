@@ -23,7 +23,7 @@
     // field and the colours that sit on it; each page overrides these
     --field: var(--plaster);
     --on-field: var(--ink);
-    --ghost: var(--fern);
+   
 
     --display: "Archivo", system-ui, sans-serif;
     --text: "Archivo", system-ui, sans-serif;
@@ -163,10 +163,10 @@ strong {
     color: var(--on-field);
 }
 
-.field--plaster { --field: var(--plaster); --on-field: var(--ink); --ghost: var(--fern); }
-.field--sand { --field: var(--sand); --on-field: var(--ink); --ghost: var(--fern); }
-.field--leaf { --field: var(--leaf); --on-field: var(--plaster); --ghost: var(--forest); }
-.field--forest { --field: var(--forest); --on-field: var(--plaster); --ghost: var(--fern); }
+.field--plaster { --field: var(--plaster); --on-field: var(--ink); }
+.field--sand { --field: var(--sand); --on-field: var(--ink); }
+.field--leaf { --field: var(--leaf); --on-field: var(--plaster); }
+.field--forest { --field: var(--forest); --on-field: var(--plaster); }
 
 // ---------------------------------------------------------------- type
 
@@ -542,6 +542,7 @@ ul.bill,
             font-weight: 800;
             font-size: clamp(2rem, 9vw, 3rem);
             line-height: 1.1;
+            text-transform: none;
             letter-spacing: 0;
             border-bottom: 0;
             padding-block: 0.1em;
@@ -718,55 +719,105 @@ h2:hover .anchor-link,
     }
 }
 
-// bottom strip of the poster: the bill of upcoming dates and the box office
-.poster-bill {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: center;
-    gap: 1.25rem 2.5rem;
-    padding-block: 1.25rem 1.6rem;
+// next concerts on home: a row of date cards
+.next-dates {
+    padding-block: clamp(1.5rem, 3vw, 2.25rem) clamp(2rem, 4vw, 3rem);
     border-top: var(--rule);
 }
 
-.dates-strip {
+.next-dates-head {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 2rem;
     align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
-.dates-strip-label {
-    flex-basis: 100%;
-}
-
-.date-chip {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    text-decoration: none;
-}
-
-.date-chip-day {
+.next-dates-title {
     font-family: var(--display);
     font-weight: 800;
-    font-size: 2rem;
-    line-height: 0.9;
+    font-variation-settings: "wdth" 112;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
-.date-chip-text {
+.date-grid {
     display: grid;
-    line-height: 1.1;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.75rem;
+}
 
-    b {
-        font-variation-settings: "wdth" 112;
-        font-size: 0.8rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
+@media (max-width: 1100px) {
+    .date-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.date-card {
+    display: grid;
+    gap: 0.35rem;
+    align-content: start;
+    height: 100%;
+    padding: 1rem 1rem 1.1rem;
+    border: 2px solid var(--ink);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, transform 0.35s var(--ease-out);
+
+    &:hover {
+        background: var(--ink);
+        color: var(--plaster);
+        transform: translateY(-3px);
+    }
+}
+
+.date-card--private {
+    border-style: dashed;
+}
+
+.date-card-when {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.date-card-day {
+    font-family: var(--display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 112;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+}
+
+.date-card-month,
+.date-card-meta {
+    font-weight: 700;
+    font-variation-settings: "wdth" 112;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.date-card-where {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+.date-card-meta {
+    opacity: 0.75;
+}
+
+@media (max-width: 560px) {
+    .date-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    span {
-        font-weight: 600;
-        font-size: 0.95rem;
+    .date-card-day {
+        font-size: 2rem;
     }
 }
 
@@ -775,7 +826,6 @@ h2:hover .anchor-link,
     flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem 1.5rem;
-    justify-content: flex-end;
 }
 
 .phone-link {
@@ -793,10 +843,6 @@ h2:hover .anchor-link,
 }
 
 @media (max-width: 900px) {
-    .poster-bill {
-        grid-template-columns: 1fr;
-    }
-
     .box-office {
         justify-content: flex-start;
     }

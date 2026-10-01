@@ -84,7 +84,7 @@ spacing:
   section-head: "clamp(2rem, 4vw, 3rem)"
   page-head-top: "clamp(2.5rem, 7vw, 5.5rem)"
   page-head-bottom: "clamp(2rem, 5vw, 4rem)"
-  hero-gap: "clamp(1.5rem, 3vw, 2.5rem)"
+  hero-gap: "clamp(1.5rem, 4vw, 4rem)"
   row: "1.1rem"
   tag-gap: "0.5rem"
 components:
@@ -128,7 +128,7 @@ components:
     rounded: "{rounded.pill}"
     padding: "0.4em 0.95em"
   hero-logo:
-    width: "clamp(9rem, 16vw, 13rem)"
+    width: "clamp(8rem, 13vw, 11.5rem)"
   lang-switch:
     textColor: "{colors.ink}"
     typography: "{typography.label-nav}"
@@ -174,16 +174,16 @@ components:
 
 **Creative North Star: "The Real Band"**
 
-The site presents Teína as a working band. The real logo and a real photo of all six members lead the home page. Below them, the copy is plain modern type, and booking is never more than one tap away. Pages are flat fields of the logo's colours: plaster cream, sand, leaf green and deep forest green, with black ink for text and rules. Headings are Archivo ExtraBold in sentence case. Lists of names are outlined pill tags. Buttons are ticket stubs, the one playful shape in an otherwise plain system.
+The site presents Teína as a working band. The real logo and a real photo of all six members share the home page's first screen. Below them, the copy is plain modern type, and booking is never more than one tap away. Pages are flat fields of the logo's colours: plaster cream, sand, leaf green and deep forest green, with black ink for text and rules. Headings are Archivo ExtraBold in sentence case. Lists of names are outlined pill tags. Buttons are ticket stubs, the one playful shape in an otherwise plain system.
 
-The look is flat and ruled. There are no shadows, no gradients on surfaces and no blur. Structure comes from 3px ink rules, field colour changes and type weight. Photography carries the energy: live and band photos are framed in a 3px ink border with square corners. Motion is small and functional: tickets lift and tilt on hover, photos zoom slightly inside their frames, the mobile menu wipes down.
+The look is flat and ruled. There are no shadows, no gradients on surfaces and no blur. Structure comes from 3px ink rules, field colour changes and type weight. Photography carries the energy: live and band photos are framed in a 3px ink border with square corners, except the unframed home hero photo. Motion is small and functional: tickets lift and tilt on hover, photos zoom slightly inside their frames, the mobile menu wipes down.
 
 The palette is pinned to the butterfly logo and was chosen by the band. There is one light theme and no dark mode. The band rejected the earlier festival-poster direction (condensed uppercase display type, name rows separated by dots, an offset second print layer) because it read as a bullfight poster. That look is retired.
 
 **Key Characteristics:**
 
 - The band-supplied logo (butterfly plus script wordmark) appears as an image, never redrawn in type.
-- A full-width live band photo opens the home page.
+- The home hero pairs the logo and booking copy with a large, unframed band photo.
 - Archivo is the only typeface; headings are ExtraBold in sentence case.
 - Lists of names are outlined pill tags that wrap freely.
 - Whole-page colour fields: each template sets one field on `<body>`, and sections switch field.
@@ -218,7 +218,7 @@ Flat colours from the butterfly logo: two warm paper tones, greens, and a green-
 
 **The Logo Inks Rule.** Every colour comes from the tokens in `:root`, or from `color-mix` of them. No new hex values outside `:root`, no gradients on surfaces, no bright accents (pink, lemon, cobalt). The band pinned these colours to their logo.
 
-**The Field Rule.** A field sets the background (`--field`) and the text colour on it (`--on-field`) together. Plaster and sand carry ink text; leaf and forest carry plaster text. Never set one without the other. Fields still assign a `--ghost` value, but nothing reads it.
+**The Field Rule.** A field sets the background (`--field`) and the text colour on it (`--on-field`) together. Plaster and sand carry ink text; leaf and forest carry plaster text. Never set one without the other.
 
 **The Page Field Rule.** Each template declares one field on `<body>`, and the sticky header takes that field's colour. Home, media and legal are plaster; concerts and band are sand; tribute and contact are leaf; music and 404 are forest. Sections without a field fall back to the plaster body.
 
@@ -252,11 +252,10 @@ Flat colours from the butterfly logo: two warm paper tones, greens, and a green-
 
 The layout is one centred column, max width 88rem, with a fluid side gutter of clamp(1rem, 4vw, 3rem). Sections are full-bleed bands of field colour, and their content sits inside that column. Section padding is clamp(3rem, 8vw, 6.5rem), with a 3px ink rule between consecutive sections. Section heads (title plus lede) sit clamp(2rem, 4vw, 3rem) above their content.
 
-The home first viewport stacks three parts:
+The home first viewport is a two-column grid (5fr text, 7fr photo, gap clamp(1.5rem, 4vw, 4rem), vertically centred), followed by a "Próximos conciertos" block under a 3px rule: a heading with a link to all dates, then up to six date cards (2px ink border, dashed for private events) with the day, month, place, and time, "Evento privado" or "Entradas a la venta". Six columns on desktop, three under 1100px, two under 560px; the card fills with ink on hover.
 
-- The band photo, full column width at 16:9 (capped at 78vh, focal point 50% 8% so all six faces stay in frame), inside a 3px ink frame.
-- A two-column body. On the left, the h1 holds the logo image (clamp(9rem, 16vw, 13rem) wide) centred over a two-line uppercase strap. On the right are the description lede, the shared-stage sentence in soft ink, and the box office: the Contrata a Teína ticket followed by the phone number.
-- A next-dates strip under a 3px rule.
+- **Left column, left-aligned:** the h1 holds the logo image (clamp(8rem, 13vw, 11.5rem) wide) above the uppercase strap "Banda murciana" ("Band from Murcia, Spain" in English). Below it are the description lede (max 34rem), the shared-stage sentence in soft ink (max 34rem), and the box office: the Contrata a Teína ticket followed by the phone number.
+- **Right column:** the band photo with no frame, height min(68vh, 44rem) (at least 20rem), `object-fit: cover` at focal point 50% 30%.
 
 Inner pages open with a page head: the page name at headline size, then a lede.
 
@@ -265,10 +264,9 @@ Lists of records are rows divided by 3px rules: songs, concerts, FAQ entries, se
 Responsive behaviour, by observed breakpoint:
 
 - 960px: nav links move into a full-screen drawer with large ExtraBold links.
-- 900px: the dates strip and box office align left.
-- 860px: splits and the booking band collapse to one column; services go to 2 columns (1 at 560px).
+- 900px: the box office aligns left.
+- 860px: the home hero stacks with the photo first at 4:3 and the logo, text and box office centred below it (logo 7.5rem). Splits and the booking band collapse to one column; services go to 2 columns (1 at 560px).
 - 800px: the home live split and the members grid collapse (members to 2 columns).
-- 760px: the hero photo crops to 4:3, and the hero body stacks and centres, with the logo at 7.5rem.
 - 700px: concert rows reflow to date plus details; the header ticket hides and a fixed two-button dock (call and book) appears at the bottom of the screen.
 - 420px: the brand name hides beside the butterfly mark.
 
@@ -276,7 +274,7 @@ Responsive behaviour, by observed breakpoint:
 
 **The One Tap Rule.** Every page offers booking in one tap: the header ticket on wide screens, the booking band above the footer, and the fixed dock on phones. A phone shows only one Contratar at a time.
 
-**The Faces First Rule.** The home photo is cropped from the top (focal point 50% 8%), so every member's face stays visible at every width.
+**The Faces First Rule.** The home photo is cropped around the faces (focal point 50% 30%), so all six members stay visible in both the tall desktop crop and the 4:3 phone crop.
 
 ## Elevation & Depth
 
@@ -334,13 +332,13 @@ Underlined at 2px with a 0.18em offset, thickening to 3px on hover. Credit links
 
 ### Photo plates
 
-Live and band photos sit in a 3px ink frame with square corners and `object-fit: cover`. On hover, the photo inside scales to 1.03 or 1.04 over 0.6s while the frame stays still. The home hero photo does not zoom.
+Live and band photos sit in a 3px ink frame with square corners and `object-fit: cover`. On hover, the photo inside scales to 1.03 or 1.04 over 0.6s while the frame stays still. The home hero photo is the exception: it has no frame and does not zoom.
 
 ### Navigation
 
 - **Header:** sticky, in the page field colour, with a 3px ink rule below. It holds the butterfly mark (a CSS mask over `currentColor`) with "Teína" in Archivo 800 at 1.3rem, uppercase label links, a language switch in a 2px outline box that fills with ink on hover, and a small ink ticket.
 - **States:** on hover and on the current page, a 3px bar underlines the link.
-- **Mobile:** under 960px, a three-bar toggle opens a full-screen drawer that wipes down with a clip-path. Links show at clamp(2rem, 9vw, 3rem) in ExtraBold, and the current page is underlined. They keep the uppercase transform from the desktop nav links, which makes them the one place where large type is uppercase.
+- **Mobile:** under 960px, a three-bar toggle opens a full-screen drawer that wipes down with a clip-path. Links show at clamp(2rem, 9vw, 3rem) in ExtraBold, and the current page is underlined. They are in sentence case like every other heading.
 
 ### Phone dock
 
@@ -348,7 +346,7 @@ Under 700px, a fixed bar splits in two over an ink frame: Call (plaster fill, in
 
 ### Signature: logo and photo hero
 
-The home h1 contains the band-supplied logo image (`static/imgs/teina-logo-trim.webp` with a PNG fallback, alt "Teína", trimmed from `teina-logo.png`) centred above the strap "Banda tributo de indie pop rock / Calasparra, Murcia". The full-width band photo sits above it. Keep the logo as an image: its green butterfly and script wordmark are the identity, and type does not stand in for it.
+The home h1 contains the band-supplied logo image (`static/imgs/teina-logo-trim.webp` with a PNG fallback, alt "Teína", trimmed from `teina-logo.png`) above the strap "Banda murciana". It heads the text column beside the unframed band photo; under 860px the photo comes first and the logo sits centred under it. Keep the logo as an image: its green butterfly and script wordmark are the identity, and type does not stand in for it.
 
 ### Gallery (structural constraint)
 
@@ -368,7 +366,7 @@ The section has no inner `.wrap`; its width and gutter come from the `#galeria` 
 - **Do** set headings in Archivo 800 at width 112 in sentence case, with negative tracking.
 - **Do** show lists of names as outlined pill tags.
 - **Do** use ticket stubs for every button, picking the variant that contrasts with the field.
-- **Do** separate sections and rows with 3px ink rules, and frame photos with a 3px ink border.
+- **Do** separate sections and rows with 3px ink rules, and frame photos with a 3px ink border (the home hero photo is the one unframed photo).
 - **Do** show the logo as the band-supplied image.
 - **Do** keep booking one tap away on every page, in both languages.
 - **Do** check layouts at 390px and 1440px.

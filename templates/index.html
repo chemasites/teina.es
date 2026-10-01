@@ -67,7 +67,7 @@
                     <source type="image/webp" srcset="{{ get_url(path='imgs/teina-logo-trim.webp') }}">
                     <img class="hero-logo" src="{{ get_url(path='imgs/teina-logo-trim.png') }}" alt="Teína" width="381" height="573" decoding="async">
                 </picture>
-                <span class="strap">Calasparra, Murcia</span>
+                <span class="strap">{% if lang == "en" %}Band from Murcia, Spain{% else %}Banda murciana{% endif %}</span>
             </h1>
             <div class="hero-text">
                 <p class="lede">{% if lang == "en" %}Indie pop rock tribute band that combines reinterpreted covers of major Spanish artists with original songs.{% else %}Banda tributo de indie pop rock que combina versiones reinterpretadas de grandes referentes nacionales con canciones propias.{% endif %}</p>
@@ -80,23 +80,26 @@
         </div>
     </div>
     <div class="wrap">
-        <div class="poster-bill">
-            <div class="dates-strip" data-upcoming="4">
-                <p class="dates-strip-label strap">{% if lang == "en" %}Next dates{% else %}Próximas fechas{% endif %}</p>
-                {%- for c in upcoming[:6] %}
+        <section class="next-dates" aria-labelledby="next-dates-title" data-upcoming="6">
+            <div class="next-dates-head">
+                <h2 class="next-dates-title" id="next-dates-title">{% if lang == "en" %}Next concerts{% else %}Próximos conciertos{% endif %}</h2>
+                <a class="credit-link" href="{{ lang_prefix }}/conciertos/">{% if lang == "en" %}All dates{% else %}Todas las fechas{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+            <ol class="date-grid">
+                {%- for c in upcoming[:8] %}
                 {%- set parts = c.date | split(pat="-") %}
                 {%- set m = parts[1] | int %}
-                <a class="date-chip" href="{{ lang_prefix }}/conciertos/" data-date="{{ c.date }}">
-                    <span class="date-chip-day">{{ parts[2] | int }}</span>
-                    <span class="date-chip-text">
-                        <b>{% if lang == "en" %}{{ months_en[m] }}{% else %}{{ months_es[m] }}{% endif %}{% if c.private %} · {% if lang == "en" %}private{% else %}privado{% endif %}{% endif %}</b>
-                        <span>{{ c.display }}</span>
-                    </span>
-                </a>
+                <li data-date="{{ c.date }}">
+                    <a class="date-card{% if c.private %} date-card--private{% endif %}" href="{{ lang_prefix }}/conciertos/">
+                        <span class="date-card-when"><span class="date-card-day">{{ parts[2] | int }}</span> <span class="date-card-month">{% if lang == "en" %}{{ months_en[m] }}{% else %}{{ months_es[m] }}{% endif %}</span></span>
+                        <span class="date-card-where">{{ c.display }}</span>
+                        <span class="date-card-meta">{% if c.private %}{% if lang == "en" %}Private event{% else %}Evento privado{% endif %}{% elif c.ticket_url %}{% if lang == "en" %}Tickets on sale{% else %}Entradas a la venta{% endif %}{% elif c.time %}{{ c.time }}{% endif %}</span>
+                    </a>
+                </li>
                 {%- endfor %}
-                <a class="credit-link" href="{{ lang_prefix }}/conciertos/" data-empty{% if upcoming | length > 0 %} hidden{% endif %}>{% if lang == "en" %}New dates coming soon. See past shows{% else %}Nuevas fechas muy pronto. Mira los conciertos pasados{% endif %}</a>
-            </div>
-        </div>
+            </ol>
+            <p class="next-dates-empty" data-empty{% if upcoming | length > 0 %} hidden{% endif %}><a class="credit-link" href="{{ lang_prefix }}/conciertos/">{% if lang == "en" %}New dates coming soon. See past shows{% else %}Nuevas fechas muy pronto. Mira los conciertos pasados{% endif %}</a></p>
+        </section>
     </div>
 </header>
 
