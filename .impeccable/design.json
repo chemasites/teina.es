@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T11:02:59+00:00",
+  "title": "Design System: Teína",
+  "extensions": {
+    "colorMeta": {
+      "plaster": {
+        "role": "neutral",
+        "displayName": "Plaster Cream",
+        "canonical": "#f4ead9",
+        "oklch": "oklch(94.0% 0.025 81.1)",
+        "tonalRamp": [
+          "oklch(15% 0.025 81.1)",
+          "oklch(26% 0.025 81.1)",
+          "oklch(38% 0.025 81.1)",
+          "oklch(50% 0.025 81.1)",
+          "oklch(62% 0.025 81.1)",
+          "oklch(74% 0.025 81.1)",
+          "oklch(85% 0.025 81.1)",
+          "oklch(95% 0.025 81.1)"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Warm Sand",
+        "canonical": "#e6d2b3",
+        "oklch": "oklch(87.2% 0.047 78.8)",
+        "tonalRamp": [
+          "oklch(15% 0.047 78.8)",
+          "oklch(26% 0.047 78.8)",
+          "oklch(38% 0.047 78.8)",
+          "oklch(50% 0.047 78.8)",
+          "oklch(62% 0.047 78.8)",
+          "oklch(74% 0.047 78.8)",
+          "oklch(85% 0.047 78.8)",
+          "oklch(95% 0.047 78.8)"
+        ]
+      },
+      "leaf": {
+        "role": "primary",
+        "displayName": "Leaf Green",
+        "canonical": "#1f5b37",
+        "oklch": "oklch(42.2% 0.086 153.8)",
+        "tonalRamp": [
+          "oklch(15% 0.086 153.8)",
+          "oklch(26% 0.086 153.8)",
+          "oklch(38% 0.086 153.8)",
+          "oklch(50% 0.086 153.8)",
+          "oklch(62% 0.086 153.8)",
+          "oklch(74% 0.086 153.8)",
+          "oklch(85% 0.086 153.8)",
+          "oklch(95% 0.086 153.8)"
+        ]
+      },
+      "fern": {
+        "role": "tertiary",
+        "displayName": "Fern",
+        "canonical": "#3f8a54",
+        "oklch": "oklch(57.1% 0.112 150.6)",
+        "tonalRamp": [
+          "oklch(15% 0.112 150.6)",
+          "oklch(26% 0.112 150.6)",
+          "oklch(38% 0.112 150.6)",
+          "oklch(50% 0.112 150.6)",
+          "oklch(62% 0.112 150.6)",
+          "oklch(74% 0.112 150.6)",
+          "oklch(85% 0.112 150.6)",
+          "oklch(95% 0.112 150.6)"
+        ]
+      },
+      "forest": {
+        "role": "secondary",
+        "displayName": "Deep Forest",
+        "canonical": "#0f2619",
+        "oklch": "oklch(24.5% 0.039 157.1)",
+        "tonalRamp": [
+          "oklch(15% 0.039 157.1)",
+          "oklch(26% 0.039 157.1)",
+          "oklch(38% 0.039 157.1)",
+          "oklch(50% 0.039 157.1)",
+          "oklch(62% 0.039 157.1)",
+          "oklch(74% 0.039 157.1)",
+          "oklch(85% 0.039 157.1)",
+          "oklch(95% 0.039 157.1)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Black Ink",
+        "canonical": "#131612",
+        "oklch": "oklch(19.5% 0.009 137.8)",
+        "tonalRamp": [
+          "oklch(15% 0.009 137.8)",
+          "oklch(26% 0.009 137.8)",
+          "oklch(38% 0.009 137.8)",
+          "oklch(50% 0.009 137.8)",
+          "oklch(62% 0.009 137.8)",
+          "oklch(74% 0.009 137.8)",
+          "oklch(85% 0.009 137.8)",
+          "oklch(95% 0.009 137.8)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#3d3a33",
+        "oklch": "oklch(34.9% 0.013 87.6)",
+        "tonalRamp": [
+          "oklch(15% 0.013 87.6)",
+          "oklch(26% 0.013 87.6)",
+          "oklch(38% 0.013 87.6)",
+          "oklch(50% 0.013 87.6)",
+          "oklch(62% 0.013 87.6)",
+          "oklch(74% 0.013 87.6)",
+          "oklch(85% 0.013 87.6)",
+          "oklch(95% 0.013 87.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The TEÍNA headliner on the home poster, with the ghost print pass."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page name in each inner page's poster head, with the ghost print pass."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings and the booking band title."
+      },
+      "bill": {
+        "displayName": "Bill",
+        "purpose": "Lineup rows of names with CSS-drawn dot separators; size set by context."
+      },
+      "button": {
+        "displayName": "Ticket",
+        "purpose": "Ticket-stub button labels."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Paragraph under a headliner or title, max 38rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; prose caps at 40rem."
+      },
+      "label": {
+        "displayName": "Strap",
+        "purpose": "Poster strap lines and section labels, uppercase."
+      },
+      "label-nav": {
+        "displayName": "Label",
+        "purpose": "Nav links, roles, years, badges, captions and footer links, uppercase."
+      }
+    },
+    "fields": [
+      {
+        "name": "field--plaster",
+        "field": "plaster",
+        "onField": "ink",
+        "ghost": "fern",
+        "pages": [
+          "home",
+          "media",
+          "legal"
+        ]
+      },
+      {
+        "name": "field--sand",
+        "field": "sand",
+        "onField": "ink",
+        "ghost": "fern",
+        "pages": [
+          "conciertos",
+          "banda"
+        ]
+      },
+      {
+        "name": "field--leaf",
+        "field": "leaf",
+        "onField": "plaster",
+        "ghost": "forest",
+        "pages": [
+          "tributo",
+          "contacto"
+        ]
+      },
+      {
+        "name": "field--forest",
+        "field": "forest",
+        "onField": "plaster",
+        "ghost": "fern",
+        "pages": [
+          "musica",
+          "404"
+        ]
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Big Shoulders",
+        "file": "static/fonts/big-shoulders-latin.woff2",
+        "weights": "700 900",
+        "axes": "opsz fixed at 72",
+        "subset": "latin",
+        "preloaded": true
+      },
+      {
+        "family": "Archivo",
+        "file": "static/fonts/archivo-latin.woff2",
+        "weights": "400 800",
+        "axes": "wdth 100 to 120",
+        "subset": "latin",
+        "preloaded": false
+      }
+    ],
+    "shadows": [],
+    "borders": [
+      {
+        "name": "rule",
+        "value": "3px solid var(--ink)",
+        "purpose": "Section, row and header dividers; photo frames."
+      },
+      {
+        "name": "rule-thin",
+        "value": "2px solid currentColor",
+        "purpose": "Outlined labels: language switch, private badge, past-events toggle; footer bottom line."
+      },
+      {
+        "name": "perforation",
+        "value": "2px dashed currentColor at 45% opacity",
+        "purpose": "Ticket stub divider before the icon."
+      }
+    ],
+    "overlays": [
+      {
+        "name": "lightbox-scrim",
+        "value": "color-mix(in srgb, var(--ink) 96%, transparent)",
+        "purpose": "Full-screen photo viewer only; ink at 96%."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default curve for every transition and the print pass."
+      },
+      {
+        "name": "print-pass",
+        "value": "1.1s ease-out 0.15s both",
+        "purpose": "Ghost headliner lands 0.16em right, 0.08em up, fades in, settles at 0.035em, 0.03em."
+      },
+      {
+        "name": "ticket-lift",
+        "value": "transform 0.35s ease-out",
+        "purpose": "Ticket hover: translateY(-3px) rotate(-1.5deg)."
+      },
+      {
+        "name": "photo-zoom",
+        "value": "transform 0.6s ease-out",
+        "purpose": "Photo inside its frame scales to 1.03 or 1.04 on hover."
+      },
+      {
+        "name": "drawer-wipe",
+        "value": "clip-path 0.45s ease-out",
+        "purpose": "Mobile nav drawer wipes down from the header."
+      },
+      {
+        "name": "today-pulse",
+        "value": "opacity 1.6s ease-in-out infinite",
+        "purpose": "Today's concert badge."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none",
+        "purpose": "prefers-reduced-motion removes all motion; the ghost pass shows settled."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "brand-compact",
+        "value": "420px",
+        "purpose": "Brand name hides beside the mark."
+      },
+      {
+        "name": "phone-narrow",
+        "value": "560px",
+        "purpose": "Services to one column; strap place wraps."
+      },
+      {
+        "name": "phone",
+        "value": "700px",
+        "purpose": "Booking dock appears, header ticket hides, concert rows reflow."
+      },
+      {
+        "name": "bill-stack",
+        "value": "760px",
+        "purpose": "Stackable lineup rows print one name per line."
+      },
+      {
+        "name": "tablet-narrow",
+        "value": "800px",
+        "purpose": "Live split and members grid collapse."
+      },
+      {
+        "name": "tablet",
+        "value": "860px",
+        "purpose": "Splits, booking band and services collapse."
+      },
+      {
+        "name": "poster-stack",
+        "value": "900px",
+        "purpose": "Home poster grid stacks to one column."
+      },
+      {
+        "name": "nav-drawer",
+        "value": "960px",
+        "purpose": "Nav links move into a full-screen drawer."
+      }
+    ],
+    "constraints": [
+      {
+        "name": "gallery-markup",
+        "files": [
+          "templates/media.html",
+          "scripts/media.py",
+          "scripts/sitemap.py"
+        ],
+        "body": "The #galeria section markup (section.section.section-alt#galeria, div.gallery.gallery-large, each a.gallery-item[data-lightbox] with picture, source and img lines) is parsed by exact-text regular expressions. Keep tags, attribute order and indentation; style from CSS only."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ticket Button",
+      "kind": "button",
+      "refersTo": "ticket",
+      "description": "Default booking and action button: ink ticket stub with notched ends and a perforated arrow stub.",
+      "html": "<a class=\"ds-ticket\" href=\"#\">Contrata a Teína<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"square\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-ticket { display: inline-flex; align-items: center; gap: 0.9em; padding: 0.85em 1.4em 0.85em 1.5em; background: var(--ink, #131612); color: var(--plaster, #f4ead9); font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 800; font-size: 1.35rem; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; -webkit-mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s; } .ds-ticket::before { content: \"\"; order: 1; align-self: stretch; margin-block: -0.4em; border-left: 2px dashed currentColor; opacity: 0.45; } .ds-ticket svg { order: 2; width: 1em; height: 1em; flex: none; } .ds-ticket:hover { transform: translateY(-3px) rotate(-1.5deg); } .ds-ticket:active { transform: translateY(0) rotate(0); } .ds-ticket:focus-visible { outline: 3px solid var(--ink, #131612); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ticket Button, Paper",
+      "kind": "button",
+      "refersTo": "ticket-paper",
+      "description": "Ticket on forest or leaf fields.",
+      "html": "<div class=\"ds-on-forest\"><a class=\"ds-ticket ds-ticket--paper\" href=\"#\">Pide fecha<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"square\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-ticket { display: inline-flex; align-items: center; gap: 0.9em; padding: 0.85em 1.4em 0.85em 1.5em; background: var(--ink, #131612); color: var(--plaster, #f4ead9); font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 800; font-size: 1.35rem; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; -webkit-mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s; } .ds-ticket::before { content: \"\"; order: 1; align-self: stretch; margin-block: -0.4em; border-left: 2px dashed currentColor; opacity: 0.45; } .ds-ticket svg { order: 2; width: 1em; height: 1em; flex: none; } .ds-ticket:hover { transform: translateY(-3px) rotate(-1.5deg); } .ds-ticket:active { transform: translateY(0) rotate(0); } .ds-ticket:focus-visible { outline: 3px solid var(--ink, #131612); outline-offset: 3px; } .ds-on-forest { background: var(--forest, #0f2619); padding: 1.5rem; } .ds-ticket--paper { background: var(--plaster, #f4ead9); color: var(--ink, #131612); } .ds-on-forest .ds-ticket:focus-visible { outline-color: var(--plaster, #f4ead9); }"
+    },
+    {
+      "name": "Ticket Button, Sand",
+      "kind": "button",
+      "refersTo": "ticket-sand",
+      "description": "Ticket on the leaf booking band and the 404 page.",
+      "html": "<div class=\"ds-on-leaf\"><a class=\"ds-ticket ds-ticket--sand\" href=\"#\">Prepara tu evento<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"square\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-ticket { display: inline-flex; align-items: center; gap: 0.9em; padding: 0.85em 1.4em 0.85em 1.5em; background: var(--ink, #131612); color: var(--plaster, #f4ead9); font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 800; font-size: 1.35rem; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; -webkit-mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s; } .ds-ticket::before { content: \"\"; order: 1; align-self: stretch; margin-block: -0.4em; border-left: 2px dashed currentColor; opacity: 0.45; } .ds-ticket svg { order: 2; width: 1em; height: 1em; flex: none; } .ds-ticket:hover { transform: translateY(-3px) rotate(-1.5deg); } .ds-ticket:active { transform: translateY(0) rotate(0); } .ds-ticket:focus-visible { outline: 3px solid var(--ink, #131612); outline-offset: 3px; } .ds-on-leaf { background: var(--leaf, #1f5b37); padding: 1.5rem; } .ds-ticket--sand { background: var(--sand, #e6d2b3); color: var(--ink, #131612); } .ds-on-leaf .ds-ticket:focus-visible { outline-color: var(--plaster, #f4ead9); }"
+    },
+    {
+      "name": "Ticket Button, Leaf",
+      "kind": "button",
+      "refersTo": "ticket-leaf",
+      "description": "Second action beside an ink ticket on paper fields.",
+      "html": "<a class=\"ds-ticket ds-ticket--leaf\" href=\"#\">Ver en YouTube<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"square\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-ticket { display: inline-flex; align-items: center; gap: 0.9em; padding: 0.85em 1.4em 0.85em 1.5em; background: var(--ink, #131612); color: var(--plaster, #f4ead9); font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 800; font-size: 1.35rem; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; -webkit-mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s; } .ds-ticket::before { content: \"\"; order: 1; align-self: stretch; margin-block: -0.4em; border-left: 2px dashed currentColor; opacity: 0.45; } .ds-ticket svg { order: 2; width: 1em; height: 1em; flex: none; } .ds-ticket:hover { transform: translateY(-3px) rotate(-1.5deg); } .ds-ticket:active { transform: translateY(0) rotate(0); } .ds-ticket:focus-visible { outline: 3px solid var(--ink, #131612); outline-offset: 3px; } .ds-ticket--leaf { background: var(--leaf, #1f5b37); color: var(--plaster, #f4ead9); }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky header in the page field colour: butterfly mark and name, label links with an underline bar, outlined language switch, small ticket.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">Teína</a><ul class=\"ds-nav-links\"><li><a href=\"#\" aria-current=\"page\">Conciertos</a></li><li><a href=\"#\">Música</a></li><li><a href=\"#\">Tributo</a></li><li><a href=\"#\">Banda</a></li><li><a href=\"#\">Media</a></li></ul><a class=\"ds-lang\" href=\"#\">EN</a><a class=\"ds-ticket ds-ticket--sm\" href=\"#\">Contratar<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"square\"><path d=\"M5 12h13M13 6l6 6-6 6\"/></svg></a></nav>",
+      "css": ".ds-ticket { display: inline-flex; align-items: center; gap: 0.9em; padding: 0.85em 1.4em 0.85em 1.5em; background: var(--ink, #131612); color: var(--plaster, #f4ead9); font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 800; font-size: 1.35rem; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; -webkit-mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 0.42em at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 0.42em at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s; } .ds-ticket::before { content: \"\"; order: 1; align-self: stretch; margin-block: -0.4em; border-left: 2px dashed currentColor; opacity: 0.45; } .ds-ticket svg { order: 2; width: 1em; height: 1em; flex: none; } .ds-ticket:hover { transform: translateY(-3px) rotate(-1.5deg); } .ds-ticket:active { transform: translateY(0) rotate(0); } .ds-ticket:focus-visible { outline: 3px solid var(--ink, #131612); outline-offset: 3px; } .ds-nav { display: flex; align-items: center; gap: 1.5rem; padding: 0.7rem 1.5rem; min-height: 4.25rem; background: var(--sand, #e6d2b3); color: var(--ink, #131612); border-bottom: 3px solid var(--ink, #131612); } .ds-nav-brand { margin-right: auto; font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 900; font-size: 1.75rem; line-height: 1; text-transform: uppercase; text-decoration: none; color: inherit; } .ds-nav-links { display: flex; gap: 1.6rem; margin: 0; padding: 0; list-style: none; } .ds-nav-links a { font-family: var(--text, \"Archivo\", system-ui, sans-serif); font-weight: 700; font-variation-settings: \"wdth\" 112; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; color: inherit; padding-block: 0.3rem; border-bottom: 3px solid transparent; } .ds-nav-links a:hover, .ds-nav-links a[aria-current=\"page\"] { border-bottom-color: currentColor; } .ds-nav a:focus-visible { outline: 3px solid var(--ink, #131612); outline-offset: 3px; } .ds-lang { font-family: var(--text, \"Archivo\", system-ui, sans-serif); font-weight: 800; font-variation-settings: \"wdth\" 112; font-size: 0.9rem; letter-spacing: 0.06em; text-decoration: none; color: inherit; padding: 0.35rem 0.5rem; border: 2px solid currentColor; line-height: 1; } .ds-lang:hover { background: var(--ink, #131612); color: var(--plaster, #f4ead9); border-color: var(--ink, #131612); } .ds-ticket--sm { font-size: 1.05rem; padding: 0.7em 1em 0.7em 1.1em; gap: 0.7em; }"
+    },
+    {
+      "name": "Headliner with Print Pass",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Page name at headliner scale with a ghost second pass that lands out of register and settles a few px off.",
+      "html": "<div class=\"ds-field-plaster\"><h1 class=\"ds-headliner\"><span class=\"ds-headliner-ink\">Teína</span><span class=\"ds-headliner-ghost\" aria-hidden=\"true\">Teína</span></h1></div>",
+      "css": ".ds-field-plaster { background: var(--plaster, #f4ead9); color: var(--ink, #131612); padding: 1.5rem; } .ds-headliner { position: relative; margin: 0; font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 900; font-variation-settings: \"opsz\" 72; text-transform: uppercase; line-height: 0.8; letter-spacing: -0.01em; font-size: clamp(4.5rem, 15vw, 9rem); isolation: isolate; } .ds-headliner-ink { position: relative; z-index: 1; display: block; } .ds-headliner-ghost { position: absolute; inset: 0; z-index: 0; color: var(--fern, #3f8a54); transform: translate(0.035em, 0.03em); animation: ds-print-pass 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; pointer-events: none; } @keyframes ds-print-pass { from { transform: translate(0.16em, -0.08em); opacity: 0; } 35% { opacity: 1; } to { transform: translate(0.035em, 0.03em); opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-headliner-ghost { animation: none; } }"
+    },
+    {
+      "name": "Lineup Bill",
+      "kind": "custom",
+      "refersTo": "bill",
+      "description": "Names in condensed caps separated by CSS-drawn dots; the dot at the start of each wrapped line is clipped away.",
+      "html": "<div class=\"ds-bill\"><ul><li>Revolver</li><li>Loquillo</li><li>Second</li></ul><ul class=\"ds-bill-small\"><li>Álvaro de Luna</li><li>Danza Invisible</li><li>Efecto Mariposa</li></ul></div>",
+      "css": ".ds-bill { --dot: 0.7em; font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 800; text-transform: uppercase; line-height: 0.95; font-size: clamp(1.7rem, 3.2vw, 3rem); color: var(--ink, #131612); } .ds-bill ul { display: flex; flex-wrap: wrap; row-gap: 0.08em; margin: 0 0 0 calc(var(--dot) * -1); padding: 0; list-style: none; clip-path: inset(-0.5em -0.5em -0.5em var(--dot)); } .ds-bill ul + ul { margin-top: 0.35em; } .ds-bill li { white-space: nowrap; } .ds-bill li::before { content: \"\\00B7\"; display: inline-block; width: var(--dot); text-align: center; opacity: 0.55; } .ds-bill-small { font-size: 0.68em; }"
+    },
+    {
+      "name": "Concert Row",
+      "kind": "card",
+      "refersTo": "event-badge",
+      "description": "A dated row on the concert bill: display day and month, venue in display caps, time label, outlined badge, small ticket.",
+      "html": "<div class=\"ds-event\"><span class=\"ds-event-date\"><span class=\"ds-event-day\">10</span><span class=\"ds-event-month\">Oct</span></span><span class=\"ds-event-venue\">Orihuela · El Escorratel</span><span class=\"ds-event-time\">22:30</span><span class=\"ds-event-badge\">Privado</span></div>",
+      "css": ".ds-event { display: grid; grid-template-columns: 9rem minmax(0, 1fr) auto auto; align-items: center; gap: 0.5rem 1.75rem; padding-block: 1.1rem; border-top: 3px solid var(--ink, #131612); border-bottom: 3px solid var(--ink, #131612); color: var(--ink, #131612); background: var(--plaster, #f4ead9); } .ds-event-date { display: flex; align-items: baseline; gap: 0 0.4rem; font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 900; text-transform: uppercase; line-height: 0.85; } .ds-event-day { font-size: 3.6rem; } .ds-event-month { font-size: 1.7rem; } .ds-event-venue { font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1; text-transform: uppercase; } .ds-event-time, .ds-event-badge { font-family: var(--text, \"Archivo\", system-ui, sans-serif); font-weight: 700; font-variation-settings: \"wdth\" 112; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-event-badge { padding: 0.35em 0.7em; border: 2px solid currentColor; }"
+    },
+    {
+      "name": "Phone Dock",
+      "kind": "nav",
+      "refersTo": "dock-book",
+      "description": "Fixed two-button booking bar on phones under 700px: call and book.",
+      "html": "<nav class=\"ds-dock\"><a href=\"#\">Llamar</a><a href=\"#\">Contratar</a></nav>",
+      "css": ".ds-dock { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink, #131612); background: var(--ink, #131612); max-width: 390px; } .ds-dock a { display: flex; align-items: center; justify-content: center; min-height: 3.5rem; font-family: var(--display, \"Big Shoulders\", \"Archivo\", sans-serif); font-weight: 900; font-size: 1.35rem; text-transform: uppercase; text-decoration: none; } .ds-dock a:first-child { background: var(--plaster, #f4ead9); color: var(--ink, #131612); } .ds-dock a:last-child { background: var(--leaf, #1f5b37); color: var(--plaster, #f4ead9); } .ds-dock a:focus-visible { outline: 3px solid var(--ink, #131612); outline-offset: -6px; } .ds-dock a:last-child:focus-visible { outline-color: var(--plaster, #f4ead9); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Festival Cartel",
+    "overview": "**Creative North Star: \"The Festival Cartel\"**\n\nEvery page is a screenprinted festival poster on which Teína is the headliner. The band name and each page name sit at headliner scale, top left, in condensed black caps. Below them, names run in lineup rows separated by dots: the artists Teína shared a stage with, the bands in the repertoire, the occasions the band plays. Facts read like the strap under a poster headliner. Buttons are ticket stubs. The page itself is a flat field of one of the logo's colours, and sections change field the way a poster run changes paper.\n\nThe print is flat and physical. There are no gradients on surfaces, no shadows, no rounded cards and no blur. Structure comes from 3px ink rules, field changes and type scale. The one piece of theatre is the print pass: every headliner carries a second impression in a green ghost colour that lands out of register and settles a few pixels off, like a two-colour screenprint. Photography is real live and band photography, framed in a 3px ink border and cropped square-cornered.\n\nThe palette is pinned to the band's butterfly logo and was chosen by the band: plaster cream, sand, leaf green, fern, deep forest green and black ink. Bright inks (pink, lemon, cobalt) were rejected. There is one light theme and no dark mode. The rejected direction, recorded in the direction contract, is the dark full-bleed band hero with a centred logo.\n\n- Headliner type at poster scale (up to 19rem) in Big Shoulders Black, uppercase, line height 0.8.\n- Lineup rows of names in condensed caps, dot separators drawn by CSS.\n- Whole-page colour fields: each template sets one field on `<body>`, and sections switch field.\n- 3px ink rules as the only structural device; no shadows, no radius.\n- Ticket-stub buttons with notched ends and a dashed perforation.\n- A misregistered second print pass on every headliner.\n- Booking reachable in one tap on every page: header ticket, booking band, and a fixed dock on phones.",
+    "keyCharacteristics": [
+      "Headliner type at poster scale (up to 19rem) in Big Shoulders Black, uppercase, line height 0.8.",
+      "Lineup rows of names in condensed caps, dot separators drawn by CSS.",
+      "Whole-page colour fields: each template sets one field on `<body>`, and sections switch field.",
+      "3px ink rules as the only structural device; no shadows, no radius.",
+      "Ticket-stub buttons with notched ends and a dashed perforation.",
+      "A misregistered second print pass on every headliner.",
+      "Booking reachable in one tap on every page: header ticket, booking band, and a fixed dock on phones."
+    ],
+    "rules": [
+      {
+        "name": "The Logo Inks Rule",
+        "body": "Every colour comes from the six tokens in `:root`. No new hex values outside `:root`, no tints, no gradients on surfaces, no bright accents. The band pinned these colours to their logo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Field Rule",
+        "body": "A field sets three things together: the background (`--field`), the text colour on it (`--on-field`) and the ghost print colour (`--ghost`). Plaster and sand carry ink text with a fern ghost; leaf carries plaster text with a forest ghost; forest carries plaster text with a fern ghost. Never set one without the other two.",
+        "section": "colors"
+      },
+      {
+        "name": "The Page Field Rule",
+        "body": "Each template declares one field on `<body>`, and the sticky header takes that field's colour. Home, media and legal are plaster; concerts and band are sand; tribute and contact are leaf; music and 404 are forest. Sections without a field fall back to the plaster body.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Faces Rule",
+        "body": "Big Shoulders and Archivo only. Display type is always uppercase. No third face, no italic display.",
+        "section": "typography"
+      },
+      {
+        "name": "The Strap Rule",
+        "body": "Small text that labels something is Archivo bold, widened and tracked in caps. Small text that explains something is Archivo regular in sentence case. Do not mix the two in one line.",
+        "section": "typography"
+      },
+      {
+        "name": "The Numbers Rule",
+        "body": "Years and times use tabular figures; dates print the day in display type with the month as a label beside it.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Tap Rule",
+        "body": "Every page offers booking in one tap: the header ticket on wide screens, the booking band above the footer, and the fixed dock on phones. Only one CONTRATAR shows in the header area on a phone.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Print Rule",
+        "body": "Nothing floats. If a surface needs to separate from what is behind it, give it a field fill and a 3px ink rule.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do take every colour from the six `:root` tokens and set a whole field (`field--plaster`, `field--sand`, `field--leaf`, `field--forest`) rather than a lone background.",
+      "Do set page and section names in Big Shoulders 900 caps at headliner or title scale, with the ghost print pass on page headliners.",
+      "Do write lists of names as `.bill` rows and let CSS draw the dots.",
+      "Do use ticket stubs for every button, picking the variant that contrasts with the field.",
+      "Do separate sections and rows with 3px ink rules, and frame photos with a 3px ink border.",
+      "Do keep booking one tap away on every page, in both languages.",
+      "Do check layouts at 390px and 1440px."
+    ],
+    "donts": [
+      "Don't add bright inks (pink, lemon, cobalt) or any hex value outside `:root`.",
+      "Don't add a dark mode or a theme toggle.",
+      "Don't add a third typeface or set display type in lowercase.",
+      "Don't type dot separators between names; the bill draws and clips them.",
+      "Don't add box shadows, blur, gradients on surfaces or rounded corners (the play button is the only circle).",
+      "Don't build a dark full-bleed band hero with a centred logo.",
+      "Don't change the `#galeria` gallery markup in `templates/media.html`; the media and sitemap scripts parse it as text.",
+      "Don't use fern for text that must be read."
+    ]
+  }
+}

@@ -1634,7 +1634,7 @@ lite-youtube:hover .lty-playbtn,
     align-items: center;
     justify-content: center;
     padding: 4rem 1rem;
-    background: rgb(20 20 20 / 0.96);
+    background: color-mix(in srgb, var(--ink) 96%, transparent);
 
     &.active {
         display: flex;
