@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-- **Static site generator**: [Zola](https://www.getzola.org/) (Rust-based, config in `config.toml`)
+- **Static site generator**: [Zola](https://www.getzola.org/) (Rust-based, config in `zola.toml`)
 - **Styling**: Sass (`sass/style.scss`, compiled by Zola)
 - **Templates**: Tera templating engine (Jinja2-like)
 - **Languages**: Spanish (default) and English
@@ -11,7 +11,7 @@
 
 ## Project Structure
 
-- `config.toml` - Zola site config (base_url, languages, extra vars)
+- `zola.toml` - Zola site config (base_url, languages, extra vars)
 - `content/` - Markdown content pages (`.md` for ES, `.en.md` for EN)
 - `templates/` - Tera HTML templates (`base.html` is the layout)
 - `templates/partials/` - Reusable components (navbar, footer)

@@ -16,7 +16,7 @@ You are a content editor for the Teína band website (https://teina.es), a Zola 
 - `templates/musica.html` - Original songs and music links
 - `templates/contacto.html` - Contact and booking info
 - `content/` - Markdown content files (`.md` = Spanish, `.en.md` = English)
-- `config.toml` - Site metadata, SEO keywords
+- `zola.toml` - Site metadata, SEO keywords
 
 ## Rules
 

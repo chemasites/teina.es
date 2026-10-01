@@ -36,13 +36,10 @@
 </script>
 <script type="application/ld+json">
 {% set cdata = load_data(path="data/concerts.toml") %}
-{% set concerts = cdata.concert | sort(attribute="date") %}
 {% set today_num = now() | date(format="%Y%m%d") | int %}
+{% set upcoming = [c for c in cdata.concert | sort(attribute="date") if not c.private and c.date | replace(from="-", to="") | int >= today_num] %}
 [
-{% set_global first = true %}
-{%- for c in concerts %}
-{%- if not c.private and c.date | replace(from="-", to="") | int >= today_num %}
-{%- if not first %},{% endif %}{% set_global first = false %}
+{%- for c in upcoming %}
     {
         "@context": "https://schema.org",
         "@type": "MusicEvent",
@@ -58,18 +55,14 @@
         {%- endif %}
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
-    }
-{%- endif %}
+    }{% if not loop.last %},{% endif %}
 {%- endfor %}
 ]
 </script>
 {% endblock %}
 
 {% block content %}
-{% set lang_prefix = "" %}
-{% if lang == "en" %}
-    {% set lang_prefix = "/en" %}
-{% endif %}
+{% set lang_prefix = "/en" if lang == "en" else "" %}
 {% include "partials/navbar.html" %}
 
 <main class="page-content conciertos-page" id="main">

@@ -13,7 +13,7 @@ You are an SEO specialist for teina.es, a Zola static site for an indie pop-rock
 - `templates/sitemap.xml` - Custom sitemap with image/video schemas (ES + EN)
 - `templates/base.html` - Meta tags, JSON-LD (MusicGroup, WebSite), OG/Twitter cards
 - `templates/index.html` - MusicEvent JSON-LD for concerts, breadcrumbs
-- `config.toml` - `[extra]` section has SEO keywords
+- `zola.toml` - `[extra]` section has SEO keywords
 - `static/robots.txt` - Search engine directives
 - `static/llms.txt` / `static/llms-full.txt` - AI discoverability
 

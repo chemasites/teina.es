@@ -1,7 +1,4 @@
-{% set lang_prefix = "" %}
-{% if lang == "en" %}
-    {% set lang_prefix = "/en" %}
-{% endif %}
+{% set lang_prefix = "/en" if lang == "en" else "" %}
 
 {% set current = current_path | default(value="/") %}
 {% if lang == "en" %}
