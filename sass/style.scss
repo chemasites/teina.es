@@ -5,15 +5,15 @@
 @font-face {
     font-family: "Big Shoulders";
     src: url("fonts/big-shoulders-latin.woff2") format("woff2");
-    font-weight: 600 900;
+    font-weight: 700 900;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Archivo";
     src: url("fonts/archivo-latin.woff2") format("woff2");
-    font-weight: 100 900;
-    font-stretch: 62% 125%;
+    font-weight: 400 800;
+    font-stretch: 100% 120%;
     font-display: swap;
 }
 
@@ -472,8 +472,8 @@ ul.bill,
     width: 2.6rem;
     aspect-ratio: 366 / 295;
     background: currentColor;
-    -webkit-mask: url("imgs/mariposa-mark.png") center / contain no-repeat;
-    mask: url("imgs/mariposa-mark.png") center / contain no-repeat;
+    -webkit-mask: url("imgs/mariposa-mark.webp") center / contain no-repeat;
+    mask: url("imgs/mariposa-mark.webp") center / contain no-repeat;
 }
 
 .nav-brand-name {
@@ -701,6 +701,17 @@ h2:hover .anchor-link,
     min-width: 0;
 }
 
+.poster-title {
+    display: grid;
+    gap: clamp(1.25rem, 2.2vw, 2rem);
+    margin: 0;
+    font: inherit;
+
+    .headliner {
+        display: block;
+    }
+}
+
 .poster-strap {
     display: flex;
     flex-wrap: wrap;
@@ -711,10 +722,20 @@ h2:hover .anchor-link,
         width: 2.4rem;
     }
 
+    flex-wrap: nowrap;
+    align-items: center;
+
     @media (max-width: 560px) {
         .strap-dot {
             display: none;
         }
+
+        .strap-place {
+            display: block;
+        }
+
+        font-variation-settings: "wdth" 100;
+        letter-spacing: 0.04em;
     }
 }
 

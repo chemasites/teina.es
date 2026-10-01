@@ -50,16 +50,16 @@
 <header class="poster field field--plaster">
     <div class="wrap poster-grid">
         <div class="poster-main">
-            <h1 class="headliner">
-                <span class="headliner-ink">Teína</span>
-                <span class="headliner-ghost" aria-hidden="true">Teína</span>
+            <h1 class="poster-title">
+                <span class="headliner">
+                    <span class="headliner-ink">Teína</span>
+                    <span class="headliner-ghost" aria-hidden="true">Teína</span>
+                </span>
+                <span class="poster-strap strap">
+                    <span class="mark" aria-hidden="true"></span>
+                    <span>{% if lang == "en" %}Indie pop rock tribute band{% else %}Banda tributo de indie pop rock{% endif %}<span class="strap-dot" aria-hidden="true"> · </span><span class="strap-place">Calasparra, Murcia</span></span>
+                </span>
             </h1>
-            <p class="poster-strap strap">
-                <span class="mark" aria-hidden="true"></span>
-                <span>{% if lang == "en" %}Indie pop rock live{% else %}Indie pop rock en directo{% endif %}</span>
-                <span class="strap-dot" aria-hidden="true">·</span>
-                <span>Calasparra, Murcia</span>
-            </p>
             <p class="lede">{% if lang == "en" %}The indie pop rock tribute band that turns your town square into a gig. Six musicians, sax included, and two hours of songs everyone sings.{% else %}La banda tributo de indie pop rock que convierte tu plaza en un concierto. Seis músicos, saxo incluido, y dos horas de himnos que canta todo el mundo.{% endif %}</p>
             <ul class="bill poster-facts">
                 <li>{% if lang == "en" %}6 musicians{% else %}6 músicos{% endif %}</li>
@@ -168,8 +168,8 @@
             <div class="live-photos">
                 <a href="{{ lang_prefix }}/media/">
                     <picture>
-                        <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-confeti-final.webp') }}">
-                        <img src="{{ get_url(path='media/thumbs/banda-confeti-final.jpg') }}" alt="{% if lang == 'en' %}Teína on stage under a rain of confetti, crowd in front{% else %}Teína en el escenario bajo una lluvia de confeti, con el público delante{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                        <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-foto-publico-grande.webp') }}">
+                        <img src="{{ get_url(path='media/thumbs/banda-foto-publico-grande.jpg') }}" alt="{% if lang == 'en' %}Teína posing on stage with a big crowd behind them{% else %}Teína posando en el escenario con mucho público detrás{% endif %}" width="600" height="369" loading="lazy" decoding="async">
                     </picture>
                 </a>
                 <a href="{{ lang_prefix }}/media/">

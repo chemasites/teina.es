@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }} | {% if lang == "en" %}Indie Pop Rock Band in Murcia, Spain{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}</title>
+    <title>{% block title %}{{ config.title }} | {% if lang == "en" %}Indie Pop Rock Tribute Band in Murcia, Spain{% else %}Banda Tributo de Indie Pop Rock en Murcia{% endif %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
     <meta name="author" content="Teína">
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
+    <meta name="geo.region" content="ES-MU">
+    <meta name="geo.placename" content="Calasparra, Murcia">
+    <meta name="geo.position" content="38.2297;-1.6996">
+    <meta name="ICBM" content="38.2297, -1.6996">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     {# set before canonical/og:url so both reuse the trailing-slash-correct paths, not a hand-built /en #}
     {% set current_path = current_path | default(value="/") %}
     {% if lang == "en" %}
@@ -74,7 +78,6 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="{{ get_url(path='style.css') }}" as="style">
     <link rel="preload" href="{{ get_url(path='fonts/big-shoulders-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ get_url(path='fonts/archivo-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
     {% block preload %}{% endblock %}
 
     <!-- Styles -->
@@ -407,7 +410,16 @@
                 const videoId = this.getAttribute('videoid');
                 // data-poster swaps YouTube's thumbnail for a live photo where the default frame is only the logo
                 const poster = this.dataset.poster || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-                this.style.backgroundImage = `url(${poster})`;
+                // fetch the poster only when the player nears the viewport, so it never competes with the hero
+                const paint = () => { this.style.backgroundImage = `url(${poster})`; };
+                if ('IntersectionObserver' in window) {
+                    const io = new IntersectionObserver((entries) => {
+                        if (entries.some(e => e.isIntersecting)) { paint(); io.disconnect(); }
+                    }, { rootMargin: '400px' });
+                    io.observe(this);
+                } else {
+                    paint();
+                }
 
                 const playBtn = document.createElement('button');
                 playBtn.type = 'button';

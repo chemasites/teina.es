@@ -54,3 +54,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      # IndexNow tells Bing, Yandex and other engines which URLs changed; a failure never blocks the deploy
+      - name: Notify IndexNow
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: 29295bd0b0a311ecd2ef8f38cb7f87ab
+        run: |
+          urls=$(curl -fsS https://teina.es/sitemap.xml | grep -o '<loc>[^<]*' | sed 's/<loc>//' | jq -R . | jq -sc .)
+          body=$(jq -nc --arg key "$INDEXNOW_KEY" --argjson urls "$urls" '{host: "teina.es", key: $key, keyLocation: ("https://teina.es/" + $key + ".txt"), urlList: $urls}')
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$body"
