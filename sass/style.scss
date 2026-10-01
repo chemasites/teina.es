@@ -629,42 +629,42 @@ h2:hover .anchor-link,
 
 .hero {
     display: grid;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-    padding-block: clamp(1.25rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(1.5rem, 3.5vw, 3rem);
 }
 
 .hero-photo {
+    order: 2;
     margin: 0;
-    border: 3px solid var(--ink);
-    overflow: hidden;
 
     img {
         width: 100%;
-        aspect-ratio: 16 / 9;
-        max-height: 78vh;
+        height: min(68vh, 44rem);
+        min-height: 20rem;
         object-fit: cover;
-        object-position: 50% 8%;
+        object-position: 50% 30%;
     }
 }
 
 .hero-body {
+    order: 1;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(1.5rem, 4vw, 4rem);
+    gap: 1.5rem;
+    justify-items: start;
 }
 
 .hero-title {
     display: grid;
-    justify-items: center;
-    text-align: center;
-    gap: 0.9rem;
+    justify-items: start;
+    gap: 1rem;
     margin: 0;
     font: inherit;
 }
 
 .hero-logo {
-    width: clamp(9rem, 16vw, 13rem);
+    width: clamp(8rem, 13vw, 11.5rem);
     height: auto;
 }
 
@@ -674,12 +674,12 @@ h2:hover .anchor-link,
     justify-items: start;
 
     .lede {
-        max-width: 40rem;
+        max-width: 34rem;
     }
 }
 
 .hero-with {
-    max-width: 44rem;
+    max-width: 34rem;
     color: var(--ink-soft);
 
     b {
@@ -687,19 +687,26 @@ h2:hover .anchor-link,
     }
 }
 
-@media (max-width: 760px) {
-    .hero-photo img {
-        aspect-ratio: 4 / 3;
-    }
-
-    .hero-body {
+@media (max-width: 860px) {
+    .hero {
         grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
     }
 
+    .hero-photo {
+        order: 0;
+
+        img {
+            height: auto;
+            min-height: 0;
+            aspect-ratio: 4 / 3;
+        }
+    }
+
+    .hero-body,
+    .hero-title,
     .hero-text {
         justify-items: center;
+        text-align: center;
     }
 
     .hero-logo {
