@@ -7,7 +7,7 @@
 - **Templates**: Tera templating engine (Jinja2-like)
 - **Languages**: Spanish (default) and English
 - **Hosting**: GitHub Pages, deployed via GitHub Actions on push to `main`
-- **CI/CD**: `.github/workflows/main.yml` (Zola 0.22.0 build + deploy)
+- **CI/CD**: `.github/workflows/main.yml` (Zola 0.23.6 build + deploy)
 
 ## Project Structure
 

@@ -16,8 +16,8 @@
         {%- elif sitemap_entry.date %}
         <lastmod>{{ sitemap_entry.date | date(format="%Y-%m-%d") }}</lastmod>
         {%- endif %}
-        <changefreq>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") or "conciertos" in sitemap_entry.permalink %}weekly{% else %}monthly{% endif %}</changefreq>
-        <priority>{% if sitemap_entry.permalink is ending_with("teina.es/") or sitemap_entry.permalink is ending_with("/en/") %}1.0{% elif "conciertos" in sitemap_entry.permalink or "tributo" in sitemap_entry.permalink %}0.9{% elif "banda" in sitemap_entry.permalink or "musica" in sitemap_entry.permalink or "media" in sitemap_entry.permalink %}0.8{% elif "contacto" in sitemap_entry.permalink %}0.7{% else %}0.5{% endif %}</priority>
+        <changefreq>{% if sitemap_entry.permalink is ending_with(pat="teina.es/") or sitemap_entry.permalink is ending_with(pat="/en/") or "conciertos" in sitemap_entry.permalink %}weekly{% else %}monthly{% endif %}</changefreq>
+        <priority>{% if sitemap_entry.permalink is ending_with(pat="teina.es/") or sitemap_entry.permalink is ending_with(pat="/en/") %}1.0{% elif "conciertos" in sitemap_entry.permalink or "tributo" in sitemap_entry.permalink %}0.9{% elif "banda" in sitemap_entry.permalink or "musica" in sitemap_entry.permalink or "media" in sitemap_entry.permalink %}0.8{% elif "contacto" in sitemap_entry.permalink %}0.7{% else %}0.5{% endif %}</priority>
         {#- hreflang alternate links -#}
         {%- if "/en/" in sitemap_entry.permalink -%}
         <xhtml:link rel="alternate" hreflang="es" href="{{ sitemap_entry.permalink | replace(from="teina.es/en/", to="teina.es/") | safe }}"/>
@@ -29,7 +29,7 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="{{ sitemap_entry.permalink | safe }}"/>
         {%- endif -%}
         {#- Homepage images -#}
-        {%- if sitemap_entry.permalink is ending_with("teina.es/") -%}
+        {%- if sitemap_entry.permalink is ending_with(pat="teina.es/") -%}
         <image:image>
             <image:loc>https://teina.es/imgs/teina-logo.png</image:loc>
             <image:title>Teína - Logo de la banda de indie pop rock</image:title>
@@ -46,7 +46,7 @@
             <image:caption>Teína tocando en directo, banda de indie pop rock de Calasparra, Murcia</image:caption>
         </image:image>
         {%- endif -%}
-        {%- if sitemap_entry.permalink is ending_with("/en/") -%}
+        {%- if sitemap_entry.permalink is ending_with(pat="/en/") -%}
         <image:image>
             <image:loc>https://teina.es/imgs/teina-logo.png</image:loc>
             <image:title>Teína - Indie pop rock band logo</image:title>
@@ -64,7 +64,7 @@
         </image:image>
         {%- endif -%}
         {#- Banda page images - Spanish -#}
-        {%- if sitemap_entry.permalink is ending_with("/banda/") and not "/en/" in sitemap_entry.permalink -%}
+        {%- if sitemap_entry.permalink is ending_with(pat="/banda/") and not "/en/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/banda/juanjo.png</image:loc>
             <image:title>Juanjo - Guitarra y Voz de Teína</image:title>
@@ -130,7 +130,7 @@
         </image:image>
         {%- endif -%}
         {#- Tributo page images - Spanish -#}
-        {%- if sitemap_entry.permalink is ending_with("/tributo/") and not "/en/" in sitemap_entry.permalink -%}
+        {%- if sitemap_entry.permalink is ending_with(pat="/tributo/") and not "/en/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
             <image:title>Teína - Banda tributo de indie pop rock en Murcia</image:title>
@@ -146,7 +146,7 @@
         </image:image>
         {%- endif -%}
         {#- Media page images and videos - Spanish -#}
-        {%- if sitemap_entry.permalink is ending_with("/media/") and not "/en/" in sitemap_entry.permalink -%}
+        {%- if sitemap_entry.permalink is ending_with(pat="/media/") and not "/en/" in sitemap_entry.permalink -%}
         <image:image>
             <image:loc>https://teina.es/media/large/banda-confeti-final.webp</image:loc>
             <image:title>Teína en escenario con lluvia de confeti y público</image:title>

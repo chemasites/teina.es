@@ -92,25 +92,6 @@
 </script>
 {% endblock %}
 
-{% block extra_css %}
-<!-- TODO: Eliminar cuando el modal esté listo -->
-<style>
-.member {
-    cursor: default;
-}
-.member:hover, .member:focus {
-    transform: none;
-    box-shadow: none;
-    background: transparent;
-}
-.member:hover .member-avatar,
-.member:hover .member-avatar-wrapper {
-    transform: none;
-    border-color: var(--border-color);
-}
-</style>
-{% endblock %}
-
 {% block content %}
 {% set lang_prefix = "" %}
 {% if lang == "en" %}
