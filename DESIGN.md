@@ -254,7 +254,7 @@ The layout is one centred column, max width 88rem, with a fluid side gutter of c
 
 The home first viewport is a two-column grid (5fr text, 7fr photo, gap clamp(1.5rem, 4vw, 4rem), vertically centred), followed by a "Próximos conciertos" block under a 3px rule: a heading with a link to all dates, then up to six date cards (2px ink border, dashed for private events) with the day, month, place, and time, "Evento privado" or "Entradas a la venta". Six columns on desktop, three under 1100px, two under 560px; the card fills with ink on hover.
 
-- **Left column, left-aligned:** the h1 holds the logo image (clamp(8rem, 13vw, 11.5rem) wide) above the uppercase strap "Banda murciana" ("Band from Murcia, Spain" in English). Below it are the description lede (max 34rem), the shared-stage sentence in soft ink (max 34rem), and the box office: the Contrata a Teína ticket followed by the phone number.
+- **Left column, left-aligned:** the h1 holds the logo image (clamp(8rem, 13vw, 11.5rem) wide). Below it are the description lede (max 34rem), which opens with "Banda murciana" ("from Murcia, Spain" in English), the shared-stage sentence in soft ink (max 34rem), and the box office: the Contrata a Teína ticket followed by the phone number.
 - **Right column:** the band photo with no frame, height min(68vh, 44rem) (at least 20rem), `object-fit: cover` at focal point 50% 30%.
 
 Inner pages open with a page head: the page name at headline size, then a lede.
@@ -346,7 +346,7 @@ Under 700px, a fixed bar splits in two over an ink frame: Call (plaster fill, in
 
 ### Signature: logo and photo hero
 
-The home h1 contains the band-supplied logo image (`static/imgs/teina-logo-trim.webp` with a PNG fallback, alt "Teína", trimmed from `teina-logo.png`) above the strap "Banda murciana". It heads the text column beside the unframed band photo; under 860px the photo comes first and the logo sits centred under it. Keep the logo as an image: its green butterfly and script wordmark are the identity, and type does not stand in for it.
+The home h1 contains the band-supplied logo image (`static/imgs/teina-logo-trim.webp` with a PNG fallback, alt "Teína", trimmed from `teina-logo.png`). It heads the text column beside the unframed band photo; under 860px the photo comes first and the logo sits centred under it. Keep the logo as an image: its green butterfly and script wordmark are the identity, and type does not stand in for it.
 
 ### Gallery (structural constraint)
 
