@@ -13,6 +13,9 @@
 {% block twitter_title %}{{ page.title }} | Teína{% endblock %}
 {% block twitter_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
+{% block field %}field--plaster{% endblock %}
+{% block theme_color %}#f4ead9{% endblock %}
+
 {% block extra_schema %}
 <script type="application/ld+json">
 {
@@ -84,27 +87,38 @@
 {% set lang_prefix = "/en" if lang == "en" else "" %}
 {% include "partials/navbar.html" %}
 
-<main class="page-content media-page" id="main">
-    <header class="page-header">
-        <h1>{% if lang == "en" %}Photos & Videos of Teína{% else %}Fotos y Vídeos de Teína{% endif %}</h1>
-        <p class="page-subtitle">{% if lang == "en" %}Photos and videos from inside the live show{% else %}Fotos y vídeos desde dentro del directo{% endif %}</p>
+<main id="main">
+    <header class="poster-head field field--plaster">
+        <div class="wrap">
+            <h1 class="headliner headliner--long">
+                <span class="headliner-ink">{% if lang == "en" %}Photos &amp; videos{% else %}Fotos y vídeos{% endif %}</span>
+                <span class="headliner-ghost" aria-hidden="true">{% if lang == "en" %}Photos &amp; videos{% else %}Fotos y vídeos{% endif %}</span>
+            </h1>
+            <p class="lede">{% if lang == "en" %}Every photo is from a real Teína show: town festivals across the Region of Murcia, summer stages, backstage before the first chord. If you are weighing us up for an event, this is what the night looks like.{% else %}Todas las fotos son de conciertos reales de Teína: fiestas de pueblo por toda la Región de Murcia, escenarios de verano, backstage antes del primer acorde. Si nos estás valorando para un evento, así es una noche con nosotros.{% endif %}</p>
+        </div>
     </header>
 
-    <section class="section" id="videos">
-        <h2>Videos</h2>
-        <div class="videos-grid">
-            <div class="video-item">
-                <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
+    <section class="section field field--sand" id="videos">
+        <div class="wrap">
+            <div class="section-head">
+                <h2 class="title">{% if lang == "en" %}Videos{% else %}Vídeos{% endif %}</h2>
             </div>
-            <div class="video-item">
-                <lite-youtube videoid="_ue01WuY4bQ" data-title="Teína - {% if lang == 'en' %}Sentimiento Arrocero (Official Calasparra Anthem){% else %}Sentimiento Arrocero (Himno oficial Ciudad Calasparra){% endif %}"></lite-youtube>
+            <div class="videos-grid">
+                <div class="video-item">
+                    <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
+                    <p class="video-caption">{% if lang == "en" %}Promo video{% else %}Vídeo promocional{% endif %}</p>
+                </div>
+                <div class="video-item">
+                    <lite-youtube videoid="_ue01WuY4bQ" data-title="Teína - {% if lang == 'en' %}Sentimiento Arrocero (Official Calasparra Anthem){% else %}Sentimiento Arrocero (Himno oficial Ciudad Calasparra){% endif %}"></lite-youtube>
+                    <p class="video-caption">{% if lang == "en" %}Sentimiento Arrocero, official Calasparra anthem{% else %}Sentimiento Arrocero, himno oficial de Calasparra{% endif %}</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section section-alt" id="galeria">
-        <h2>{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
-        <p class="section-intro">{% if lang == "en" %}Every photo here is from a real Teína show — town festivals across the Region of Murcia, summer stages, backstage before the first chord. The gallery covers full-band shots under stage lights, close-ups of each musician at work, and the quieter moments in the dressing room. If you are weighing us up for an event, this is what the night actually looks like. See where we play next on our <a href="{{ lang_prefix }}/conciertos/">upcoming concerts</a>, or read about the <a href="{{ lang_prefix }}/tributo/">tribute show</a> itself.{% else %}Todas las fotos son de conciertos reales de Teína: fiestas de pueblo por toda la Región de Murcia, escenarios de verano, backstage antes del primer acorde. La galería recoge planos de banda completa bajo los focos, primeros planos de cada músico y los momentos más tranquilos del camerino. Si nos estás valorando para un evento, así es una noche con nosotros. Mira dónde tocamos próximamente en <a href="{{ lang_prefix }}/conciertos/">conciertos</a>, o conoce el <a href="{{ lang_prefix }}/tributo/">tributo</a>.{% endif %}</p>
+        <h2 class="title">{% if lang == "en" %}Gallery{% else %}Galería{% endif %}</h2>
+        <p class="section-intro">{% if lang == "en" %}Full-band shots under the lights, close-ups of each musician and the quiet moments backstage. See where we play next on the <a href="{{ lang_prefix }}/conciertos/">concerts page</a>, or read about the <a href="{{ lang_prefix }}/tributo/">tribute show</a>.{% else %}Planos de banda completa bajo los focos, primeros planos de cada músico y los ratos tranquilos del camerino. Mira dónde tocamos en <a href="{{ lang_prefix }}/conciertos/">conciertos</a>, o conoce el <a href="{{ lang_prefix }}/tributo/">tributo</a>.{% endif %}</p>
 
         <div class="gallery gallery-large">
             <!-- Stage wide shots -->
@@ -433,26 +447,26 @@
         </div>
     </section>
 
-    <section class="section" id="conciertos">
-        <h2>{% if lang == "en" %}Concerts{% else %}Conciertos{% endif %}</h2>
-        <div class="gallery gallery-large">
-            <a href="{{ get_url(path='conciertos/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
-                <picture>
-                    <source type="image/webp" srcset="{{ get_url(path='conciertos/conciertos-25.webp') }}">
-                    <img src="{{ get_url(path='conciertos/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy" decoding="async" width="1080" height="1350">
-                </picture>
-            </a>
+    <section class="section" id="carteles">
+        <div class="wrap split">
+            <h2 class="title">{% if lang == "en" %}Posters{% else %}Carteles{% endif %}</h2>
+            <div class="gallery gallery--posters">
+                <a href="{{ get_url(path='conciertos/conciertos-25.jpg') }}" class="gallery-item" data-lightbox>
+                    <picture>
+                        <source type="image/webp" srcset="{{ get_url(path='conciertos/conciertos-25.webp') }}">
+                        <img src="{{ get_url(path='conciertos/conciertos-25.jpg') }}" alt="{% if lang == 'en' %}Teína Concert 2025{% else %}Concierto Teína 2025{% endif %}" loading="lazy" decoding="async" width="1080" height="1350">
+                    </picture>
+                </a>
+            </div>
         </div>
     </section>
 </main>
 
 {% include "partials/footer.html" %}
 
-<!-- Lightbox for gallery -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="{% if lang == 'en' %}Photo viewer{% else %}Visor de fotos{% endif %}">
-    <button class="lightbox-close" aria-label="{% if lang == 'en' %}Close{% else %}Cerrar{% endif %}">&times;</button>
-    <button class="lightbox-nav lightbox-prev" aria-label="{% if lang == 'en' %}Previous{% else %}Anterior{% endif %}">&#8249;</button>
-    <img src="" alt="" class="lightbox-img">
-    <button class="lightbox-nav lightbox-next" aria-label="{% if lang == 'en' %}Next{% else %}Siguiente{% endif %}">&#8250;</button>
+    <button class="lightbox-close" aria-label="{% if lang == 'en' %}Close{% else %}Cerrar{% endif %}"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="lightbox-nav lightbox-prev" aria-label="{% if lang == 'en' %}Previous{% else %}Anterior{% endif %}"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lightbox-nav lightbox-next" aria-label="{% if lang == 'en' %}Next{% else %}Siguiente{% endif %}"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M9 5l7 7-7 7"/></svg></button>
 </div>
 {% endblock %}

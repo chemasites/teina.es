@@ -1,72 +1,80 @@
 {% set lang_prefix = "/en" if lang == "en" else "" %}
 
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-col">
-            {% if lang == "en" %}
-            <p class="footer-heading">Navigation</p>
-            <ul>
-                <li><a href="{{ lang_prefix }}/banda/">The Band</a></li>
-                <li><a href="{{ lang_prefix }}/tributo/">Tribute Band</a></li>
-                <li><a href="{{ lang_prefix }}/musica/">Music</a></li>
-                <li><a href="{{ lang_prefix }}/media/">Media</a></li>
-                <li><a href="{{ lang_prefix }}/contacto/">Contact</a></li>
-            </ul>
-            {% else %}
-            <p class="footer-heading">Navegación</p>
-            <ul>
-                <li><a href="/banda/">La Banda</a></li>
-                <li><a href="/tributo/">Tributo</a></li>
-                <li><a href="/musica/">Música</a></li>
-                <li><a href="/media/">Media</a></li>
-                <li><a href="/contacto/">Contacto</a></li>
-            </ul>
-            {% endif %}
+{% if not hide_booking | default(value=false) %}
+<section class="booking" aria-labelledby="booking-title">
+    <div class="wrap booking-grid">
+        <div>
+            <h2 class="display booking-title" id="booking-title">{% if lang == "en" %}Book Teína{% else %}Contrata a Teína{% endif %}</h2>
+            <p class="lede booking-copy">{% if lang == "en" %}Call or email with the date, the town and the type of event. We reply with availability and terms. No middlemen.{% else %}Llámanos o escríbenos con la fecha, el pueblo y el tipo de evento. Te contestamos con disponibilidad y condiciones. Sin intermediarios.{% endif %}</p>
         </div>
-        <div class="footer-col">
-            {% if lang == "en" %}
-            <p class="footer-heading">Contact</p>
-            {% else %}
-            <p class="footer-heading">Contacto</p>
-            {% endif %}
-            <ul>
-                <li>
-                    <a href="mailto:teinaband@gmail.com">
-                        <svg aria-hidden="true" focusable="false" class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-                        teinaband@gmail.com
-                    </a>
-                </li>
-                <li>
-                    <a href="tel:+34661892704">
-                        <svg aria-hidden="true" focusable="false" class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                        661 892 704
-                    </a>
-                </li>
-            </ul>
+        <div class="booking-lines">
+            <a class="phone-link" href="tel:+34661892704">661 892 704</a>
+            <a class="mail-link" href="mailto:teinaband@gmail.com">teinaband@gmail.com</a>
+            <a class="ticket ticket--sand" href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Plan your event{% else %}Prepara tu evento{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="mark" aria-hidden="true"></span>
+                <p>Teína<br>{% if lang == "en" %}Indie pop rock live from Calasparra, Murcia{% else %}Indie pop rock en directo desde Calasparra, Murcia{% endif %}</p>
+            </div>
+            <nav class="footer-nav" aria-label="{% if lang == 'en' %}Footer{% else %}Pie de página{% endif %}">
+                {% if lang == "en" %}
+                <a href="{{ lang_prefix }}/conciertos/">Concerts</a>
+                <a href="{{ lang_prefix }}/musica/">Music</a>
+                <a href="{{ lang_prefix }}/tributo/">Tribute</a>
+                <a href="{{ lang_prefix }}/banda/">Band</a>
+                <a href="{{ lang_prefix }}/media/">Media</a>
+                <a href="{{ lang_prefix }}/contacto/">Contact</a>
+                {% else %}
+                <a href="/conciertos/">Conciertos</a>
+                <a href="/musica/">Música</a>
+                <a href="/tributo/">Tributo</a>
+                <a href="/banda/">Banda</a>
+                <a href="/media/">Media</a>
+                <a href="/contacto/">Contacto</a>
+                {% endif %}
+            </nav>
             <div class="footer-social">
-                <a href="https://instagram.com/teinaband" target="_blank" rel="noopener" aria-label="Instagram">
-                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <a href="https://instagram.com/teinaband" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    Instagram
                 </a>
-                <a href="https://www.youtube.com/@teina8932" target="_blank" rel="noopener" aria-label="YouTube">
-                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                <a href="https://www.youtube.com/@teina8932" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                    YouTube
                 </a>
-                <a href="https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J" target="_blank" rel="noopener" aria-label="Spotify">
-                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
+                <a href="https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14.5c2.5-1 5.5-1 8 0"/><path d="M6.5 11.5c3.5-1.5 7.5-1.5 11 0"/><path d="M5 8.5c4.5-2 9.5-2 14 0"/></svg>
+                    Spotify
                 </a>
             </div>
         </div>
-        <div class="footer-col">
-            <p class="footer-heading">Teína</p>
-            <p>Indie Pop Rock<br>Calasparra, Murcia</p>
+        <div class="footer-bottom">
+            {% if lang == "en" %}
+            <p>&copy; {{ now() | date(format="%Y") }} Teína. All rights reserved.</p>
+            <p>Developed by <a href="https://chemaclass.es/web" target="_blank" rel="noopener">Chemaclass</a> · <a href="{{ lang_prefix }}/legal/">Legal notice</a> · <a href="/sitemap.xml">Sitemap</a></p>
+            {% else %}
+            <p>&copy; {{ now() | date(format="%Y") }} Teína. Todos los derechos reservados.</p>
+            <p>Desarrollado por <a href="https://chemaclass.es/web" target="_blank" rel="noopener">Chemaclass</a> · <a href="/legal/">Aviso legal</a> · <a href="/sitemap.xml">Sitemap</a></p>
+            {% endif %}
         </div>
     </div>
-    <div class="footer-bottom">
-        {% if lang == "en" %}
-        <p>&copy; {{ now() | date(format="%Y") }} Teína. All rights reserved.</p>
-        <p class="developer">Developed by <a href="https://chemaclass.com/" target="_blank">Chemaclass</a> · <a href="{{ lang_prefix }}/legal/">Legal notice</a> · <a href="/sitemap.xml">Sitemap</a></p>
-        {% else %}
-        <p>&copy; {{ now() | date(format="%Y") }} Teína. Todos los derechos reservados.</p>
-        <p class="developer">Desarrollado por <a href="https://chemaclass.com/es/" target="_blank">Chemaclass</a> · <a href="/legal/">Aviso legal</a> · <a href="/sitemap.xml">Sitemap</a></p>
-        {% endif %}
-    </div>
 </footer>
+
+<nav class="dock" aria-label="{% if lang == 'en' %}Quick booking{% else %}Contratación rápida{% endif %}">
+    <a href="tel:+34661892704">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        {% if lang == "en" %}Call{% else %}Llamar{% endif %}
+    </a>
+    {% if hide_booking | default(value=false) %}
+    <a href="mailto:teinaband@gmail.com">{% if lang == "en" %}Email{% else %}Escribir{% endif %}</a>
+    {% else %}
+    <a href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Book us{% else %}Contratar{% endif %}</a>
+    {% endif %}
+</nav>

@@ -11,18 +11,19 @@ You style https://teina.es.
 
 ## Files
 
-- `sass/style.scss` - the single stylesheet (about 2,500 lines)
-- `templates/base.html` - theme toggle, lightbox, and past-concerts script
+- `DESIGN.md` - the design system: palette, type, components, layout rules
+- `sass/style.scss` - the single stylesheet
+- `templates/base.html` - page shell and scripts (lightbox, past concerts, date strip, mobile menu)
 
 ## Design system
 
-- Light: cream `#f9f5f0` background, dark brown `#3a3530` text. Dark: `#1a1816` background, `#e8e4e0` text. Brown accents for buttons and hover.
-- Theme is `[data-theme="dark"]` on `<html>`, defaulting to the system preference.
-- Components: fixed navbar with scroll blur, theme toggle, ES/EN switcher, hero, concert list with collapsible past events, member cards, gallery lightbox, footer.
+- A festival lineup poster in the logo's colours: plaster cream, sand, leaf green, deep foliage green, black ink. No bright inks.
+- Big Shoulders uppercase for display and lineup rows, Archivo for text.
+- Every page is a colour field; components are lineup `.bill` rows, `.ticket` stub buttons, 3px ink rules, and the `.headliner` with its offset second-colour copy.
 
 ## Rules
 
-1. Theme colors through CSS custom properties; new hex values only in the token blocks.
-2. Check every change in light and dark, on mobile and desktop.
-3. Reuse existing classes and breakpoints.
+1. Colours only through the `:root` tokens.
+2. One light theme. Check every change at 390px and 1440px.
+3. Reuse existing classes before adding new ones.
 4. Run `zola build`; a Sass error fails it.

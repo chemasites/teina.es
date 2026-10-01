@@ -13,6 +13,9 @@
 {% block twitter_title %}{{ page.title }} | Teína{% endblock %}
 {% block twitter_description %}{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}{% endblock %}
 
+{% block field %}field--plaster{% endblock %}
+{% block theme_color %}#f4ead9{% endblock %}
+
 {% block extra_schema %}
 <script type="application/ld+json">
 {
@@ -39,9 +42,22 @@
 {% block content %}
 {% include "partials/navbar.html" %}
 
-<main class="page-content" id="main">
-    <h1>{{ page.title }}</h1>
-    {{ page.content | safe }}
+<main id="main">
+    <header class="poster-head field field--plaster">
+        <div class="wrap">
+            <h1 class="headliner headliner--long">
+                <span class="headliner-ink">{{ page.title }}</span>
+                <span class="headliner-ghost" aria-hidden="true">{{ page.title }}</span>
+            </h1>
+        </div>
+    </header>
+    <section class="section section--tight">
+        <div class="wrap">
+            <div class="prose">
+                {{ page.content | safe }}
+            </div>
+        </div>
+    </section>
 </main>
 
 {% include "partials/footer.html" %}

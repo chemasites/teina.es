@@ -15,7 +15,9 @@ paths:
 
 ## Site conventions
 
-- Pages extend `base.html` and fill `{% block content %}`; navbar and footer come from `templates/partials/`.
+- Pages extend `base.html`, set the page colour with `{% block field %}field--<name>{% endblock %}` and `{% block theme_color %}`, and fill `{% block content %}`; navbar and footer come from `templates/partials/`.
+- The footer partial prints the booking band on every page. Set `{% set hide_booking = true %}` before including it on a page that is already the booking page.
+- Page headers use `.poster-head` with an `h1.headliner` holding `.headliner-ink` plus an `aria-hidden` `.headliner-ghost` copy of the same text.
 - Bilingual text uses `{% if lang == "en" %}...{% else %}...{% endif %}` inline. There are no translation keys.
 - Images use `<picture>` with a WebP `<source>`, a JPEG/PNG `<img>`, `width`, `height`, and native `loading="lazy"` below the fold. Never a JS-only `data-src`: crawlers miss it.
 - Pipe `config.base_url`, `section.permalink`, and `page.permalink` through `| safe` inside `<script type="application/ld+json">`. Tera escapes `&`, `<`, `>`, `"`, and `'` as entities, and script content is not decoded, so Google reads a corrupted URL.

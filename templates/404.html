@@ -5,74 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Teína</title>
     <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0f2619">
+    <link rel="icon" href="{{ get_url(path='favicon.ico') }}" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='imgs/favicon.png') }}">
-    <style>
-        :root {
-            --bg: #f9f5f0;
-            --text: #3a3530;
-            --muted: #7a6a58;
-            --border: #d5c9b8;
-            --btn-bg: #2a2520;
-            --btn-text: #f9f5f0;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #1a1816;
-                --text: #e8e4e0;
-                --muted: #9a9692;
-                --border: #3a3836;
-                --btn-bg: #e8e4e0;
-                --btn-text: #1a1816;
-            }
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "Georgia", serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        .container { max-width: 460px; }
-        h1 { font-size: 5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        p { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6; }
-        .links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .btn-primary {
-            background: var(--btn-bg);
-            color: var(--btn-text);
-        }
-        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
-        .btn-secondary {
-            background: transparent;
-            color: var(--muted);
-            border: 1px solid var(--border);
-        }
-        .btn-secondary:hover { border-color: var(--muted); }
-    </style>
+    <link rel="preload" href="{{ get_url(path='fonts/big-shoulders-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
 </head>
-<body>
-    <div class="container">
-        <h1>404</h1>
-        <p>Esta página no existe. Vuelve al inicio o contáctanos.</p>
-        <div class="links">
-            <a href="/" class="btn-primary">Inicio</a>
-            <a href="/contacto/" class="btn-secondary">Contacto</a>
+<body class="field--forest">
+    <main class="lost field field--forest">
+        <div class="wrap">
+            <span class="mark" aria-hidden="true"></span>
+            <h1 class="headliner">
+                <span class="headliner-ink">404</span>
+                <span class="headliner-ghost" aria-hidden="true">404</span>
+            </h1>
+            <p class="lede">Esta página no está en el cartel. <span lang="en">This page is not on the bill.</span></p>
+            <p class="listen-links">
+                <a class="ticket ticket--paper" href="/">Inicio</a>
+                <a class="ticket ticket--sand" href="/contacto/">Contratar</a>
+                <a class="credit-link" href="tel:+34661892704">661 892 704</a>
+                <a class="credit-link" href="/en/" lang="en">English</a>
+            </p>
         </div>
-    </div>
+    </main>
 </body>
 </html>

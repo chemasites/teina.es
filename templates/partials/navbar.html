@@ -6,59 +6,37 @@
 {% else %}
     {% set alt_lang_path = "/en" ~ current %}
 {% endif %}
+{% set nav = [
+    {"slug": "conciertos", "es": "Conciertos", "en": "Concerts"},
+    {"slug": "musica", "es": "Música", "en": "Music"},
+    {"slug": "tributo", "es": "Tributo", "en": "Tribute"},
+    {"slug": "banda", "es": "Banda", "en": "Band"},
+    {"slug": "media", "es": "Media", "en": "Media"}
+] %}
 
 <a class="skip-link" href="#main">{% if lang == "en" %}Skip to main content{% else %}Ir al contenido principal{% endif %}</a>
 <header class="site-header">
-<nav class="navbar">
-    <a href="{{ lang_prefix }}/" class="nav-logo">
-        <img src="{{ get_url(path='imgs/mariposa-teina.jpg') }}" alt="Teína" width="58" height="45" decoding="async" fetchpriority="high">
+<nav class="navbar" aria-label="{% if lang == 'en' %}Main{% else %}Principal{% endif %}">
+    <a href="{{ lang_prefix }}/" class="nav-brand" aria-label="{% if lang == 'en' %}Teína, home{% else %}Teína, inicio{% endif %}">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="nav-brand-name">Teína</span>
     </a>
     <button class="nav-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="{% if lang == 'en' %}Open menu{% else %}Abrir menú{% endif %}">
         <span class="nav-toggle-bars" aria-hidden="true"></span>
     </button>
     <ul class="nav-links" id="nav-links">
+        {%- for item in nav %}
+        {%- set href = lang_prefix ~ "/" ~ item.slug ~ "/" %}
+        <li><a href="{{ href }}"{% if current is starting_with(pat=href) %} aria-current="page"{% endif %}>{% if lang == "en" %}{{ item.en }}{% else %}{{ item.es }}{% endif %}</a></li>
+        {%- endfor %}
+    </ul>
+    <div class="nav-actions">
         {% if lang == "en" %}
-        <li><a href="{{ lang_prefix }}/conciertos/">Concerts</a></li>
-        <li><a href="{{ lang_prefix }}/musica/">Music</a></li>
-        <li><a href="{{ lang_prefix }}/tributo/">Tribute</a></li>
-        <li><a href="{{ lang_prefix }}/banda/">Band</a></li>
-        <li><a href="{{ lang_prefix }}/media/">Media</a></li>
-        <li class="nav-cta-item"><a href="{{ lang_prefix }}/contacto/" class="nav-cta">Book</a></li>
+        <a class="lang-switch" href="{{ alt_lang_path }}" hreflang="es" lang="es" title="Español">ES</a>
         {% else %}
-        <li><a href="/conciertos/">Conciertos</a></li>
-        <li><a href="/musica/">Música</a></li>
-        <li><a href="/tributo/">Tributo</a></li>
-        <li><a href="/banda/">Banda</a></li>
-        <li><a href="/media/">Media</a></li>
-        <li class="nav-cta-item"><a href="/contacto/" class="nav-cta">Contratar</a></li>
+        <a class="lang-switch" href="{{ alt_lang_path }}" hreflang="en" lang="en" title="English">EN</a>
         {% endif %}
-    </ul>
-    <ul class="nav-actions">
-        <li class="lang-switcher">
-            {% if lang == "en" %}
-            <a href="{{ alt_lang_path }}" title="Español">ES</a>
-            {% else %}
-            <a href="{{ alt_lang_path }}" title="English">EN</a>
-            {% endif %}
-        </li>
-        <li class="theme-toggle">
-            <button id="theme-toggle" aria-label="{% if lang == 'en' %}Toggle dark mode{% else %}Cambiar modo oscuro{% endif %}">
-                <svg aria-hidden="true" focusable="false" class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg aria-hidden="true" focusable="false" class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-        </li>
-    </ul>
+        <a href="{{ lang_prefix }}/contacto/" class="ticket ticket--sm">{% if lang == "en" %}Book us{% else %}Contratar{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+    </div>
 </nav>
 </header>

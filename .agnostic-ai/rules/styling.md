@@ -5,8 +5,11 @@ paths:
 
 # SCSS rules
 
-- Theme colors come from CSS custom properties (`var(--...)`). New hex values go only in the `:root` and `[data-theme="dark"]` token blocks; leave existing neutral hexes (`#fff`, `#000`, shimmer greys) alone unless the task touches them.
-- Light palette: `#f9f5f0` background, `#3a3530` text. Dark palette: `#1a1816` background, `#e8e4e0` text.
-- Dark mode is `[data-theme="dark"]` on `<html>`, set by the toggle in `base.html` with `prefers-color-scheme` as the default. Check every change in both themes.
-- Mobile first. Reuse existing class names and breakpoints before adding new ones.
-- Zola compiles Sass during `zola build`; a Sass error fails the build.
+- The site is a festival lineup poster printed in the logo's colours. `DESIGN.md` at the repository root is the design system; read it before a visual change.
+- Colours come only from the tokens in `:root` (`--plaster`, `--sand`, `--leaf`, `--fern`, `--forest`, `--ink`). No new hex values outside `:root`. No bright inks (pink, lemon, cobalt): the band rejected them.
+- Each page is a field: `field--plaster`, `field--sand`, `field--leaf` or `field--forest` on `<body>` (via the `field` block) and on sections. The field sets `--field`, `--on-field` and `--ghost`.
+- One light theme. There is no dark mode and no theme toggle.
+- Type: Big Shoulders (display, uppercase) and Archivo (text), self-hosted in `static/fonts/`. No other faces.
+- Lists of names use `.bill`; separators are drawn by CSS and clipped at line starts. Do not type dots between names.
+- Buttons are `.ticket` stubs (`ticket--paper`, `ticket--sand`, `ticket--leaf`, `ticket--sm`). Rules are 3px ink.
+- Mobile first; check 390px and 1440px. Zola compiles Sass during `zola build`; a Sass error fails the build.

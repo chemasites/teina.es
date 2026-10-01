@@ -6,7 +6,7 @@
       imagesrcset="{{ get_url(path='media/hero-800.webp') }} 800w,
                    {{ get_url(path='media/hero-1200.webp') }} 1200w,
                    {{ get_url(path='media/hero-1800.webp') }} 1800w"
-      imagesizes="(max-width: 480px) 100vw, (max-width: 900px) 100vw, 900px"
+      imagesizes="(max-width: 900px) 100vw, 40vw"
       type="image/webp"
       fetchpriority="high">
 {% endblock %}
@@ -39,137 +39,187 @@
 {% block content %}
 {% set lang_prefix = "/en" if lang == "en" else "" %}
 {% include "partials/navbar.html" %}
+{% set cdata = load_data(path="data/concerts.toml") %}
+{% set today_num = now() | date(format="%Y%m%d") | int %}
+{% set upcoming = [c for c in cdata.concert | sort(attribute="date") if c.date | replace(from="-", to="") | int >= today_num] %}
+{% set months_es = ["", "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"] %}
+{% set months_en = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %}
 
-<main class="page-content home-page" id="main">
+<main id="main">
 
-<header class="hero" id="inicio">
-    <picture>
-        <source
-            type="image/webp"
-            srcset="{{ get_url(path='media/hero-800.webp') }} 800w,
-                    {{ get_url(path='media/hero-1200.webp') }} 1200w,
-                    {{ get_url(path='media/hero-1800.webp') }} 1800w"
-            sizes="(max-width: 480px) 100vw, (max-width: 900px) 100vw, 900px">
-        <img
-            src="{{ get_url(path='media/hero-1200.jpg') }}"
-            srcset="{{ get_url(path='media/hero-800.jpg') }} 800w,
-                    {{ get_url(path='media/hero-1200.jpg') }} 1200w,
-                    {{ get_url(path='media/hero-1800.jpg') }} 1800w"
-            sizes="(max-width: 480px) 100vw, (max-width: 900px) 100vw, 900px"
-            alt="Teína - {% if lang == 'en' %}Indie Pop Rock Band{% else %}Banda Indie Pop Rock{% endif %}"
-            class="hero-logo"
-            fetchpriority="high"
-            decoding="async"
-            width="1200"
-            height="857">
-    </picture>
-    <div class="hero-content">
-        <h1 class="hero-title">Teína <span class="tagline">{% if lang == "en" %}indie pop rock tribute{% else %}tributo indie pop rock{% endif %}</span></h1>
-        {% if lang == "en" %}
-        <p class="hero-description">Indie pop rock tribute band that combines reinterpreted covers of major Spanish artists with original songs</p>
-        <div class="hero-buttons">
-            <a href="{{ lang_prefix }}/musica/" class="btn btn-primary">
-                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                Listen
-            </a>
-            <a href="{{ lang_prefix }}/contacto/" class="btn btn-secondary">
-                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Bookings
-            </a>
+<header class="poster field field--plaster">
+    <div class="wrap poster-grid">
+        <div class="poster-main">
+            <h1 class="headliner">
+                <span class="headliner-ink">Teína</span>
+                <span class="headliner-ghost" aria-hidden="true">Teína</span>
+            </h1>
+            <p class="poster-strap strap">
+                <span class="mark" aria-hidden="true"></span>
+                <span>{% if lang == "en" %}Indie pop rock live{% else %}Indie pop rock en directo{% endif %}</span>
+                <span class="strap-dot" aria-hidden="true">·</span>
+                <span>Calasparra, Murcia</span>
+            </p>
+            <p class="lede">{% if lang == "en" %}The indie pop rock tribute band that turns your town square into a gig. Six musicians, sax included, and two hours of songs everyone sings.{% else %}La banda tributo de indie pop rock que convierte tu plaza en un concierto. Seis músicos, saxo incluido, y dos horas de himnos que canta todo el mundo.{% endif %}</p>
+            <ul class="bill poster-facts">
+                <li>{% if lang == "en" %}6 musicians{% else %}6 músicos{% endif %}</li>
+                <li>{% if lang == "en" %}2 h live{% else %}2 h de directo{% endif %}</li>
+                <li>{% if lang == "en" %}6 originals{% else %}6 temas propios{% endif %}</li>
+            </ul>
+            <div class="poster-with">
+                <p class="strap">{% if lang == "en" %}Shared the stage with{% else %}Han compartido escenario con{% endif %}</p>
+                <div class="bill">
+                    <ul class="bill-row">
+                        <li>Revolver</li>
+                        <li>Loquillo</li>
+                        <li>Second</li>
+                    </ul>
+                    <ul class="bill-row bill-row--small">
+                        <li>Álvaro de Luna</li>
+                        <li>Danza Invisible</li>
+                        <li>Efecto Mariposa</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        {% else %}
-        <p class="hero-description">Banda tributo de indie pop rock que combina versiones reinterpretadas de grandes referentes nacionales con canciones propias</p>
-        <div class="hero-buttons">
-            <a href="/musica/" class="btn btn-primary">
-                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                Escuchar
-            </a>
-            <a href="/contacto/" class="btn btn-secondary">
-                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Contrataciones
-            </a>
+        <figure class="poster-photo">
+            <picture>
+                <source type="image/webp"
+                    srcset="{{ get_url(path='media/hero-800.webp') }} 800w, {{ get_url(path='media/hero-1200.webp') }} 1200w, {{ get_url(path='media/hero-1800.webp') }} 1800w"
+                    sizes="(max-width: 900px) 100vw, 40vw">
+                <img src="{{ get_url(path='media/hero-1200.jpg') }}"
+                    srcset="{{ get_url(path='media/hero-800.jpg') }} 800w, {{ get_url(path='media/hero-1200.jpg') }} 1200w, {{ get_url(path='media/hero-1800.jpg') }} 1800w"
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                    alt="{% if lang == 'en' %}The six members of Teína posing in front of a brick wall{% else %}Los seis miembros de Teína posando frente a una pared de ladrillo{% endif %}"
+                    width="1200" height="857" fetchpriority="high" decoding="async">
+            </picture>
+        </figure>
+    </div>
+    <div class="wrap">
+        <div class="poster-bill">
+            <div class="dates-strip" data-upcoming="4">
+                <p class="dates-strip-label strap">{% if lang == "en" %}Next dates{% else %}Próximas fechas{% endif %}</p>
+                {%- for c in upcoming[:6] %}
+                {%- set parts = c.date | split(pat="-") %}
+                {%- set m = parts[1] | int %}
+                <a class="date-chip" href="{{ lang_prefix }}/conciertos/" data-date="{{ c.date }}">
+                    <span class="date-chip-day">{{ parts[2] | int }}</span>
+                    <span class="date-chip-text">
+                        <b>{% if lang == "en" %}{{ months_en[m] }}{% else %}{{ months_es[m] }}{% endif %}{% if c.private %} · {% if lang == "en" %}private{% else %}privado{% endif %}{% endif %}</b>
+                        <span>{{ c.display }}</span>
+                    </span>
+                </a>
+                {%- endfor %}
+                <a class="credit-link" href="{{ lang_prefix }}/conciertos/" data-empty{% if upcoming | length > 0 %} hidden{% endif %}>{% if lang == "en" %}New dates coming soon. See past shows{% else %}Nuevas fechas muy pronto. Mira los conciertos pasados{% endif %}</a>
+            </div>
+            <div class="box-office">
+                <a class="phone-link" href="tel:+34661892704">661 892 704</a>
+                <a class="ticket" href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Book Teína{% else %}Contrata a Teína{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
         </div>
-        {% endif %}
     </div>
 </header>
 
-<section class="section fade-in" id="about">
-    {% if lang == "en" %}
-    <h2>About Teína</h2>
-    <p class="section-intro">We are an indie pop rock tribute band from Calasparra, in the Northwest of the Region of Murcia, Spain. All members have extensive experience in the world of live music in different formats. Teína offers the best reinterpreted covers of Spanish indie rock, plus original songs with intensity and personality. <a href="{{ lang_prefix }}/tributo/">Learn more about our tribute →</a></p>
-    <a href="{{ lang_prefix }}/banda/" class="section-cta">
-        <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        Meet the band
-    </a>
-    {% else %}
-    <h2>Sobre Teína</h2>
-    <p class="section-intro">Teína es una banda tributo de indie pop rock originaria de Calasparra, en el Noroeste de la Región de Murcia, España. Todos los componentes cuentan con una amplia experiencia en el mundo de la música en directo en diferentes formatos. Ofrecemos las mejores versiones reinterpretadas del indie rock nacional, además de temas propios con intensidad y personalidad. <a href="/tributo/">Conoce nuestro tributo →</a></p>
-    <a href="/banda/" class="section-cta">
-        <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        Conocer la banda
-    </a>
-    {% endif %}
-</section>
-
-<section class="section section-alt fade-in" id="preview">
-    {% if lang == "en" %}
-    <h2>Featured Video</h2>
-    {% else %}
-    <h2>Video Destacado</h2>
-    {% endif %}
-    <div class="videos-grid">
-        <div class="video-item">
-            <lite-youtube videoid="XDiUv8ba55I" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
+<section class="section lineup" id="repertorio">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="title">{% if lang == "en" %}Two hours of songs the crowd sings back{% else %}Dos horas de himnos que se corean{% endif %}</h2>
+            <p class="lede">{% if lang == "en" %}We reinterpret the Spanish and international indie that plays at every party, with our own touch and six original songs in between.{% else %}Reinterpretamos el indie nacional e internacional que suena en todas las fiestas. Con sello propio y seis temas nuestros entre medias.{% endif %}</p>
+        </div>
+        <p class="strap">{% if lang == "en" %}Songs by{% else %}Suenan canciones de{% endif %}</p>
+        <div class="bill bill--stack lineup-bill">
+            <ul class="bill-row bill-row--1">
+                <li>Vetusta Morla</li>
+                <li>Love of Lesbian</li>
+            </ul>
+            <ul class="bill-row bill-row--2">
+                <li>Izal</li>
+                <li>Lori Meyers</li>
+                <li>Sidonie</li>
+                <li>Dorian</li>
+            </ul>
+            <ul class="bill-row bill-row--3">
+                <li>La Habitación Roja</li>
+                <li>Iván Ferreiro</li>
+                <li>Sidecars</li>
+            </ul>
+            <ul class="bill-row bill-row--3">
+                <li>Second</li>
+                <li>Carolina Durante</li>
+            </ul>
+        </div>
+        <div class="lineup-more">
+            <p class="lineup-own">{% if lang == "en" %}+ 6 Teína originals{% else %}+ 6 temas de Teína{% endif %}</p>
+            <a class="credit-link" href="{{ lang_prefix }}/tributo/">{% if lang == "en" %}About the tribute show{% else %}Cómo es el tributo{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </div>
     </div>
-    <a href="{{ lang_prefix }}/media/" class="section-cta">
-        <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        {% if lang == "en" %}See more{% else %}Ver más{% endif %}
-    </a>
 </section>
 
-<section class="section section-concerts fade-in" id="conciertos">
-    {% if lang == "en" %}
-    <h2>Upcoming Concerts</h2>
-    <p class="section-intro">Upcoming live shows in Murcia, Granada, Calasparra, Caravaca and more.</p>
-    <div class="cta-buttons">
-        <a href="{{ lang_prefix }}/conciertos/" class="btn btn-primary">
-            <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            See all concerts →
-        </a>
+<section class="section field field--sand" id="directo">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="title">{% if lang == "en" %}This is a night with Teína{% else %}Así es una noche con Teína{% endif %}</h2>
+        </div>
+        <div class="live-split">
+            <div class="video-item">
+                <lite-youtube videoid="XDiUv8ba55I" data-poster="{{ get_url(path='media/large/banda-confeti-final.webp') }}" data-title="Teína - {% if lang == 'en' %}Promo Video{% else %}Video Promocional{% endif %}"></lite-youtube>
+                <p class="video-caption">{% if lang == "en" %}Promo video · 2:33{% else %}Vídeo promocional · 2:33{% endif %}</p>
+            </div>
+            <div class="live-photos">
+                <a href="{{ lang_prefix }}/media/">
+                    <picture>
+                        <source type="image/webp" srcset="{{ get_url(path='media/thumbs/banda-confeti-final.webp') }}">
+                        <img src="{{ get_url(path='media/thumbs/banda-confeti-final.jpg') }}" alt="{% if lang == 'en' %}Teína on stage under a rain of confetti, crowd in front{% else %}Teína en el escenario bajo una lluvia de confeti, con el público delante{% endif %}" width="600" height="400" loading="lazy" decoding="async">
+                    </picture>
+                </a>
+                <a href="{{ lang_prefix }}/media/">
+                    <picture>
+                        <source type="image/webp" srcset="{{ get_url(path='media/thumbs/juanjo-apuntando-publico.webp') }}">
+                        <img src="{{ get_url(path='media/thumbs/juanjo-apuntando-publico.jpg') }}" alt="{% if lang == 'en' %}Juanjo pointing at the crowd from the stage{% else %}Juanjo señalando al público desde el escenario{% endif %}" width="400" height="600" loading="lazy" decoding="async">
+                    </picture>
+                </a>
+                <a class="credit-link" href="{{ lang_prefix }}/media/">{% if lang == "en" %}All photos and videos{% else %}Todas las fotos y vídeos{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            </div>
+        </div>
     </div>
-    {% else %}
-    <h2>Próximos Conciertos</h2>
-    <p class="section-intro">Próximos directos en Murcia, Granada, Calasparra, Caravaca y más.</p>
-    <div class="cta-buttons">
-        <a href="/conciertos/" class="btn btn-primary">
-            <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Ver todos los conciertos →
-        </a>
-    </div>
-    {% endif %}
 </section>
 
-<section class="section section-alt fade-in" id="contact-cta">
-    <div class="contact-container">
-        <div class="contact-header">
+<section class="section field field--forest" id="eventos">
+    <div class="wrap">
+        <h2 class="visually-hidden">{% if lang == "en" %}Events we play{% else %}Eventos en los que tocamos{% endif %}</h2>
+        <div class="bill bill--stack occasions">
             {% if lang == "en" %}
-            <h2>Organizing an event?</h2>
-            <p>Let's talk and make it unforgettable</p>
+            <ul class="bill-row"><li>Town festivals</li><li>Festivals</li><li>Weddings</li></ul>
+            <ul class="bill-row"><li>Company events</li><li>Private parties</li><li>Venues</li></ul>
             {% else %}
-            <h2>¿Organizas un evento?</h2>
-            <p>Hablemos y hagamos que sea inolvidable</p>
+            <ul class="bill-row"><li>Fiestas patronales</li><li>Festivales</li><li>Bodas</li></ul>
+            <ul class="bill-row"><li>Empresas</li><li>Fiestas privadas</li><li>Salas</li></ul>
             {% endif %}
         </div>
-        <div class="cta-buttons">
-            <a href="{{ lang_prefix }}/contacto/" class="btn btn-primary">
-                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                {% if lang == "en" %}Contact{% else %}Contactar{% endif %}
-            </a>
-            <a href="tel:+34661892704" class="btn btn-secondary">
-                <svg aria-hidden="true" focusable="false" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                661 892 704
-            </a>
+        <div class="occasions-foot">
+            <p class="lede">{% if lang == "en" %}Repertoire and format adapted to each event. Across the Region of Murcia, the bordering provinces and anywhere in Spain.{% else %}Repertorio y formato adaptados a cada evento. Por toda la Región de Murcia, las provincias vecinas y donde haga falta en España.{% endif %}</p>
+            <a class="ticket ticket--paper" href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Ask for a date{% else %}Pide fecha{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="temas">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="title">{% if lang == "en" %}Six songs of our own{% else %}Seis temas propios{% endif %}</h2>
+            <p class="lede">{% if lang == "en" %}From the first single in 2017 to the latest in 2025. Hear them before you see us live.{% else %}Del primer single en 2017 al último en 2025. Escúchalos antes de vernos en directo.{% endif %}</p>
+        </div>
+        <ol class="singles">
+            <li class="single"><span class="single-title">A contratiempo</span><span class="single-year">2025</span></li>
+            <li class="single"><span class="single-title">Sentimiento arrocero</span><span class="single-year">2025</span></li>
+            <li class="single"><span class="single-title">Volver a empezar</span><span class="single-year">2024</span></li>
+            <li class="single"><span class="single-title">Quiero</span><span class="single-year">2023</span></li>
+            <li class="single"><span class="single-title">Salvaje</span><span class="single-year">2019</span></li>
+            <li class="single"><span class="single-title">Calavera</span><span class="single-year">2017</span></li>
+        </ol>
+        <div class="listen-links">
+            <a class="ticket" href="https://open.spotify.com/artist/3DNeaFbVbrX0Z23VLr8J2J" target="_blank" rel="noopener">Spotify<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <a class="ticket ticket--leaf" href="https://www.youtube.com/@teina8932" target="_blank" rel="noopener">YouTube<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
     </div>
 </section>

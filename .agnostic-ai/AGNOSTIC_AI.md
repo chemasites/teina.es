@@ -6,6 +6,7 @@ Bilingual site for Teína, an indie pop rock band from Calasparra, Murcia: https
 
 - [Zola](https://www.getzola.org/) 0.23 (pinned in `.github/workflows/main.yml`), config in `zola.toml`
 - Tera v2 templates in `templates/`, Sass in `sass/style.scss`
+- Visual design: `DESIGN.md` (festival lineup poster in the logo colours); product facts and audience: `PRODUCT.md`
 - Spanish is the default language (`/...`), English lives under `/en/...`
 - GitHub Pages: every push to `main` runs `zola check`, `zola build`, and deploys
 
