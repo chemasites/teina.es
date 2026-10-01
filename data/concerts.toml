@@ -162,22 +162,32 @@ private = true
 [[concert]]
 date = "2026-10-02"
 display = "Puebla de Mula"
-time = "--:--"
+time = "00.00h"
 private = false
 schema_name = "Puebla de Mula"
 schema_loc = "Puebla de Mula"
 schema_city = "Puebla de Mula"
-schema_start = "2026-10-02"
+schema_start = "2026-10-02T00:00:00+02:00"
+
+[[concert]]
+date = "2026-10-03"
+display = "Almería"
+private = true
 
 [[concert]]
 date = "2026-10-10"
 display = "Orihuela - El Escorratel"
-time = "23.30h"
+time = "23.00h"
 private = false
 schema_name = "El Escorratel"
 schema_loc = "El Escorratel"
 schema_city = "Orihuela"
-schema_start = "2026-10-10T23:30:00+02:00"
+schema_start = "2026-10-10T23:00:00+02:00"
+
+[[concert]]
+date = "2026-10-24"
+display = "Elche de la Sierra"
+private = true
 
 [[concert]]
 date = "2026-10-30"
@@ -191,6 +201,21 @@ schema_city = "Murcia"
 schema_start = "2026-10-30T22:00:00+01:00"
 
 [[concert]]
+date = "2026-11-21"
+display = "Nerpio"
+private = true
+
+[[concert]]
 date = "2026-11-28"
-display = "Calasparra"
+display = "La Daya"
+private = true
+
+[[concert]]
+date = "2026-12-05"
+display = "Boda"
+private = true
+
+[[concert]]
+date = "2027-04-10"
+display = "Caravaca - Boda"
 private = true
