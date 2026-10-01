@@ -1,13 +1,6 @@
-// Teína: festival lineup poster printed in the colours of the band's logo:
+// Teína: a modern band site in the colours of the band's logo:
 // plaster cream, sand, leaf and deep foliage green, black ink.
-// Condensed headliner type stacked in lineup rows.
-
-@font-face {
-    font-family: "Big Shoulders";
-    src: url("fonts/big-shoulders-latin.woff2") format("woff2");
-    font-weight: 700 900;
-    font-display: swap;
-}
+// Real logo and live photos lead; Archivo for every word.
 
 @font-face {
     font-family: "Archivo";
@@ -32,7 +25,7 @@
     --on-field: var(--ink);
     --ghost: var(--fern);
 
-    --display: "Big Shoulders", "Archivo", sans-serif;
+    --display: "Archivo", system-ui, sans-serif;
     --text: "Archivo", system-ui, sans-serif;
 
     --gutter: clamp(1rem, 4vw, 3rem);
@@ -179,17 +172,16 @@ strong {
 
 .display {
     font-family: var(--display);
-    font-weight: 900;
-    font-variation-settings: "opsz" 72;
-    text-transform: uppercase;
-    line-height: 1;
-    letter-spacing: -0.005em;
+    font-weight: 800;
+    font-variation-settings: "wdth" 112;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
     text-wrap: balance;
 }
 
 .title {
     @extend .display;
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: clamp(2.1rem, 4.4vw, 3.8rem);
 }
 
 .lede {
@@ -210,9 +202,8 @@ strong {
         margin: 2.2em 0 0.5em;
         font-family: var(--display);
         font-weight: 800;
-        font-size: 1.9rem;
-        line-height: 1;
-        text-transform: uppercase;
+        font-size: 1.45rem;
+        line-height: 1.15;
     }
 
     h3 {
@@ -241,53 +232,30 @@ strong {
     text-transform: uppercase;
 }
 
-// lineup rows: names in condensed caps with a dot before each one. The list is pulled
-// left by one dot width and clipped there, so the dot that starts a wrapped line is hidden.
+// name lists (artists, towns, events) as outlined tags that wrap freely
 .bill {
-    --dot: 0.7em;
-    font-family: var(--display);
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 0.95;
+    font-family: var(--text);
+    font-weight: 700;
+    font-variation-settings: "wdth" 104;
+    line-height: 1.2;
 }
 
 ul.bill,
 .bill > ul {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 0.08em;
-    margin-left: calc(var(--dot) * -1);
-    clip-path: inset(-0.5em -0.5em -0.5em var(--dot));
+    gap: 0.5rem;
 
     li {
+        padding: 0.4em 0.95em;
+        border: 2px solid currentColor;
+        border-radius: 999px;
         white-space: nowrap;
-    }
-
-    li::before {
-        content: "\00B7";
-        display: inline-block;
-        width: var(--dot);
-        text-align: center;
-        opacity: 0.55;
-    }
-}
-
-// below this width lineup rows stack one name per line, like a phone-sized poster
-@media (max-width: 760px) {
-    .bill--stack > ul,
-    ul.bill--stack {
-        display: block;
-        margin-left: 0;
-        clip-path: none;
-
-        li::before {
-            content: none;
-        }
     }
 }
 
 .bill-row + .bill-row {
-    margin-top: 0.35em;
+    margin-top: 0.5rem;
 }
 
 // ---------------------------------------------------------------- headliner
@@ -296,12 +264,11 @@ ul.bill,
     position: relative;
     margin: 0;
     font-family: var(--display);
-    font-weight: 900;
-    font-variation-settings: "opsz" 72;
-    text-transform: uppercase;
-    line-height: 0.8;
-    letter-spacing: -0.01em;
-    font-size: clamp(7.5rem, 25vw, 19rem);
+    font-weight: 800;
+    font-variation-settings: "wdth" 112;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-size: clamp(3.2rem, 9vw, 7rem);
     margin-top: 0.22em;
     text-wrap: balance;
     isolation: isolate;
@@ -311,32 +278,6 @@ ul.bill,
     position: relative;
     z-index: 1;
     display: block;
-}
-
-// second screenprint pass: lands out of register, then settles a few px off
-.headliner-ghost {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    color: var(--ghost);
-    transform: translate(0.035em, 0.03em);
-    animation: print-pass 1.1s var(--ease-out) 0.15s both;
-    pointer-events: none;
-    user-select: none;
-}
-
-@keyframes print-pass {
-    from {
-        transform: translate(0.16em, -0.08em);
-        opacity: 0;
-    }
-    35% {
-        opacity: 1;
-    }
-    to {
-        transform: translate(0.035em, 0.03em);
-        opacity: 1;
-    }
 }
 
 // ---------------------------------------------------------------- ticket buttons
@@ -352,10 +293,9 @@ ul.bill,
     color: var(--paper);
     font-family: var(--display);
     font-weight: 800;
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     line-height: 1;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    letter-spacing: 0;
     text-decoration: none;
     white-space: nowrap;
     -webkit-mask:
@@ -408,7 +348,7 @@ ul.bill,
 }
 
 .ticket--sm {
-    font-size: 1.05rem;
+    font-size: 0.92rem;
     padding: 0.7em 1em 0.7em 1.1em;
     gap: 0.7em;
 }
@@ -478,10 +418,10 @@ ul.bill,
 
 .nav-brand-name {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: 1.75rem;
+    font-weight: 800;
+    font-size: 1.3rem;
     line-height: 1;
-    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
 .nav-links {
@@ -599,9 +539,9 @@ ul.bill,
         a {
             display: block;
             font-family: var(--display);
-            font-weight: 900;
-            font-size: clamp(3rem, 15vw, 5rem);
-            line-height: 0.95;
+            font-weight: 800;
+            font-size: clamp(2rem, 9vw, 3rem);
+            line-height: 1.1;
             letter-spacing: 0;
             border-bottom: 0;
             padding-block: 0.1em;
@@ -639,8 +579,8 @@ ul.bill,
 
     .headliner {
         margin-top: 0.15em;
-        font-size: clamp(4.5rem, 15vw, 13rem);
-        line-height: 0.92;
+        font-size: clamp(2.8rem, 7.5vw, 6rem);
+        line-height: 1.02;
     }
 
     .lede {
@@ -681,107 +621,100 @@ h2:hover .anchor-link,
     opacity: 0.6;
 }
 
-// ---------------------------------------------------------------- home: poster hero
+// ---------------------------------------------------------------- home: hero
 
 .poster {
     border-bottom: 3px solid var(--ink);
 }
 
-.poster-grid {
+.hero {
     display: grid;
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    gap: clamp(1.5rem, 3vw, 3rem);
-    padding-block: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 2.5rem);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    padding-block: clamp(1.25rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.poster-main {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.25rem, 2.2vw, 2rem);
-    min-width: 0;
-}
-
-.poster-title {
-    display: grid;
-    gap: clamp(1.25rem, 2.2vw, 2rem);
+.hero-photo {
     margin: 0;
-    font: inherit;
-
-    .headliner {
-        display: block;
-    }
-}
-
-.poster-strap {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.4rem 0.9rem;
-
-    .mark {
-        width: 2.4rem;
-    }
-
-    flex-wrap: nowrap;
-    align-items: center;
-
-    @media (max-width: 560px) {
-        .strap-dot {
-            display: none;
-        }
-
-        .strap-place {
-            display: block;
-        }
-
-        font-variation-settings: "wdth" 100;
-        letter-spacing: 0.04em;
-    }
-}
-
-.poster-facts {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(1.6rem, 2.8vw, 2.6rem);
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.poster-with {
-    padding-top: 1.1rem;
-    border-top: var(--rule);
-
-    .bill {
-        margin-top: 0.6rem;
-        font-size: clamp(1.7rem, 3.2vw, 3rem);
-    }
-
-    .bill-row--small {
-        font-size: 0.68em;
-    }
-}
-
-.poster-photo {
-    position: relative;
-    margin: 0;
-    align-self: stretch;
-    min-height: 22rem;
     border: 3px solid var(--ink);
+    overflow: hidden;
 
     img {
-        position: absolute;
-        inset: 0;
         width: 100%;
-        height: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: 78vh;
         object-fit: cover;
-        object-position: 50% 45%;
+        object-position: 50% 8%;
+    }
+}
+
+.hero-body {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.hero-title {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 0.9rem;
+    margin: 0;
+    font: inherit;
+}
+
+.hero-logo {
+    width: clamp(9rem, 16vw, 13rem);
+    height: auto;
+}
+
+.hero-text {
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+
+    .lede {
+        max-width: 40rem;
+    }
+}
+
+.hero-with {
+    max-width: 44rem;
+    color: var(--ink-soft);
+
+    b {
+        color: var(--ink);
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-photo img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .hero-body {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        justify-items: center;
+    }
+
+    .hero-logo {
+        width: 7.5rem;
+    }
+
+    .hero-text .box-office {
+        justify-content: center;
     }
 }
 
 // bottom strip of the poster: the bill of upcoming dates and the box office
 .poster-bill {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
     gap: 1.25rem 2.5rem;
     padding-block: 1.25rem 1.6rem;
@@ -808,9 +741,9 @@ h2:hover .anchor-link,
 
 .date-chip-day {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: 2.6rem;
-    line-height: 0.8;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 0.9;
 }
 
 .date-chip-text {
@@ -840,8 +773,8 @@ h2:hover .anchor-link,
 
 .phone-link {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: 2rem;
+    font-weight: 800;
+    font-size: 1.6rem;
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
@@ -853,16 +786,6 @@ h2:hover .anchor-link,
 }
 
 @media (max-width: 900px) {
-    .poster-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .poster-photo {
-        min-height: 0;
-        aspect-ratio: 4 / 3;
-        order: 2;
-    }
-
     .poster-bill {
         grid-template-columns: 1fr;
     }
@@ -888,21 +811,12 @@ h2:hover .anchor-link,
 
 .lineup-bill {
     margin-inline: auto;
-    max-width: 70rem;
+    max-width: 60rem;
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
 
     > ul {
         justify-content: center;
-        margin-left: 0;
-        clip-path: none;
     }
-
-    li:first-child::before {
-        content: none;
-    }
-
-    .bill-row--1 { font-size: clamp(2.6rem, 5.4vw, 4.8rem); }
-    .bill-row--2 { font-size: clamp(2rem, 3.9vw, 3.5rem); }
-    .bill-row--3 { font-size: clamp(1.5rem, 2.8vw, 2.5rem); }
 }
 
 .lineup-more {
@@ -915,10 +829,9 @@ h2:hover .anchor-link,
 
 .lineup-own {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(1.8rem, 3.6vw, 3rem);
-    line-height: 1;
-    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    line-height: 1.1;
     color: var(--leaf);
 }
 
@@ -971,8 +884,7 @@ h2:hover .anchor-link,
 // ---------------------------------------------------------------- events for hire
 
 .occasions {
-    font-size: clamp(2.4rem, 5.2vw, 4.6rem);
-    line-height: 0.95;
+    font-size: clamp(1.15rem, 2vw, 1.6rem);
 }
 
 .occasions-foot {
@@ -1006,10 +918,9 @@ h2:hover .anchor-link,
 
 .single-title {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(1.9rem, 3vw, 2.6rem);
-    line-height: 0.95;
-    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.1;
 }
 
 .single-year {
@@ -1035,16 +946,15 @@ h2:hover .anchor-link,
 
 .track-title {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(2.4rem, 7vw, 5.5rem);
-    line-height: 0.9;
-    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    line-height: 1.05;
 }
 
 .track-year {
     font-family: var(--display);
     font-weight: 800;
-    font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
     font-variant-numeric: tabular-nums;
 }
 
@@ -1080,17 +990,16 @@ h2:hover .anchor-link,
     flex-wrap: wrap;
     gap: 0 0.4rem;
     font-family: var(--display);
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.85;
+    font-weight: 800;
+    line-height: 0.95;
 }
 
 .event-day {
-    font-size: 3.6rem;
+    font-size: 2.6rem;
 }
 
 .event-month {
-    font-size: 1.7rem;
+    font-size: 1.15rem;
 }
 
 .event-year {
@@ -1106,9 +1015,8 @@ h2:hover .anchor-link,
 .event-venue {
     font-family: var(--display);
     font-weight: 800;
-    font-size: clamp(1.6rem, 3vw, 2.5rem);
-    line-height: 1;
-    text-transform: uppercase;
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    line-height: 1.15;
 }
 
 .event-time,
@@ -1208,11 +1116,11 @@ h2:hover .anchor-link,
     }
 
     .event-day {
-        font-size: 2.4rem;
+        font-size: 1.9rem;
     }
 
     .event-venue {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
     }
 
     .event-actions {
@@ -1228,11 +1136,11 @@ h2:hover .anchor-link,
     }
 
     .event-day {
-        font-size: 2.8rem;
+        font-size: 2.1rem;
     }
 
     .event-month {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .event-time,
@@ -1281,10 +1189,9 @@ h2:hover .anchor-link,
 
 .member-name {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
-    line-height: 0.9;
-    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    line-height: 1.05;
 }
 
 .member-role {
@@ -1302,7 +1209,7 @@ h2:hover .anchor-link,
 }
 
 .shared-bill {
-    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
 }
 
 .split {
@@ -1321,11 +1228,11 @@ h2:hover .anchor-link,
 // ---------------------------------------------------------------- tribute
 
 .repertoire-bill {
-    font-size: clamp(2.2rem, 5.6vw, 4.8rem);
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
 }
 
 .towns {
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
 }
 
 .faq-list {
@@ -1346,9 +1253,8 @@ h2:hover .anchor-link,
         list-style: none;
         font-family: var(--display);
         font-weight: 800;
-        font-size: clamp(1.5rem, 2.6vw, 2.1rem);
-        line-height: 1.05;
-        text-transform: uppercase;
+        font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+        line-height: 1.25;
 
         &::-webkit-details-marker {
             display: none;
@@ -1402,14 +1308,14 @@ h2:hover .anchor-link,
 
 .box-value {
     font-family: var(--display);
-    font-weight: 900;
-    font-size: clamp(2.6rem, 9vw, 7.5rem);
-    line-height: 0.85;
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 4.6rem);
+    line-height: 1;
     overflow-wrap: anywhere;
 }
 
 .box-value--mail {
-    font-size: clamp(1.6rem, 4vw, 3.6rem);
+    font-size: clamp(1.3rem, 3vw, 2.6rem);
     text-transform: none;
 }
 
@@ -1435,8 +1341,8 @@ a.box:hover .box-value {
         &::before {
             content: counter(brief);
             font-family: var(--display);
-            font-weight: 900;
-            font-size: 1.8rem;
+            font-weight: 800;
+            font-size: 1.4rem;
             line-height: 1;
         }
     }
@@ -1474,10 +1380,9 @@ a.box:hover .box-value {
 
     h3 {
         font-family: var(--display);
-        font-weight: 900;
-        font-size: 2.1rem;
-        line-height: 0.95;
-        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 1.45rem;
+        line-height: 1.15;
     }
 
     p {
@@ -1708,8 +1613,8 @@ lite-youtube:hover .lty-playbtn,
 }
 
 .booking-title {
-    font-size: clamp(3.5rem, 10vw, 9rem);
-    line-height: 1.06;
+    font-size: clamp(2.6rem, 6vw, 5.2rem);
+    line-height: 1.02;
 }
 
 .booking-copy {
@@ -1722,7 +1627,7 @@ lite-youtube:hover .lty-playbtn,
     justify-items: start;
 
     .phone-link {
-        font-size: clamp(2.6rem, 5vw, 4.2rem);
+        font-size: clamp(2rem, 3.6vw, 3rem);
     }
 }
 
@@ -1833,9 +1738,8 @@ lite-youtube:hover .lty-playbtn,
             gap: 0.5rem;
             min-height: 3.5rem;
             font-family: var(--display);
-            font-weight: 900;
-            font-size: 1.35rem;
-            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 1.1rem;
             text-decoration: none;
         }
 
@@ -1887,7 +1791,7 @@ lite-youtube:hover .lty-playbtn,
 
 .headliner--long {
     .poster-head & {
-        font-size: clamp(3.4rem, 9vw, 8rem);
-        line-height: 0.95;
+        font-size: clamp(2.4rem, 5.6vw, 4.8rem);
+        line-height: 1.05;
     }
 }

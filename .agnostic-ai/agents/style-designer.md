@@ -17,9 +17,9 @@ You style https://teina.es.
 
 ## Design system
 
-- A festival lineup poster in the logo's colours: plaster cream, sand, leaf green, deep foliage green, black ink. No bright inks.
-- Big Shoulders uppercase for display and lineup rows, Archivo for text.
-- Every page is a colour field; components are lineup `.bill` rows, `.ticket` stub buttons, 3px ink rules, and the `.headliner` with its offset second-colour copy.
+- A modern band site in the logo's colours: plaster cream, sand, leaf green, deep foliage green, black ink. No bright inks.
+- Archivo only, mixed case for headings. The real logo and live photos lead the home page.
+- Every page is a colour field; components are `.bill` tag lists, `.ticket` stub buttons, 3px ink rules and the `.headliner` page title. Avoid anything that reads as a poster or bullfight cartel (condensed caps, dot-separated name rows).
 
 ## Rules
 

@@ -17,14 +17,14 @@ Constraints: keep the butterfly mark; keep gallery and video markup that scripts
 
 ## Direction contract
 
-THESIS: Teína headlines its own festival cartel. Refuses the dark full-bleed band hero with centred logo.
+THESIS: Teína as a real band: the logo and the live photo lead, plain modern type, booking one tap away. Refuses the poster/bullfight cartel look (condensed caps, dot-separated name rows) the band rejected.
 
-OWN-WORLD: flat screenprint fields in the logo's colours (plaster cream, sand, leaf green, deep foliage green; user-pinned, no bright inks), black ink; condensed heavy display stacked in lineup rows separated by dots; each page is a poster in its own field colour; ticket-stub buttons.
+OWN-WORLD: the logo's colours as flat page fields (plaster cream, sand, leaf, deep forest; user-pinned), black ink, Archivo only in mixed case, outlined tag lists, ticket-stub buttons, 3px ink rules.
 
 STORY: booker sees a band that headlines with real names, sees dates, books in one tap.
 
-FIRST VIEWPORT: plaster field; TEÍNA at headliner scale top-left; live photo plate right; shared-stage lineup rows below the name; bottom bill strip with next dates and the CONTRATAR ticket button plus phone.
+FIRST VIEWPORT: plaster field; the band photo full-width with all six faces; under it the real logo (butterfly + script) beside the original description, shared-stage line, CONTRATA A TEÍNA ticket and phone; next-dates strip below.
 
-FORM: Festival lineup poster, candidate 1 of 7 (pick), seed 6fb3cc4d. Signature: screenprint passes land with misregistration then align.
+FORM: revised from Festival Lineup Poster (pick, seed 6fb3cc4d) after band feedback; signature: real logo plus live photo hero.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

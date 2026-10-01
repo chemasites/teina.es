@@ -6,7 +6,7 @@
       imagesrcset="{{ get_url(path='media/hero-800.webp') }} 800w,
                    {{ get_url(path='media/hero-1200.webp') }} 1200w,
                    {{ get_url(path='media/hero-1800.webp') }} 1800w"
-      imagesizes="(max-width: 900px) 100vw, 40vw"
+      imagesizes="(max-width: 1408px) 100vw, 1408px"
       type="image/webp"
       fetchpriority="high">
 {% endblock %}
@@ -48,52 +48,36 @@
 <main id="main">
 
 <header class="poster field field--plaster">
-    <div class="wrap poster-grid">
-        <div class="poster-main">
-            <h1 class="poster-title">
-                <span class="headliner">
-                    <span class="headliner-ink">Teína</span>
-                    <span class="headliner-ghost" aria-hidden="true">Teína</span>
-                </span>
-                <span class="poster-strap strap">
-                    <span class="mark" aria-hidden="true"></span>
-                    <span>{% if lang == "en" %}Indie pop rock tribute band{% else %}Banda tributo de indie pop rock{% endif %}<span class="strap-dot" aria-hidden="true"> · </span><span class="strap-place">Calasparra, Murcia</span></span>
-                </span>
-            </h1>
-            <p class="lede">{% if lang == "en" %}Spanish and international indie covers, plus our own songs. Live, with sax.{% else %}Versiones del indie nacional e internacional y temas propios. En directo y con saxo.{% endif %}</p>
-            <ul class="bill poster-facts">
-                <li>{% if lang == "en" %}6 musicians{% else %}6 músicos{% endif %}</li>
-                <li>{% if lang == "en" %}2 h live{% else %}2 h de directo{% endif %}</li>
-                <li>{% if lang == "en" %}6 originals{% else %}6 temas propios{% endif %}</li>
-            </ul>
-            <div class="poster-with">
-                <p class="strap">{% if lang == "en" %}Shared the stage with{% else %}Han compartido escenario con{% endif %}</p>
-                <div class="bill">
-                    <ul class="bill-row">
-                        <li>Revolver</li>
-                        <li>Loquillo</li>
-                        <li>Second</li>
-                    </ul>
-                    <ul class="bill-row bill-row--small">
-                        <li>Álvaro de Luna</li>
-                        <li>Danza Invisible</li>
-                        <li>Efecto Mariposa</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <figure class="poster-photo">
+    <div class="wrap hero">
+        <figure class="hero-photo">
             <picture>
                 <source type="image/webp"
                     srcset="{{ get_url(path='media/hero-800.webp') }} 800w, {{ get_url(path='media/hero-1200.webp') }} 1200w, {{ get_url(path='media/hero-1800.webp') }} 1800w"
-                    sizes="(max-width: 900px) 100vw, 40vw">
+                    sizes="(max-width: 1408px) 100vw, 1408px">
                 <img src="{{ get_url(path='media/hero-1200.jpg') }}"
                     srcset="{{ get_url(path='media/hero-800.jpg') }} 800w, {{ get_url(path='media/hero-1200.jpg') }} 1200w, {{ get_url(path='media/hero-1800.jpg') }} 1800w"
-                    sizes="(max-width: 900px) 100vw, 40vw"
+                    sizes="(max-width: 1408px) 100vw, 1408px"
                     alt="{% if lang == 'en' %}The six members of Teína posing in front of a brick wall{% else %}Los seis miembros de Teína posando frente a una pared de ladrillo{% endif %}"
                     width="1200" height="857" fetchpriority="high" decoding="async">
             </picture>
         </figure>
+        <div class="hero-body">
+            <h1 class="hero-title">
+                <picture>
+                    <source type="image/webp" srcset="{{ get_url(path='imgs/teina-logo-trim.webp') }}">
+                    <img class="hero-logo" src="{{ get_url(path='imgs/teina-logo-trim.png') }}" alt="Teína" width="381" height="573" decoding="async">
+                </picture>
+                <span class="strap">{% if lang == "en" %}Indie pop rock tribute band{% else %}Banda tributo de indie pop rock{% endif %}<span class="visually-hidden"> · </span><br>Calasparra, Murcia</span>
+            </h1>
+            <div class="hero-text">
+                <p class="lede">{% if lang == "en" %}Indie pop rock tribute band that combines reinterpreted covers of major Spanish artists with original songs.{% else %}Banda tributo de indie pop rock que combina versiones reinterpretadas de grandes referentes nacionales con canciones propias.{% endif %}</p>
+                <p class="hero-with">{% if lang == "en" %}Shared the stage with{% else %}Han compartido escenario con{% endif %} <b>Revolver</b>, <b>Loquillo</b>, <b>Second</b>, <b>Álvaro de Luna</b>, <b>Danza Invisible</b> {% if lang == "en" %}and{% else %}y{% endif %} <b>Efecto Mariposa</b>.</p>
+                <div class="box-office">
+                    <a class="ticket" href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Book Teína{% else %}Contrata a Teína{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+                    <a class="phone-link" href="tel:+34661892704">661 892 704</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="wrap">
         <div class="poster-bill">
@@ -111,10 +95,6 @@
                 </a>
                 {%- endfor %}
                 <a class="credit-link" href="{{ lang_prefix }}/conciertos/" data-empty{% if upcoming | length > 0 %} hidden{% endif %}>{% if lang == "en" %}New dates coming soon. See past shows{% else %}Nuevas fechas muy pronto. Mira los conciertos pasados{% endif %}</a>
-            </div>
-            <div class="box-office">
-                <a class="phone-link" href="tel:+34661892704">661 892 704</a>
-                <a class="ticket" href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Book Teína{% else %}Contrata a Teína{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
             </div>
         </div>
     </div>

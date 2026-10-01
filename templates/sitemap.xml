@@ -31,6 +31,11 @@
         {#- Homepage images -#}
         {%- if sitemap_entry.permalink is ending_with(pat="teina.es/") -%}
         <image:image>
+            <image:loc>https://teina.es/imgs/teina-logo-trim.png</image:loc>
+            <image:title>Teína</image:title>
+            <image:caption>Logo de Teína, banda tributo de indie pop rock de Calasparra, Murcia</image:caption>
+        </image:image>
+        <image:image>
             <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
             <image:title>Los seis miembros de Teína posando frente a una pared de ladrillo</image:title>
             <image:caption>Teína, banda de indie pop rock de Calasparra, Murcia</image:caption>
@@ -47,6 +52,11 @@
         </image:image>
         {%- endif -%}
         {%- if sitemap_entry.permalink is ending_with(pat="/en/") -%}
+        <image:image>
+            <image:loc>https://teina.es/imgs/teina-logo-trim.png</image:loc>
+            <image:title>Teína</image:title>
+            <image:caption>Logo of Teína, indie pop rock tribute band from Calasparra, Murcia, Spain</image:caption>
+        </image:image>
         <image:image>
             <image:loc>https://teina.es/media/hero-1200.jpg</image:loc>
             <image:title>The six members of Teína posing in front of a brick wall</image:title>
