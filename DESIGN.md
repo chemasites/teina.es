@@ -259,7 +259,7 @@ The home first viewport is a two-column grid (5fr text, 7fr photo, gap clamp(1.5
 
 Inner pages open with a page head: the page name at headline size, then a lede.
 
-Lists of records are rows divided by 3px rules: songs, concerts, FAQ entries, services and contact lines. Lists of names (repertoire artists, shared-stage artists, towns, occasions) are wrapping pill tags with a 0.5rem gap. The home repertoire tags are centred under a centred section head. Media uses a CSS columns masonry (3 columns, min 18rem). Band members sit in a 3-column grid of 4:5 portraits.
+Lists of records are rows divided by 3px rules: songs, concerts, FAQ entries, services and contact lines. Lists of names (shared-stage artists, towns) are wrapping pill tags with a 0.5rem gap. The site names no covered artists. Media uses a CSS columns masonry (3 columns, min 18rem). Band members sit in a 3-column grid of 4:5 portraits.
 
 Responsive behaviour, by observed breakpoint:
 
@@ -313,7 +313,7 @@ Friendly, tactile and plain.
 
 ### Name tags
 
-Wrapping lists of outlined pills, used for the repertoire artists, the bands Teína shared a stage with, towns and occasions.
+Wrapping lists of outlined pills, used for the bands Teína shared a stage with and for towns.
 
 - **Style:** no fill, 2px `currentColor` outline, radius 999px, padding 0.4em 0.95em, Archivo 700 at width 104, no wrapping inside a tag.
 - **Colour:** they take the field's text colour, so they are ink on paper fields and plaster on forest and leaf.

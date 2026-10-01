@@ -376,14 +376,14 @@
       "kind": "chip",
       "refersTo": "tag",
       "description": "Outlined pill tags for lists of names (repertoire, shared-stage artists, towns); they take the field's text colour.",
-      "html": "<ul class=\"ds-tags\"><li>Vetusta Morla</li><li>Love of Lesbian</li><li>Izal</li><li>Lori Meyers</li><li>Sidonie</li><li>Dorian</li></ul>",
+      "html": "<ul class=\"ds-tags\"><li>Murcia capital</li><li>Calasparra</li><li>Caravaca de la Cruz</li><li>Cehegín</li><li>Lorca</li><li>Yeste</li></ul>",
       "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; font-family: var(--text, \"Archivo\", system-ui, sans-serif); font-weight: 700; font-variation-settings: \"wdth\" 104; line-height: 1.2; font-size: clamp(1.05rem, 1.7vw, 1.35rem); } .ds-tags li { padding: 0.4em 0.95em; border: 2px solid currentColor; border-radius: 999px; white-space: nowrap; } .ds-tags { color: var(--ink, #131612); }"
     },
     {
       "name": "Name Tags on Forest",
       "kind": "chip",
       "refersTo": "tag-on-dark",
-      "description": "The same tags on a forest field, as in the home occasions section.",
+      "description": "The same tags on a forest field.",
       "html": "<div class=\"ds-on-forest-tags\"><ul class=\"ds-tags\"><li>Fiestas patronales</li><li>Festivales</li><li>Bodas</li><li>Empresas</li></ul></div>",
       "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; font-family: var(--text, \"Archivo\", system-ui, sans-serif); font-weight: 700; font-variation-settings: \"wdth\" 104; line-height: 1.2; font-size: clamp(1.05rem, 1.7vw, 1.35rem); } .ds-tags li { padding: 0.4em 0.95em; border: 2px solid currentColor; border-radius: 999px; white-space: nowrap; } .ds-on-forest-tags { background: var(--forest, #0f2619); color: var(--plaster, #f4ead9); padding: 1.5rem; }"
     },

@@ -862,30 +862,12 @@ h2:hover .anchor-link,
     }
 }
 
-.lineup-bill {
-    margin-inline: auto;
-    max-width: 60rem;
-    font-size: clamp(1rem, 1.6vw, 1.25rem);
-
-    > ul {
-        justify-content: center;
-    }
-}
-
 .lineup-more {
     margin-top: 1.75rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem 1.5rem;
-}
-
-.lineup-own {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-    line-height: 1.1;
-    color: var(--leaf);
 }
 
 // ---------------------------------------------------------------- home: live split
@@ -936,10 +918,6 @@ h2:hover .anchor-link,
 
 // ---------------------------------------------------------------- events for hire
 
-.occasions {
-    font-size: clamp(1.15rem, 2vw, 1.6rem);
-}
-
 .occasions-foot {
     display: flex;
     flex-wrap: wrap;
@@ -949,6 +927,12 @@ h2:hover .anchor-link,
     margin-top: clamp(2rem, 4vw, 3rem);
     padding-top: 1.5rem;
     border-top: var(--rule);
+}
+
+.occasions-foot--bare {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
 }
 
 // ---------------------------------------------------------------- songs
@@ -1279,10 +1263,6 @@ h2:hover .anchor-link,
 }
 
 // ---------------------------------------------------------------- tribute
-
-.repertoire-bill {
-    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
-}
 
 .towns {
     font-size: clamp(1.05rem, 1.7vw, 1.35rem);

@@ -106,33 +106,10 @@
     <div class="wrap">
         <div class="section-head">
             <h2 class="title">{% if lang == "en" %}Up to 2 hours live{% else %}Hasta 2 horas de directo{% endif %}</h2>
-            <p class="lede">{% if lang == "en" %}The indie everyone knows, with six of our own songs in between.{% else %}El indie que todo el mundo conoce, con seis temas nuestros entre medias.{% endif %}</p>
-        </div>
-        <p class="strap">{% if lang == "en" %}Songs by{% else %}Suenan canciones de{% endif %}</p>
-        <div class="bill bill--stack lineup-bill">
-            <ul class="bill-row bill-row--1">
-                <li>Vetusta Morla</li>
-                <li>Love of Lesbian</li>
-            </ul>
-            <ul class="bill-row bill-row--2">
-                <li>Izal</li>
-                <li>Lori Meyers</li>
-                <li>Sidonie</li>
-                <li>Dorian</li>
-            </ul>
-            <ul class="bill-row bill-row--3">
-                <li>La Habitación Roja</li>
-                <li>Iván Ferreiro</li>
-                <li>Sidecars</li>
-            </ul>
-            <ul class="bill-row bill-row--3">
-                <li>Second</li>
-                <li>Carolina Durante</li>
-            </ul>
+            <p class="lede">{% if lang == "en" %}The indie pop rock everyone knows. We also have 6 original songs to date.{% else %}El indie pop rock que todo el mundo conoce. También contamos con 6 temas propios hasta la fecha.{% endif %}</p>
         </div>
         <div class="lineup-more">
-            <p class="lineup-own">{% if lang == "en" %}+ 6 Teína originals{% else %}+ 6 temas de Teína{% endif %}</p>
-            <a class="credit-link" href="{{ lang_prefix }}/tributo/">{% if lang == "en" %}About the tribute show{% else %}Cómo es el tributo{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            <a class="credit-link" href="{{ lang_prefix }}/tributo/">{% if lang == "en" %}How we sound{% else %}Cómo sonamos{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </div>
     </div>
 </section>
@@ -169,18 +146,9 @@
 <section class="section field field--forest" id="eventos">
     <div class="wrap">
         <h2 class="visually-hidden">{% if lang == "en" %}Events we play{% else %}Eventos en los que tocamos{% endif %}</h2>
-        <div class="bill bill--stack occasions">
-            {% if lang == "en" %}
-            <ul class="bill-row"><li>Town festivals</li><li>Festivals</li><li>Weddings</li></ul>
-            <ul class="bill-row"><li>Company events</li><li>Private parties</li><li>Venues</li></ul>
-            {% else %}
-            <ul class="bill-row"><li>Fiestas patronales</li><li>Festivales</li><li>Bodas</li></ul>
-            <ul class="bill-row"><li>Empresas</li><li>Fiestas privadas</li><li>Salas</li></ul>
-            {% endif %}
-        </div>
-        <div class="occasions-foot">
+        <div class="occasions-foot occasions-foot--bare">
             <p class="lede">{% if lang == "en" %}Repertoire and format adapted to each event. Region of Murcia, neighbouring provinces and the rest of Spain.{% else %}Repertorio y formato adaptados a cada evento. Región de Murcia, provincias vecinas y resto de España.{% endif %}</p>
-            <a class="ticket ticket--paper" href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Ask for a date{% else %}Pide fecha{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+            <a class="ticket ticket--paper" href="{{ lang_prefix }}/contacto/">{% if lang == "en" %}Request your date{% else %}Solicita tu fecha{% endif %}<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </div>
     </div>
 </section>
