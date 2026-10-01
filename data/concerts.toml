@@ -196,19 +196,14 @@ schema_city = "Murcia"
 schema_start = "2026-10-30T22:00:00+01:00"
 
 [[concert]]
-date = "2026-11-14"
-display = "Murcia - Sala Revólver"
-time = "22.00h"
-private = false
-schema_name = "Sala Revólver"
-schema_loc = "Sala Revólver"
-schema_city = "Murcia"
-schema_start = "2026-11-14T22:00:00+01:00"
-
-[[concert]]
 date = "2026-11-21"
 display = "Nerpio"
-private = true
+time = "--:--"
+private = false
+schema_name = "Nerpio"
+schema_loc = "Nerpio"
+schema_city = "Nerpio"
+schema_start = "2026-11-21"
 
 [[concert]]
 date = "2026-11-28"
