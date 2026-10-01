@@ -198,12 +198,12 @@ schema_start = "2026-10-30T22:00:00+01:00"
 [[concert]]
 date = "2026-11-21"
 display = "Nerpio"
-time = "--:--"
+time = "19.00h"
 private = false
 schema_name = "Nerpio"
 schema_loc = "Nerpio"
 schema_city = "Nerpio"
-schema_start = "2026-11-21"
+schema_start = "2026-11-21T19:00:00+01:00"
 
 [[concert]]
 date = "2026-11-28"
