@@ -1,6 +1,6 @@
 base_url = "https://teina.es"
 title = "Teína"
-description = "Teína es una banda de indie pop rock de Calasparra, Murcia. Seis músicos, seis sencillos propios y dos horas de directo para tu evento o festival."
+description = "Teína es una banda de indie pop rock de Calasparra, Murcia. Seis músicos, seis sencillos propios y hasta dos horas de directo para tu evento o festival."
 default_language = "es"
 compile_sass = true
 build_search_index = false
