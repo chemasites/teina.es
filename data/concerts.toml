@@ -162,7 +162,12 @@ private = true
 [[concert]]
 date = "2026-10-02"
 display = "Puebla de Mula"
-private = true
+time = "00.00h"
+private = false
+schema_name = "Puebla de Mula"
+schema_loc = "Puebla de Mula"
+schema_city = "Puebla de Mula"
+schema_start = "2026-10-02T00:00:00+02:00"
 
 [[concert]]
 date = "2026-10-03"
@@ -172,7 +177,12 @@ private = true
 [[concert]]
 date = "2026-10-10"
 display = "Orihuela - El Escorratel"
-private = true
+time = "23.00h"
+private = false
+schema_name = "El Escorratel"
+schema_loc = "El Escorratel"
+schema_city = "Orihuela"
+schema_start = "2026-10-10T23:00:00+02:00"
 
 [[concert]]
 date = "2026-10-30"
