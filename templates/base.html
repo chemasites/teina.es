@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.title }} | {% if lang == "en" %}Indie Pop Rock Tribute Band in Murcia, Spain{% else %}Banda Tributo de Indie Pop Rock en Murcia{% endif %}{% endblock %}</title>
+    <title>{% block title %}{{ config.title }} | {% if lang == "en" %}Indie Pop Rock Band in Murcia, Spain{% else %}Banda de Indie Pop Rock en Murcia{% endif %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
     <meta name="author" content="Teína">
     <meta name="geo.region" content="ES-MU">
@@ -103,12 +103,12 @@
         "@id": "{{ config.base_url | safe }}/#band",
         "name": "Teína",
         "alternateName": ["Teina", "Teína Band", "Teina Band", "Teína Rock", "Teina Rock"],
-        "description": "{% if lang == 'en' %}Indie pop rock tribute band from Calasparra, Murcia, Spain. The best reinterpreted covers of current Spanish indie pop rock and original songs. Available for events, festivals and celebrations across the Region of Murcia and Spain.{% else %}Teína es una banda tributo de indie pop rock de Calasparra, Murcia, España. Las mejores versiones reinterpretadas del indie pop rock nacional actual y temas propios. Disponibles para eventos, festivales y celebraciones en la Región de Murcia y toda España.{% endif %}",
+        "description": "{% if lang == 'en' %}Indie pop rock band from Calasparra, Murcia, Spain. The best reinterpreted covers of current Spanish indie pop rock and original songs. Available for events, festivals and celebrations across the Region of Murcia and Spain.{% else %}Teína es una banda de indie pop rock de Calasparra, Murcia, España. Las mejores versiones reinterpretadas del indie pop rock nacional actual y temas propios. Disponibles para eventos, festivales y celebraciones en la Región de Murcia y toda España.{% endif %}",
         "url": "{{ config.base_url | safe }}{% if lang == 'en' %}/en/{% else %}/{% endif %}",
         "logo": "{{ get_url(path='imgs/teina-logo.png') }}",
         "image": "{{ get_url(path='media/hero-1200.jpg') }}",
         "numberOfMembers": 6,
-        "genre": ["Indie Pop Rock", "Tributo", "Pop Rock Español", "Indie Pop", "Pop Rock", "Rock", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}", "{% if lang == 'en' %}Alternative Rock{% else %}Rock Alternativo{% endif %}"],
+        "genre": ["Indie Pop Rock", "Pop Rock Español", "Indie Pop", "Pop Rock", "Rock", "{% if lang == 'en' %}Spanish Indie{% else %}Indie Español{% endif %}", "{% if lang == 'en' %}Alternative Rock{% else %}Rock Alternativo{% endif %}"],
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Calasparra",
