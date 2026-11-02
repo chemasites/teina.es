@@ -1,6 +1,6 @@
 ---
 name: content-editor
-description: Edits Teína site text in Spanish and English - pages, band info, songs, FAQ, legal, and concert data. Use for any copy or translation change.
+description: "Use for any copy or translation change: pages, band info, songs, FAQ, legal, concert text"
 model: {claude: sonnet}
 x-claude:
   tools: Read, Edit, Write, Glob, Grep, Bash

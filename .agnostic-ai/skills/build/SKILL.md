@@ -1,6 +1,6 @@
 ---
 name: build
-description: Build the Teína site with Zola, as CI does, and fix or report errors.
+description: "Use to build the site with Zola as CI does, and fix or report errors"
 user-invocable: true
 x-claude:
   allowed-tools: Bash, Read, Edit

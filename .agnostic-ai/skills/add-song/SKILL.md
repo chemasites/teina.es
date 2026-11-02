@@ -1,6 +1,6 @@
 ---
 name: add-song
-description: Add an original Teína song to the music page with its streaming links.
+description: "Use to add an original song to the music page with its streaming links"
 user-invocable: true
 argument-hint: "<song-name> <year> [spotify-url] [youtube-url]"
 x-claude:

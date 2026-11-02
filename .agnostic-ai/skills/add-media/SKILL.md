@@ -1,6 +1,6 @@
 ---
 name: add-media
-description: Add photos or YouTube videos to the Teína media gallery, with WebP, thumbnails, and sitemap entries.
+description: "Use to add photos or YouTube videos to the media gallery with WebP, thumbnails and sitemap entries"
 user-invocable: true
 argument-hint: "<image-path-or-youtube-url> [caption-es] [caption-en]"
 x-claude:

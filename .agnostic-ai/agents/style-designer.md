@@ -1,6 +1,6 @@
 ---
 name: style-designer
-description: Changes Teína visuals in SCSS - layout, light and dark themes, responsive behavior, animation. Use for any styling request.
+description: "Use for any styling request: SCSS layout, responsive behavior, animation, design tokens"
 model: {claude: sonnet}
 x-claude:
   tools: Read, Edit, Write, Glob, Grep, Bash

@@ -1,6 +1,6 @@
 ---
 name: seo-optimizer
-description: Handles Teína SEO - sitemap, JSON-LD, meta and social tags, robots and llms files. Use for search visibility or structured data changes.
+description: "Use for search visibility changes: sitemap, JSON-LD, meta and social tags, robots, llms files"
 model: {claude: sonnet}
 x-claude:
   tools: Read, Edit, Write, Glob, Grep, Bash, WebFetch

@@ -1,6 +1,6 @@
 ---
 name: add-concert
-description: Add, change, or remove a Teína concert in data/concerts.toml. Use when given a date, venue, city, time, or ticket link.
+description: "Add, change, or remove a Teína concert in data/concerts.toml. Use when given a date, venue, city, time, or ticket link."
 user-invocable: true
 argument-hint: "<date> <venue> <city> [time] [ticket-url]"
 x-claude:

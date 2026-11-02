@@ -1,6 +1,6 @@
 ---
 name: image-manager
-description: Converts, resizes, and audits Teína images - band photos, gallery, concert posters. Use when adding images or fixing missing WebP, thumbnails, or dimensions.
+description: "Use when adding images or fixing missing WebP, thumbnails or dimensions"
 model: {claude: sonnet}
 x-claude:
   tools: Read, Edit, Write, Glob, Grep, Bash

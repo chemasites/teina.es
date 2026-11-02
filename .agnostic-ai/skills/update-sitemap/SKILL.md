@@ -1,6 +1,6 @@
 ---
 name: update-sitemap
-description: Audit templates/sitemap.xml against the images and videos each page renders, and fix drift.
+description: "Use to audit templates/sitemap.xml against the images and videos each page renders and fix drift"
 user-invocable: true
 x-claude:
   allowed-tools: Read, Edit, Write, Bash, Grep, Glob

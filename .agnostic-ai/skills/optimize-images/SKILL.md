@@ -1,6 +1,6 @@
 ---
 name: optimize-images
-description: Audit Teína images for missing WebP variants, thumbnails, large copies, and width/height attributes, and fix them.
+description: "Use to audit and fix missing WebP variants, thumbnails, large copies and width/height attributes"
 user-invocable: true
 x-claude:
   allowed-tools: Bash, Read, Edit, Write, Glob, Grep
